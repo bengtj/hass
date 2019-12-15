@@ -1,0 +1,864 @@
+﻿title: Hemma hos LMMB
+
+resources:
+  # https://github.com/ciotlosm/custom-lovelace
+  - url: /local/group-card.js?v=2
+    type: js
+
+views:
+  # Overview tab
+  - icon: mdi:home-assistant
+    id: overview
+    background: radial-gradient(skyblue, cadetblue)
+    theme: dark-mode
+    cards:
+      # Floor plan
+      - type: picture-elements
+        image: /local/planskiss.png
+        elements:
+          # Hus sidovy
+          - type: state-icon
+            entity: sensor.yr_symbol
+            style:
+              top: 4.5%
+              left: 6%
+          - type: state-label
+            entity: sensor.ute_temperature
+            style:
+              top: 4%
+              left: 28%
+          - type: state-label
+            entity: sensor.vind_temperature
+            style:
+              top: 6.5%
+              left: 16.5%
+          - type: state-label
+            entity: sensor.inne_temperature
+            style:
+              top: 9.5%
+              left: 16.5%
+          - type: state-label
+            entity: sensor.grund_humidity
+            style:
+              top: 12.6%
+              left: 17%
+          - type: state-label
+            entity: sensor.power
+            style:
+              top: 16%
+              left: 17%
+          - type: state-icon
+            entity: sensor.energy_daily
+            style:
+              top: 20%
+              left: 11%
+          - type: state-icon
+            entity: sensor.energy_monthly
+            style:
+              top: 20%
+              left: 17%
+          - type: state-icon
+            entity: sensor.energy_yearly
+            style:
+              top: 20%
+              left: 23%
+          - type: state-badge
+            entity: input_select.scen
+            style:
+              top: 28%
+              left: 17%
+              font-size: 75%
+          # Sovrum
+          - type: state-icon
+            entity: switch.sovrum
+            tap_action:
+              action: toggle
+            style:
+              top: 10%
+              left: 41%
+          - type: state-icon
+            entity: light.sanggavel
+            tap_action:
+              action: toggle
+            style:
+              top: 6%
+              left: 51%
+          - type: state-icon
+            entity: light.sovtak
+            tap_action:
+              action: toggle
+            style:
+              top: 14%
+              left: 51%
+          - type: state-label
+            entity: sensor.sovrum_ute_temperature
+            style:
+              top: 16%
+              left: 31%
+          - type: state-label
+            entity: sensor.sovrum_temperature
+            style:
+              top: 10%
+              left: 53%
+          - type: state-label
+            entity: sensor.sovrum_humidity
+            style:
+              top: 16%
+              left: 43.5%
+          - type: state-icon
+            entity: vacuum.purjo
+            style:
+              top: 6%
+              left: 63%
+          # Maltes rum
+          - type: state-icon
+            entity: light.maltes_vagg
+            tap_action:
+              action: toggle
+            style:
+              top: 6%
+              left: 73%
+          - type: state-icon
+            entity: switch.maltes_fonster
+            tap_action:
+              action: toggle
+            style:
+              top: 13%
+              left: 85%
+          - type: state-icon
+            entity: light.maltes_tak
+            tap_action:
+              action: toggle
+            style:
+              top: 11%
+              left: 77%
+          - type: state-label
+            entity: sensor.malte_temperature
+            style:
+              top: 16%
+              left: 75%
+          - type: state-label
+            entity: sensor.malte_humidity
+            style:
+              top: 20%
+              left: 83%
+          - type: state-label
+            entity: sensor.malte_ute_temperature
+            style:
+              top: 9%
+              left: 94%
+          # Linas rum
+          - type: state-icon
+            entity: switch.linas_fonster
+            tap_action:
+              action: toggle
+            style:
+              top: 26%
+              left: 41%
+          - type: state-icon
+            entity: light.linas_tak
+            tap_action:
+              action: toggle
+            style:
+              top: 24%
+              left: 49%
+          - type: state-icon
+            entity: light.linas_vagg
+            tap_action:
+              action: toggle
+            style:
+              top: 32%
+              left: 55%
+          - type: state-label
+            entity: sensor.lina_ute_temperature
+            style:
+              top: 32%
+              left: 31%
+          - type: state-label
+            entity: sensor.lina_temperature
+            style:
+              top: 28.5%
+              left: 50%
+          - type: state-label
+            entity: sensor.lina_humidity
+            style:
+              top: 32%
+              left: 43.5%
+          # Sovrumsgång
+          - type: state-icon
+            entity: light.sovrumsgang
+            tap_action:
+              action: toggle
+            style:
+              top: 26%
+              left: 63%
+          # Badrum
+          - type: state-icon
+            entity: light.badrumsskap
+            tap_action:
+              action: toggle
+            style:
+              top: 28%
+              left: 75%
+          - type: state-icon
+            entity: binary_sensor.badrum_motion
+            style:
+              top: 25%
+              left: 84%
+          # Kök
+          - type: state-icon
+            entity: light.matbord_upp
+            tap_action:
+              action: toggle
+            style:
+              top: 38%
+              left: 51%
+          - type: state-icon
+            entity: light.matbord_ned
+            tap_action:
+              action: toggle
+            style:
+              top: 43%
+              left: 51%
+          - type: state-icon
+            entity: switch.koksfonster
+            tap_action:
+              action: toggle
+            style:
+              top: 40%
+              left: 41%
+          - type: state-icon
+            entity: light.koksfonster
+            tap_action:
+              action: toggle
+            style:
+              top: 44.5%
+              left: 41%
+          - type: state-icon
+            entity: light.kokstak
+            tap_action:
+              action: toggle
+            style:
+              top: 51.5%
+              left: 55%
+          - type: state-label
+            entity: sensor.kyl_v_temperature
+            style:
+              top: 51.5%
+              left: 42%
+              font-size: 61%
+          - type: state-label
+            entity: sensor.frys_v_temperature
+            style:
+              top: 54%
+              left: 42.5%
+              font-size: 61%
+          - type: state-label
+            entity: sensor.kyl_h_temperature
+            style:
+              top: 51.5%
+              left: 48%
+              font-size: 61%
+          - type: state-label
+            entity: sensor.frys_h_temperature
+            style:
+              top: 54%
+              left: 50%
+              font-size: 61%
+          # Tvättstuga
+          - type: state-icon
+            entity: light.tvatt_tak
+            tap_action:
+              action: toggle
+            style:
+              top: 38.5%
+              left: 77%
+          - type: state-icon
+            entity: binary_sensor.tvatt_motion
+            style:
+              top: 38.5%
+              left: 84%
+          - type: state-icon
+            entity: climate.nibe
+            style:
+              top: 33%
+              left: 70%
+          - type: state-icon
+            entity: climate.room
+            style:
+              top: 33%
+              left: 75.5%
+          - type: state-icon
+            entity: water_heater.nibe
+            style:
+              top: 33%
+              left: 81%
+          # Hall
+          - type: state-icon
+            entity: binary_sensor.hall_motion
+            style:
+              top: 54%
+              left: 63%
+          - type: state-icon
+            entity: light.halltak
+            tap_action:
+              action: toggle
+            style:
+              top: 54%
+              left: 78%
+          - type: state-icon
+            entity: light.huego
+            tap_action:
+              action: toggle
+            style:
+              top: 57%
+              left: 70%
+          # Klädkammaren
+          - type: state-icon
+            entity: light.kammartak
+            tap_action:
+              action: toggle
+            style:
+              top: 47%
+              left: 70%
+          - type: state-icon
+            entity: binary_sensor.kammare_motion
+            style:
+              top: 47%
+              left: 73%
+          # Lilla toaletten
+          - type: state-icon
+            entity: light.toalett
+            tap_action:
+              action: toggle
+            style:
+              top: 47%
+              left: 79%
+          - type: state-icon
+            entity: binary_sensor.toa_motion
+            style:
+              top: 47%
+              left: 84%
+          # Entré
+          - type: state-icon
+            entity: switch.juleljus
+            tap_action:
+              action: toggle
+            style:
+              top: 31%
+              left: 91%
+          - type: state-icon
+            entity: light.entre
+            tap_action:
+              action: toggle
+            style:
+              top: 47.5%
+              left: 91%
+          - type: state-icon
+            entity: light.sexan
+            tap_action:
+              action: toggle
+            style:
+              top: 61%
+              left: 91.4%
+          - type: state-label
+            entity: sensor.entre_ute_temperature
+            style:
+              top: 67%
+              left: 94%
+          - type: state-label
+            entity: sensor.entre_ute_humidity
+            style:
+              top: 70%
+              left: 94%
+          # Altan
+          - type: state-icon
+            entity: binary_sensor.altan_motion
+            style:
+              top: 40%
+              left: 9%
+          - type: state-icon
+            entity: switch.fontanljus
+            tap_action:
+              action: toggle
+            style:
+              top: 57%
+              left: 10%
+          - type: state-icon
+            entity: light.altan
+            tap_action:
+              action: toggle
+            style:
+              top: 67.7%
+              left: 33%
+          - type: state-icon
+            entity: light.altanslinga
+            tap_action:
+              action: toggle
+            style:
+              top: 61%
+              left: 35%
+          - type: state-icon
+            entity: light.ormen
+            tap_action:
+              action: toggle
+            style:
+              top: 45%
+              left: 20%
+          - type: state-icon
+            entity: light.julorm
+            tap_action:
+              action: toggle
+            style:
+              top: 52%
+              left: 20%
+          - type: state-label
+            entity: sensor.altan_ute_temperature
+            style:
+              top: 58%
+              left: 23%
+          - type: state-label
+            entity: sensor.altan_ute_humidity
+            style:
+              top: 61%
+              left: 23%
+          # Vardagsrum
+          - type: state-icon
+            entity: light.altanfonster
+            tap_action:
+              action: toggle
+            style:
+              top: 64%
+              left: 41%
+          - type: state-icon
+            entity: light.golvlampa
+            tap_action:
+              action: toggle
+            style:
+              top: 61.5%
+              left: 48%
+          - type: state-icon
+            entity: switch.twinkly
+            tap_action:
+              action: toggle
+            style:
+              top: 62%
+              left: 55%
+          - type: state-icon
+            entity: light.tak_h
+            tap_action:
+              action: toggle
+            style:
+              top: 68%
+              left: 50%
+          - type: state-icon
+            entity: light.tak_v
+            tap_action:
+              action: toggle
+            style:
+              top: 68%
+              left: 75%
+          - type: state-icon
+            entity: switch.fonster
+            tap_action:
+              action: toggle
+            style:
+              top: 69%
+              left: 85%
+          - type: state-icon
+            entity: light.hornlampa
+            tap_action:
+              action: toggle
+            style:
+              top: 75%
+              left: 85%
+          - type: state-icon
+            entity: light.bordslampa
+            tap_action:
+              action: toggle
+            style:
+              top: 75.5%
+              left: 80%
+          - type: state-icon
+            entity: switch.tvljus
+            tap_action:
+              action: toggle
+            style:
+              top: 75.5%
+              left: 73%
+          - type: state-icon
+            entity: switch.vitrinskap
+            tap_action:
+              action: toggle
+            style:
+              top: 75.5%
+              left: 48%
+          - type: state-label
+            entity: sensor.vardagsrum_temperature
+            style:
+              top: 65.5%
+              left: 63%
+          - type: state-icon
+            entity: switch.ac
+            style:
+              top: 62%
+              left: 76%
+          # Relax
+          - type: state-icon
+            entity: light.relaxgang
+            tap_action:
+              action: toggle
+            style:
+              top: 74.5%
+              left: 34%
+          - type: state-icon
+            entity: switch.plantljus
+            tap_action:
+              action: toggle
+            style:
+              top: 67.7%
+              left: 16%
+          - type: state-icon
+            entity: switch.plantfonster
+            tap_action:
+              action: toggle
+            style:
+              top: 72.5%
+              left: 22%
+          - type: state-icon
+            entity: light.relaxtak
+            tap_action:
+              action: toggle
+            style:
+              top: 78%
+              left: 20%
+          - type: state-label
+            entity: sensor.relax_temperature
+            style:
+              top: 83.5%
+              left: 20%
+          - type: state-icon
+            entity: light.datatak
+            tap_action:
+              action: toggle
+            style:
+              top: 88.5%
+              left: 20%
+          - type: state-icon
+            entity: switch.dator
+            tap_action:
+              action: toggle
+            style:
+              top: 94.5%
+              left: 17%
+          - type: state-icon
+            entity: light.dator
+            tap_action:
+              action: toggle
+            style:
+              top: 94.5%
+              left: 24%
+          # Garage
+          - type: state-icon
+            entity: binary_sensor.garage_motion
+            style:
+              top: 88%
+              left: 50%
+          - type: state-label
+            entity: sensor.garagefrys_temperature
+            style:
+              top: 83%
+              left: 39%
+              font-size: 61%
+          - type: state-label
+            entity: sensor.garagekyl_temperature
+            style:
+              top: 80.5%
+              left: 46%
+              font-size: 61%
+          - type: state-label
+            entity: sensor.garage_temperature 
+            style:
+              top: 85.5%
+              left: 58%
+          - type: state-icon
+            entity: light.traning
+            tap_action:
+              action: toggle
+            style:
+              top: 81%
+              left: 31%
+          - type: state-icon
+            entity: light.skrivare
+            tap_action:
+              action: toggle
+            style:
+              top: 94.5%
+              left: 31%
+          - type: state-icon
+            entity: light.garagefonster
+            tap_action:
+              action: toggle
+            style:
+              top: 95%
+              left: 41%
+          - type: state-icon
+            entity: light.atervinning
+            tap_action:
+              action: toggle
+            style:
+              top: 94%
+              left: 80%
+          - type: state-icon
+            entity: light.garageport
+            tap_action:
+              action: toggle
+            style:
+              top: 94%
+              left: 88%
+      # Tracker locations
+      - type: glance
+        entities:
+          - device_tracker.bengts_mobil
+          - device_tracker.marias_mobil
+          - device_tracker.maltes_mobil
+          - device_tracker.lina_lan
+      # Yr forecast picture
+      - type: picture-entity
+        entity: camera.yr_vader
+        show_name: false
+        show_state: false
+      # Västtrafik frame, https through proxy from http://wap.vasttrafik.se
+      - type: iframe
+        url: !secret vt_url
+        aspect_ratio: 75%
+  # Weather tab
+  - icon: mdi:weather-partly-rainy
+    id: weather
+    title: Weather
+    cards:
+    # YR meteogram image
+    - type: picture-entity
+      entity: camera.yr_vader
+      show_name: false
+      show_state: false
+    # SMHI
+    - type: weather-forecast
+      entity: weather.smhi_smhi
+    # Dark sky card, https://blog.darksky.net/forecast-embeds/
+    - type: iframe
+      url: !secret darksky_url
+    - type: history-graph
+      title: Historik 3 dagar
+      hours_to_show: 72
+      entities:
+        - entity: sensor.inne_temperature
+          name: Innetemp
+        - entity: sensor.ute_temperature
+          name: Utetemp
+  # Camera tab
+  - icon: mdi:cctv
+    id: camera
+    title: Kameror
+    cards:
+      - type: picture-entity
+        entity: camera.altan
+        show_state: false
+      - type: picture-entity
+        entity: camera.plantfonster
+        show_state: false
+      - type: picture-entity
+        entity: camera.altanfonster
+        show_state: false
+      - type: picture-entity
+        entity: camera.koksfonster
+        show_state: false
+      - type: picture-entity
+        entity: camera.garage
+        show_state: false
+      - type: entity-filter
+        entities:
+          - device_tracker.bengts_mobil
+          - device_tracker.bengt_lan
+          - device_tracker.marias_mobil
+          - device_tracker.maria_lan
+          - device_tracker.maltes_mobil
+          - device_tracker.malte_lan
+#          - device_tracker.linas_mobil
+          - device_tracker.lina_lan
+        state_filter:
+          - home
+        card: 
+          type: glance
+  # Map tab
+  - icon: mdi:map-search-outline
+    id: map
+    title: Kartan
+    cards:
+     - type: map
+       aspect_ratio: 150%
+       entities:
+         - device_tracker.bengts_mobil
+         - device_tracker.marias_mobil
+         - device_tracker.maltes_mobil
+         - device_tracker.lina_lan
+         - zone.home
+         - zone.skolan
+         - zone.hemkopco
+         - zone.barnens_byvag
+         - zone.getskar
+         - zone.ericsson
+         - zone.saab
+         - zone.liseberg
+         - zone.sundahallen
+         - zone.fregatten
+  # Vacuum tab
+  - icon: mdi:robot-vacuum-variant
+    id: vacuum
+    title: Dammsugare
+    cards:
+      - type: entities
+        title: Dammsugare
+        show_header_toggle: false
+        entities:
+          - vacuum.purjo
+          - switch.purjo_schedule
+      - type: picture-entity
+        entity: camera.purjo_cleaning_map
+        show_state: false
+  - icon: mdi:calendar-clock
+    id: calendar
+    title: Kalender
+    cards:
+      - type: iframe
+        url: !secret maria_calendar
+        aspect_ratio: 100%
+      - type: iframe
+        url: !secret bengt_calendar
+        aspect_ratio: 100%
+  # Light tab
+  - icon: mdi:lightbulb-outline
+    id: light
+    title: Belysning
+    cards:
+      - type: entities
+        title: Belysning
+        entities:
+          - group.belysning_dag
+          - group.belysning_sovrum
+          - group.belysning_ute
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Dag
+          column_width: 25%
+        group: group.belysning_dag
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Sovrum
+          column_width: 25%
+        group: group.belysning_sovrum
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Ute
+          column_width: 25%
+        group: group.belysning_ute
+      - type: glance
+        title: Övrigt
+        entities:
+          - light.badrumsskap
+          - switch.tvljus
+          - group.fluxljus
+        column_width: 25%
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Maltes rum
+          column_width: 25%
+        group: group.maltes_ljus
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Linas rum
+          column_width: 25%
+        group: group.linas_ljus
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Hall
+          column_width: 25%
+        group: group.hallbelysning
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Kök
+          column_width: 25%
+        group: group.koksljus
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Vardagsrum
+          column_width: 25%
+        group: group.vardagsrumsljus
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Relax
+          column_width: 25%
+        group: group.relaxljus
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Garage
+          column_width: 25%
+        group: group.garageljus
+
+  # Media tab
+  - icon: mdi:music
+    id: media
+    title: Media
+    cards:
+      # Squeezebox card
+      - type: entities
+        title: Squeezebox
+        entities:
+          - media_player.sovrum
+          - media_player.linas
+          - media_player.maltes
+          - media_player.tvatt
+          - media_player.kok
+          - media_player.vardagsrum
+          - media_player.altanfonster
+          - media_player.relax
+      # Chromecast card
+      - type: entities
+        title: Chromecast
+        entities:
+          - media_player.kokscast
+          - media_player.vardagscast
+          - media_player.maltecast
+          - media_player.linacast
+      # Google home card
+      - type: entities
+        title: Google home
+        entities:
+          - media_player.kokshome
+      # Remotes card
+      - type: entities
+        title: Kontroll
+        entities:
+          - remote.vardagsharmoni
+          - media_player.denon_avr_x6200w
+          - type: weblink
+            name: All components
+            url: /states
+
+      # Squueezecast card
+      - type: entities
+        title: Squeezecast
+        entities:
+          - media_player.vardagssqueezecast
+          - media_player.maltesqueezecast
+          - media_player.linasqueezecast

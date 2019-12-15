@@ -1,0 +1,89 @@
+﻿# Mail with pictures from cameras from altan
+# Should be possible to convert images with bad mime type this way but needs some work for hass.io:
+# convert /tmp/camera_forhave.jpg /tmp/camera_forhave.jpg https://community.home-assistant.io/t/smtp-unknown-mime-type/12962/3
+altan_mail:
+  alias: "Mail för detekterad altanrörelse"
+  sequence:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.altan
+      filename: "/config/www/cam/altan1.jpg"
+  - service: homeassistant.turn_on
+    data:
+      entity_id:
+        - light.altanslinga
+        - light.altan
+        - switch.fontanljus
+  - service: camera.snapshot
+    data:
+      entity_id: camera.plantfonster
+      filename: "/config/www/cam/plantfonster.jpg"
+  - service: camera.snapshot
+    data:
+      entity_id: camera.altanfonster
+      filename: "/config/www/cam/altanfonster.jpg"
+  - service: camera.snapshot
+    data:
+      entity_id: camera.koksfonster
+      filename: "/config/www/cam/koksfonster.jpg"
+  - delay: 
+      seconds: 3
+  - service: camera.snapshot
+    data:
+      entity_id: camera.altan
+      filename: "/config/www/cam/altan2.jpg"
+  - service: notify.email # Mailen kommer fram långsammare med fler bilder, bättre med fler små mail...
+    data_template:
+      title: Någon smyger på altanen {{ now().strftime("%H:%M") }}!
+      message: "Se själv på bilderna..."
+      data:
+        images:
+          - /config/www/cam/altan1.jpg
+          - /config/www/cam/altan2.jpg
+          - /config/www/cam/plantfonster.jpg
+          - /config/www/cam/altanfonster.jpg
+          - /config/www/cam/koksfonster.jpg
+
+# Mail a standard message and speak the title on google home.
+# Note by using a script it is possible to include a secret url.
+notify:
+  alias: "Meddela något via mail"
+  fields:
+      title:
+        description: 'Subject'
+        example: 'Viktigt meddelande från home assistant'
+      message:
+        description: 'Message body'
+        example: 'Något har hänt hemma'
+      url:
+        description: 'Url for reaching hass'
+        example: '!secret base_url'
+  sequence:
+  - service: notify.email
+    data_template:
+      title: '{{ title }}'
+      message: |
+        {{ message }}
+        
+        {{ url }}
+        
+        /Hemtjänsten
+  - service: script.say
+    data_template:
+      message: '{{ title }}'
+
+# Say something on google home mini in the kitchen
+say:
+  alias: "Berätta något"
+  sequence:
+  - service: tts.google_say
+    data_template:
+      entity_id: media_player.kokshome
+      message: "{{ message }}"
+      language: 'sv'
+      cache: false
+
+# Nice workaround for else clause in actions
+noop:
+  sequence:
+    delay: 00:00:00

@@ -1,0 +1,365 @@
+# Google assistant configuration
+
+# HASS: https://www.home-assistant.io/components/google_assistant/
+
+project_id: !secret gass_project_id
+api_key: !secret gass_api_key
+expose_by_default: false
+exposed_domains:
+entity_config:
+
+  # Sovrum
+  switch.sovrum:
+    name: Sovfönster
+    aliases: Sovrumsfönster
+    room: Sovrum
+    expose: true
+  media_player.sovrum:
+    name: Sovradio
+    aliases: Sovrumsradio
+    room: Sovrum
+    expose: true
+  light.sanggavel:
+    name: Gavel
+    aliases: Sänggavel
+    room: Sovrum
+    expose: true
+  light.sovtak:
+    name: Sovtak
+    aliases: Sovrumstak
+    room: Sovrum
+    expose: true
+  light.sovrumsgang:
+    name: Gång
+    aliases: Sovrumsgång
+    room: Sovrum
+    expose: true
+ 
+   # Maltes rum
+  switch.maltes_rum:
+    name: Maltefönster
+    aliases: Maltes fönster
+    room: Maltes rum
+    expose: true
+  media_player.maltes:
+    name: Malteradio
+    aliases: Maltes radio
+    room: Maltes rum
+    expose: true
+  light.maltes_tak:
+    name: Maltes tak
+    aliases: Maltes taklampa
+    room: Maltes rum
+    expose: true
+  light.maltes_vagg:
+    name: Maltes vägg
+    aliases: Maltes vägglampa
+    room: Maltes rum
+    expose: true
+ 
+   # Linas rum
+  switch.linas_rum:
+    name: Linafönster
+    room: Linas rum
+    aliases: Linas fönster
+    expose: true
+  media_player.linas:
+    name: Linaradio
+    aliases: Linas radio
+    room: Linas rum
+    expose: true
+  light.linas_tak:
+    name: Linas tak
+    aliases: Linas taklampa
+    room: Linas rum
+    expose: true
+  light.linas_vagg:
+    name: Linas vägg
+    aliases: Linas vägglampa
+    room: Linas rum
+    expose: true
+ 
+  # Kök
+  light.matbord:
+    name: Matbord
+    aliases: Köksbord
+    room: Kök
+    expose: true
+  light.matbord_upp:
+    name: Matbord upp
+    aliases: Köksbord upp
+    room: Kök
+    expose: true
+  light.matbord_ned:
+    name: Matbord ned
+    aliases: Köksbord ned
+    room: Kök
+    expose: true
+  light.koksfonster:
+    name: Köks fönster
+    aliases: Köksfönster
+    room: Kök
+    expose: true
+  switch.koksfonster:
+    name: Julstake
+    aliases: Stake
+    room: Kök
+    expose: true
+  light.kokstak:
+    name: Kökstak
+    room: Kök
+    expose: true
+  media_player.kok:
+    name: Köks radio
+    aliases: Köksradio
+    room: Kök
+    expose: true
+
+  # Tvättrum
+  media_player.tvatt:
+    name: Tvättrums radio
+    aliases: Tvättrumsradio
+    room: Tvättrum
+    expose: true
+  light.tvatt_tak:
+    name: Tvätt tak
+    aliases: Tvättrumstak
+    room: Tvättrum
+    expose: true
+
+  # Klädkammare
+  light.kammartak:
+    name: Kammartak
+    aliases: Kammare
+    room: Klädkammare
+    expose: true
+
+  # Lilla toaletten
+  light.toaspegel:
+    name: Toaspegel
+    aliases: Toa
+    room: Toalett
+    expose: true
+
+  # Hall
+  light.halltak:
+    name: Halltak
+    aliases: Hall taklampa
+    room: Hall
+    expose: true
+  light.huego:
+    name: Huego
+    aliases: Hue go
+    room: Hall
+    expose: true
+    
+  # Vardagsrum
+  switch.fonster:
+    name: Fönster
+    aliases: Vardagsrumsfönster
+    room: Vardagsrum
+    expose: true
+  light.hornlampa:
+    name: Hörn lampa
+    aliases: Hörnlampa
+    room: Vardagsrum
+    expose: true
+  light.bordslampa:
+    name: Bordslampa
+    aliases: TV-lampa
+    room: Vardagsrum
+    expose: true
+  light.tak_v:
+    name: Tak vänster
+    aliases: Taklampa vänster
+    room: Vardagsrum
+    expose: true
+  light.tak_h:
+    name: Tak höger
+    aliases: Taklampa höger
+    room: Vardagsrum
+    expose: true
+  switch.vitrinskap:
+    name: Skåp
+    aliases: Vitrinskåp
+    room: Vardagsrum
+    expose: true
+  light.altanfonster:
+    name: Altan fönster
+    aliases: Altanfönster
+    room: Vardagsrum
+    expose: true
+  light.golvlampa:
+    name: Läslampa
+    aliases: Golvlampa
+    room: Vardagsrum
+    expose: true
+  media_player.vardagsrum:
+    name: Vardagsrums radio
+    aliases: Vardagsrumsradio
+    room: Vardagsrum
+    expose: true
+  media_player.altanfonster:
+    name: Altan radio
+    aliases: Altanradio
+    room: Vardagsrum
+    expose: true
+
+  # Relax
+  switch.dator:
+    name: Dator
+    room: Relax
+    expose: true
+  light.dator:
+    name: Datorlampa
+    aliases: Datalampa
+    room: Relax
+    expose: true
+  light.datatak:
+    name: Data tak
+    aliases: Datatak
+    room: Relax
+    expose: true
+  switch.plantfonster:
+    name: Plant fönster
+    aliases: Plantfönster
+    room: Relax
+    expose: true
+  switch.plantljus:
+    name: Plant ljus
+    aliases: Plantljus
+    room: Relax
+    expose: true
+  light.relaxgang:
+    name: Relax gång
+    aliases: Relaxgång
+    room: Relax
+    expose: true
+  light.relaxtak:
+    name: Relaxtak
+    aliases: Relax taklampa
+    room: Relax
+    expose: true
+  media_player.relax:
+    name: Relax radio
+    aliases: Relaxradio
+    room: Relax
+    expose: true
+ 
+  # Garage
+  light.garagefonster:
+    name: Garagefönster
+    room: Garage
+    expose: true
+  light.traning:
+    name: Träning
+    room: Garage
+    expose: true
+  light.atervinning:
+    name: Återvinning
+    room: Garage
+    expose: true
+  light.skrivare:
+    name: Skrivare
+    room: Garage
+    expose: true
+
+  # Ute
+  light.altan:
+    name: Altanljus
+    aliases: Altan
+    room: Ute
+    expose: true
+  switch.fontanljus:
+    name: Fontänljus
+    aliases: Fontän
+    room: Ute
+    expose: true
+  switch.juleljus:
+    name: Juleljus
+    room: Ute
+    expose: true
+  light.entre:
+    name: Entréljus
+    aliases: Entré
+    room: Ute
+    expose: true
+  light.sexan:
+    name: Sex
+    aliases: Sexan
+    room: Ute
+    expose: true
+  light.garageport:
+    name: Garageport
+    aliases: Port
+    room: Ute
+    expose: true
+
+  # Scener
+  scene.flux:
+    name: Flux
+    aliases: Fluxljus
+    room: Övrigt
+    expose: true
+  scene.inget:
+    name: Nothing
+    aliases: Inget
+    room: Övrigt
+    expose: true
+  scene.energi:
+    name: Energise
+    aliases: Energi
+    room: Övrigt
+    expose: true
+  scene.koncentration:
+    name: Concentrate
+    aliases: Koncentration
+    room: Övrigt
+    expose: true
+  scene.ljust:
+    name: Bright
+    aliases: Ljust
+    room: Övrigt
+    expose: true
+  scene.las:
+    name: Read
+    aliases: Läs
+    room: Övrigt
+    expose: true
+  scene.dimmat:
+    name: Dimmed
+    aliases: Dimmat
+    room: Övrigt
+    expose: true
+  scene.nattljus:
+    name: Nightlight
+    aliases: Nattljus
+    room: Övrigt
+    expose: true
+  scene.skymning:
+    name: Tropical twilight
+    aliases: Skymning
+    room: Övrigt
+    expose: true
+  scene.solnedgang:
+    name: Savanna sunset
+    aliases: Solnedgång
+    room: Övrigt
+    expose: true
+  scene.frost:
+    name: Arctic aurora
+    aliases: Frost
+    room: Övrigt
+    expose: true
+  scene.varblommor:
+    name: Spring blossom
+    aliases: Vårblommor
+    room: Övrigt
+    expose: true
+
+  # Dammsugare
+  vacuum.purjo:
+    name: Purjo
+    aliases: Dammsugare
+    room: Övrigt
+    expose: true

@@ -1,0 +1,185 @@
+# Weather/RFXtrx sensors
+
+# Weather icon from yr
+- platform: yr
+
+# Hue sensors from https://github.com/robmarkcole/Hue-sensors-HASS
+- platform: huesensor
+
+# RFXtrx433XL sensors, needs host restart for automatic_add change
+- platform: rfxtrx
+  automatic_add: false
+  devices:
+    "0a52090ed70000d1370159":
+      name: Sovrum
+      data_type:
+        - Humidity
+        - Temperature
+    "08500706d800006159":
+      name: Sovrum Ute
+    "0a520906e70000d0370159":
+      name: Malte
+      data_type:
+        - Humidity
+        - Temperature
+    "08500704e800006559":
+      name: Malte Ute
+    "0a5209fbf70000c9340159":
+      name: Lina
+      data_type:
+        - Humidity
+        - Temperature
+    "0850071bf800006559":
+      name: Lina Ute
+    "08500724970080b259":
+      name: Frys V
+    "08500705ef0000f559":
+      name: Kyl V
+    "0850071d8700005459":
+      name: Frys H
+    "08500717080000ed59":
+      name: Kyl H
+    "0a52090bc700006d480369":
+      name: Vind
+      data_type:
+        - Humidity
+        - Temperature
+    "0a520104fb04009e3a0069":
+      name: Grund
+      data_type:
+        - Humidity
+        - Temperature
+    "0a52010267020067470359":
+      name: Altan Ute
+      data_type:
+        - Humidity
+        - Temperature
+    "0a5201063001005f410050":
+      name: Entré Ute
+      data_type:
+        - Humidity
+        - Temperature
+#    "0a520807010400da200259": # ESIC with random dropouts
+    "08500741980000f869":
+      name: Vardagsrum
+#    "0a520815010100b33d0159": # ESIC with random 70degC and alike
+    "08500706470000f869":
+      name: Garagefrys
+    "0a520942b7000044140259":
+      name: Garagekyl
+    "085001e2080100a969": # <- Ch1, Ch2 "0850013d0602801869" and Ch3 "0850012e0003010559". Ch3 collided with neighbour.
+      name: Relax
+    "08200a1807d00a0669":
+      name: Rök Relax
+    "08200a1f02100a0659":
+      name: Rök Sovrum
+# Calculated sensors
+- platform: min_max
+  name: Ute Temperature
+  type: mean
+  round_digits: 1
+  entity_ids:
+    - sensor.sovrum_ute_temperature
+    - sensor.malte_ute_temperature
+    - sensor.lina_ute_temperature
+    - sensor.entre_ute_temperature
+#    - sensor.altan_ute_temperature # Gives bad mean value
+- platform: min_max
+  name: Inne Temperature
+  type: mean
+  round_digits: 1
+  entity_ids:
+    - sensor.relax_temperature
+    - sensor.vardagsrum_temperature
+    - sensor.sovrum_temperature
+    - sensor.malte_temperature
+    - sensor.lina_temperature
+#    - sensor.garage_temperature # Gives bad mean value
+
+# Effekt och energi
+- platform: template
+  sensors:
+    power:
+      friendly_name: Effekt
+      value_template: '{{ ((float(states("sensor.current_1")) + float(states("sensor.current_2")) + float(states("sensor.current_3")))*220) | int }}' # Should've been 236V but this seems more calibrated...
+      unit_of_measurement: W
+      icon_template: mdi:power-plug
+- platform: integration
+  name: Energy
+  source: sensor.power
+  unit_prefix: k
+  round: 2
+
+# Trafikverkets väderstationer
+- platform: trafikverket_weatherstation
+  name: Trafikverket Jörlanda
+  api_key: !secret trafikverket_api_key
+  station: Jörlanda
+  monitored_conditions:
+      - air_temp
+      - road_temp
+      - humidity
+      - precipitation
+      - wind_direction
+      - wind_direction_text
+      - wind_speed
+# - platform: trafikverket_weatherstation
+  # name: Trafikverket Kungälv
+  # api_key: !secret trafikverket_api_key
+  # station: Kungälv
+  # monitored_conditions:
+      # - air_temp
+      # - road_temp
+      # - humidity
+      # - precipitation
+      # - wind_direction
+      # - wind_direction_text
+      # - wind_speed
+# - platform: trafikverket_weatherstation
+  # name: Trafikverket Tjörnbron
+  # api_key: !secret trafikverket_api_key
+  # station: Tjörnbron
+  # monitored_conditions:
+      # - air_temp
+      # - road_temp
+      # - humidity
+      # - precipitation
+      # - wind_direction
+      # - wind_direction_text
+      # - wind_speed
+# - platform: trafikverket_weatherstation
+  # name: Trafikverket Ödsmål
+  # api_key: !secret trafikverket_api_key
+  # station: Ödsmål
+  # monitored_conditions:
+      # - air_temp
+      # - road_temp
+      # - humidity
+      # - precipitation
+      # - wind_direction
+      # - wind_direction_text
+      # - wind_speed
+# - platform: trafikverket_weatherstation
+  # name: Trafikverket Fiskhamnsmotet
+  # api_key: !secret trafikverket_api_key
+  # station: Fiskhamnsmotet
+  # monitored_conditions:
+      # - air_temp
+      # - road_temp
+      # - humidity
+      # - precipitation
+      # - wind_direction
+      # - wind_direction_text
+      # - wind_speed
+# - platform: trafikverket_weatherstation
+  # name: Trafikverket Delsjön
+  # api_key: !secret trafikverket_api_key
+  # station: Delsjön
+  # monitored_conditions:
+      # - air_temp
+      # - road_temp
+      # - humidity
+      # - precipitation
+      # - wind_direction
+      # - wind_direction_text
+      # - wind_speed

@@ -1,0 +1,15 @@
+# Start by making all switches look like a lightbulb and then overwrite it for some
+"switch.*":
+  icon: mdi:lightbulb
+"switch.klocka_*":
+  icon: mdi:alarm-bell
+"switch.fjarr_*":
+  icon: mdi:remote
+"switch.laddare_*":
+  icon: mdi:battery-charging
+"light.*tak*":
+  icon: mdi:ceiling-light
+"light.*vagg*":
+  icon: mdi:wall-sconce
+"*.*flux*":
+  icon: mdi:palette

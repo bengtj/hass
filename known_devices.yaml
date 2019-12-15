@@ -1,0 +1,34 @@
+# The ip addresses for nmap_tracker to track is in configuration.yaml, see device_tracker
+# Device tracker names and images is in customize.yaml
+
+maria_lan:
+  hide_if_away: false
+  icon:
+  mac: !secret maria_mac
+  name: maria.lan
+  picture:
+  track: true
+
+bengt_lan:
+  hide_if_away: false
+  icon:
+  mac: !secret bengt_mac
+  name: bengt.lan
+  picture:
+  track: true
+
+malte_lan:
+  hide_if_away: false
+  icon:
+  mac: !secret malte_mac
+  name: malte.lan
+  picture:
+  track: true
+
+lina_lan:
+  hide_if_away: false
+  icon:
+  mac: !secret lina_mac
+  name: lina.lan
+  picture:
+  track: true

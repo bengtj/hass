@@ -1,0 +1,284 @@
+# Root configuration for home assistant
+# Secrets are defined in the file secrets.yaml
+
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Hemma hos LMMB
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 10
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Stockholm
+  # Customization files
+  customize: !include customize.yaml
+  customize_glob: !include customize_glob.yaml
+  # No login for watch/phone, see https://www.home-assistant.io/docs/authentication/provider
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.0.30
+        - 192.168.0.34
+      trusted_users:
+        192.168.0.30: !secret bengt_user_id
+        192.168.0.34: !secret bengt_user_id
+      allow_bypass_login: true
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Configure http(s)
+http:
+  base_url: !secret base_url
+  # Reverse proxy https server 192.168.0.10
+  use_x_forwarded_for: true
+  trusted_proxies: 192.168.0.10
+
+# Configure database details recording
+recorder:
+  db_url: !secret db_url
+  purge_keep_days: 14
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Support person component
+person:
+
+# Support python scripts
+python_script:
+
+# System health info support
+system_health:
+
+# Weather provider, see https://www.home-assistant.io/components/weather.yweather/
+weather:
+  - platform: smhi
+    latitude: !secret latitude
+    longitude: !secret longitude
+    name: SMHI
+
+# Track device location with nmap. See secrets.yaml for gpslogger configuration.
+device_tracker:
+  - platform: nmap_tracker
+    hosts:
+      - 192.168.0.29
+      - 192.168.0.30
+      - 192.168.0.31
+      - 192.168.0.32
+    home_interval: 5
+    interval_seconds: 30
+
+# AC power toggle via Harmony. Copied as switch.ac to get icon color.
+input_boolean:
+  ac:
+    name: Luftkonditionering
+    icon: mdi:air-conditioner
+
+# RFXtrx 433MHz receiver/transmitter
+rfxtrx:
+  device: /dev/ttyUSB0
+
+# Philips hue bridge
+hue:
+  bridges:
+    - host: 192.168.0.13
+      allow_unreachable: true
+
+# Neato botvac
+neato:
+  username: !secret neato_username
+  password: !secret neato_password
+
+# Nibe F370 heat pump plugin from https://github.com/elupus/hass_nibe 
+# List of parameter IDs: https://github.com/openhab/openhab1-addons/wiki/Nibe-Heat-Pump-Binding
+nibe:
+  systems:
+    - system: !secret nibe_system
+      units:
+        - unit: 0
+      climates: True
+      water_heaters: True
+      fans: True
+      sensors:
+        - 40083
+        - 40081
+        - 40079
+utility_meter:
+  energy_daily:
+    source: sensor.energy
+    cycle: daily
+  energy_monthly:
+    source: sensor.energy
+    cycle: monthly
+  energy_yearly:
+    source: sensor.energy
+    cycle: yearly
+
+# Cameras
+ffmpeg:
+camera:
+  - platform: generic
+    name: Altan
+    still_image_url: !secret altan_cam_url
+  - platform: generic
+    name: Köksfönster
+    still_image_url: !secret koks_cam_url
+  - platform: generic
+    name: Altanfönster
+    still_image_url: !secret vardagsrum_cam_url
+  - platform: generic
+    name: Plantfönster
+    still_image_url: !secret relax_cam_url
+  - platform: generic
+    name: Garage
+    still_image_url: !secret garage_cam_url
+  - platform: generic
+    name: Yr Väder
+    still_image_url: !secret yr_svg_url
+    content_type: 'image/svg+xml'
+
+# Mail. Uses gmail filter-forwarding from hass_email to work without delay. It seems like gmail will deliver quicker to the sender address(!)
+notify:
+  - name: email
+    platform: smtp
+    server: 192.168.0.10
+    port: 25
+    encryption: none
+    sender: !secret hass_email
+    recipient:
+      - !secret hass_email
+    sender_name: Home Assistant
+
+# Scene selector
+input_select:
+  scen:
+    name: Scen
+    options:
+      - Flux
+      - Inget
+      - Energise
+      - Concentrate
+      - Bright
+      - Read
+      - Dimmed
+      - Nightlight
+      - Savanna sunset
+      - Tropical twilight
+      - Arctic aurora
+      - Spring blossom
+    initial: Flux
+    icon: mdi:theme-light-dark
+scene:
+  - name: Flux
+    entities:
+      input_select.scen:
+        state: on
+        option: Flux
+  - name: Inget
+    entities:
+      input_select.scen:
+        state: off
+        option: Inget
+  - name: Energi
+    entities:
+      input_select.scen:
+        state: on
+        option: Energise
+  - name: Koncentration
+    entities:
+      input_select.scen:
+        state: on
+        option: Concentrate
+  - name: Ljust
+    entities:
+      input_select.scen:
+        state: on
+        option: Bright
+  - name: Läs
+    entities:
+      input_select.scen:
+        state: on
+        option: Read
+  - name: Dimmat
+    entities:
+      input_select.scen:
+        state: on
+        option: Dimmed
+  - name: Nattljus
+    entities:
+      input_select.scen:
+        state: on
+        option: Nightlight
+  - name: Skymning
+    entities:
+      input_select.scen:
+        state: on
+        option: Tropical twilight
+  - name: Solnedgång
+    entities:
+      input_select.scen:
+        state: on
+        option: Savanna sunset
+  - name: Frost
+    entities:
+      input_select.scen:
+        state: on
+        option: Arctic aurora
+  - name: Vårblommor
+    entities:
+      input_select.scen:
+        state: on
+        option: Spring blossom
+
+# Text to speech
+tts:
+  - platform: google_translate
+    service_name: google_say
+    base_url: http://192.168.0.12:8123
+
+# Lovelace UI
+lovelace:
+  mode: yaml
+
+# Includes of other config files
+zone: !include zone.yaml
+sensor: !include sensor.yaml
+switch: !include switch.yaml
+light: !include light.yaml
+google_assistant: !include google_assistant.yaml
+group: !include group.yaml
+automation: !include automation.yaml
+automation old: !include automation_manual.yaml
+script: !include script.yaml

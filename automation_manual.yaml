@@ -1,0 +1,713 @@
+# Notera följande:
+# Använd into to/from i state trigger om du vill att det ska trigga på varje event. Använd condition eller templates.
+
+# Varningsmail för varm kyl/frys
+- alias: Kyl eller frys varm
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.frys_v_temperature
+    above: '-12'
+  - platform: numeric_state
+    entity_id: sensor.frys_v_temperature
+    above: '-8'
+  - platform: numeric_state
+    entity_id: sensor.kyl_v_temperature
+    above: '10'
+  - platform: numeric_state
+    entity_id: sensor.frys_h_temperature
+    above: '-12'
+  - platform: numeric_state
+    entity_id: sensor.frys_h_temperature
+    above: '-8'
+  - platform: numeric_state
+    entity_id: sensor.kyl_h_temperature
+    above: '10'
+  - platform: numeric_state
+    entity_id: sensor.garagefrys_temperature
+    above: '-12'
+  - platform: numeric_state
+    entity_id: sensor.garagefrys_temperature
+    above: '-8'
+  - platform: numeric_state
+    entity_id: sensor.garagekyl_temperature
+    above: '10'
+  action:
+  - service: script.notify
+    data_template:
+      title: Någon kyl eller frys verkar lite väl varm {{ now().strftime("%H:%M") }}!
+      message: |
+        Kyl V: {{states("sensor.kyl_v_temperature")}}°C
+        Frys V: {{states("sensor.frys_v_temperature")}}°C
+        
+        Kyl H: {{states("sensor.kyl_h_temperature")}}°C
+        Frys H: {{states("sensor.frys_h_temperature")}}°C
+        
+        Garagekyl: {{states("sensor.garagekyl_temperature")}}°C
+        Garagefrys: {{states("sensor.garagefrys_temperature")}}°C
+      url: !secret hass_overview_url
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.klocka_musik
+
+# Varningsmail för vatten
+- alias: Vattenvarning
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.vatten_badkar_1
+        - switch.vatten_badkar_2
+        - switch.vatten_toa_1
+        - switch.vatten_toa_2
+        - switch.vatten_dusch_1
+        - switch.vatten_dusch_2
+        - switch.vatten_tvatt_1
+        - switch.vatten_tvatt_2
+        - switch.vatten_disk_1
+        - switch.vatten_disk_2
+  action:
+  - service: script.notify
+    data_template:
+      title: Det verkar blött någonstans {{ now().strftime("%H:%M") }}!
+      message: |
+        Badkar: {{states("switch.vatten_badkar_1")}} {{states("switch.vatten_badkar_2")}}
+        Lilla toaletten: {{states("switch.vatten_toa_1")}} {{states("switch.vatten_toa_2")}}
+        Dusch: {{states("switch.vatten_dusch_1")}} {{states("switch.vatten_dusch_2")}}
+        Tvättstuga: {{states("switch.vatten_tvatt_1")}} {{states("switch.vatten_tvatt_2")}}
+        Diskho: {{states("switch.vatten_disk_1")}} {{states("switch.vatten_disk_2")}}
+      url: !secret hass_devstate_url
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.klocka_ring
+
+# Varningsmail för rök
+- alias: Rökvarning
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id:
+      - sensor.rok_relax_sensor_status
+      - sensor.rok_sovrum_sensor_status
+  action:
+  - service: script.notify
+    data_template:
+      title: Det verkar BRINNA hemma {{ now().strftime("%H:%M") }}!
+      message: |
+        Någon röksensor har iaf varnat...
+
+        Sovrum: {{states("sensor.rok_sovrum_sensor_status")}}
+        Relax: {{states("sensor.rok_relax_sensor_status")}}
+      url: !secret hass_devstate_url
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.klocka_ring
+
+# Varningsmail för kallt inne
+- alias: Kallt inne
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.inne_temperature
+    below: '18'
+  action:
+  - service: script.notify
+    data_template:
+      title: Det verkar kallt inomhus {{ now().strftime("%H:%M") }}!
+      message: |
+        Medel inne: {{states("sensor.inne_temperature")}}°C
+      url: !secret hass_overview_url
+
+# Varningsmail och uteljus på när någon rör sig på altan vid fel tillfälle
+- alias: Rörelse altan
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.altan_motion
+    to: 'on' # TODO: and off?
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: group.hemma
+        state: 'not_home'
+      - condition: time
+        after: '01:00:00'
+        before: '06:00:00'
+  action: # Flera mindre mail så når dom fram snabbare...
+  - service: script.altan_mail
+  - delay: '00:00:20'
+  - condition: state
+    entity_id: binary_sensor.altan_motion
+    state: 'on'
+  - service: script.altan_mail
+  - delay: '00:00:20'
+  - condition: state
+    entity_id: binary_sensor.altan_motion
+    state: 'on'
+  - service: script.altan_mail
+
+# Infomail för hemma/borta
+- alias: Hemmamail
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: group.hemma,device_tracker.maltes_mobil
+    to: 'home'
+  action:
+  - service: script.notify
+    data_template:
+      title: '{{ trigger.to_state.attributes.friendly_name }} är hemma och röjer igen {{ now().strftime("%H:%M") }}!'
+      message: |
+        Bengt: {{states("device_tracker.bengts_mobil")}}
+        Maria: {{states("device_tracker.marias_mobil")}}
+        Malte: {{states("device_tracker.maltes_mobil")}}
+        Lina: {{states("device_tracker.linas_mobil")}}
+      url: !secret hass_map_url
+- alias: Bortamail
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: group.hemma,device_tracker.maltes_mobil
+    from: 'home'
+  action:
+  - service: script.notify
+    data_template:
+      title: '{{ trigger.to_state.attributes.friendly_name }} lämnade hemmet {{ now().strftime("%H:%M") }}!'
+      message: |
+        Bengt: {{states("device_tracker.bengts_mobil")}}
+        Maria: {{states("device_tracker.marias_mobil")}}
+        Malte: {{states("device_tracker.maltes_mobil")}}
+        Lina: {{states("device_tracker.linas_mobil")}}
+      url: !secret hass_map_url
+
+# AC power toggle via Harmony
+- alias: Luftkonditionering på
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.ac
+    to: 'on'
+  action:
+    service: remote.send_command
+    data:
+      entity_id: remote.vardagsharmoni
+      command: PowerOn
+      device: 56488837
+- alias: Luftkonditionering av
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.ac
+    to: 'off'
+  action:
+    service: remote.send_command
+    data:
+      entity_id: remote.vardagsharmoni
+      command: PowerOff
+      device: 56488837
+
+# Schema belysning dag
+- alias: Schema dag på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '07:00:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: group.belysning_dag
+- alias: Schema dag av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '00:45:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.belysning_dag
+  
+# Schema belysning sovrum
+- alias: Schema sovrum på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '09:00:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: group.belysning_sovrum
+- alias: Schema sovrum av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '20:15:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.belysning_sovrum
+
+# Schema belysning ute
+- alias: Schema ute morgon på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '05:30:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: group.belysning_ute
+- alias: Schema ute morgon av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '09:30:00'
+  - platform: sun
+    event: sunrise
+    offset: '01:30:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.belysning_ute
+- alias: Schema ute kväll på
+  initial_state: 'on'
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: group.belysning_ute
+- alias: Schema ute kväll av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '01:30:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.belysning_ute
+
+# Schema laddare
+- alias: Schema laddare tvättrum av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '07:00:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.laddare_tvattrum
+- alias: Schema laddare vardagsrum på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '09:00:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.laddare_vardagsrum
+- alias: Schema laddare vardagsrum av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.laddare_vardagsrum
+
+# TV bakljus styrt av TV
+- alias: TV bakljus på
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id:  remote.vardagsharmoni
+    to: 'on'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.tvljus
+  - delay: '00:00:05'
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.tvljus
+- alias: TV bakljus av
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: remote.vardagsharmoni
+    to: 'off'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.tvljus
+  - delay: '00:00:05'
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.tvljus
+
+# Matsbordsljus  
+- alias: Matbord på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '17:15:00'
+  - platform: time
+    at: '11:45:00'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.matbord
+- alias: Matbord av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '14:00:00'
+  - platform: time
+    at: '20:10:00'
+  action:
+  - service: light.turn_off
+    data:
+      entity_id: light.matbord
+
+# Sovrumsgångsljus
+- alias: Sovrumsgång på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '18:00:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: light.sovrumsgang
+      brightness: 10
+- alias: Sovrumsgång av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '03:30:00'
+  - platform: time
+    at: '17:00:00'
+  - platform: time
+    at: '20:00:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id:
+        - light.sovrumsgang
+        - light.sovrumsgang_1
+        - light.sovrumsgang_2
+- alias: Sovrumsgång borta toggle
+  initial_state: 'on'
+  trigger:
+  - platform: time_pattern
+    minutes: '/13'
+    seconds: 00
+  condition:
+  - condition: state
+    entity_id: group.hemma
+    state: not_home
+  - condition: template
+    value_template: "{{ (range(3)|random) == 0 }}"
+  - condition: or
+    conditions:
+      - condition: time
+        after: '02:00:00'
+        before: '03:00:00' 
+      - condition: time
+        after: '09:00:00'
+        before: '16:55:00' 
+  action:
+  - service: light.toggle
+    data:
+      entity_id: light.sovrumsgang
+
+# Schema plantljus
+- alias: Schema plantljus på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '05:30:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.plantljus
+- alias: Schema plantljus av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '21:00:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.plantljus
+
+# Nya hue huvdbrytaren
+# Use condition to catch all events and not only state changes
+# https://community.home-assistant.io/t/multiple-actions-on-trigger-each-with-its-own-condition/82105
+- alias: Huvudbrytare
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: sensor.huvudbrytare
+  action:
+    - service_template: >
+        {% if trigger.to_state.state in ["1_hold"] %}
+          homeassistant.turn_on
+        {% elif trigger.to_state.state in ["4_hold"] %}
+          homeassistant.turn_off
+        {% else %}
+          script.noop
+        {% endif %}
+      data_template:
+        entity_id: >
+          {% if trigger.to_state.state in ["1_hold"] %}
+            group.belysning_dag
+          {% elif trigger.to_state.state in ["4_hold"] %}
+            group.belysning_all
+          {% endif %}
+    - service_template: >
+        {% if trigger.to_state.state in ["2_hold", "3_hold"] %}
+          input_select.select_option
+        {% else %}
+          script.noop
+        {% endif %}
+      data_template:
+        entity_id:
+          input_select.scen
+        option: >
+          {% if trigger.to_state.state in ["2_hold"] %}
+            Bright
+          {% elif trigger.to_state.state in ["3_hold"] %}
+            Flux
+          {% endif %}
+
+# Dagsbelysning fjärrisar
+- alias: Dagsbelysning fjärris
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.fjarr_11_dag
+        - switch.fjarr_21_dag
+        - switch.fjarr_31_dag
+  action:
+    - service_template: >
+        {% if trigger.to_state.state == "on" %}
+          homeassistant.turn_on
+        {% else %}
+          homeassistant.turn_off
+        {% endif %}
+      data:
+        entity_id: group.belysning_dag
+
+# Dagsbelysning grupp
+- alias: Dagsbelysning grupp
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: group.belysning_dag
+  action:
+    - service: homeassistant.turn_off
+      entity_id: automation.dagsbelysning_fjarris
+    - service_template: >
+        {% if trigger.to_state.state == "on" %}
+          homeassistant.turn_on
+        {% else %}
+          homeassistant.turn_off
+        {% endif %}
+      data:
+        entity_id:
+          - switch.fjarr_11_dag
+          - switch.fjarr_21_dag
+          - switch.fjarr_31_dag
+    - service: homeassistant.turn_on
+      entity_id: automation.dagsbelysning_fjarris
+
+# Sovrumsbelysning fjärrisar
+- alias: Sovrumsbelysning fjärris
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.fjarr_12_sovrum
+        - switch.fjarr_22_sovrum
+        - switch.fjarr_32_sovrum
+  action:
+    - service_template: >
+        {% if trigger.to_state.state == "on" %}
+          homeassistant.turn_on
+        {% else %}
+          homeassistant.turn_off
+        {% endif %}
+      data:
+        entity_id: group.belysning_sovrum
+
+# Sovrumsbelysning grupp
+- alias: Sovrumsbelysning grupp
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: group.belysning_sovrum
+  action:
+    - service: homeassistant.turn_off
+      entity_id: automation.sovrumsbelysning_fjarris
+    - service_template: >
+        {% if trigger.to_state.state == "on" %}
+          homeassistant.turn_on
+        {% else %}
+          homeassistant.turn_off
+        {% endif %}
+      data:
+        entity_id:
+          - switch.fjarr_12_sovrum
+          - switch.fjarr_22_sovrum
+          - switch.fjarr_32_sovrum
+    - service: homeassistant.turn_on
+      entity_id: automation.sovrumsbelysning_fjarris
+
+# Utebelysning fjärrisar
+- alias: Utebelysning fjärris
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.fjarr_13_ute
+        - switch.fjarr_23_ute
+        - switch.fjarr_33_ute
+  action:
+    - service_template: >
+        {% if trigger.to_state.state == "on" %}
+          homeassistant.turn_on
+        {% else %}
+          homeassistant.turn_off
+        {% endif %}
+      data:
+        entity_id: group.belysning_ute
+
+# Utebelysning grupp
+- alias: Utebelysning grupp
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: group.belysning_ute
+  action:
+    - service: homeassistant.turn_off
+      entity_id: automation.utebelysning_fjarris
+    - service_template: >
+        {% if trigger.to_state.state == "on" %}
+          homeassistant.turn_on
+        {% else %}
+          homeassistant.turn_off
+        {% endif %}
+      data:
+        entity_id:
+          - switch.fjarr_13_ute
+          - switch.fjarr_23_ute
+          - switch.fjarr_33_ute
+    - service: homeassistant.turn_on
+      entity_id: automation.utebelysning_fjarris
+
+# Fluxbrytare med tal. Inte i bruk...
+- alias: Fluxbrytare
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: switch.fluxbrytare
+  action:
+    - service_template: >
+        {% if trigger.to_state.state == "on" %}
+          homeassistant.turn_on
+        {% else %}
+          homeassistant.turn_off
+        {% endif %}
+      data:
+        entity_id:
+          - group.fluxljus
+    - service: script.say
+      data_template:
+          message: >
+            {% if trigger.to_state.state == "on" %}
+              'Aktiverar fluxljus!'
+            {% else %}
+              'Stänger av fluxljus!'
+            {% endif %}
+
+# Scener
+# Kan inte använda Hus-gruppen för den saknar scenerna.
+# Och scener i Hue Essentials verkar bara funka med Hue.
+# TODO: Kanske kan gå om man bara sparar scenerna i husgruppen!?
+# Testa hue.hue_activate_scene servicen i hass med detta data:
+# { "group_name": "Relax", "scene_name": "Bright"}
+# Det visade sig att jag fick ta bort scenerna och lägga till dom igen för att få vissa att funka. Kan behöva starta om home assistant eftersom den mappar nyckeln på något sätt.
+- alias: Välj scen
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_select.scen
+  action:
+    - service_template: >
+        {% if trigger.to_state.state == "Flux" %}
+          homeassistant.turn_on
+        {% else %}
+          homeassistant.turn_off
+        {% endif %}
+      data:
+        entity_id: group.fluxljus
+    - condition: template
+      value_template: '{{ not is_state("input_select.scen", "Flux") and not is_state("input_select.scen", "Inget") }}'
+    - delay: '00:00:01'
+    - service: hue.hue_activate_scene
+      data_template:
+        group_name: 'Vardagsrum'
+        scene_name: '{{ trigger.to_state.state }}'
+#    - delay: '00:00:01'
+    - service: hue.hue_activate_scene
+      data_template:
+        group_name: 'Relax'
+        scene_name: '{{ trigger.to_state.state }}'
+#    - delay: '00:00:01'
+    - service: hue.hue_activate_scene
+      data_template:
+        group_name: 'Hall'
+        scene_name: '{{ trigger.to_state.state }}'
+#    - delay: '00:00:01'
+    - service: hue.hue_activate_scene
+      data_template:
+        group_name: 'Sovrum'
+        scene_name: '{{ trigger.to_state.state }}'
+    - service: hue.hue_activate_scene
+      data_template:
+        group_name: 'Kök'
+        scene_name: '{{ trigger.to_state.state }}'
+    - condition: time
+      after: '09:00:00'
+      before: '20:00:00'
+    - delay: '00:00:01'
+    - service: hue.hue_activate_scene
+      data_template:
+        group_name: 'Maltes rum'
+        scene_name: '{{ trigger.to_state.state }}'
+#   - delay: '00:00:01'
+    - service: hue.hue_activate_scene
+      data_template:
+        group_name: 'Linas rum'
+        scene_name: '{{ trigger.to_state.state }}'
+#    - delay: '00:00:01'
+#    - service: hue.hue_activate_scene
+#      data_template:
+#        group_name: 'Hus'
+#        scene_name: '{{ trigger.to_state.state }}'
+
+# Slå på fluxljus vid uppstart
+- alias: Systemstart
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: homeassistant.turn_on
+      entity_id:
+        - group.fluxljus

@@ -1,0 +1,142 @@
+﻿# Belysning på under dagen
+# Använder både hue-grupperna och individuella lampor för att minska risken att flux går in och stör.
+
+# TODO: Create light groups instead. Use light switch to transform switches to lights: https://www.home-assistant.io/components/light.switch/
+
+# All belysning
+belysning_all:
+  name: All belysning
+  entities:
+    - group.belysning_dag
+    - group.belysning_sovrum
+    - group.belysning_ute
+    - light.matbord
+    - switch.tvljus
+
+# Dagsbelysning
+belysning_dag:
+  name: Belysning dag
+  entities:
+    - switch.koksfonster
+    - light.koksfonster
+    - group.vardagsrumsljus
+    - group.relaxljus
+    - group.hallbelysning
+
+# Belysning morgon/kväll i sovrum
+belysning_sovrum:
+  name: Belysning sovrum
+  entities:
+    - light.sovrum
+    - switch.sovrum
+    - light.sanggavel
+    - light.sovtak
+    - group.maltes_ljus
+    - group.linas_ljus
+    - light.sovrumsgang
+    - light.maltes_tak
+    - light.linas_tak
+
+# Utebelysning
+belysning_ute:
+  name: Utebelysning
+  entities:
+    - light.ute
+    - switch.fontanljus
+    - switch.juleljus
+    - light.garageport
+    - light.entre
+    - light.altan
+    - light.sexan
+    - light.altanslinga
+
+# Ljus i Maltes rum
+maltes_ljus:
+  name: Maltes ljus
+  entities:
+    - light.maltes_rum
+    - switch.maltes_fonster
+    - light.maltes_tak
+    - light.maltes_vagg
+
+# Ljus i Linas rum
+linas_ljus:
+  name: Linas ljus
+  entities:
+    - light.linas_rum
+    - switch.linas_fonster
+    - light.linas_tak
+    - light.linas_vagg
+
+# Ljus i hall
+hallbelysning:
+  name: Hallbelysning
+  entities:
+    - light.hall
+    - light.halltak
+    - light.huego
+
+# Ljus i kök
+koksljus:
+  name: Köksbelysning
+  entities:
+    - light.kok
+    - light.kokstak
+    - light.koksfonster
+    - light.matbord_upp
+    - light.matbord_ned
+
+# Ljus i vardagsrum
+vardagsrumsljus:
+  name: Vardagsrumsljus
+  entities:
+    - light.vardagsrum
+    - switch.fonster
+    - switch.vitrinskap
+    - light.altanfonster
+    - light.golvlampa
+    - light.hornlampa
+    - light.tak_h
+    - light.tak_v
+
+# Ljus i relax
+relaxljus:
+  name: Relaxljus
+  entities:
+    - light.relax
+    - switch.plantfonster
+    - switch.plantljus
+    - switch.dator
+    - light.dator
+    - light.skarm_v
+    - light.skarm_u
+    - light.skarm_h
+    - light.relaxgang
+    - light.relaxtak
+    - light.datatak
+
+# Ljus i garage
+garageljus:
+  name: Garageljus
+  entities:
+    - light.garage
+    - light.garagefonster
+    - light.traning
+    - light.atervinning
+
+# Group with all flux light on/off
+fluxljus:
+  name: Fluxljus
+  entities:
+    - switch.dagsflux
+    - switch.sovflux
+    - switch.uteflux
+
+# Hemma group tracker
+hemma:
+  name: Föräldrarna
+  entities:
+    - device_tracker.bengts_mobil
+    - device_tracker.bengt_lan
+    - device_tracker.marias_mobil
+    - device_tracker.maria_lan
