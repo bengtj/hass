@@ -1,0 +1,11 @@
+secrets.yaml
+ssl_info.txt
+harmony*.conf
+tts
+.*
+*.log
+*.gz
+*.jpg
+*.png
+*.pyc
+!.gitignore
