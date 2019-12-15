@@ -701,7 +701,7 @@
 #        group_name: 'Hus'
 #        scene_name: '{{ trigger.to_state.state }}'
 
-# Slå på fluxljus vid uppstart
+# Slå på fluxljus och tema vid uppstart
 - alias: Systemstart
   initial_state: 'on'
   trigger:
@@ -711,3 +711,6 @@
     - service: homeassistant.turn_on
       entity_id:
         - group.fluxljus
+#    - service: frontend.set_theme # Does not work; if the user change theme the lovelace-background will not change :(
+#      data:
+#        name: christmas

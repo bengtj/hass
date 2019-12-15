@@ -9,8 +9,6 @@ views:
   # Overview tab
   - icon: mdi:home-assistant
     id: overview
-    background: radial-gradient(skyblue, cadetblue)
-    theme: dark-mode
     cards:
       # Floor plan
       - type: picture-elements
