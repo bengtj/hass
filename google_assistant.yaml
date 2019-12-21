@@ -36,7 +36,7 @@ entity_config:
     expose: true
  
    # Maltes rum
-  switch.maltes_rum:
+  light.maltes_fonster:
     name: Maltefönster
     aliases: Maltes fönster
     room: Maltes rum
@@ -58,7 +58,7 @@ entity_config:
     expose: true
  
    # Linas rum
-  switch.linas_rum:
+  light.linas_fonster:
     name: Linafönster
     room: Linas rum
     aliases: Linas fönster

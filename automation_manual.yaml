@@ -245,7 +245,10 @@
   action:
   - service: homeassistant.turn_off
     data:
-      entity_id: group.belysning_sovrum
+      entity_id: 
+        - light.maltes_rum
+        - light.linas_rum
+        - light.sovrumsgang
 
 # Schema belysning ute
 - alias: Schema ute morgon på

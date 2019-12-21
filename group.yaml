@@ -28,14 +28,12 @@ belysning_sovrum:
   name: Belysning sovrum
   entities:
     - light.sovrum
+    - light.maltes_rum
+    - light.linas_rum
     - light.sovfonster
     - light.sanggavel
     - light.sovtak
-    - group.maltes_ljus
-    - group.linas_ljus
     - light.sovrumsgang
-    - light.maltes_tak
-    - light.linas_tak
 
 # Utebelysning
 belysning_ute:
@@ -49,6 +47,8 @@ belysning_ute:
     - light.altan
     - light.sexan
     - light.altanslinga
+    - light.julorm
+    - light.ormen
 
 # Ljus i Maltes rum
 maltes_ljus:
@@ -92,6 +92,7 @@ vardagsrumsljus:
   entities:
     - light.vardagsrum
     - switch.fonster
+    - light.bordslampa
     - light.vitrinskap
     - light.altanfonster
     - light.golvlampa
