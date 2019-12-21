@@ -9,7 +9,7 @@ exposed_domains:
 entity_config:
 
   # Sovrum
-  switch.sovrum:
+  light.sovfonster:
     name: Sovfönster
     aliases: Sovrumsfönster
     room: Sovrum
@@ -179,7 +179,7 @@ entity_config:
     aliases: Taklampa höger
     room: Vardagsrum
     expose: true
-  switch.vitrinskap:
+  light.vitrinskap:
     name: Skåp
     aliases: Vitrinskåp
     room: Vardagsrum

@@ -7,15 +7,15 @@
   devices:
 
     # Ljus
-    "0b11002d0000029a0d000060":
-      name: Sovrum
-      fire_event: true
-    "0b1100040000029a0b000050":
-      name: Linas fönster
-      fire_event: true
-    "0b1100480000029a0c000050":
-      name: Maltes fönster
-      fire_event: true
+#    "0b11002d0000029a0d000060":
+#      name: Sovrum
+#      fire_event: true
+#    "0b1100040000029a0b000050":
+#      name: Linas fönster
+#      fire_event: true
+#    "0b1100480000029a0c000050":
+#      name: Maltes fönster
+#      fire_event: true
     "0b1100d90000029a01000050":
       name: Köksfönster
       fire_event: true

@@ -28,7 +28,7 @@ belysning_sovrum:
   name: Belysning sovrum
   entities:
     - light.sovrum
-    - switch.sovrum
+    - light.sovfonster
     - light.sanggavel
     - light.sovtak
     - group.maltes_ljus
@@ -55,7 +55,7 @@ maltes_ljus:
   name: Maltes ljus
   entities:
     - light.maltes_rum
-    - switch.maltes_fonster
+    - light.maltes_fonster
     - light.maltes_tak
     - light.maltes_vagg
 
@@ -64,7 +64,7 @@ linas_ljus:
   name: Linas ljus
   entities:
     - light.linas_rum
-    - switch.linas_fonster
+    - light.linas_fonster
     - light.linas_tak
     - light.linas_vagg
 
@@ -92,7 +92,7 @@ vardagsrumsljus:
   entities:
     - light.vardagsrum
     - switch.fonster
-    - switch.vitrinskap
+    - light.vitrinskap
     - light.altanfonster
     - light.golvlampa
     - light.hornlampa

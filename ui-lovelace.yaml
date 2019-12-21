@@ -68,7 +68,7 @@ views:
               font-size: 75%
           # Sovrum
           - type: state-icon
-            entity: switch.sovrum
+            entity: light.sovfonster
             tap_action:
               action: toggle
             style:
@@ -117,7 +117,7 @@ views:
               top: 6%
               left: 73%
           - type: state-icon
-            entity: switch.maltes_fonster
+            entity: light.maltes_fonster
             tap_action:
               action: toggle
             style:
@@ -147,7 +147,7 @@ views:
               left: 94%
           # Linas rum
           - type: state-icon
-            entity: switch.linas_fonster
+            entity: light.linas_fonster
             tap_action:
               action: toggle
             style:
@@ -485,7 +485,7 @@ views:
               top: 75.5%
               left: 73%
           - type: state-icon
-            entity: switch.vitrinskap
+            entity: light.vitrinskap
             tap_action:
               action: toggle
             style:
