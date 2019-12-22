@@ -19,6 +19,7 @@ belysning_dag:
   entities:
     - switch.koksfonster
     - light.koksfonster
+    - switch.twinkly
     - group.vardagsrumsljus
     - group.relaxljus
     - group.hallbelysning
