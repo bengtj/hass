@@ -60,14 +60,14 @@
         - Humidity
         - Temperature
 #    "0a520807010400da200259": # ESIC with random dropouts
-    "08500741980000f869":
+    "085001e2080100a969": # <- Ch1, Ch2 "0850013d0602801869" and Ch3 "0850012e0003010559". Ch3 collided with neighbour.
       name: Vardagsrum
 #    "0a520815010100b33d0159": # ESIC with random 70degC and alike
     "08500706470000f869":
       name: Garagefrys
     "0a520942b7000044140259":
       name: Garagekyl
-    "085001e2080100a969": # <- Ch1, Ch2 "0850013d0602801869" and Ch3 "0850012e0003010559". Ch3 collided with neighbour.
+    "08500741980000f869":
       name: Relax
     "08200a1807d00a0669":
       name: Rök Relax
