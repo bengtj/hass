@@ -16,12 +16,12 @@
 #    "0b1100480000029a0c000050":
 #      name: Maltes fönster
 #      fire_event: true
-    "0b1100d90000029a01000050":
-      name: Köksfönster
-      fire_event: true
-    "0b1100880000029a02000050":
-      name: Fönster
-      fire_event: true
+#    "0b1100d90000029a01000050":
+#      name: Köksfönster
+#      fire_event: true
+#    "0b1100880000029a02000050":
+#      name: Fönster
+#      fire_event: true
     "0b1100110000029a0e010f50":
       name: TvLjus
       fire_event: true
@@ -31,12 +31,12 @@
 #    "0b1100490000029a06000050":
 #      name: Altanfönster
 #      fire_event: true
-    "0b1100cf0000029a04000050":
-      name: Plantljus
-      fire_event: true
-    "0b1100520000029a05000060":
-      name: Plantfönster
-      fire_event: true
+#    "0b1100cf0000029a04000050":
+#      name: Plantljus
+#      fire_event: true
+#    "0b1100520000029a05000060":
+#      name: Plantfönster
+#      fire_event: true
     "0b11002400055efa01020d60":
       name: Dator
       fire_event: true

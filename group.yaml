@@ -17,7 +17,7 @@ belysning_all:
 belysning_dag:
   name: Belysning dag
   entities:
-    - switch.koksfonster
+    - light.kokstake
     - light.koksfonster
     - switch.twinkly
     - group.vardagsrumsljus
@@ -92,7 +92,7 @@ vardagsrumsljus:
   name: Vardagsrumsljus
   entities:
     - light.vardagsrum
-    - switch.fonster
+    - light.fonster
     - light.bordslampa
     - light.vitrinskap
     - light.altanfonster
@@ -106,8 +106,8 @@ relaxljus:
   name: Relaxljus
   entities:
     - light.relax
-    - switch.plantfonster
-    - switch.plantljus
+    - light.plantfonster
+    - light.plantljus
     - switch.dator
     - light.dator
     - light.skarm_v

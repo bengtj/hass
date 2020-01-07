@@ -9,6 +9,8 @@
   icon: mdi:battery-charging
 "light.*tak*":
   icon: mdi:ceiling-light
+"light.*stake*":
+  icon: mdi:candle  
 "light.*vagg*":
   icon: mdi:wall-sconce
 "*.*flux*":

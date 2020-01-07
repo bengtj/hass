@@ -100,7 +100,7 @@ entity_config:
     aliases: Köksfönster
     room: Kök
     expose: true
-  switch.koksfonster:
+  light.kokstake:
     name: Julstake
     aliases: Stake
     room: Kök
@@ -154,7 +154,7 @@ entity_config:
     expose: true
     
   # Vardagsrum
-  switch.fonster:
+  light.fonster:
     name: Fönster
     aliases: Vardagsrumsfönster
     room: Vardagsrum
@@ -220,12 +220,12 @@ entity_config:
     aliases: Datatak
     room: Relax
     expose: true
-  switch.plantfonster:
+  light.plantfonster:
     name: Plant fönster
     aliases: Plantfönster
     room: Relax
     expose: true
-  switch.plantljus:
+  light.plantljus:
     name: Plant ljus
     aliases: Plantljus
     room: Relax
