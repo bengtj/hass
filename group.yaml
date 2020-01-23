@@ -109,7 +109,7 @@ relaxljus:
     - light.plantfonster
     - light.plantljus
     - switch.dator
-    - light.dator
+    - light.datormys
     - light.skarm_v
     - light.skarm_u
     - light.skarm_h

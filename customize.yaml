@@ -40,7 +40,7 @@ light.garageplanta:
   icon: mdi:flower
 switch.dator:
   icon: mdi:monitor-multiple
-light.dator:
+light.datormys:
   icon: mdi:lamp
 light.koksfonster:
   icon: mdi:lamp

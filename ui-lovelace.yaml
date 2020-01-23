@@ -550,7 +550,7 @@ views:
               top: 94.5%
               left: 17%
           - type: state-icon
-            entity: light.dator
+            entity: light.datormys
             tap_action:
               action: toggle
             style:

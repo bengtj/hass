@@ -210,7 +210,7 @@ entity_config:
     name: Dator
     room: Relax
     expose: true
-  light.dator:
+  light.datormys:
     name: Datorlampa
     aliases: Datalampa
     room: Relax
