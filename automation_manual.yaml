@@ -495,127 +495,27 @@
 - alias: Dagsbelysning fjärris
   initial_state: 'on'
   trigger:
-    - platform: state
-      entity_id:
-        - switch.fjarr_11_dag
-        - switch.fjarr_21_dag
-        - switch.fjarr_31_dag
+    - platform: event
+      event_type: button_pressed
+  condition:
+    condition: template
+    value_template: "{{ trigger.event.data.entity_id | regex_match('switch.fjarr') }}"
   action:
     - service_template: >
-        {% if trigger.to_state.state == "on" %}
+        {% if trigger.event.data.state == "on" %}
           homeassistant.turn_on
         {% else %}
           homeassistant.turn_off
         {% endif %}
-      data:
-        entity_id: group.belysning_dag
-
-# Dagsbelysning grupp
-- alias: Dagsbelysning grupp
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: group.belysning_dag
-  action:
-    - service: homeassistant.turn_off
-      entity_id: automation.dagsbelysning_fjarris
-    - service_template: >
-        {% if trigger.to_state.state == "on" %}
-          homeassistant.turn_on
-        {% else %}
-          homeassistant.turn_off
-        {% endif %}
-      data:
-        entity_id:
-          - switch.fjarr_11_dag
-          - switch.fjarr_21_dag
-          - switch.fjarr_31_dag
-    - service: homeassistant.turn_on
-      entity_id: automation.dagsbelysning_fjarris
-
-# Sovrumsbelysning fjärrisar
-- alias: Sovrumsbelysning fjärris
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id:
-        - switch.fjarr_12_sovrum
-        - switch.fjarr_22_sovrum
-        - switch.fjarr_32_sovrum
-  action:
-    - service_template: >
-        {% if trigger.to_state.state == "on" %}
-          homeassistant.turn_on
-        {% else %}
-          homeassistant.turn_off
-        {% endif %}
-      data:
-        entity_id: group.belysning_sovrum
-
-# Sovrumsbelysning grupp
-- alias: Sovrumsbelysning grupp
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: group.belysning_sovrum
-  action:
-    - service: homeassistant.turn_off
-      entity_id: automation.sovrumsbelysning_fjarris
-    - service_template: >
-        {% if trigger.to_state.state == "on" %}
-          homeassistant.turn_on
-        {% else %}
-          homeassistant.turn_off
-        {% endif %}
-      data:
-        entity_id:
-          - switch.fjarr_12_sovrum
-          - switch.fjarr_22_sovrum
-          - switch.fjarr_32_sovrum
-    - service: homeassistant.turn_on
-      entity_id: automation.sovrumsbelysning_fjarris
-
-# Utebelysning fjärrisar
-- alias: Utebelysning fjärris
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id:
-        - switch.fjarr_13_ute
-        - switch.fjarr_23_ute
-        - switch.fjarr_33_ute
-  action:
-    - service_template: >
-        {% if trigger.to_state.state == "on" %}
-          homeassistant.turn_on
-        {% else %}
-          homeassistant.turn_off
-        {% endif %}
-      data:
-        entity_id: group.belysning_ute
-
-# Utebelysning grupp
-- alias: Utebelysning grupp
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: group.belysning_ute
-  action:
-    - service: homeassistant.turn_off
-      entity_id: automation.utebelysning_fjarris
-    - service_template: >
-        {% if trigger.to_state.state == "on" %}
-          homeassistant.turn_on
-        {% else %}
-          homeassistant.turn_off
-        {% endif %}
-      data:
-        entity_id:
-          - switch.fjarr_13_ute
-          - switch.fjarr_23_ute
-          - switch.fjarr_33_ute
-    - service: homeassistant.turn_on
-      entity_id: automation.utebelysning_fjarris
+      data_template:
+        entity_id: >
+          {% if trigger.event.data.entity_id | regex_match('switch.fjarr_._1_') %}
+            group.belysning_dag
+          {% elif trigger.event.data.entity_id | regex_match('switch.fjarr_._2_') %}
+            group.belysning_sovrum
+          {% else %}
+            group.belysning_ute
+          {% endif %}
 
 # Fluxbrytare med tal. Inte i bruk...
 - alias: Fluxbrytare
