@@ -15,3 +15,5 @@
   icon: mdi:wall-sconce
 "*.*flux*":
   icon: mdi:palette
+"group.belysning*":
+  assumed_state: true

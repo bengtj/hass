@@ -748,35 +748,43 @@ views:
     cards:
       - type: entities
         title: Belysning
+        show_header_toggle: false
+        icon: mdi:home-outline
         entities:
+          - group.belysning_all
           - group.belysning_dag
           - group.belysning_sovrum
           - group.belysning_ute
       - type: custom:group-card
         card:
           type: glance
-          title: Dag
+          title: Belysning dag
           column_width: 25%
         group: group.belysning_dag
       - type: custom:group-card
         card:
           type: glance
-          title: Sovrum
+          title: Belysning sovrum
           column_width: 25%
         group: group.belysning_sovrum
       - type: custom:group-card
         card:
           type: glance
-          title: Ute
+          title: Belysning ute
           column_width: 25%
         group: group.belysning_ute
-      - type: glance
-        title: Övrigt
-        entities:
-          - light.badrumsskap
-          - switch.tvljus
-          - group.fluxljus
-        column_width: 25%
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Övrigt
+          column_width: 25%
+        group: group.ovrigtljus
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Sovrum
+          column_width: 25%
+        group: group.sovrumsljus
       - type: custom:group-card
         card:
           type: glance
@@ -794,7 +802,7 @@ views:
           type: glance
           title: Hall
           column_width: 25%
-        group: group.hallbelysning
+        group: group.halljus
       - type: custom:group-card
         card:
           type: glance
@@ -819,6 +827,12 @@ views:
           title: Garage
           column_width: 25%
         group: group.garageljus
+      - type: custom:group-card
+        card:
+          type: glance
+          title: Ute
+          column_width: 25%
+        group: group.uteljus
 
   # Media tab
   - icon: mdi:music

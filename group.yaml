@@ -13,43 +13,45 @@ belysning_all:
     - light.matbord
     - switch.tvljus
 
-# Dagsbelysning
+# Dagsbelysningen är på dagtid
 belysning_dag:
   name: Belysning dag
   entities:
+    - light.vardagsrum
+#    - switch.twinkly
+    - light.hall
     - light.kokstake
     - light.koksfonster
-    - switch.twinkly
-    - group.vardagsrumsljus
-    - group.relaxljus
-    - group.hallbelysning
+    - light.relax
+    - light.plantfonster
+    - light.plantljus
+    - switch.dator
 
-# Belysning morgon/kväll i sovrum
+# Sovrumsbelysningen är på senare dagtid
 belysning_sovrum:
   name: Belysning sovrum
   entities:
     - light.sovrum
     - light.maltes_rum
     - light.linas_rum
-    - light.sovfonster
-    - light.sanggavel
-    - light.sovtak
-    - light.sovrumsgang
 
-# Utebelysning
+# Utebelysningen är på morgon/kväll
 belysning_ute:
   name: Utebelysning
   entities:
     - light.ute
     - switch.fontanljus
     - switch.juleljus
-    - light.garageport
-    - light.entre
-    - light.altan
-    - light.sexan
-    - light.altanslinga
-    - light.julorm
-    - light.ormen
+
+# Ljus i sovrum och sovrumsgång
+sovrumsljus:
+  name: Sovrumsljus
+  entities:
+    - light.sovrum
+    - light.sovfonster
+    - light.sanggavel
+    - light.sovtak
+    - light.sovrumsgang
 
 # Ljus i Maltes rum
 maltes_ljus:
@@ -70,7 +72,7 @@ linas_ljus:
     - light.linas_vagg
 
 # Ljus i hall
-hallbelysning:
+halljus:
   name: Hallbelysning
   entities:
     - light.hall
@@ -79,7 +81,7 @@ hallbelysning:
 
 # Ljus i kök
 koksljus:
-  name: Köksbelysning
+  name: Köksljus
   entities:
     - light.kok
     - light.kokstak
@@ -125,6 +127,32 @@ garageljus:
     - light.garagefonster
     - light.traning
     - light.atervinning
+
+# Ljus utomhus
+uteljus:
+  name: Uteljus
+  entities:
+    - light.ute
+    - switch.fontanljus
+    - switch.juleljus
+    - light.garageport
+    - light.entre
+    - light.altan
+    - light.sexan
+    - light.altanslinga
+    - light.julorm
+    - light.ormen
+
+# Övrigt ljus
+ovrigtljus:
+  name: Övrigt ljus
+  entities:
+      - light.badrumsskap
+      - light.tvatt_tak
+      - light.toaspegel
+      - light.kladkammare
+      - switch.tvljus
+      - group.fluxljus
 
 # Group with all flux light on/off
 fluxljus:
