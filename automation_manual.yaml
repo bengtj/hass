@@ -452,25 +452,25 @@
         - light.garageplanta
 
 # Ensure all light turns off properly
-- alias: Ensure all light turns off
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: group.belysning_all
-    to: 'off'
-  action:
-  - delay: '00:00:05'
-  - service: homeassistant.turn_off
-    data:
-      entity_id: group.belysning_sovrum
-  - delay: '00:00:02'
-  - service: homeassistant.turn_off
-    data:
-      entity_id: group.belysning_ute
-  - delay: '00:00:02'
-  - service: homeassistant.turn_off
-    data:
-      entity_id: group.belysning_dag
+#- alias: Ensure all light turns off
+#  initial_state: 'on'
+#  trigger:
+#  - platform: state
+#    entity_id: group.belysning_all
+#    to: 'off'
+#  action:
+#  - delay: '00:00:05'
+#  - service: homeassistant.turn_off
+#    data:
+#      entity_id: group.belysning_sovrum
+#  - delay: '00:00:02'
+#  - service: homeassistant.turn_off
+#    data:
+#      entity_id: group.belysning_ute
+#  - delay: '00:00:02'
+#  - service: homeassistant.turn_off
+#    data:
+#      entity_id: group.belysning_dag
 
 # New hue main switch
 # Use condition to catch all events and not only state changes

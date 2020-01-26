@@ -7,11 +7,16 @@
 belysning_all:
   name: All belysning
   entities:
-    - group.belysning_dag
-    - group.belysning_sovrum
-    - group.belysning_ute
-    - light.matbord
+    - light.alla_1
+    - light.alla_2
+#    - group.belysning_dag
+#    - group.belysning_sovrum
+#    - group.belysning_ute
+#    - light.matbord
     - switch.tvljus
+    - switch.dator
+    - switch.fontanljus
+    - switch.juleljus
 
 # Dagsbelysningen är på dagtid
 belysning_dag:
