@@ -9,3 +9,4 @@ tts
 *.png
 *.pyc
 !.gitignore
+webostv.conf

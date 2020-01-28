@@ -23,11 +23,11 @@ belysning_dag:
   name: Belysning dag
   entities:
     - light.vardagsrum
+    - light.relax
 #    - switch.twinkly
     - light.hall
     - light.kokstake
     - light.koksfonster
-    - light.relax
     - light.plantfonster
     - light.plantljus
     - switch.dator

@@ -44,7 +44,7 @@ altan_mail:
           - /config/www/cam/altanfonster.jpg
           - /config/www/cam/koksfonster.jpg
 
-# Mail a standard message and speak the title on google home.
+# Mail a standard message, speak the title on google home and show on relax tv.
 # Note by using a script it is possible to include a secret url.
 notify:
   alias: "Meddela något via mail"
@@ -69,6 +69,9 @@ notify:
         
         /Hemtjänsten
   - service: script.say
+    data_template:
+      message: '{{ title }}'
+  - service: notify.relaxtv
     data_template:
       message: '{{ title }}'
 

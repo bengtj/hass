@@ -297,7 +297,7 @@
   initial_state: 'on'
   trigger:
   - platform: time
-    at: '07:00:00'
+    at: '07:05:00'
   action:
   - service: homeassistant.turn_off
     data:
@@ -306,7 +306,7 @@
   initial_state: 'on'
   trigger:
   - platform: time
-    at: '09:00:00'
+    at: '09:05:00'
   action:
   - service: homeassistant.turn_on
     data:
@@ -315,7 +315,7 @@
   initial_state: 'on'
   trigger:
   - platform: time
-    at: '23:00:00'
+    at: '23:50:00'
   action:
   - service: homeassistant.turn_off
     data:

@@ -182,6 +182,11 @@ notify:
       - !secret hass_email
     sender_name: Home Assistant
 
+# Relax TV for notifications
+webostv:
+  host: 192.168.0.25
+  name: RelaxTV
+
 # Scene selector
 input_select:
   scen:
