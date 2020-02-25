@@ -3,7 +3,9 @@
 # HASS: https://www.home-assistant.io/components/google_assistant/
 
 project_id: !secret gass_project_id
-api_key: !secret gass_api_key
+service_account:
+  private_key: !secret gass_private_key
+  client_email: !secret gass_client_email
 expose_by_default: false
 exposed_domains:
 entity_config:
