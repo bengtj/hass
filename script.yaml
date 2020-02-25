@@ -85,6 +85,12 @@ say:
       message: "{{ message }}"
       language: 'sv'
       cache: false
+  - service: tts.google_say
+    data_template:
+      entity_id: media_player.datahome
+      message: "{{ message }}"
+      language: 'sv'
+      cache: false
 
 # Nice workaround for else clause in actions
 noop:
