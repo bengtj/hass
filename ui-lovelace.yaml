@@ -1,10 +1,9 @@
 ﻿title: Hemma hos LMMB
 
 resources:
-  # https://github.com/ciotlosm/custom-lovelace
-  - url: /local/group-card.js?v=2
-    type: js
-
+  # https://github.com/thomasloven/lovelace-auto-entities/
+  - url: /local/auto-entities.js
+    type: module
 views:
   # Overview tab
   - icon: mdi:home-assistant
@@ -755,84 +754,97 @@ views:
           - group.belysning_dag
           - group.belysning_sovrum
           - group.belysning_ute
-      - type: custom:group-card
+      - type: custom:auto-entities
         card:
           type: glance
           title: Belysning dag
-          column_width: 25%
-        group: group.belysning_dag
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.belysning_dag
+      - type: custom:auto-entities
         card:
           type: glance
           title: Belysning sovrum
-          column_width: 25%
-        group: group.belysning_sovrum
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.belysning_sovrum
+      - type: custom:auto-entities
         card:
           type: glance
           title: Belysning ute
-          column_width: 25%
-        group: group.belysning_ute
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.belysning_ute
+      - type: custom:auto-entities
         card:
           type: glance
           title: Övrigt
-          column_width: 25%
-        group: group.ovrigtljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.ovrigtljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Sovrum
-          column_width: 25%
-        group: group.sovrumsljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.sovrumsljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Maltes rum
-          column_width: 25%
-        group: group.maltes_ljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.maltes_ljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Linas rum
-          column_width: 25%
-        group: group.linas_ljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.linas_ljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Hall
-          column_width: 25%
-        group: group.halljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.halljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Kök
-          column_width: 25%
-        group: group.koksljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.koksljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Vardagsrum
-          column_width: 25%
-        group: group.vardagsrumsljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.vardagsrumsljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Relax
-          column_width: 25%
-        group: group.relaxljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.relaxljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Garage
-          column_width: 25%
-        group: group.garageljus
-      - type: custom:group-card
+        filter:
+          include:
+            - group: group.garageljus
+      - type: custom:auto-entities
         card:
           type: glance
           title: Ute
-          column_width: 25%
-        group: group.uteljus
+        filter:
+          include:
+            - group: group.uteljus
 
   # Media tab
   - icon: mdi:music
@@ -864,6 +876,9 @@ views:
         title: Google home
         entities:
           - media_player.kokshome
+          - media_player.datahome
+          - media_player.maltehome
+          - media_player.linahome
       # Remotes card
       - type: entities
         title: Kontroll
