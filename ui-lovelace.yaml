@@ -854,6 +854,7 @@ views:
       # Squeezebox card
       - type: entities
         title: Squeezebox
+        show_header_toggle: false
         entities:
           - media_player.sovrum
           - media_player.linas
@@ -866,6 +867,7 @@ views:
       # Chromecast card
       - type: entities
         title: Chromecast
+        show_header_toggle: false
         entities:
           - media_player.kokscast
           - media_player.vardagscast
@@ -874,6 +876,7 @@ views:
       # Google home card
       - type: entities
         title: Google home
+        show_header_toggle: false
         entities:
           - media_player.kokshome
           - media_player.datahome
@@ -882,6 +885,7 @@ views:
       # Remotes card
       - type: entities
         title: Kontroll
+        show_header_toggle: false
         entities:
           - remote.vardagsharmoni
           - media_player.denon_avr_x6200w
@@ -892,7 +896,17 @@ views:
       # Squueezecast card
       - type: entities
         title: Squeezecast
+        show_header_toggle: false
         entities:
           - media_player.vardagssqueezecast
           - media_player.maltesqueezecast
           - media_player.linasqueezecast
+
+      # Server card
+      - type: entities
+        title: Server
+        show_header_toggle: false
+        entities:
+          - sensor.minecraft_players_online
+          - sensor.r7000_014d_kb_sec_received
+          - sensor.r7000_014d_kb_sec_sent
