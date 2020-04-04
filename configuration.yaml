@@ -147,24 +147,44 @@ utility_meter:
     source: sensor.energy
     cycle: yearly
 
-# Cameras
+# Cameras, reolink: https://github.com/fwestenberg/reolink, see binary_sensor.yaml for camera motion sensers
+stream:
 ffmpeg:
 camera:
-  - platform: generic
+  - platform: reolink_dev
     name: Altan
-    still_image_url: !secret altan_cam_url
-  - platform: generic
+    host: "192.168.0.64"
+    username: !secret cam_user
+    password: !secret cam_pwd
+  - platform: mjpeg
     name: Köksfönster
-    still_image_url: !secret koks_cam_url
-  - platform: generic
+    still_image_url: http://192.168.0.62/image/jpeg.cgi
+    mjpeg_url: http://192.168.0.62/mjpeg.cgi
+    username: !secret cam_user
+    password: !secret cam_pwd
+  - platform: mjpeg
     name: Altanfönster
-    still_image_url: !secret vardagsrum_cam_url
-  - platform: generic
+    still_image_url: http://192.168.0.63/image/jpeg.cgi
+    mjpeg_url: http://192.168.0.63/mjpeg.cgi
+    username: !secret cam_user
+    password: !secret cam_pwd
+  - platform: mjpeg
     name: Plantfönster
-    still_image_url: !secret relax_cam_url
-  - platform: generic
+    still_image_url: http://192.168.0.60/image/jpeg.cgi
+    mjpeg_url: http://192.168.0.60/mjpeg.cgi
+    username: !secret cam_user
+    password: !secret cam_pwd
+  - platform: reolink_dev
     name: Garage
-    still_image_url: !secret garage_cam_url
+    host: "192.168.0.61"
+    username: !secret cam_user
+    password: !secret cam_pwd
+  - platform: mjpeg
+    name: Print
+    still_image_url: http://192.168.0.65/image/jpeg.cgi
+    mjpeg_url: http://192.168.0.65/mjpeg.cgi
+    username: !secret cam_user
+    password: !secret cam_pwd
   - platform: generic
     name: Yr Väder
     still_image_url: !secret yr_svg_url
@@ -281,6 +301,7 @@ lovelace:
 # Includes of other config files
 zone: !include zone.yaml
 sensor: !include sensor.yaml
+binary_sensor: !include binary_sensor.yaml
 switch: !include switch.yaml
 light: !include light.yaml
 google_assistant: !include google_assistant.yaml

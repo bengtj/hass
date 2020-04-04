@@ -680,6 +680,9 @@ views:
       - type: picture-entity
         entity: camera.garage
         show_state: false
+      - type: picture-entity
+        entity: camera.print
+        show_state: false
       - type: entity-filter
         entities:
           - device_tracker.bengts_mobil
