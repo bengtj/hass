@@ -479,7 +479,7 @@
   initial_state: 'on'
   trigger:
   - platform: state
-    entity_id: sensor.huvudbrytare
+    entity_id: remote.huvudbrytare
   action:
     - service_template: >
         {% if trigger.to_state.state in ["1_hold"] %}

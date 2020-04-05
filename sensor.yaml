@@ -3,9 +3,6 @@
 # Weather icon from yr
 - platform: yr
 
-# Hue sensors from https://github.com/robmarkcole/Hue-sensors-HASS
-- platform: huesensor
-
 # RFXtrx433XL sensors, needs host restart for automatic_add change
 - platform: rfxtrx
   automatic_add: false

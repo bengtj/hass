@@ -116,6 +116,8 @@ hue:
   bridges:
     - host: 192.168.0.13
       allow_unreachable: true
+remote: # From https://github.com/robmarkcole/Hue-remotes-HASS
+  - platform: hueremote
 
 # Neato botvac
 neato:
@@ -147,7 +149,7 @@ utility_meter:
     source: sensor.energy
     cycle: yearly
 
-# Cameras, reolink: https://github.com/fwestenberg/reolink, see binary_sensor.yaml for camera motion sensers
+# Cameras, reolink: https://github.com/fwestenberg/reolink, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
 stream:
 ffmpeg:
 camera:
