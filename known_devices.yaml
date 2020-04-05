@@ -2,7 +2,6 @@
 # Device tracker names and images is in customize.yaml
 
 maria_lan:
-  hide_if_away: false
   icon:
   mac: !secret maria_mac
   name: maria.lan
@@ -10,7 +9,6 @@ maria_lan:
   track: true
 
 bengt_lan:
-  hide_if_away: false
   icon:
   mac: !secret bengt_mac
   name: bengt.lan
@@ -18,7 +16,6 @@ bengt_lan:
   track: true
 
 malte_lan:
-  hide_if_away: false
   icon:
   mac: !secret malte_mac
   name: malte.lan
@@ -26,7 +23,6 @@ malte_lan:
   track: true
 
 lina_lan:
-  hide_if_away: false
   icon:
   mac: !secret lina_mac
   name: lina.lan

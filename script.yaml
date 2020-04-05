@@ -35,7 +35,7 @@ altan_mail:
   - service: notify.email # Mailen kommer fram långsammare med fler bilder, bättre med fler små mail...
     data_template:
       title: Någon smyger på altanen {{ now().strftime("%H:%M") }}!
-      message: "Se själv på bilderna..."
+      message: !secret hass_altan_msg
       data:
         images:
           - /config/www/cam/altan1.jpg

@@ -451,27 +451,6 @@
         - light.plantljus
         - light.garageplanta
 
-# Ensure all light turns off properly
-#- alias: Ensure all light turns off
-#  initial_state: 'on'
-#  trigger:
-#  - platform: state
-#    entity_id: group.belysning_all
-#    to: 'off'
-#  action:
-#  - delay: '00:00:05'
-#  - service: homeassistant.turn_off
-#    data:
-#      entity_id: group.belysning_sovrum
-#  - delay: '00:00:02'
-#  - service: homeassistant.turn_off
-#    data:
-#      entity_id: group.belysning_ute
-#  - delay: '00:00:02'
-#  - service: homeassistant.turn_off
-#    data:
-#      entity_id: group.belysning_dag
-
 # New hue main switch
 # Use condition to catch all events and not only state changes
 # https://community.home-assistant.io/t/multiple-actions-on-trigger-each-with-its-own-condition/82105
@@ -590,17 +569,14 @@
       data_template:
         group_name: 'Vardagsrum'
         scene_name: '{{ trigger.to_state.state }}'
-#    - delay: '00:00:01'
     - service: hue.hue_activate_scene
       data_template:
         group_name: 'Relax'
         scene_name: '{{ trigger.to_state.state }}'
-#    - delay: '00:00:01'
     - service: hue.hue_activate_scene
       data_template:
         group_name: 'Hall'
         scene_name: '{{ trigger.to_state.state }}'
-#    - delay: '00:00:01'
     - service: hue.hue_activate_scene
       data_template:
         group_name: 'Sovrum'
