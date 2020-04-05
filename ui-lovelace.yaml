@@ -5,6 +5,7 @@ resources:
   - url: /local/auto-entities.js
     type: module
 views:
+
   # Overview tab
   - icon: mdi:home-assistant
     id: overview
@@ -660,6 +661,7 @@ views:
           name: Innetemp
         - entity: sensor.ute_temperature
           name: Utetemp
+
   # Camera tab
   - icon: mdi:cctv
     id: camera
@@ -680,9 +682,6 @@ views:
       - type: picture-entity
         entity: camera.garage
         show_state: false
-      - type: picture-entity
-        entity: camera.print
-        show_state: false
       - type: entity-filter
         entities:
           - device_tracker.bengts_mobil
@@ -697,6 +696,7 @@ views:
           - home
         card: 
           type: glance
+
   # Map tab
   - icon: mdi:map-search-outline
     id: map
@@ -719,20 +719,46 @@ views:
          - zone.liseberg
          - zone.sundahallen
          - zone.fregatten
-  # Vacuum tab
-  - icon: mdi:robot-vacuum-variant
-    id: vacuum
-    title: Dammsugare
+
+  # Server tab
+  - icon: mdi:server-network
+    id: server
+    title: Server
     cards:
+      # Server card
       - type: entities
-        title: Dammsugare
+        title: Server
         show_header_toggle: false
         entities:
-          - vacuum.purjo
-          - switch.purjo_schedule
-      - type: picture-entity
-        entity: camera.purjo_cleaning_map
-        show_state: false
+          - sensor.minecraft_players_online
+          - sensor.r7000_014d_kb_sec_received
+          - sensor.r7000_014d_kb_sec_sent
+      # 3D print cards
+      - type: entities
+        title: Octoprint
+        show_header_toggle: false
+        entities:
+          - sensor.octoprint_current_state
+          - sensor.octoprint_job_percentage
+          - sensor.octoprint_time_elapsed
+          - sensor.octoprint_time_remaining
+      - type: picture-glance
+        title: Octoprint Cam
+        entities:
+          - entity: sensor.octoprint_job_percentage
+            show_state: true
+        camera_image: camera.print
+        camera_view: live
+      # Vacuum cards
+      - type: picture-glance
+        title: Purjo
+        entities:
+          - entity: vacuum.purjo
+            show_state: true
+          - entity: switch.purjo_schedule
+            show_state: true
+        entity: vacuum.purjo
+        camera_image: camera.purjo_cleaning_map
   - icon: mdi:calendar-clock
     id: calendar
     title: Kalender
@@ -743,6 +769,7 @@ views:
       - type: iframe
         url: !secret bengt_calendar
         aspect_ratio: 100%
+
   # Light tab
   - icon: mdi:lightbulb-outline
     id: light
@@ -895,7 +922,6 @@ views:
           - type: weblink
             name: All components
             url: /states
-
       # Squueezecast card
       - type: entities
         title: Squeezecast
@@ -904,12 +930,3 @@ views:
           - media_player.vardagssqueezecast
           - media_player.maltesqueezecast
           - media_player.linasqueezecast
-
-      # Server card
-      - type: entities
-        title: Server
-        show_header_toggle: false
-        entities:
-          - sensor.minecraft_players_online
-          - sensor.r7000_014d_kb_sec_received
-          - sensor.r7000_014d_kb_sec_sent

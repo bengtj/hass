@@ -132,7 +132,7 @@
       message: |
         Resultat: http://octopi.lan/
         Tidsåtgång: {{ states('sensor.octoprint_time_elapsed') | int | timestamp_custom('%H:%M:%S', 0) }}
-      url: !secret hass_cam_url
+      url: !secret hass_server_url
 
 # Varningsmail och uteljus på när någon rör sig på altan vid fel tillfälle
 - alias: Rörelse altan
