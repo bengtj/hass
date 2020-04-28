@@ -46,7 +46,7 @@
       data_type:
         - Humidity
         - Temperature
-    "0a52010267020067470359":
+    "0a5201120802006e3a0069": # Changed itself from "0a52010267020067470359"
       name: Altan Ute
       data_type:
         - Humidity
