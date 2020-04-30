@@ -1,11 +1,11 @@
-﻿title: Hemma hos LMMB
+title: Hemma hos LMMB
 
 resources:
   # https://github.com/thomasloven/lovelace-auto-entities/
   - url: /local/auto-entities.js
     type: module
+ 
 views:
-
   # Overview tab
   - icon: mdi:home-assistant
     id: overview
@@ -661,6 +661,18 @@ views:
           name: Innetemp
         - entity: sensor.ute_temperature
           name: Utetemp
+    - type: history-graph
+      title: Veckans coronavirus i Sverige
+      hours_to_show: 168
+      entities:
+        - entity: sensor.sweden_coronavirus_confirmed
+          name: Fall
+        - entity: sensor.sweden_coronavirus_current
+          name: Sjuka
+        - entity: sensor.sweden_coronavirus_recovered
+          name: Friska
+        - entity: sensor.sweden_coronavirus_deaths
+          name: Döda
 
   # Camera tab
   - icon: mdi:cctv
