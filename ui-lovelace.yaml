@@ -925,10 +925,7 @@ views:
         show_header_toggle: false
         entities:
           - remote.vardagsharmoni
-          - media_player.denon_avr_x6200w
-          - type: weblink
-            name: All components
-            url: /states
+          - media_player.vardagsdenon
       # Squueezecast card
       - type: entities
         title: Squeezecast

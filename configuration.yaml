@@ -208,6 +208,12 @@ webostv:
   host: 192.168.0.25
   name: RelaxTV
 
+# Denon AVR
+media_player:
+  - platform: denonavr
+    host: 192.168.0.5
+    name: VardagsDenon
+
 # Scene selector
 input_select:
   scen:
