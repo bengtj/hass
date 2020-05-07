@@ -1,10 +1,5 @@
 title: Hemma hos LMMB
 
-resources:
-  # https://github.com/thomasloven/lovelace-auto-entities/
-  - url: /local/auto-entities.js
-    type: module
- 
 views:
   # Overview tab
   - icon: mdi:home-assistant

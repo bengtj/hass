@@ -305,7 +305,11 @@ tts:
 # Lovelace UI
 lovelace:
   mode: yaml
-
+  resources:
+    # https://github.com/thomasloven/lovelace-auto-entities/
+    - url: /local/auto-entities.js
+      type: module
+ 
 # Includes of other config files
 zone: !include zone.yaml
 sensor: !include sensor.yaml
