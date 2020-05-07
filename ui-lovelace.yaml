@@ -905,8 +905,8 @@ views:
         title: Chromecast
         show_header_toggle: false
         entities:
-          - media_player.kokscast
           - media_player.vardagscast
+          - media_player.garagecast
           - media_player.maltecast
           - media_player.linacast
       # Google home card
@@ -933,7 +933,8 @@ views:
         entities:
           - media_player.kokssqueezecast
           - media_player.altansqueezecast
-          - media_player.datasqueezecast
           - media_player.vardagssqueezecast
+          - media_player.datasqueezecast
+          - media_player.garagesqueezecast
           - media_player.maltesqueezecast
           - media_player.linasqueezecast
