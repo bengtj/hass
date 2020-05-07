@@ -83,13 +83,6 @@ python_script:
 # System health info support
 system_health:
 
-# Weather provider, see https://www.home-assistant.io/components/weather.yweather/
-weather:
-  - platform: smhi
-    latitude: !secret latitude
-    longitude: !secret longitude
-    name: SMHI
-
 # Track device location with nmap. See secrets.yaml for gpslogger configuration.
 device_tracker:
   - platform: nmap_tracker
