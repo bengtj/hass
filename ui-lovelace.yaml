@@ -897,7 +897,6 @@ views:
           - media_player.linas
           - media_player.maltes
           - media_player.tvatt
-          - media_player.kok
           - media_player.vardagsrum
           - media_player.altanfonster
           - media_player.relax
@@ -916,6 +915,7 @@ views:
         show_header_toggle: false
         entities:
           - media_player.kokshome
+          - media_player.altanhome
           - media_player.datahome
           - media_player.maltehome
           - media_player.linahome
@@ -934,6 +934,9 @@ views:
         title: Squeezecast
         show_header_toggle: false
         entities:
+          - media_player.kokssqueezecast
+          - media_player.altansqueezecast
+          - media_player.datasqueezecast
           - media_player.vardagssqueezecast
           - media_player.maltesqueezecast
           - media_player.linasqueezecast

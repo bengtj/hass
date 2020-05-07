@@ -111,11 +111,6 @@ entity_config:
     name: Kökstak
     room: Kök
     expose: true
-  media_player.kok:
-    name: Köks radio
-    aliases: Köksradio
-    room: Kök
-    expose: true
 
   # Tvättrum
   media_player.tvatt:
