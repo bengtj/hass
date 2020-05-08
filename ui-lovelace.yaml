@@ -643,8 +643,10 @@ views:
       show_name: false
       show_state: false
     # SMHI
-    - type: weather-forecast
-      entity: weather.smhi_smhi
+    - type: custom:weather-card-chart
+      title: SMHI
+      weather: weather.smhi_smhi
+      mode: daily
     # Dark sky card, https://blog.darksky.net/forecast-embeds/
     - type: iframe
       url: !secret darksky_url
