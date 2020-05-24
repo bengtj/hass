@@ -391,20 +391,20 @@ views:
             style:
               top: 61%
               left: 35%
-          - type: state-icon
-            entity: light.ormen
-            tap_action:
-              action: toggle
-            style:
-              top: 45%
-              left: 20%
-          - type: state-icon
-            entity: light.julorm
-            tap_action:
-              action: toggle
-            style:
-              top: 52%
-              left: 20%
+          # - type: state-icon
+          #   entity: light.ormen
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 45%
+          #     left: 20%
+          # - type: state-icon
+          #   entity: light.julorm
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 52%
+          #     left: 20%
           - type: state-label
             entity: sensor.altan_ute_temperature
             style:
@@ -644,7 +644,7 @@ views:
       show_state: false
     # SMHI
     - type: custom:weather-card-chart
-      title: SMHI
+      title: SMHI Väder Stora Höga 
       weather: weather.smhi_smhi
       mode: daily
     # Dark sky card, https://blog.darksky.net/forecast-embeds/
@@ -768,6 +768,8 @@ views:
             show_state: true
         entity: vacuum.purjo
         camera_image: camera.purjo_cleaning_map
+
+  # Calendar tab
   - icon: mdi:calendar-clock
     id: calendar
     title: Kalender
