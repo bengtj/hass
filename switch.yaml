@@ -203,6 +203,8 @@
     - light.entre
     - light.sexan
     - light.altanslinga
+    - light.entrepiedestal_v
+    - light.entrepiedestal_h
 
 - platform: command_line
   switches:

@@ -354,6 +354,20 @@ views:
             style:
               top: 61%
               left: 91.4%
+          - type: state-icon
+            entity: light.entrepiedestal_v
+            tap_action:
+              action: toggle
+            style:
+              top: 54%
+              left: 98%
+          - type: state-icon
+            entity: light.entrepiedestal_h
+            tap_action:
+              action: toggle
+            style:
+              top: 76%
+              left: 98%
           - type: state-label
             entity: sensor.entre_ute_temperature
             style:
