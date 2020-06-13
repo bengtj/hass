@@ -352,7 +352,7 @@ views:
             tap_action:
               action: toggle
             style:
-              top: 61%
+              top: 59%
               left: 91.4%
           - type: state-icon
             entity: light.entrepiedestal_v
@@ -360,6 +360,13 @@ views:
               action: toggle
             style:
               top: 54%
+              left: 97%
+          - type: state-icon
+            entity: light.entrebuske
+            tap_action:
+              action: toggle
+            style:
+              top: 62%
               left: 98%
           - type: state-icon
             entity: light.entrepiedestal_h
@@ -367,7 +374,7 @@ views:
               action: toggle
             style:
               top: 76%
-              left: 98%
+              left: 97%
           - type: state-label
             entity: sensor.entre_ute_temperature
             style:

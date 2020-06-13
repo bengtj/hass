@@ -34,6 +34,8 @@ light.sovrumsgang:
   icon: mdi:wall-sconce
 switch.fontanljus:
   icon: mdi:spotlight-beam
+light.entrebuske:
+  icon: mdi:spotlight-beam
 light.plantljus:
   icon: mdi:flower
 light.garageplanta:

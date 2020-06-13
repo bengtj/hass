@@ -205,6 +205,7 @@
     - light.altanslinga
     - light.entrepiedestal_v
     - light.entrepiedestal_h
+    - light.entrebuske
 
 - platform: command_line
   switches:
