@@ -9,13 +9,9 @@ belysning_all:
   entities:
     - light.alla_1
     - light.alla_2
-#    - group.belysning_dag
-#    - group.belysning_sovrum
-#    - group.belysning_ute
-#    - light.matbord
     - switch.tvljus
     - switch.dator
-    - switch.fontanljus
+    - switch.altanjul
     - switch.juleljus
 
 # Dagsbelysningen är på dagtid
@@ -45,7 +41,7 @@ belysning_ute:
   name: Utebelysning
   entities:
     - light.ute
-    - switch.fontanljus
+    - switch.altanjul
     - switch.juleljus
 
 # Ljus i sovrum och sovrumsgång
@@ -138,7 +134,7 @@ uteljus:
   name: Uteljus
   entities:
     - light.ute
-    - switch.fontanljus
+    - switch.altanjul
     - switch.juleljus
     - light.garageport
     - light.entre

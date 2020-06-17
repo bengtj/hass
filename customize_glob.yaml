@@ -13,8 +13,10 @@
   icon: mdi:candle  
 "light.*vagg*":
   icon: mdi:wall-sconce
-"light.*piedestal*":
+"light.*stolpe*":
   icon: mdi:lava-lamp
+"light.*spot*":
+  icon: mdi:spotlight-beam
 "*.*flux*":
   icon: mdi:palette
 "group.belysning*":

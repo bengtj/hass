@@ -26,15 +26,19 @@ light.julorm:
   icon: mdi:mushroom
 switch.juleljus:
   icon: mdi:mushroom
+switch.altanjul:
+  icon: mdi:mushroom
 switch.entreljus:
   icon: mdi:wall-sconce
 light.entre:
   icon: mdi:wall-sconce
 light.sovrumsgang:
   icon: mdi:wall-sconce
-switch.fontanljus:
-  icon: mdi:spotlight-beam
 light.entrebuske:
+  icon: mdi:spotlight-beam
+light.altanbonsai:
+  icon: mdi:spotlight-beam
+light.altanfontan:
   icon: mdi:spotlight-beam
 light.plantljus:
   icon: mdi:flower

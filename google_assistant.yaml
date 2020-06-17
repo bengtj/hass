@@ -267,13 +267,13 @@ entity_config:
     aliases: Altan
     room: Ute
     expose: true
-  switch.fontanljus:
-    name: Fontänljus
+  switch.altanjul:
+    name: Altanjuleljus
     aliases: Fontän
     room: Ute
     expose: true
   switch.juleljus:
-    name: Juleljus
+    name: Entréjuleljus
     room: Ute
     expose: true
   light.entre:

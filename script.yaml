@@ -13,7 +13,6 @@ altan_mail:
       entity_id:
         - light.altanslinga
         - light.altan
-        - switch.fontanljus
   - service: camera.snapshot
     data:
       entity_id: camera.plantfonster

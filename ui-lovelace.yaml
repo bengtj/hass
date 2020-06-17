@@ -355,7 +355,7 @@ views:
               top: 59%
               left: 91.4%
           - type: state-icon
-            entity: light.entrepiedestal_v
+            entity: light.entrestolpe_v
             tap_action:
               action: toggle
             style:
@@ -369,7 +369,7 @@ views:
               top: 62%
               left: 98%
           - type: state-icon
-            entity: light.entrepiedestal_h
+            entity: light.entrestolpe_h
             tap_action:
               action: toggle
             style:
@@ -392,12 +392,47 @@ views:
               top: 40%
               left: 9%
           - type: state-icon
-            entity: switch.fontanljus
+            entity: switch.altanjul
+            tap_action:
+              action: toggle
+            style:
+              top: 45%
+              left: 25%
+          - type: state-icon
+            entity: light.altanstolpe_1
+            tap_action:
+              action: toggle
+            style:
+              top: 63%
+              left: 15%
+          - type: state-icon
+            entity: light.altanstolpe_2
+            tap_action:
+              action: toggle
+            style:
+              top: 63%
+              left: 7%
+          - type: state-icon
+            entity: light.altanstolpe_3
+            tap_action:
+              action: toggle
+            style:
+              top: 45%
+              left: 15%
+          - type: state-icon
+            entity: light.altanfontan
+            tap_action:
+              action: toggle
+            style:
+              top: 51%
+              left: 11%
+          - type: state-icon
+            entity: light.altanbonsai
             tap_action:
               action: toggle
             style:
               top: 57%
-              left: 10%
+              left: 11%
           - type: state-icon
             entity: light.altan
             tap_action:
