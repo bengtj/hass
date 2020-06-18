@@ -16,10 +16,6 @@ light.sexan:
   icon: mdi:numeric-6-circle-outline
 light.sanggavel:
   icon: mdi:wall-sconce-flat
-switch.altanljus:
-  icon: mdi:wall-sconce
-light.altan:
-  icon: mdi:wall-sconce
 light.ormen:
   icon: mdi:mushroom
 light.julorm:
@@ -29,8 +25,6 @@ switch.juleljus:
 switch.altanjul:
   icon: mdi:mushroom
 switch.entreljus:
-  icon: mdi:wall-sconce
-light.entre:
   icon: mdi:wall-sconce
 light.sovrumsgang:
   icon: mdi:wall-sconce

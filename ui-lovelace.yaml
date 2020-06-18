@@ -341,7 +341,7 @@ views:
               top: 31%
               left: 91%
           - type: state-icon
-            entity: light.entre
+            entity: light.entrevagg
             tap_action:
               action: toggle
             style:
@@ -434,7 +434,7 @@ views:
               top: 57%
               left: 11%
           - type: state-icon
-            entity: light.altan
+            entity: light.altanvagg
             tap_action:
               action: toggle
             style:

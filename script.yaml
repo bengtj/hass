@@ -12,7 +12,7 @@ altan_mail:
     data:
       entity_id:
         - light.altanslinga
-        - light.altan
+        - light.altanvagg
   - service: camera.snapshot
     data:
       entity_id: camera.plantfonster

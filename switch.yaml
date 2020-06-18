@@ -198,7 +198,7 @@
   stop_time: '23:45'
   lights:
     - light.halltak
-    - light.altan
+    - light.altanvagg
     - light.altanslinga
     - light.altanstolpe_1
     - light.altanstolpe_2
@@ -206,7 +206,7 @@
     - light.altanbonsai
     - light.altanfontan
     - light.garageport
-    - light.entre
+    - light.entrevagg
     - light.sexan
     - light.entrestolpe_v
     - light.entrestolpe_h
