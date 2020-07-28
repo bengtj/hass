@@ -272,7 +272,7 @@ views:
               top: 38.5%
               left: 84%
           - type: state-icon
-            entity: climate.nibe
+            entity: climate.supply
             style:
               top: 33%
               left: 70%
@@ -282,10 +282,15 @@ views:
               top: 33%
               left: 75.5%
           - type: state-icon
-            entity: water_heater.nibe
+            entity: water_heater.supply
             style:
               top: 33%
               left: 81%
+          - type: state-icon
+            entity: fan.ventilation
+            style:
+              top: 33%
+              left: 85.5%
           # Hall
           - type: state-icon
             entity: binary_sensor.hall_motion
@@ -688,6 +693,7 @@ views:
       - type: iframe
         url: !secret vt_url
         aspect_ratio: 75%
+
   # Weather tab
   - icon: mdi:weather-partly-rainy
     id: weather
