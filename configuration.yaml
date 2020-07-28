@@ -213,7 +213,7 @@ webostv:
 # Denon AVR
 media_player:
   - platform: denonavr
-    host: 192.168.0.5
+    host: 192.168.0.37
     name: VardagsDenon
 
 # Scene selector
