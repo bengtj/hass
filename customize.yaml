@@ -1,11 +1,11 @@
 switch.tvljus:
-  icon: mdi:wall-sconce-variant
+  icon: mdi:wall-sconce-round-variant
 switch.twinkly:
   icon: mdi:pine-tree
 light.garageport:
   icon: mdi:wall-sconce
 light.garagefonster:
-  icon: mdi:wall-sconce-variant
+  icon: mdi:wall-sconce-round-variant
 light.traning:
   icon: mdi:lamp
 light.skrivare:
@@ -49,11 +49,11 @@ light.altanslinga:
 light.badrumsskap:
   icon: mdi:led-strip-variant
 light.huego:
-  icon: mdi:wall-sconce-variant
+  icon: mdi:wall-sconce-round-variant
 switch.ac:
   icon: mdi:air-conditioner
 light.matbord_upp:
-  icon: mdi:wall-sconce-variant
+  icon: mdi:wall-sconce-round-variant
 light.matbord_ned:
   icon: mdi:wall-sconce-flat
 light.relax:
