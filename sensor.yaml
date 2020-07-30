@@ -51,7 +51,7 @@
       data_type:
         - Humidity
         - Temperature
-    "0a5201063001005f410050":
+    "0a52010d8c0100a7390069": # Changed itself from "0a5201063001005f410050"
       name: Entré Ute
       data_type:
         - Humidity
