@@ -180,3 +180,23 @@
       # - wind_direction
       # - wind_direction_text
       # - wind_speed
+
+# Glue Lock from https://github.com/uki-hassio/Glue-Lock
+- platform: rest
+  resource: !secret glue_resource
+  name: friggebod_sensor
+  method: GET
+  authentication: basic
+  username: !secret glue_user
+  password: !secret glue_pass
+  json_attributes:
+    - Status
+    - BatteryStatusAfter
+  value_template: 'OK'
+- platform: template
+  sensors:
+      friggebod_status:
+          value_template: '{{ states.sensor.friggebod_sensor.attributes["Status"] }}'
+      friggebod_battery:
+          value_template: '{{ (states.sensor.friggebod_sensor.attributes["BatteryStatusAfter"] | int /255 * 100) | int }}'
+    

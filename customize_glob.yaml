@@ -19,5 +19,9 @@
   icon: mdi:spotlight-beam
 "*.*flux*":
   icon: mdi:palette
+"switch.*_lock":
+  icon: mdi:home-lock
+"sensor.*battery*":
+  icon: mdi:battery
 "group.belysning*":
   assumed_state: true
