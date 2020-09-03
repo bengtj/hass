@@ -532,9 +532,7 @@ views:
               top: 75%
               left: 85%
           - type: state-icon
-            entity: light.bordslampa
-            tap_action:
-              action: toggle
+            entity: switch.speltv
             style:
               top: 75.5%
               left: 80%
@@ -543,8 +541,15 @@ views:
             tap_action:
               action: toggle
             style:
+              top: 72.5%
+              left: 80%
+          - type: state-icon
+            entity: light.bordslampa
+            tap_action:
+              action: toggle
+            style:
               top: 75.5%
-              left: 73%
+              left: 74%
           - type: state-icon
             entity: light.vitrinskap
             tap_action:

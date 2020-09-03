@@ -225,5 +225,12 @@
 - platform: command_line
   switches:
       friggebod_lock:
+          friendly_name: "Olåst <-Friggebod-> Låst"
           command_on: !secret glue_command_on
           command_off: !secret glue_command_off
+
+# Wake on LAN for SpelTV
+- platform: wake_on_lan
+  name: SpelTV
+  mac: 'D4:5D:64:52:12:66'
+  host: '192.168.0.7'

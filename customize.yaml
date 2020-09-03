@@ -38,6 +38,8 @@ light.plantljus:
   icon: mdi:flower
 light.garageplanta:
   icon: mdi:flower
+switch.speltv:
+  icon: mdi:monitor
 switch.dator:
   icon: mdi:monitor-multiple
 light.datormys:
@@ -100,3 +102,5 @@ sensor.energy_monthly:
   friendly_name: "Månatlig energiförbrukning"
 sensor.energy_yearly:
   friendly_name: "Årlig energiförbrukning"
+
+# Use wall-sconce-round-variant wall-sconce-flat-variant after updating to newer hassio with newer icons
