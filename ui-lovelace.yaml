@@ -888,6 +888,8 @@ views:
         filter:
           include:
             - group: group.belysning_ute
+            - entity_id: light.entre
+            - entity_id: light.altan
       - type: custom:auto-entities
         card:
           type: glance
