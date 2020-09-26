@@ -9,7 +9,6 @@ belysning_all:
   entities:
     - light.alla_1
     - light.alla_2
-    - switch.tvljus
     - switch.dator
     - switch.altanjul
     - switch.juleljus

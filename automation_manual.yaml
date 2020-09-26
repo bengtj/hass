@@ -223,18 +223,20 @@
       command: PowerOff
       device: 56488837
 
-# Turn on SpelTV when harmony changes to on. Probably should check for current_activity=Kodi/Spela?
+# Turn on SpelTV when harmony changes to Spela Steam.
 - alias: SpelTV Wake On LAN
   initial_state: 'on'
   trigger:
-  - platform: state
+    platform: state
     entity_id: remote.vardagsharmoni
-    to: 'on'
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Spela Steam" }}'
   action:
-  - service: homeassistant.turn_on
+    service: homeassistant.turn_on
     data:
       entity_id: switch.speltv
-
+    
 # Schema belysning dag
 - alias: Schema dag på
   initial_state: 'on'
@@ -348,36 +350,6 @@
   - service: homeassistant.turn_off
     data:
       entity_id: switch.laddare_vardagsrum
-
-# TV bakljus styrt av TV
-- alias: TV bakljus på
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id:  remote.vardagsharmoni
-    to: 'on'
-  action:
-  - service: homeassistant.turn_on
-    data:
-      entity_id: switch.tvljus
-  - delay: '00:00:05'
-  - service: homeassistant.turn_on
-    data:
-      entity_id: switch.tvljus
-- alias: TV bakljus av
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: remote.vardagsharmoni
-    to: 'off'
-  action:
-  - service: homeassistant.turn_off
-    data:
-      entity_id: switch.tvljus
-  - delay: '00:00:05'
-  - service: homeassistant.turn_off
-    data:
-      entity_id: switch.tvljus
 
 # Matsbordsljus  
 - alias: Matbord på
