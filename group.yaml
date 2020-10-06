@@ -77,7 +77,6 @@ halljus:
   entities:
     - light.hall
     - light.halltak
-    - light.huego
 
 # Ljus i kök
 koksljus:
@@ -94,14 +93,17 @@ vardagsrumsljus:
   name: Vardagsrumsljus
   entities:
     - light.vardagsrum
+    - light.tak_v
+    - light.tak_h
     - light.fonster
+    - light.hornlampa
+    - light.tv_v
+    - light.tv_h
     - light.bordslampa
+    - light.huego
     - light.vitrinskap
     - light.altanfonster
     - light.golvlampa
-    - light.hornlampa
-    - light.tak_h
-    - light.tak_v
 
 # Ljus i relax
 relaxljus:

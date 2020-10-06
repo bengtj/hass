@@ -22,9 +22,9 @@
 #    "0b1100880000029a02000050":
 #      name: Fönster
 #      fire_event: true
-    "0b1100110000029a0e010f50":
-      name: TvLjus
-      fire_event: true
+#    "0b1100110000029a0e010f50":
+#      name: TvLjus
+#      fire_event: true
 #    "0b1100780000029a03000060":
 #      name: Vitrinskåp
 #      fire_event: true
@@ -181,7 +181,6 @@
     - light.relax
     - light.vardagsrum
     - light.koksfonster
-    - light.huego
     - light.matbord_upp
 - platform: flux
   name: Sovflux

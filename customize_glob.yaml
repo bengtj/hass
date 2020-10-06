@@ -17,6 +17,10 @@
   icon: mdi:lava-lamp
 "light.*spot*":
   icon: mdi:spotlight-beam
+"light.tv_*":
+  icon: mdi:led-strip
+"light.skarm_*":
+  icon: mdi:led-strip
 "*.*flux*":
   icon: mdi:palette
 "switch.*_lock":

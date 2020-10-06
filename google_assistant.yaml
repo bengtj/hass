@@ -144,11 +144,6 @@ entity_config:
     aliases: Hall taklampa
     room: Hall
     expose: true
-  light.huego:
-    name: Huego
-    aliases: Hue go
-    room: Hall
-    expose: true
     
   # Vardagsrum
   light.fonster:
@@ -164,6 +159,11 @@ entity_config:
   light.bordslampa:
     name: Bordslampa
     aliases: TV-lampa
+    room: Vardagsrum
+    expose: true
+  light.huego:
+    name: Huego
+    aliases: Hue go
     room: Vardagsrum
     expose: true
   light.tak_v:
