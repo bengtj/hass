@@ -653,19 +653,26 @@ views:
               top: 81%
               left: 31%
           - type: state-icon
-            entity: light.skrivare
+            entity: light.golvflakt
             tap_action:
               action: toggle
             style:
               top: 94.5%
               left: 31%
           - type: state-icon
+            entity: light.skrivare
+            tap_action:
+              action: toggle
+            style:
+              top: 94.5%
+              left: 37%
+          - type: state-icon
             entity: light.garagefonster
             tap_action:
               action: toggle
             style:
               top: 95%
-              left: 41%
+              left: 43%
           - type: state-icon
             entity: light.atervinning
             tap_action:
