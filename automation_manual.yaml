@@ -87,8 +87,8 @@
   trigger:
   - platform: state
     entity_id:
-      - sensor.rok_relax_sensor_status
-      - sensor.rok_sovrum_sensor_status
+      - sensor.rok_relax
+      - sensor.rok_sovrum
   action:
   - service: script.notify
     data_template:
@@ -513,18 +513,18 @@
             Flux
           {% endif %}
 
-# Dagsbelysning fjärrisar
-- alias: Dagsbelysning fjärris
+# Belysning fjärrisar
+- alias: Belysning fjärrisar
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: button_pressed
+      event_type: state_changed
   condition:
     condition: template
     value_template: "{{ trigger.event.data.entity_id | regex_match('switch.fjarr') }}"
   action:
     - service_template: >
-        {% if trigger.event.data.state == "on" %}
+        {% if trigger.event.data.new_state.state == "on" %}
           homeassistant.turn_on
         {% else %}
           homeassistant.turn_off

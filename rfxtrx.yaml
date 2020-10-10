@@ -1,0 +1,150 @@
+# RFXtrx 433MHz receiver/transmitter
+device: /dev/ttyUSB0
+#debug: True
+#automatic_add: True
+devices:
+
+# Temperature sensors
+  "0a52090ed70000d1370159":
+    # name: Sovrum
+  "08500706d800006159":
+    # name: Sovrum Ute
+  "0a520906e70000d0370159":
+    # name: Malte
+  "08500704e800006559":
+    # name: Malte Ute
+  "0a5209fbf70000c9340159":
+    # name: Lina
+  "0850071bf800006559":
+    # name: Lina Ute
+  "08500724970080b259":
+    # name: Frys V
+  "08500705ef0000f559":
+    # name: Kyl V
+  "0850071d8700005459":
+    # name: Frys H
+  "0850072da800003269": # Changed itself from "08500717080000ed59", why?
+    # name: Kyl H
+  "0a52090bc700006d480369":
+    # name: Vind
+  "0a520104fb04009e3a0069":
+    # name: Grund
+  "0a5201120802006e3a0069": # Changed itself from "0a52010267020067470359"
+    # name: Altan Ute
+  "0a52010d8c0100a7390069": # Changed itself from "0a5201063001005f410050"
+    # name: Entré Ute
+  "085001e2080100a969": # <- Ch1, Ch2 "0850013d0602801869" and Ch3 "0850012e0003010559". Ch3 collided with neighbour.
+    # name: Vardagsrum
+  "08500706470000f869":
+    # name: Garagefrys
+  "0a520942b7000044140259":
+    # name: Garagekyl
+  "08500741980000f869":
+    # name: Relax
+
+# Smoke detectors
+  "08200a1807d00a0669":
+    # name: Rök Relax
+  "08200a1f02100a0659":
+    # name: Rök Sovrum
+
+# Switches
+# Toggle between switch and dimmable light:
+# https://github.com/home-assistant/core/issues/38107
+  "0b11002400055efa01010f60": # Was dimmable light "0b11002400055efa01020d60"
+    # name: Dator
+    fire_event: true
+  "0b1100940000029a07010f50":
+    # name: Altanjul
+    fire_event: true
+  "0b11000500bc0cfe01010f70": 
+    # name: Juleljus
+    fire_event: true
+  "0b1100770000029a09010f40":
+    # name: Laddare tvättrum
+    fire_event: true
+  "0b11008a0000029a0a000060":
+    # name: Laddare vardagsrum
+    fire_event: true
+
+# Remote controls
+  "0b11009d00ddbae201040f50":
+    # name: Dörrknapp
+    fire_event: true
+  "0b11003401b54ffa10010f60":
+    # name: Fjärr 1-1 dag
+    fire_event: true
+  "0b11008401b54ffa0f010f50":
+    # name: Fjärr 1-2 sovrum
+    fire_event: true
+  "0b11008c01b54ffa0e010f50":
+    # name: Fjärr 1-3 ute
+    fire_event: true
+  "0b1100a0011a67f610010f60":
+    # name: Fjärr 2-1 dag
+    fire_event: true
+  "0b1100a6011a67f60f010f50":
+    # name: Fjärr 2-2 sovrum
+    fire_event: true
+  "0b1100b1011a67f60e010f50":
+    # name: Fjärr 2-3 ute
+    fire_event: true
+  "0b1100dc03e567f610000050":
+    # name: Fjärr 3-1 dag
+    fire_event: true
+  "0b1100ea03e567f60f010f50":
+    # name: Fjärr 3-2 sovrum
+    fire_event: true
+  "0b1100f003e567f60e000050":
+    #name: Fjärr 3-3 ute
+    fire_event: true
+
+# Doorbell
+  "0b1100580000029b01010f60":
+    # name: Klocka Ring
+    fire_event: true
+    off_delay: 3
+  "0b11000b0000029b02010f60":
+    # name: Klocka Dörr
+    fire_event: true
+    off_delay: 3
+  "0b1100490000029b03010f40":
+    # name: Klocka Musik
+    fire_event: true
+    off_delay: 3
+  "0b11003c0000029b04010f50":
+    # name: Klocka Fågel
+    fire_event: true
+    off_delay: 3
+
+# Water sensors
+  "0b1100de01a2024601010f60":
+    # name: Vatten toa 1
+    fire_event: true
+  "0b11003701a2024602010f60":
+    # name: Vatten toa 2
+    fire_event: true
+  "0b1100ab01a2096a01010f50":
+    # name: Vatten badkar 1
+    fire_event: true
+  "0b11008f01a2096a02010f50":
+    # name: Vatten badkar 2
+    fire_event: true
+  "0b11000001bfeb6601010f60":
+    # name: Vatten tvätt 1
+    fire_event: true
+  "0b11006d01bfeb6602010f60":
+    # name: Vatten tvätt 2
+    fire_event: true
+  "0b11003f01bfeada01010f50":
+    # name: Vatten disk 1
+    fire_event: true
+  "0b11003301bfeada02010f50":
+    # name: Vatten disk 2
+    fire_event: true
+  "0b11001e01bfe7e601010f50":
+    # name: Vatten dusch 1
+    fire_event: true
+  "0b11000001bfe7e602010f50":
+    # name: Vatten dusch 2
+    fire_event: true

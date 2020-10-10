@@ -10,11 +10,11 @@ views:
         image: /local/planskiss.png
         elements:
           # Hus sidovy
-          - type: state-icon
-            entity: sensor.yr_symbol
-            style:
-              top: 4.5%
-              left: 6%
+#          - type: state-icon
+#            entity: sensor.yr_symbol
+#            style:
+#              top: 4.5%
+#              left: 6%
           - type: state-label
             entity: sensor.ute_temperature
             style:
@@ -990,7 +990,7 @@ views:
         title: Chromecast
         show_header_toggle: false
         entities:
-          - media_player.vardagscast
+          - media_player.vardagsshield
           - media_player.garagecast
           - media_player.maltecast
           - media_player.linacast
@@ -1012,14 +1012,14 @@ views:
           - remote.vardagsharmoni
           - media_player.vardagsdenon
       # Squueezecast card
-      - type: entities
-        title: Squeezecast
-        show_header_toggle: false
-        entities:
-          - media_player.kokssqueezecast
-          - media_player.altansqueezecast
-          - media_player.vardagssqueezecast
-          - media_player.datasqueezecast
-          - media_player.garagesqueezecast
-          - media_player.maltesqueezecast
-          - media_player.linasqueezecast
+      # - type: entities
+      #   title: Squeezecast
+      #   show_header_toggle: false
+      #   entities:
+      #     - media_player.kokssqueezecast
+      #     - media_player.altansqueezecast
+      #     - media_player.vardagssqueezecast
+      #     - media_player.datasqueezecast
+      #     - media_player.garagesqueezecast
+      #     - media_player.maltesqueezecast
+      #     - media_player.linasqueezecast

@@ -103,10 +103,6 @@ input_boolean:
     name: Luftkonditionering
     icon: mdi:air-conditioner
 
-# RFXtrx 433MHz receiver/transmitter
-rfxtrx:
-  device: /dev/ttyUSB0
-
 # Philips hue bridge
 hue:
   bridges:
@@ -325,9 +321,9 @@ zone: !include zone.yaml
 sensor: !include sensor.yaml
 binary_sensor: !include binary_sensor.yaml
 switch: !include switch.yaml
-light: !include light.yaml
 google_assistant: !include google_assistant.yaml
 group: !include group.yaml
 automation: !include automation.yaml
 automation old: !include automation_manual.yaml
 script: !include script.yaml
+rfxtrx: !include rfxtrx.yaml
