@@ -21,6 +21,8 @@
   icon: mdi:led-strip
 "light.skarm_*":
   icon: mdi:led-strip
+"light.*slinga":
+  icon: mdi:led-strip-variant
 "light.*flakt*":
   icon: mdi:fan
 "*.*flux*":

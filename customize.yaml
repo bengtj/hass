@@ -44,8 +44,6 @@ light.datormys:
   icon: mdi:lamp
 light.koksfonster:
   icon: mdi:lamp
-light.altanslinga:
-  icon: mdi:led-strip-variant
 light.badrumsskap:
   icon: mdi:led-strip-variant
 light.huego:

@@ -365,6 +365,13 @@ views:
               top: 59%
               left: 91.4%
           - type: state-icon
+            entity: light.entreslinga
+            tap_action:
+              action: toggle
+            style:
+              top: 64.5%
+              left: 91.4%
+          - type: state-icon
             entity: light.entrestolpe_v
             tap_action:
               action: toggle
@@ -388,12 +395,12 @@ views:
           - type: state-label
             entity: sensor.entre_ute_temperature
             style:
-              top: 67%
+              top: 69%
               left: 94%
           - type: state-label
             entity: sensor.entre_ute_humidity
             style:
-              top: 70%
+              top: 72%
               left: 94%
           # Altan
           - type: state-icon
