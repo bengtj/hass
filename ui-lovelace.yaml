@@ -10,11 +10,11 @@ views:
         image: /local/planskiss.png
         elements:
           # Hus sidovy
-#          - type: state-icon
-#            entity: sensor.yr_symbol
-#            style:
-#              top: 4.5%
-#              left: 6%
+          - type: state-label
+            entity: weather.smhi_smhi
+            style:
+              top: 4%
+              left: 6%
           - type: state-label
             entity: sensor.ute_temperature
             style:
@@ -729,10 +729,13 @@ views:
       show_name: false
       show_state: false
     # SMHI
-    - type: custom:weather-card-chart
-      title: SMHI Väder Stora Höga 
-      weather: weather.smhi_smhi
-      mode: daily
+    - type: weather-forecast
+      name: SMHI Väder Stora Höga 
+      entity: weather.smhi_smhi
+    # - type: custom:weather-card-chart
+    #   title: SMHI Väder Stora Höga 
+    #   weather: weather.smhi_smhi
+    #   mode: daily
     # Dark sky card, https://blog.darksky.net/forecast-embeds/
     - type: iframe
       url: !secret darksky_url
@@ -750,10 +753,6 @@ views:
       entities:
         - entity: sensor.sweden_coronavirus_confirmed
           name: Fall
-        - entity: sensor.sweden_coronavirus_current
-          name: Sjuka
-        - entity: sensor.sweden_coronavirus_recovered
-          name: Friska
         - entity: sensor.sweden_coronavirus_deaths
           name: Döda
 
@@ -1007,17 +1006,19 @@ views:
         show_header_toggle: false
         entities:
           - media_player.kokshome
+          - media_player.vardagshome
           - media_player.altanhome
-          - media_player.datahome
+          - media_player.relaxhome
           - media_player.maltehome
           - media_player.linahome
+          - media_player.sovhome
       # Remotes card
       - type: entities
         title: Kontroll
         show_header_toggle: false
         entities:
           - remote.vardagsharmoni
-          - media_player.vardagsdenon
+        #  - media_player.vardagsdenon
       # Squueezecast card
       # - type: entities
       #   title: Squeezecast
