@@ -187,6 +187,10 @@ camera:
     mjpeg_url: http://192.168.0.65/mjpeg.cgi
     username: !secret cam_user
     password: !secret cam_pwd
+  - platform: mjpeg
+    name: OctoPrint
+    still_image_url: http://192.168.0.18/webcam/?action=snapshot
+    mjpeg_url: http://192.168.0.18/webcam/?action=stream
   - platform: generic
     name: Yr Väder
     still_image_url: !secret yr_svg_url
