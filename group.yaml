@@ -39,7 +39,7 @@ belysning_sovrum:
 belysning_ute:
   name: Utebelysning
   entities:
-    - light.ute # Without entréslinga
+    - light.ute
     - switch.altanjul
     - switch.juleljus
 
