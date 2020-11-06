@@ -566,10 +566,8 @@
 
 # Scener
 # Notera att detta bara funkar med den hue-brygga man senast har integrerat med i home assistant.
-# Kan inte använda Hus-gruppen för den saknar scenerna. Och scener i Hue Essentials verkar bara funka med Hue. TODO: Kanske kan gå om man bara sparar scenerna i husgruppen!?
 # Testa hue.hue_activate_scene servicen i hass med detta data:
 # { "group_name": "Relax", "scene_name": "Bright"}
-# Det visade sig att jag fick ta bort scenerna och lägga till dom igen för att få vissa att funka. Kan behöva starta om home assistant eftersom den mappar nyckeln på något sätt.
 - alias: Välj scen
   initial_state: 'on'
   trigger:
@@ -586,14 +584,13 @@
         entity_id: group.fluxljus
     - condition: template
       value_template: '{{ not is_state("input_select.scen", "Flux") and not is_state("input_select.scen", "Inget") }}'
-    - delay: '00:00:01'
     - service: hue.hue_activate_scene
       data_template:
         group_name: 'Vardagsrum'
         scene_name: '{{ trigger.to_state.state }}'
     - service: hue.hue_activate_scene
       data_template:
-        group_name: 'Relax'
+        group_name: 'Relax' # Does not work when on 2nd hue
         scene_name: '{{ trigger.to_state.state }}'
     - service: hue.hue_activate_scene
       data_template:
@@ -615,7 +612,6 @@
       data_template:
         group_name: 'Maltes rum'
         scene_name: '{{ trigger.to_state.state }}'
-#   - delay: '00:00:01'
     - service: hue.hue_activate_scene
       data_template:
         group_name: 'Linas rum'
