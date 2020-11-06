@@ -12,23 +12,23 @@ entity_config:
 
   # Sovrum
   light.sovfonster:
-    name: Sovfönster
-    aliases: Sovrumsfönster
+    name: Sovrumsfönster
+    aliases: Sovfönster
     room: Sovrum
     expose: true
   light.sanggavel:
-    name: Gavel
-    aliases: Sänggavel
+    name: Sänggavel
+    aliases: Gavel
     room: Sovrum
     expose: true
   light.sovtak:
-    name: Sovtak
-    aliases: Sovrumstak
+    name: Sovrumstak
+    aliases: Sovtak
     room: Sovrum
     expose: true
   light.sovrumsgang:
-    name: Gång
-    aliases: Sovrumsgång
+    name: Sovrumsgång
+    aliases: Gång
     room: Sovrum
     expose: true
  
@@ -52,8 +52,8 @@ entity_config:
    # Linas rum
   light.linas_fonster:
     name: Linafönster
-    room: Linas rum
     aliases: Linas fönster
+    room: Linas rum
     expose: true
   light.linas_tak:
     name: Linas tak
@@ -123,7 +123,12 @@ entity_config:
     aliases: Hall taklampa
     room: Hall
     expose: true
-    
+  light.hallgo:
+    name: Hall huego
+    aliases: Hallgo
+    room: Hall
+    expose: true
+
   # Vardagsrum
   light.fonster:
     name: Fönster
@@ -175,6 +180,11 @@ entity_config:
     aliases: Datorfönster
     room: Relax
     expose: true
+  light.skarm:
+    name: Skärm
+    aliases: Dataskärm
+    room: Relax
+    expose: true
   light.datormys:
     name: Datorlampa
     aliases: Datalampa
@@ -191,6 +201,7 @@ entity_config:
     expose: true
   light.plantljus:
     name: Plantljus
+    aliases: Relaxplanta
     room: Relax
     expose: true
   light.relaxgang:
@@ -207,6 +218,10 @@ entity_config:
     name: Garagefönster
     room: Garage
     expose: true
+  light.skrivare:
+    name: Skrivare
+    room: Garage
+    expose: true
   light.traning:
     name: Träning
     room: Garage
@@ -215,8 +230,8 @@ entity_config:
     name: Återvinning
     room: Garage
     expose: true
-  light.skrivare:
-    name: Skrivare
+  light.garageplanta:
+    name: Garageplanta
     room: Garage
     expose: true
 
@@ -230,15 +245,40 @@ entity_config:
     name: Altanvägg
     room: Ute
     expose: true
+  light.altanvagg:
+    name: Altanvägg
+    room: Ute
+    expose: true
+  light.altanslinga:
+    name: Altanslinga
+    room: Ute
+    expose: true
+  light.altanstolpe_1:
+    name: Altanstolpe 1
+    room: Ute
+    expose: true
+  light.altanstolpe_2:
+    name: Altanstolpe 2
+    room: Ute
+    expose: true
+  light.altanstolpe_3:
+    name: Altanstolpe 3
+    room: Ute
+    expose: true
+  light.altanfontan:
+    name: Altanfontän
+    room: Ute
+    expose: true
+  light.altanbonsai:
+    name: Altanbonsai
+    room: Ute
+    expose: true
   switch.altanjul:
     name: Altanjuleljus
     aliases: Altanjul
     room: Ute
     expose: true
-  switch.juleljus:
-    name: Entréjuleljus
-    room: Ute
-    expose: true
+
   light.entre:
     name: Entré
     aliases: Entréljus
@@ -249,13 +289,35 @@ entity_config:
     room: Ute
     expose: true
   light.sexan:
-    name: Sex
-    aliases: Sexan
+    name: Sexan
+    room: Ute
+    expose: true
+  light.entreslinga:
+    name: Entréslinga
+    room: Ute
+    expose: true
+  light.entrestolpe_v:
+    name: Entréstolpe Vänster
+    aliases: Entréstolpe V
+    room: Ute
+    expose: true
+  light.entresbuske:
+    name: Entrébuske
+    aliases: Entréspot
+    room: Ute
+    expose: true
+  light.entrestolpe_h:
+    name: Entréstolpe Höger
+    aliases: Entréstolpe H
     room: Ute
     expose: true
   light.garageport:
     name: Garageport
     aliases: Port
+    room: Ute
+    expose: true
+  switch.juleljus:
+    name: Entréjuleljus
     room: Ute
     expose: true
 
