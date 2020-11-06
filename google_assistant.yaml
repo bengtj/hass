@@ -187,7 +187,10 @@ entity_config:
     expose: true
   light.datormys:
     name: Datorlampa
-    aliases: Datalampa
+    aliases:
+      - Datalampa
+      - Datormys
+      - Datamys
     room: Relax
     expose: true
   light.datatak:
