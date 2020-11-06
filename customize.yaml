@@ -46,6 +46,8 @@ light.badrumsskap:
   icon: mdi:led-strip-variant
 light.huego:
   icon: mdi:alarm-light
+light.hallgo:
+  icon: mdi:alarm-light
 switch.ac:
   icon: mdi:air-conditioner
 light.matbord_upp:
