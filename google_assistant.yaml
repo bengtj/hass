@@ -98,8 +98,7 @@ entity_config:
     room: Kök
     expose: true
   light.koksfonster:
-    name: Köks fönster
-    aliases: Köksfönster
+    name: Köksfönster
     room: Kök
     expose: true
   light.kokstake:
@@ -114,13 +113,12 @@ entity_config:
 
   # Tvättrum
   media_player.tvatt:
-    name: Tvättrums radio
-    aliases: Tvättrumsradio
+    name: Tvättrumsradio
     room: Tvättrum
     expose: true
   light.tvatt_tak:
-    name: Tvätt tak
-    aliases: Tvättrumstak
+    name: Tvättrumstak
+    aliases: Tvätt tak
     room: Tvättrum
     expose: true
 
@@ -152,8 +150,7 @@ entity_config:
     room: Vardagsrum
     expose: true
   light.hornlampa:
-    name: Hörn lampa
-    aliases: Hörnlampa
+    name: Hörnlampa
     room: Vardagsrum
     expose: true
   light.bordslampa:
@@ -182,8 +179,7 @@ entity_config:
     room: Vardagsrum
     expose: true
   light.altanfonster:
-    name: Altan fönster
-    aliases: Altanfönster
+    name: Altanfönster
     room: Vardagsrum
     expose: true
   light.golvlampa:
@@ -192,8 +188,7 @@ entity_config:
     room: Vardagsrum
     expose: true
   media_player.vardagsrum:
-    name: Vardagsrums radio
-    aliases: Vardagsrumsradio
+    name: Vardagsrumsradio
     room: Vardagsrum
     expose: true
   media_player.altanfonster:
@@ -203,8 +198,9 @@ entity_config:
     expose: true
 
   # Relax
-  light.datorfonster:
-    name: Datorfönster
+  light.datafonster:
+    name: Datafönster
+    aliases: Datorfönster
     room: Relax
     expose: true
   light.datormys:
@@ -213,33 +209,28 @@ entity_config:
     room: Relax
     expose: true
   light.datatak:
-    name: Data tak
-    aliases: Datatak
+    name: Datatak
+    aliases: Datortak
     room: Relax
     expose: true
   light.plantfonster:
-    name: Plant fönster
-    aliases: Plantfönster
+    name: Plantfönster
     room: Relax
     expose: true
   light.plantljus:
-    name: Plant ljus
-    aliases: Plantljus
+    name: Plantljus
     room: Relax
     expose: true
   light.relaxgang:
-    name: Relax gång
-    aliases: Relaxgång
+    name: Relaxgång
     room: Relax
     expose: true
   light.relaxtak:
     name: Relaxtak
-    aliases: Relax taklampa
     room: Relax
     expose: true
   media_player.relax:
-    name: Relax radio
-    aliases: Relaxradio
+    name: Relaxradio
     room: Relax
     expose: true
  
