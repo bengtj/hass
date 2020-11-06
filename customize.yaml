@@ -38,8 +38,6 @@ light.garageplanta:
   icon: mdi:flower
 switch.speltv:
   icon: mdi:monitor
-switch.dator:
-  icon: mdi:monitor-multiple
 light.datormys:
   icon: mdi:lamp
 light.koksfonster:

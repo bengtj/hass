@@ -616,7 +616,7 @@ views:
               top: 88.5%
               left: 20%
           - type: state-icon
-            entity: switch.dator
+            entity: light.datafonster
             tap_action:
               action: toggle
             style:

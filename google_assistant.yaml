@@ -203,8 +203,8 @@ entity_config:
     expose: true
 
   # Relax
-  switch.dator:
-    name: Dator
+  light.datorfonster:
+    name: Datorfönster
     room: Relax
     expose: true
   light.datormys:

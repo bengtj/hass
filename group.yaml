@@ -9,7 +9,6 @@ belysning_all:
   entities:
     - light.alla_1
     - light.alla_2
-    - switch.dator
     - switch.altanjul
     - switch.juleljus
 
@@ -25,7 +24,6 @@ belysning_dag:
     - light.koksfonster
     - light.plantfonster
     - light.plantljus
-    - switch.dator
 
 # Sovrumsbelysningen är på senare dagtid
 belysning_sovrum:
@@ -112,7 +110,7 @@ relaxljus:
     - light.relax
     - light.plantfonster
     - light.plantljus
-    - switch.dator
+    - light.datafonster
     - light.datormys
     - light.skarm_v
     - light.skarm_u

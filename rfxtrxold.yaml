@@ -35,10 +35,10 @@
 #    "0b1100520000029a05000060":
 #      name: Plantfönster
 #      fire_event: true
-    "0b11002400055efa01020d60":
-      name: Dator
+    "0b11002400055efa01010f60": # Was dimmable light "0b11002400055efa01020d60"
+      # name: Dator
       fire_event: true
-    "0b1100940000029a07010f50":
+      "0b1100940000029a07010f50":
       name: Altanjul
       fire_event: true
     "0b11000500bc0cfe01010f70": 

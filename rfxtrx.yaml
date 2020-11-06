@@ -51,9 +51,6 @@ devices:
 # Switches
 # Toggle between switch and dimmable light:
 # https://github.com/home-assistant/core/issues/38107
-  "0b11002400055efa01010f60": # Was dimmable light "0b11002400055efa01020d60"
-    # name: Dator
-    fire_event: true
   "0b1100940000029a07010f50":
     # name: Altanjul
     fire_event: true
