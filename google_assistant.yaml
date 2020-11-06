@@ -16,11 +16,6 @@ entity_config:
     aliases: Sovrumsfönster
     room: Sovrum
     expose: true
-  media_player.sovrum:
-    name: Sovradio
-    aliases: Sovrumsradio
-    room: Sovrum
-    expose: true
   light.sanggavel:
     name: Gavel
     aliases: Sänggavel
@@ -43,11 +38,6 @@ entity_config:
     aliases: Maltes fönster
     room: Maltes rum
     expose: true
-  media_player.maltes:
-    name: Malteradio
-    aliases: Maltes radio
-    room: Maltes rum
-    expose: true
   light.maltes_tak:
     name: Maltes tak
     aliases: Maltes taklampa
@@ -64,11 +54,6 @@ entity_config:
     name: Linafönster
     room: Linas rum
     aliases: Linas fönster
-    expose: true
-  media_player.linas:
-    name: Linaradio
-    aliases: Linas radio
-    room: Linas rum
     expose: true
   light.linas_tak:
     name: Linas tak
@@ -112,10 +97,6 @@ entity_config:
     expose: true
 
   # Tvättrum
-  media_player.tvatt:
-    name: Tvättrumsradio
-    room: Tvättrum
-    expose: true
   light.tvatt_tak:
     name: Tvättrumstak
     aliases: Tvätt tak
@@ -187,15 +168,6 @@ entity_config:
     aliases: Golvlampa
     room: Vardagsrum
     expose: true
-  media_player.vardagsrum:
-    name: Vardagsrumsradio
-    room: Vardagsrum
-    expose: true
-  media_player.altanfonster:
-    name: Altan radio
-    aliases: Altanradio
-    room: Vardagsrum
-    expose: true
 
   # Relax
   light.datafonster:
@@ -227,10 +199,6 @@ entity_config:
     expose: true
   light.relaxtak:
     name: Relaxtak
-    room: Relax
-    expose: true
-  media_player.relax:
-    name: Relaxradio
     room: Relax
     expose: true
  
