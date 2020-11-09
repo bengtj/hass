@@ -997,7 +997,6 @@ views:
           - media_player.tvatt
           - media_player.vardagsrum
           - media_player.altanfonster
-          - media_player.relax
       # Chromecast card
       - type: entities
         title: Chromecast
