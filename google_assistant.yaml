@@ -248,8 +248,8 @@ entity_config:
     name: Altanvägg
     room: Ute
     expose: true
-  light.altanvagg:
-    name: Altanvägg
+  light.extraslinga:
+    name: Extraslinga
     room: Ute
     expose: true
   light.altanslinga:

@@ -74,6 +74,25 @@ notify:
     data_template:
       message: '{{ title }}'
 
+# Randomize light color
+random_color:
+  alias: "Slumpa ljusfärg om ljuset redan är på"
+  fields:
+    entity_id:
+      description: 'Light Entity ID'
+      example: 'light.entreslinga'
+  sequence:
+  - condition: template
+    value_template: "{{ is_state(entity_id, 'on') }}"
+  - service: light.turn_on
+    data_template:
+      entity_id: '{{ entity_id }}'
+      brightness: 180
+      color_name: >
+        {% set colors = ['red', 'yellow', 'blue', 'green', 'purple'] %}
+        {{ colors|random }}
+      transition: 10
+
 # Say something on google home mini in the kitchen
 say:
   alias: "Berätta något"

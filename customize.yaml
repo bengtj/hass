@@ -1,5 +1,7 @@
-switch.twinkly:
+switch.granen:
   icon: mdi:pine-tree
+switch.istappar:
+  icon: mdi:string-lights
 light.garageport:
   icon: mdi:wall-sconce
 light.garagefonster:
@@ -38,7 +40,9 @@ light.garageplanta:
   icon: mdi:flower
 switch.speltv:
   icon: mdi:monitor
-light.datormys:
+light.skarm:
+  icon: mdi:monitor
+light.entrefonster:
   icon: mdi:lamp
 light.koksfonster:
   icon: mdi:lamp

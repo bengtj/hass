@@ -18,7 +18,7 @@ belysning_dag:
   entities:
     - light.vardagsrum
     - light.relax
-#    - switch.twinkly
+#    - switch.granen
     - light.hall
     - light.kokstake
     - light.koksfonster
@@ -40,6 +40,7 @@ belysning_ute:
     - light.ute
     - switch.altanjul
     - switch.juleljus
+    - switch.istappar
 
 # Ljus i sovrum och sovrumsgång
 sovrumsljus:

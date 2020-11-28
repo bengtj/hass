@@ -13,8 +13,8 @@ views:
           - type: state-label
             entity: weather.smhi_smhi
             style:
-              top: 4%
-              left: 6%
+              top: 1.7%
+              left: 11%
           - type: state-label
             entity: sensor.ute_temperature
             style:
@@ -409,11 +409,25 @@ views:
               top: 40%
               left: 9%
           - type: state-icon
+            entity: light.extraslinga
+            tap_action:
+              action: toggle
+            style:
+              top: 40%
+              left: 25%
+          - type: state-icon
             entity: switch.altanjul
             tap_action:
               action: toggle
             style:
               top: 45%
+              left: 25%
+          - type: state-icon
+            entity: switch.istappar
+            tap_action:
+              action: toggle
+            style:
+              top: 50%
               left: 25%
           - type: state-icon
             entity: light.altanstolpe_1
@@ -504,7 +518,7 @@ views:
               top: 61.5%
               left: 48%
           - type: state-icon
-            entity: switch.twinkly
+            entity: switch.granen
             tap_action:
               action: toggle
             style:
@@ -525,11 +539,18 @@ views:
               top: 68%
               left: 75%
           - type: state-icon
-            entity: light.fonster
+            entity: light.entrestake
             tap_action:
               action: toggle
             style:
-              top: 69%
+              top: 65%
+              left: 85%
+          - type: state-icon
+            entity: light.entrefonster
+            tap_action:
+              action: toggle
+            style:
+              top: 70%
               left: 85%
           - type: state-icon
             entity: light.hornlampa
@@ -623,12 +644,12 @@ views:
               top: 94.5%
               left: 17%
           - type: state-icon
-            entity: light.datormys
+            entity: light.skarm
             tap_action:
               action: toggle
             style:
               top: 94.5%
-              left: 24%
+              left: 23%
           # Garage
           - type: state-icon
             entity: binary_sensor.garage_motion
