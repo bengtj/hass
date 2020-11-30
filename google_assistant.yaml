@@ -88,7 +88,9 @@ entity_config:
     expose: true
   light.kokstake:
     name: Julstake
-    aliases: Stake
+    aliases:
+      - Stake
+      - Kökstake
     room: Kök
     expose: true
   light.kokstak:
@@ -130,9 +132,13 @@ entity_config:
     expose: true
 
   # Vardagsrum
-  light.fonster:
-    name: Fönster
+  light.entrefonster:
+    name: Entréfönster
     aliases: Vardagsrumsfönster
+    room: Vardagsrum
+    expose: true
+  light.entrestake:
+    name: Entréstake
     room: Vardagsrum
     expose: true
   light.hornlampa:
@@ -173,6 +179,11 @@ entity_config:
     aliases: Golvlampa
     room: Vardagsrum
     expose: true
+  switch.granen:
+    name: Gran
+    aliases: Granen
+    room: Vardagsrum
+    expose: true
 
   # Relax
   light.datafonster:
@@ -198,6 +209,10 @@ entity_config:
     aliases: Datortak
     room: Relax
     expose: true
+  light.relaxtak:
+    name: Relaxtak
+    room: Relax
+    expose: true
   light.plantfonster:
     name: Plantfönster
     room: Relax
@@ -209,10 +224,6 @@ entity_config:
     expose: true
   light.relaxgang:
     name: Relaxgång
-    room: Relax
-    expose: true
-  light.relaxtak:
-    name: Relaxtak
     room: Relax
     expose: true
  
@@ -279,6 +290,11 @@ entity_config:
   switch.altanjul:
     name: Altanjuleljus
     aliases: Altanjul
+    room: Ute
+    expose: true
+  switch.istappar:
+    name: Istappar
+    aliases: Istapparna
     room: Ute
     expose: true
 
