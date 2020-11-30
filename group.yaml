@@ -11,6 +11,8 @@ belysning_all:
     - light.alla_2
     - switch.altanjul
     - switch.juleljus
+#    - switch.granen
+    - switch.istappar
 
 # Dagsbelysningen är på dagtid
 belysning_dag:
