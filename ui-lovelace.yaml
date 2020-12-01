@@ -1024,6 +1024,7 @@ views:
         show_header_toggle: false
         entities:
           - media_player.vardagsshield
+          - media_player.relaxshield
           - media_player.garagecast
           - media_player.maltecast
           - media_player.linacast
