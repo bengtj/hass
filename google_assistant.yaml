@@ -1,6 +1,7 @@
 # Google assistant configuration
 
 # HASS: https://www.home-assistant.io/components/google_assistant/
+# Use aliases with two separate words in order to be able to say "släck fönster" in a room.
 
 project_id: !secret gass_project_id
 service_account:
@@ -13,7 +14,7 @@ entity_config:
   # Sovrum
   light.sovfonster:
     name: Sovrumsfönster
-    aliases: Sovfönster
+    aliases: Fönster sovrum
     room: Sovrum
     expose: true
   light.sanggavel:
@@ -23,12 +24,14 @@ entity_config:
     expose: true
   light.sovtak:
     name: Sovrumstak
-    aliases: Sovtak
+    aliases: Tak sovrum
     room: Sovrum
     expose: true
   light.sovrumsgang:
     name: Sovrumsgång
-    aliases: Gång
+    aliases:
+      - Gång sovrum
+      - Sovrumsgång vägg
     room: Sovrum
     expose: true
  
@@ -69,7 +72,9 @@ entity_config:
   # Kök
   light.matbord:
     name: Matbord
-    aliases: Köksbord
+    aliases:
+      - Köksbord
+      - Tak bord
     room: Kök
     expose: true
   light.matbord_upp:
@@ -84,45 +89,47 @@ entity_config:
     expose: true
   light.koksfonster:
     name: Köksfönster
+    aliases: Fönster kök
     room: Kök
     expose: true
   light.kokstake:
     name: Julstake
     aliases:
-      - Stake
-      - Kökstake
+      - Kökstake fönster
+      - Stake kök
     room: Kök
     expose: true
   light.kokstak:
     name: Kökstak
+    aliases: Tak kök
     room: Kök
     expose: true
 
   # Tvättrum
   light.tvatt_tak:
     name: Tvättrumstak
-    aliases: Tvätt tak
+    aliases: Tak tvätt
     room: Tvättrum
     expose: true
 
   # Klädkammare
   light.kammartak:
     name: Kammartak
-    aliases: Kammare
+    aliases: Tak kammare
     room: Klädkammare
     expose: true
 
   # Lilla toaletten
   light.toaspegel:
     name: Toaspegel
-    aliases: Toa
+    aliases: Spegel toa
     room: Toalett
     expose: true
 
   # Hall
   light.halltak:
     name: Halltak
-    aliases: Hall taklampa
+    aliases: Tak hall
     room: Hall
     expose: true
   light.hallgo:
@@ -134,20 +141,24 @@ entity_config:
   # Vardagsrum
   light.entrefonster:
     name: Entréfönster
-    aliases: Vardagsrumsfönster
+    aliases: Fönster entré
     room: Vardagsrum
     expose: true
   light.entrestake:
     name: Entréstake
+    aliases:
+      - Vardagstake fönster
+      - Stake vardagsrum
     room: Vardagsrum
     expose: true
   light.hornlampa:
     name: Hörnlampa
+    aliases: Hörn
     room: Vardagsrum
     expose: true
   light.bordslampa:
     name: Bordslampa
-    aliases: TV-lampa
+    aliases: Högtalare
     room: Vardagsrum
     expose: true
   light.huego:
@@ -172,6 +183,7 @@ entity_config:
     expose: true
   light.altanfonster:
     name: Altanfönster
+    aliases: Fönster altan
     room: Vardagsrum
     expose: true
   light.golvlampa:
@@ -188,48 +200,51 @@ entity_config:
   # Relax
   light.datafonster:
     name: Datafönster
-    aliases: Datorfönster
+    aliases:
+      - Fönster dator
+      - Salt sten
+      - Dator mys
     room: Relax
     expose: true
   light.skarm:
     name: Skärm
-    aliases: Dataskärm
-    room: Relax
-    expose: true
-  light.datormys:
-    name: Datorlampa
-    aliases:
-      - Datalampa
-      - Datormys
-      - Datamys
+    aliases: Skärm dator
     room: Relax
     expose: true
   light.datatak:
     name: Datatak
-    aliases: Datortak
+    aliases: Dator tak
     room: Relax
     expose: true
   light.relaxtak:
     name: Relaxtak
+    aliases: Relax tak
     room: Relax
     expose: true
   light.plantfonster:
     name: Plantfönster
+    aliases: Fönster plantor
     room: Relax
     expose: true
   light.plantljus:
     name: Plantljus
-    aliases: Relaxplanta
+    aliases:
+      - Planta relax
+      - Plantor relax
     room: Relax
     expose: true
   light.relaxgang:
     name: Relaxgång
+    aliases:
+      - Gång relax
+      - Relaxgång tak
     room: Relax
     expose: true
  
   # Garage
   light.garagefonster:
     name: Garagefönster
+    aliases: Fönster garage
     room: Garage
     expose: true
   light.skrivare:
@@ -246,6 +261,7 @@ entity_config:
     expose: true
   light.garageplanta:
     name: Garageplanta
+    aliases: Planta garage
     room: Garage
     expose: true
 
@@ -257,34 +273,42 @@ entity_config:
     expose: true
   light.altanvagg:
     name: Altanvägg
+    aliases: Vägg altan
     room: Ute
     expose: true
   light.extraslinga:
     name: Extraslinga
+    aliases: Slinga extra
     room: Ute
     expose: true
   light.altanslinga:
     name: Altanslinga
+    aliases: Slinga altan
     room: Ute
     expose: true
   light.altanstolpe_1:
     name: Altanstolpe 1
+    aliases: Altan stolpe 1
     room: Ute
     expose: true
   light.altanstolpe_2:
     name: Altanstolpe 2
+    aliases: Altan stolpe 2
     room: Ute
     expose: true
   light.altanstolpe_3:
     name: Altanstolpe 3
+    aliases: Altan stolpe 3
     room: Ute
     expose: true
   light.altanfontan:
     name: Altanfontän
+    aliases: Fontän
     room: Ute
     expose: true
   light.altanbonsai:
     name: Altanbonsai
+    aliases: Bonsai
     room: Ute
     expose: true
   switch.altanjul:
@@ -305,10 +329,12 @@ entity_config:
     expose: true
   light.entrevagg:
     name: Entrévägg
+    aliases: Vägg entré
     room: Ute
     expose: true
   light.sexan:
     name: Sexan
+    aliases: Siffra
     room: Ute
     expose: true
   light.entreslinga:
@@ -317,7 +343,7 @@ entity_config:
     expose: true
   light.entrestolpe_v:
     name: Entréstolpe Vänster
-    aliases: Entréstolpe V
+    aliases: Entré stolpe vänster
     room: Ute
     expose: true
   light.entresbuske:
@@ -327,7 +353,7 @@ entity_config:
     expose: true
   light.entrestolpe_h:
     name: Entréstolpe Höger
-    aliases: Entréstolpe H
+    aliases: Entré stolpe höger
     room: Ute
     expose: true
   light.garageport:
