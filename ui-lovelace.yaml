@@ -1008,6 +1008,7 @@ views:
     title: Media
     cards:
       # Squeezebox card
+      # Disable "squeezecast" entitites and have playlists on players to avoid log messages.
       - type: entities
         title: Squeezebox
         show_header_toggle: false
@@ -1025,6 +1026,7 @@ views:
         entities:
           - media_player.vardagsshield
           - media_player.relaxshield
+          - media_player.linashield
           - media_player.garagecast
           - media_player.maltecast
           - media_player.linacast
