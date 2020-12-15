@@ -240,7 +240,14 @@ entity_config:
       - Relaxgång tak
     room: Relax
     expose: true
- 
+
+  # Relaxbad
+  light.relaxbad_tak:
+    name: Relaxbad tak
+    aliases: Bad taklampa
+    room: Relaxbad
+    expose: true
+
   # Garage
   light.garagefonster:
     name: Garagefönster

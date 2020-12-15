@@ -650,6 +650,21 @@ views:
             style:
               top: 94.5%
               left: 23%
+          # Relaxbad
+          - type: state-icon
+            entity: light.relaxbad_tak_1
+            tap_action:
+              action: toggle
+            style:
+              top: 93%
+              left: 9%
+          - type: state-icon
+            entity: light.relaxbad_tak_2
+            tap_action:
+              action: toggle
+            style:
+              top: 83%
+              left: 9%
           # Garage
           - type: state-icon
             entity: binary_sensor.garage_motion
