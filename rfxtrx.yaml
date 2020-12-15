@@ -44,8 +44,10 @@ devices:
 
 # Smoke detectors
   "08200a1807d00a0669":
+    off_delay: 60
     # name: Rök Relax
   "08200a1f02100a0659":
+    off_delay: 60
     # name: Rök Sovrum
 
 # Switches

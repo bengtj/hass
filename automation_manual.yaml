@@ -87,17 +87,14 @@
   trigger:
   - platform: state
     entity_id:
-      - sensor.rok_relax
-      - sensor.rok_sovrum
+      - binary_sensor.rok_relax
+      - binary_sensor.rok_sovrum
   action:
   - service: script.notify
     data_template:
       title: Det verkar BRINNA hemma {{ now().strftime("%H:%M") }}!
       message: |
-        Någon röksensor har iaf varnat...
-
-        Sovrum: {{states("sensor.rok_sovrum_sensor_status")}}
-        Relax: {{states("sensor.rok_relax_sensor_status")}}
+        Röksensorn {{ trigger.to_state.attributes.friendly_name }} har iaf varnat...
       url: !secret hass_devstate_url
   - service: homeassistant.turn_on
     data:
