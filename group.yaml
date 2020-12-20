@@ -11,7 +11,7 @@ belysning_all:
     - light.alla_2
     - switch.altanjul
     - switch.juleljus
-#    - switch.granen
+    - switch.granen
     - switch.istappar
 
 # Dagsbelysningen är på dagtid
@@ -20,7 +20,7 @@ belysning_dag:
   entities:
     - light.vardagsrum
     - light.relax
-#    - switch.granen
+    - switch.granen
     - light.hall
     - light.kokstake
     - light.koksfonster
