@@ -63,9 +63,9 @@
 - platform: command_line
   switches:
     granen:
-      command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.28 on"
-      command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.28 off" 
-#      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.28 state" # Will interfere with app; only one login token can be active at once...
+      command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.26 on"
+      command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.26 off" 
+#      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.26 state" # Will interfere with app; only one login token can be active at once...
       value_template: "{{ value == \"1\" }}"
       friendly_name: Gran-twinkly
 - platform: command_line
@@ -76,6 +76,14 @@
 #      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.27 state" # Will interfere with app; only one login token can be active at once...
       value_template: "{{ value == \"1\" }}"
       friendly_name: Istapp-twinkly
+- platform: command_line
+  switches:
+    slingan:
+      command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.28 on"
+      command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.28 off" 
+#      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.26 state" # Will interfere with app; only one login token can be active at once...
+      value_template: "{{ value == \"1\" }}"
+      friendly_name: Sling-twinkly
 
 # Glue Lock from https://github.com/uki-hassio/Glue-Lock
 - platform: command_line
