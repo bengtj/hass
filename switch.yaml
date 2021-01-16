@@ -81,7 +81,7 @@
     slingan:
       command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.28 on"
       command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.28 off" 
-#      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.26 state" # Will interfere with app; only one login token can be active at once...
+#      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.28 state" # Will interfere with app; only one login token can be active at once...
       value_template: "{{ value == \"1\" }}"
       friendly_name: Sling-twinkly
 
