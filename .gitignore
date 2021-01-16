@@ -10,3 +10,4 @@ tts
 *.pyc
 !.gitignore
 webostv.conf
+blueprints
