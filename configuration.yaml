@@ -115,8 +115,8 @@ remote: # From https://github.com/robmarkcole/Hue-remotes-HASS
 
 # Neato botvac
 neato:
-  username: !secret neato_username
-  password: !secret neato_password
+  client_id: !secret neato_client_id
+  client_secret: !secret neato_secret
 
 # Nibe F370 heat pump plugin from https://github.com/elupus/hass_nibe 
 # List of parameter IDs: https://github.com/openhab/openhab1-addons/wiki/Nibe-Heat-Pump-Binding
