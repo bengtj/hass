@@ -343,13 +343,13 @@ views:
               top: 47%
               left: 84%
           # Entré
-          - type: state-icon
-            entity: switch.juleljus
-            tap_action:
-              action: toggle
-            style:
-              top: 31%
-              left: 91%
+          # - type: state-icon # [JUL]
+          #   entity: switch.juleljus
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 31%
+          #     left: 91%
           - type: state-icon
             entity: light.entrevagg
             tap_action:
@@ -408,27 +408,27 @@ views:
             style:
               top: 40%
               left: 9%
-          - type: state-icon
-            entity: light.extraslinga
-            tap_action:
-              action: toggle
-            style:
-              top: 40%
-              left: 25%
-          - type: state-icon
-            entity: switch.altanjul
-            tap_action:
-              action: toggle
-            style:
-              top: 45%
-              left: 25%
-          - type: state-icon
-            entity: switch.istappar
-            tap_action:
-              action: toggle
-            style:
-              top: 50%
-              left: 25%
+          # - type: state-icon # [JUL]
+          #   entity: light.extraslinga
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 40%
+          #     left: 25%
+          # - type: state-icon # [JUL]
+          #   entity: switch.altanjul
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 45%
+          #     left: 25%
+          # - type: state-icon # [JUL]
+          #   entity: switch.istappar
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 50%
+          #     left: 25%
           - type: state-icon
             entity: light.altanstolpe_1
             tap_action:
@@ -478,20 +478,6 @@ views:
             style:
               top: 61%
               left: 35%
-          # - type: state-icon
-          #   entity: light.ormen
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 45%
-          #     left: 20%
-          # - type: state-icon
-          #   entity: light.julorm
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 52%
-          #     left: 20%
           - type: state-label
             entity: sensor.altan_ute_temperature
             style:
@@ -517,13 +503,13 @@ views:
             style:
               top: 61.5%
               left: 48%
-          - type: state-icon
-            entity: switch.granen
-            tap_action:
-              action: toggle
-            style:
-              top: 62%
-              left: 55%
+          # - type: state-icon # [JUL]
+          #   entity: switch.granen
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 62%
+          #     left: 55%
           - type: state-icon
             entity: light.tak_h
             tap_action:
