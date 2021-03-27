@@ -1008,6 +1008,15 @@ views:
     id: media
     title: Media
     cards:
+      # Spotify card:
+      - type: entities
+        title: Spotify
+        show_header_toggle: false
+        entities:
+          - media_player.spotify_bengt_johannesson
+          - media_player.spotify_maria_vahnberg
+          - media_player.spotify_saltymalty
+          - media_player.spotify_lina_maria_johannesson
       # Squeezebox card
       # Disable "squeezecast" entitites and have playlists on players to avoid log messages.
       - type: entities
