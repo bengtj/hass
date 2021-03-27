@@ -13,14 +13,14 @@ from homeassistant.components.water_heater import (
     STATE_HEAT_PUMP,
     STATE_HIGH_DEMAND,
     SUPPORT_OPERATION_MODE,
-    WaterHeaterDevice,
+    WaterHeaterEntity,
 )
 from homeassistant.const import STATE_OFF
 from homeassistant.exceptions import PlatformNotReady
 
 from nibeuplink import get_active_hotwater
 
-from .const import CONF_WATER_HEATERS, DATA_NIBE
+from .const import DATA_NIBE
 from .const import DOMAIN as DOMAIN_NIBE
 from .entity import NibeEntity
 
@@ -83,19 +83,18 @@ async def async_setup_entry(hass, entry, async_add_entities):
         *[
             add_active(system)
             for system in systems.values()
-            if system.config[CONF_WATER_HEATERS]
         ]
     )
 
     async_add_entities(entities, True)
 
 
-class NibeWaterHeater(NibeEntity, WaterHeaterDevice):
+class NibeWaterHeater(NibeEntity, WaterHeaterEntity):
     """Water heater entity."""
 
     def __init__(self, uplink, system_id: int, statuses: Set[str], hwsys):
         """Init."""
-        super().__init__(uplink, system_id, [])
+        super().__init__(uplink, system_id)
 
         self._name = hwsys.name
         self._current_operation = STATE_OFF
@@ -212,17 +211,21 @@ class NibeWaterHeater(NibeEntity, WaterHeaterDevice):
 
     async def async_set_operation_mode(self, operation_mode):
         """Set new target operation mode."""
+        if operation_mode == OPERATION_BOOST_ONE_TIME:
+            boost = 1
+        elif operation_mode == OPERATION_AUTO:
+            boost = 0
+        else:
+            raise Exception(f"Operation mode {operation_mode} not supported in nibe api")
+
         try:
-            if operation_mode in HA_BOOST_TO_NIBE:
-                await self._uplink.put_parameter(
-                    self._system_id,
-                    self._hwsys.hot_water_boost,
-                    HA_BOOST_TO_NIBE[operation_mode],
-                )
-            else:
-                _LOGGER.error("Operation mode %s not supported", operation_mode)
+            await self._uplink.put_parameter(
+                self._system_id,
+                self._hwsys.hot_water_boost,
+                boost,
+            )
         except aiohttp.client_exceptions.ClientResponseError as e:
-            _LOGGER.error("Error trying to set mode %s", str(e))
+            raise Exception(f"Failed to set hot water boost to {boost}") from e
 
     @property
     def unique_id(self):

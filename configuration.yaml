@@ -125,9 +125,6 @@ nibe:
     - system: !secret nibe_system
       units:
         - unit: 0
-      climates: True
-      water_heaters: True
-      fans: True
       sensors:
         - 40083
         - 40081
@@ -153,11 +150,11 @@ octoprint:
 stream:
 ffmpeg:
 camera:
-  - platform: reolink_dev
-    name: Altan
-    host: "192.168.0.64"
-    username: !secret cam_user
-    password: !secret cam_pwd
+#  - platform: reolink_dev
+#    name: Altan
+#    host: "192.168.0.64"
+#    username: !secret cam_user
+#    password: !secret cam_pwd
   - platform: mjpeg
     name: Köksfönster
     still_image_url: http://192.168.0.62/image/jpeg.cgi
@@ -176,11 +173,11 @@ camera:
     mjpeg_url: http://192.168.0.60/mjpeg.cgi
     username: !secret cam_user
     password: !secret cam_pwd
-  - platform: reolink_dev
-    name: Garage
-    host: "192.168.0.61"
-    username: !secret cam_user
-    password: !secret cam_pwd
+#  - platform: reolink_dev
+#    name: Garage
+#    host: "192.168.0.61"
+#    username: !secret cam_user
+#    password: !secret cam_pwd
   - platform: mjpeg
     name: Print
     still_image_url: http://192.168.0.65/image/jpeg.cgi

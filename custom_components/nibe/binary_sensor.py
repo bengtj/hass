@@ -2,7 +2,7 @@
 
 import logging
 
-from homeassistant.components.binary_sensor import ENTITY_ID_FORMAT, BinarySensorDevice
+from homeassistant.components.binary_sensor import ENTITY_ID_FORMAT, BinarySensorEntity
 from homeassistant.exceptions import PlatformNotReady
 
 from .const import CONF_BINARY_SENSORS, DATA_NIBE
@@ -30,13 +30,13 @@ async def async_setup_entry(hass, entry, async_add_entities):
     async_add_entities(entities, True)
 
 
-class NibeBinarySensor(NibeParameterEntity, BinarySensorDevice):
+class NibeBinarySensor(NibeParameterEntity, BinarySensorEntity):
     """Binary sensor."""
 
     def __init__(self, uplink, system_id, parameter_id, entry):
         """Init."""
         super(NibeBinarySensor, self).__init__(
-            uplink, system_id, parameter_id, None, [], ENTITY_ID_FORMAT
+            uplink, system_id, parameter_id, None, ENTITY_ID_FORMAT
         )
 
     @property
