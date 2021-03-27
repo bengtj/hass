@@ -1030,7 +1030,6 @@ views:
           - media_player.linashield
           - media_player.garagecast
           - media_player.maltecast
-          - media_player.linacast
       # Google home card
       - type: entities
         title: Google home
