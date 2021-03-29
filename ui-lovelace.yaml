@@ -10,7 +10,7 @@ views:
         image: /local/planskiss.png
         elements:
           # Hus sidovy
-          - type: state-label
+          - type: state-icon # state-label
             entity: weather.smhi_smhi
             style:
               top: 1.7%
@@ -761,6 +761,9 @@ views:
     # Dark sky card, https://blog.darksky.net/forecast-embeds/
     - type: iframe
       url: !secret darksky_url
+    - type: iframe
+      url: !secret windy_url
+      aspect_ratio: 75%
     - type: history-graph
       title: Historik 3 dagar
       hours_to_show: 72
