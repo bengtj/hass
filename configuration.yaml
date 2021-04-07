@@ -215,10 +215,10 @@ webostv:
   host: 192.168.0.25
   name: RelaxTV
 
-# Scene selector
+# Global scene selector for hue
 input_select:
   scen:
-    name: Scen
+    name: Huescen
     options:
       - Flux
       - Inget
@@ -234,67 +234,6 @@ input_select:
       - Spring blossom
     initial: Flux
     icon: mdi:theme-light-dark
-scene:
-  - name: Flux
-    entities:
-      input_select.scen:
-        state: on
-        option: Flux
-  - name: Inget
-    entities:
-      input_select.scen:
-        state: off
-        option: Inget
-  - name: Energi
-    entities:
-      input_select.scen:
-        state: on
-        option: Energise
-  - name: Koncentration
-    entities:
-      input_select.scen:
-        state: on
-        option: Concentrate
-  - name: Ljust
-    entities:
-      input_select.scen:
-        state: on
-        option: Bright
-  - name: Läs
-    entities:
-      input_select.scen:
-        state: on
-        option: Read
-  - name: Dimmat
-    entities:
-      input_select.scen:
-        state: on
-        option: Dimmed
-  - name: Nattljus
-    entities:
-      input_select.scen:
-        state: on
-        option: Nightlight
-  - name: Skymning
-    entities:
-      input_select.scen:
-        state: on
-        option: Tropical twilight
-  - name: Solnedgång
-    entities:
-      input_select.scen:
-        state: on
-        option: Savanna sunset
-  - name: Frost
-    entities:
-      input_select.scen:
-        state: on
-        option: Arctic aurora
-  - name: Vårblommor
-    entities:
-      input_select.scen:
-        state: on
-        option: Spring blossom
 
 # Text to speech
 tts:
@@ -314,6 +253,8 @@ lovelace:
       type: module
  
 # Includes of other config files
+scene: !include scenes.yaml
+scene old: !include scenes_manual.yaml
 zone: !include zone.yaml
 sensor: !include sensor.yaml
 binary_sensor: !include binary_sensor.yaml

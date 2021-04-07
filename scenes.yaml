@@ -1,0 +1,103 @@
+- id: '1617791599729'
+  name: RelaxBio
+  entities:
+    switch.relaxflux:
+      friendly_name: Relaxflux
+      icon: mdi:theme-light-dark
+      state: 'off'
+    light.relaxgang:
+      brightness: 26
+      friendly_name: Relaxgång
+      supported_features: 41
+      state: 'on'
+    light.relaxtak:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 3
+      color_temp: 366
+      friendly_name: Relaxtak
+      supported_features: 43
+      icon: mdi:ceiling-light
+      state: 'on'
+    light.plantljus:
+      friendly_name: Plantljus
+      supported_features: 40
+      icon: mdi:flower
+      state: 'off'
+    light.datatak:
+      min_mireds: 153
+      max_mireds: 454
+      brightness: 51
+      color_temp: 366
+      friendly_name: Datatak
+      supported_features: 43
+      icon: mdi:ceiling-light
+      state: 'on'
+  icon: mdi:theater
+- id: '1617793300680'
+  name: Relaxflux
+  entities:
+    switch.relaxflux:
+      friendly_name: Relaxflux
+      icon: mdi:palette
+      state: 'on'
+  icon: mdi:theme-light-dark
+- id: '1617793300681'
+  name: Vardagsflux
+  entities:
+    switch.vardagsflux:
+      friendly_name: Vardagsflux
+      icon: mdi:theme-light-dark
+      state: 'on'
+  icon: mdi:theme-light-dark
+- id: '1617803565496'
+  name: Fluxljus
+  entities:
+    input_select.scen:
+      options:
+      - Flux
+      - Inget
+      - Energise
+      - Concentrate
+      - Bright
+      - Read
+      - Dimmed
+      - Nightlight
+      - Savanna sunset
+      - Tropical twilight
+      - Arctic aurora
+      - Spring blossom
+      editable: false
+      friendly_name: Scen
+      icon: mdi:theme-light-dark
+      state: Flux
+  icon: mdi:theme-light-dark
+- id: '1617803818849'
+  name: Vardagsljust
+  entities:
+    light.vardagsrum:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 255
+      hs_color:
+      - 44.835
+      - 71.373
+      rgb_color:
+      - 255
+      - 208
+      - 72
+      xy_color:
+      - 0.486
+      - 0.446
+      is_hue_group: true
+      friendly_name: Vardagsrum
+      supported_features: 63
+      state: 'on'
+    switch.vardagsflux:
+      friendly_name: Vardagsflux
+      icon: mdi:theme-light-dark
+      state: 'off'
+  icon: mdi:lightbulb-on-outline

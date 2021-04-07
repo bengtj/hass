@@ -482,6 +482,8 @@
     - service_template: >
         {% if trigger.to_state.state in ["1_hold"] %}
           homeassistant.turn_on
+        {% elif trigger.to_state.state in ["2_hold", "3_hold"] %}
+          scene.turn_on
         {% elif trigger.to_state.state in ["4_hold"] %}
           homeassistant.turn_off
         {% else %}
@@ -491,23 +493,12 @@
         entity_id: >
           {% if trigger.to_state.state in ["1_hold"] %}
             group.belysning_dag
+          {% elif trigger.to_state.state in ["2_hold"] %}
+            scene.vardagsljust
+          {% elif trigger.to_state.state in ["3_hold"] %}
+            scene.fluxljus
           {% elif trigger.to_state.state in ["4_hold"] %}
             group.belysning_all
-          {% endif %}
-    - service_template: >
-        {% if trigger.to_state.state in ["2_hold", "3_hold"] %}
-          input_select.select_option
-        {% else %}
-          script.noop
-        {% endif %}
-      data_template:
-        entity_id:
-          input_select.scen
-        option: >
-          {% if trigger.to_state.state in ["2_hold"] %}
-            Bright
-          {% elif trigger.to_state.state in ["3_hold"] %}
-            Flux
           {% endif %}
 
 # Belysning fjärrisar
@@ -536,35 +527,7 @@
             group.belysning_ute
           {% endif %}
 
-# Fluxbrytare med tal. Inte i bruk...
-- alias: Fluxbrytare
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: switch.fluxbrytare
-  action:
-    - service_template: >
-        {% if trigger.to_state.state == "on" %}
-          homeassistant.turn_on
-        {% else %}
-          homeassistant.turn_off
-        {% endif %}
-      data:
-        entity_id:
-          - group.fluxljus
-    - service: script.say
-      data_template:
-          message: >
-            {% if trigger.to_state.state == "on" %}
-              'Aktiverar fluxljus!'
-            {% else %}
-              'Stänger av fluxljus!'
-            {% endif %}
-
-# Scener
-# Notera att detta bara funkar med den hue-brygga man senast har integrerat med i home assistant.
-# Testa hue.hue_activate_scene servicen i hass med detta data:
-# { "group_name": "Relax", "scene_name": "Bright"}
+# Scene input mapping to hue
 - alias: Välj scen
   initial_state: 'on'
   trigger:
@@ -637,6 +600,3 @@
     - service: homeassistant.turn_on
       entity_id:
         - group.fluxljus
-#    - service: frontend.set_theme # Does not work; if the user change theme the lovelace-background will not change :(
-#      data:
-#        name: christmas

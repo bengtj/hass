@@ -1,0 +1,61 @@
+# Old scene dropdown support
+# - name: Flux
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Flux
+# - name: Inget
+#   entities:
+#     input_select.scene:
+#       state: off
+#       option: Inget
+# - name: Energi
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Energise
+# - name: Koncentration
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Concentrate
+# - name: Ljust
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Bright
+# - name: Läs
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Read
+# - name: Dimmat
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Dimmed
+# - name: Nattljus
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Nightlight
+# - name: Skymning
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Tropical twilight
+# - name: Solnedgång
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Savanna sunset
+# - name: Frost
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Arctic aurora
+# - name: Vårblommor
+#   entities:
+#     input_select.scene:
+#       state: on
+#       option: Spring blossom

@@ -26,7 +26,7 @@
 "light.*flakt*":
   icon: mdi:fan
 "*.*flux*":
-  icon: mdi:palette
+  icon: mdi:theme-light-dark
 "switch.*_lock":
   icon: mdi:home-lock
 "sensor.*battery*":

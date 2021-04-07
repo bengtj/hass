@@ -20,14 +20,28 @@
 # Use hue groups for warm/cold white lights instead of the bulbs for these to work properly.
 # Note that all lights in a hue group will be turned on whenever one is on. Cannot use a single large group.
 - platform: flux
-  name: Dagsflux
+  name: Relaxflux
   interval: 53
   start_colortemp: 3000
   sunset_colortemp: 2000
   stop_colortemp: 1600
   lights:
     - light.relax
+- platform: flux
+  name: Vardagsflux
+  interval: 54
+  start_colortemp: 3000
+  sunset_colortemp: 2000
+  stop_colortemp: 1600
+  lights:
     - light.vardagsrum
+- platform: flux
+  name: Köksflux
+  interval: 55
+  start_colortemp: 3000
+  sunset_colortemp: 2000
+  stop_colortemp: 1600
+  lights:
     - light.koksfonster
     - light.matbord_upp
 - platform: flux

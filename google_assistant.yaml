@@ -35,7 +35,7 @@ entity_config:
     room: Sovrum
     expose: true
  
-   # Maltes rum
+  # Maltes rum
   light.maltes_fonster:
     name: Maltefönster
     aliases: Maltes fönster
@@ -52,7 +52,7 @@ entity_config:
     room: Maltes rum
     expose: true
  
-   # Linas rum
+  # Linas rum
   light.linas_fonster:
     name: Linafönster
     aliases: Linas fönster
@@ -197,6 +197,17 @@ entity_config:
     room: Vardagsrum
     expose: true
 
+  scene.vardagsljust:
+    name: Vardagsljust
+    aliases: Ljust vardagsrum
+    room: Vardagsrum
+    expose: true
+  scene.vardagsflux:
+    name: Vardagsflux
+    aliases: Flux vardagsrum
+    room: Vardagsrum
+    expose: true
+
   # Relax
   light.datafonster:
     name: Datafönster
@@ -238,6 +249,17 @@ entity_config:
     aliases:
       - Gång relax
       - Relaxgång tak
+    room: Relax
+    expose: true
+
+  scene.relaxbio:
+    name: Relaxbio
+    aliases: Bio
+    room: Relax
+    expose: true
+  scene.relaxflux:
+    name: Relaxflux
+    aliases: Flux relax
     room: Relax
     expose: true
 
@@ -374,66 +396,65 @@ entity_config:
     expose: true
 
   # Scener
-  scene.flux:
-    name: Flux
-    aliases: Fluxljus
+  scene.fluxljus:
+    name: Fluxljus
     room: Övrigt
     expose: true
-  scene.inget:
-    name: Nothing
-    aliases: Inget
-    room: Övrigt
-    expose: true
-  scene.energi:
-    name: Energise
-    aliases: Energi
-    room: Övrigt
-    expose: true
-  scene.koncentration:
-    name: Concentrate
-    aliases: Koncentration
-    room: Övrigt
-    expose: true
-  scene.ljust:
-    name: Bright
-    aliases: Ljust
-    room: Övrigt
-    expose: true
-  scene.las:
-    name: Read
-    aliases: Läs
-    room: Övrigt
-    expose: true
-  scene.dimmat:
-    name: Dimmed
-    aliases: Dimmat
-    room: Övrigt
-    expose: true
-  scene.nattljus:
-    name: Nightlight
-    aliases: Nattljus
-    room: Övrigt
-    expose: true
-  scene.skymning:
-    name: Tropical twilight
-    aliases: Skymning
-    room: Övrigt
-    expose: true
-  scene.solnedgang:
-    name: Savanna sunset
-    aliases: Solnedgång
-    room: Övrigt
-    expose: true
-  scene.frost:
-    name: Arctic aurora
-    aliases: Frost
-    room: Övrigt
-    expose: true
-  scene.varblommor:
-    name: Spring blossom
-    aliases: Vårblommor
-    room: Övrigt
-    expose: true
+  # scene.inget:
+  #   name: Nothing
+  #   aliases: Inget
+  #   room: Övrigt
+  #   expose: true
+  # scene.energi:
+  #   name: Energise
+  #   aliases: Energi
+  #   room: Övrigt
+  #   expose: true
+  # scene.koncentration:
+  #   name: Concentrate
+  #   aliases: Koncentration
+  #   room: Övrigt
+  #   expose: true
+  # scene.ljust:
+  #   name: Bright
+  #   aliases: Ljust
+  #   room: Övrigt
+  #   expose: true
+  # scene.las:
+  #   name: Read
+  #   aliases: Läs
+  #   room: Övrigt
+  #   expose: true
+  # scene.dimmat:
+  #   name: Dimmed
+  #   aliases: Dimmat
+  #   room: Övrigt
+  #   expose: true
+  # scene.nattljus:
+  #   name: Nightlight
+  #   aliases: Nattljus
+  #   room: Övrigt
+  #   expose: true
+  # scene.skymning:
+  #   name: Tropical twilight
+  #   aliases: Skymning
+  #   room: Övrigt
+  #   expose: true
+  # scene.solnedgang:
+  #   name: Savanna sunset
+  #   aliases: Solnedgång
+  #   room: Övrigt
+  #   expose: true
+  # scene.frost:
+  #   name: Arctic aurora
+  #   aliases: Frost
+  #   room: Övrigt
+  #   expose: true
+  # scene.varblommor:
+  #   name: Spring blossom
+  #   aliases: Vårblommor
+  #   room: Övrigt
+  #   expose: true
 
   # Dammsugare
   vacuum.purjo:
