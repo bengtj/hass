@@ -745,6 +745,10 @@ views:
     id: weather
     title: Weather
     cards:
+    # windy.com
+    - type: iframe
+      url: !secret windy_url
+      aspect_ratio: 100%
     # YR meteogram image
     - type: picture-entity
       entity: camera.yr_vader
@@ -754,16 +758,10 @@ views:
     - type: weather-forecast
       name: SMHI Väder Stora Höga 
       entity: weather.smhi_smhi
-    # - type: custom:weather-card-chart
-    #   title: SMHI Väder Stora Höga 
-    #   weather: weather.smhi_smhi
-    #   mode: daily
     # Dark sky card, https://blog.darksky.net/forecast-embeds/
     - type: iframe
       url: !secret darksky_url
-    - type: iframe
-      url: !secret windy_url
-      aspect_ratio: 75%
+    # Temp sensor history
     - type: history-graph
       title: Historik 3 dagar
       hours_to_show: 72
@@ -772,14 +770,6 @@ views:
           name: Innetemp
         - entity: sensor.ute_temperature
           name: Utetemp
-    - type: history-graph
-      title: Veckans coronavirus i Sverige
-      hours_to_show: 168
-      entities:
-        - entity: sensor.sweden_coronavirus_confirmed
-          name: Fall
-        - entity: sensor.sweden_coronavirus_deaths
-          name: Döda
 
   # Camera tab
   - icon: mdi:cctv
@@ -1005,6 +995,13 @@ views:
         filter:
           include:
             - group: group.uteljus
+      - type: custom:auto-entities
+        card:
+          type: glance
+          title: Fluxljus
+        filter:
+          include:
+            - group: group.fluxljus
 
   # Media tab
   - icon: mdi:music
