@@ -252,6 +252,11 @@ entity_config:
     room: Relax
     expose: true
 
+  scene.relaxljust:
+    name: Relaxljust
+    aliases: Ljust relax
+    room: Relax
+    expose: true
   scene.relaxbio:
     name: Relaxbio
     aliases: Bio
