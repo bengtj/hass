@@ -163,7 +163,6 @@ ovrigtljus:
       - light.tvatt_tak
       - light.toaspegel
       - light.kladkammare
-      - switch.tvljus
       - group.fluxljus
 
 # Group with all flux light on/off

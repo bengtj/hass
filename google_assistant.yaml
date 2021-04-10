@@ -204,7 +204,7 @@ entity_config:
     expose: true
   scene.vardagsflux:
     name: Vardagsflux
-    aliases: Flux vardagsrum
+    aliases: Fluxljus vardagsrum
     room: Vardagsrum
     expose: true
 
@@ -264,7 +264,7 @@ entity_config:
     expose: true
   scene.relaxflux:
     name: Relaxflux
-    aliases: Flux relax
+    aliases: Fluxljus relax
     room: Relax
     expose: true
 
@@ -403,6 +403,7 @@ entity_config:
   # Scener
   scene.fluxljus:
     name: Fluxljus
+    aliases: Fluxljus Allt
     room: Övrigt
     expose: true
   # scene.inget:

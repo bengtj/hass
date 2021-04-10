@@ -6,10 +6,9 @@
       icon: mdi:theme-light-dark
       state: 'off'
     light.relaxgang:
-      brightness: 26
       friendly_name: Relaxgång
       supported_features: 41
-      state: 'on'
+      state: 'off'
     light.relaxtak:
       min_mireds: 153
       max_mireds: 454
@@ -27,12 +26,82 @@
     light.datatak:
       min_mireds: 153
       max_mireds: 454
-      brightness: 51
-      color_temp: 366
+      brightness: 23
+      color_temp: 454
       friendly_name: Datatak
       supported_features: 43
       icon: mdi:ceiling-light
       state: 'on'
+    light.skarm_h:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 5
+      hs_color:
+      - 29.663
+      - 69.804
+      rgb_color:
+      - 255
+      - 165
+      - 76
+      xy_color:
+      - 0.535
+      - 0.393
+      effect: none
+      friendly_name: Skärm H
+      supported_features: 63
+      icon: mdi:led-strip
+      state: 'on'
+    light.skarm_v:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 3
+      hs_color:
+      - 29.663
+      - 69.804
+      rgb_color:
+      - 255
+      - 165
+      - 76
+      xy_color:
+      - 0.535
+      - 0.393
+      effect: none
+      friendly_name: Skärm V
+      supported_features: 63
+      icon: mdi:led-strip
+      state: 'on'
+    light.skarm_u:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      brightness: 84
+      hs_color:
+      - 29.663
+      - 69.804
+      rgb_color:
+      - 255
+      - 165
+      - 76
+      xy_color:
+      - 0.535
+      - 0.393
+      effect: none
+      friendly_name: Skärm U
+      supported_features: 63
+      icon: mdi:led-strip
+      state: 'on'
+    light.plantfonster:
+      friendly_name: Plantfönster
+      supported_features: 40
+      state: 'off'
   icon: mdi:theater
 - id: '1617793300680'
   name: Relaxflux
@@ -111,7 +180,16 @@
       - colorloop
       - random
       brightness: 255
-      color_temp: 411
+      hs_color:
+      - 44.69
+      - 56.863
+      rgb_color:
+      - 255
+      - 218
+      - 109
+      xy_color:
+      - 0.453
+      - 0.432
       is_hue_group: true
       friendly_name: Relax
       supported_features: 63
