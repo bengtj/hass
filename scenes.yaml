@@ -40,14 +40,14 @@
       - random
       brightness: 5
       hs_color:
-      - 29.663
-      - 69.804
+      - 29.831
+      - 69.412
       rgb_color:
       - 255
-      - 165
-      - 76
+      - 166
+      - 77
       xy_color:
-      - 0.535
+      - 0.533
       - 0.393
       effect: none
       friendly_name: Skärm H
@@ -62,14 +62,14 @@
       - random
       brightness: 3
       hs_color:
-      - 29.663
-      - 69.804
+      - 29.831
+      - 69.412
       rgb_color:
       - 255
-      - 165
-      - 76
+      - 166
+      - 77
       xy_color:
-      - 0.535
+      - 0.533
       - 0.393
       effect: none
       friendly_name: Skärm V
@@ -84,14 +84,14 @@
       - random
       brightness: 84
       hs_color:
-      - 29.663
-      - 69.804
+      - 29.831
+      - 69.412
       rgb_color:
       - 255
-      - 165
-      - 76
+      - 166
+      - 77
       xy_color:
-      - 0.535
+      - 0.533
       - 0.393
       effect: none
       friendly_name: Skärm U
@@ -101,6 +101,16 @@
     light.plantfonster:
       friendly_name: Plantfönster
       supported_features: 40
+      state: 'off'
+    light.altan:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      is_hue_group: true
+      friendly_name: Altan
+      supported_features: 63
       state: 'off'
   icon: mdi:theater
 - id: '1617793300680'
@@ -137,9 +147,20 @@
       - Arctic aurora
       - Spring blossom
       editable: false
-      friendly_name: Scen
+      friendly_name: Huescen
       icon: mdi:theme-light-dark
       state: Flux
+    group.fluxljus:
+      entity_id:
+      - switch.relaxflux
+      - switch.vardagsflux
+      - switch.koksflux
+      - switch.sovflux
+      - switch.uteflux
+      order: 14
+      friendly_name: Fluxljus
+      icon: mdi:theme-light-dark
+      state: 'on'
   icon: mdi:theme-light-dark
 - id: '1617803818849'
   name: Vardagsljust
@@ -152,15 +173,15 @@
       - random
       brightness: 255
       hs_color:
-      - 44.835
-      - 71.373
+      - 44.69
+      - 56.863
       rgb_color:
       - 255
-      - 208
-      - 72
+      - 218
+      - 109
       xy_color:
-      - 0.486
-      - 0.446
+      - 0.453
+      - 0.432
       is_hue_group: true
       friendly_name: Vardagsrum
       supported_features: 63
@@ -180,26 +201,14 @@
       - colorloop
       - random
       brightness: 255
-      hs_color:
-      - 44.69
-      - 56.863
-      rgb_color:
-      - 255
-      - 218
-      - 109
-      xy_color:
-      - 0.453
-      - 0.432
+      color_temp: 343
       is_hue_group: true
       friendly_name: Relax
       supported_features: 63
       icon: mdi:ceiling-light
       state: 'on'
-    scene.relaxflux:
-      entity_id:
-      - switch.relaxflux
-      id: '1617793300680'
+    switch.relaxflux:
       friendly_name: Relaxflux
       icon: mdi:theme-light-dark
-      state: scening
+      state: 'off'
   icon: mdi:lightbulb-on-outline
