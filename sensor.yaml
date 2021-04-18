@@ -111,7 +111,8 @@
       # - wind_direction_text
       # - wind_speed
 
-# Glue Lock from https://github.com/uki-hassio/Glue-Lock
+# Glue Lock from https://github.com/uki-hassio/Glue-Lock¨
+# Todo use user-api from  https://github.com/GlueHome/homebridge-plugin/blob/master/src/api/client.ts with api-key generated as described.
 # - platform: rest
 #   resource: !secret glue_resource
 #   name: friggebod_sensor

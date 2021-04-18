@@ -55,11 +55,11 @@ views:
             style:
               top: 20%
               left: 23%
-          # - type: state-icon
-          #   entity: switch.friggebod_lock
-          #   style:
-          #     top: 28%
-          #     left: 7%
+          - type: state-icon
+            entity: switch.friggebod_lock
+            style:
+              top: 28%
+              left: 7%
           - type: state-badge
             entity: input_select.scen
             style:
