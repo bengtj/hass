@@ -99,13 +99,22 @@
       value_template: "{{ value == \"1\" }}"
       friendly_name: Sling-twinkly
 
+# Manual command for bioduk, see http://wildebeestplain.blogspot.com/2016/12/using-conrad-rsl-sockets-with-rfxcom.html
+# - platform: command_line
+#   switches:
+#     bioduk: # 09130014ddfcc0009a60
+#               091300cdddfcc0009a60
+#       friendly_name: "Bioduk"
+#       command_on: 'echo -ne "\x09\x13\x00\x14\xdd\xfc\x03\x00\x9a\x60" > /dev/ttyUSB0'
+#       command_off: 'echo -ne "\x09\x13\x00\x14\xdd\xfc\xc0\x00\x9a\x60" > /dev/ttyUSB0'
+
 # Glue Lock from https://github.com/uki-hassio/Glue-Lock
-- platform: command_line
-  switches:
-      friggebod_lock:
-          friendly_name: "Olåst <-Friggebod-> Låst"
-          command_on: !secret glue_command_on
-          command_off: !secret glue_command_off
+# - platform: command_line
+#   switches:
+#     friggebod_lock:
+#       friendly_name: "Olåst <-Friggebod-> Låst"
+#       command_on: !secret glue_command_on
+#       command_off: !secret glue_command_off
 
 # Wake on LAN for SpelTV
 - platform: wake_on_lan

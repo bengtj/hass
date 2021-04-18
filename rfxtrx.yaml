@@ -1,7 +1,17 @@
 # RFXtrx 433MHz receiver/transmitter
+
+# To add new select automatic add in rfxtrx integration and press switch/button. For lightning4 there can be two devices, note names for data bits.
+# Then enable the entity and on the entity popup the event id will popup when pressing. It is also possible to enter data to create device.
+# Then it is possible to enter stuff like databits and such for the switch using configure on the integration options.
+# The options is also the way to go to delete devices.
+
+# To receive debug logging from the RFXCOM device, add the following lines to configuration.yaml:
+# logger:
+#   logs:
+#     RFXtrx: debug
+
 device: /dev/ttyUSB0
-#debug: True
-#automatic_add: True
+# automatic_add: True
 devices:
 
 # Temperature sensors
@@ -65,6 +75,12 @@ devices:
   "0b11008a0000029a0a000060":
     # name: Laddare vardagsrum
     fire_event: true
+#  "09130014ddfcc0009a60": # PT2262 up ddfcc0 down ddfc03 -> ddfc + 8 data bits c0 or 03 (In gui only, not working!) Probably due to https://github.com/home-assistant/core/issues/46007
+    # name: Bioduk
+#    data_bits: 8
+#    command_on: 0x03
+#    command_off: 0xc0
+#    fire_event: true
 
 # Remote controls
   "0b11009d00ddbae201040f50":
@@ -147,3 +163,4 @@ devices:
   "0b11000001bfe7e602010f50":
     # name: Vatten dusch 2
     fire_event: true
+
