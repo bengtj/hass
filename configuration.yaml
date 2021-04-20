@@ -210,6 +210,12 @@ notify:
       - !secret hass_email
     sender_name: Home Assistant
 
+# Shell commands
+shell_command:
+  relax_denon_quick1: curl http://192.168.0.38/MAINZONE/QUICKSELECT/s_quickselect.asp?radioUserMode=Quick1
+  relax_denon_quick2: curl http://192.168.0.38/MAINZONE/QUICKSELECT/s_quickselect.asp?radioUserMode=Quick2
+  relax_denon_quick3: curl http://192.168.0.38/MAINZONE/QUICKSELECT/s_quickselect.asp?radioUserMode=Quick3
+
 # Relax TV for notifications
 webostv:
   host: 192.168.0.25

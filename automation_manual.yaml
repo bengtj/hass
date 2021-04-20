@@ -131,6 +131,16 @@
         Tidsåtgång: {{ states('sensor.octoprint_time_elapsed') | int | timestamp_custom('%H:%M:%S', 0) }}
       url: !secret hass_server_url
 
+# Ändra till shield på relax denon
+- alias: Quickselect RelaxShield
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: media_player.relaxshield
+    from: 'off'
+  action:
+    service: shell_command.relax_denon_quick3
+
 # Varningsmail och uteljus på när någon rör sig på altan vid fel tillfälle
 - alias: Rörelse altan
   initial_state: 'on'
