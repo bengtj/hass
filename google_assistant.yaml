@@ -335,6 +335,11 @@ entity_config:
     aliases: Altan stolpe 3
     room: Ute
     expose: true
+  light.altanstolpe_4:
+    name: Altanstolpe 4
+    aliases: Altan stolpe 4
+    room: Ute
+    expose: true
   light.altanfontan:
     name: Altanfontän
     aliases: Fontän
@@ -375,19 +380,24 @@ entity_config:
     name: Entréslinga
     room: Ute
     expose: true
-  light.entrestolpe_v:
-    name: Entréstolpe Vänster
-    aliases: Entré stolpe vänster
+  light.entrestolpe_1:
+    name: Entréstolpe 1
+    aliases: Entré stolpe 1
+    room: Ute
+    expose: true
+  light.entrestolpe_2:
+    name: Entréstolpe 2
+    aliases: Entré stolpe 2
+    room: Ute
+    expose: true
+  light.entrestolpe_3:
+    name: Entréstolpe 3
+    aliases: Entré stolpe 3
     room: Ute
     expose: true
   light.entresbuske:
     name: Entrébuske
     aliases: Entréspot
-    room: Ute
-    expose: true
-  light.entrestolpe_h:
-    name: Entréstolpe Höger
-    aliases: Entré stolpe höger
     room: Ute
     expose: true
   light.garageport:

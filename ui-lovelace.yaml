@@ -10,7 +10,7 @@ views:
         image: /local/planskiss.png
         elements:
           # Hus sidovy
-          - type: state-icon # state-label
+          - type: state-label # state-icon
             entity: weather.smhi_smhi
             style:
               top: 1.7%
@@ -372,7 +372,14 @@ views:
               top: 64.5%
               left: 91.4%
           - type: state-icon
-            entity: light.entrestolpe_v
+            entity: light.entrestolpe_1
+            tap_action:
+              action: toggle
+            style:
+              top: 49%
+              left: 98%
+          - type: state-icon
+            entity: light.entrestolpe_2
             tap_action:
               action: toggle
             style:
@@ -386,7 +393,7 @@ views:
               top: 62%
               left: 98%
           - type: state-icon
-            entity: light.entrestolpe_h
+            entity: light.entrestolpe_3
             tap_action:
               action: toggle
             style:
@@ -450,6 +457,13 @@ views:
             style:
               top: 45%
               left: 15%
+          - type: state-icon
+            entity: light.altanstolpe_4
+            tap_action:
+              action: toggle
+            style:
+              top: 45%
+              left: 7%
           - type: state-icon
             entity: light.altanfontan
             tap_action:
