@@ -68,6 +68,11 @@ entity_config:
     aliases: Linas vägglampa
     room: Linas rum
     expose: true
+  light.linas_sang:
+    name: Linas säng
+    aliases: Linas sänglampa
+    room: Linas rum
+    expose: true
  
   # Kök
   light.matbord:

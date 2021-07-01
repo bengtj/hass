@@ -161,6 +161,13 @@ views:
               top: 24%
               left: 49%
           - type: state-icon
+            entity: light.linas_sang
+            tap_action:
+              action: toggle
+            style:
+              top: 32%
+              left: 41%
+          - type: state-icon
             entity: light.linas_vagg
             tap_action:
               action: toggle
@@ -181,7 +188,7 @@ views:
             entity: sensor.lina_humidity
             style:
               top: 32%
-              left: 43.5%
+              left: 48%
           # Sovrumsgång
           - type: state-icon
             entity: light.sovrumsgang

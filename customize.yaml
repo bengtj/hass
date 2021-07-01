@@ -68,6 +68,8 @@ light.hornlampa:
   icon: mdi:floor-lamp
 light.bordslampa:
   icon: mdi:lamp
+light.linas_sang:
+  icon: mdi:wall-sconce
 group.hemma:
   icon: mdi:security-home
 device_tracker.bengts_mobil:
