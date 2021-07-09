@@ -74,6 +74,14 @@ entity_config:
     room: Linas rum
     expose: true
  
+  # Badrum
+  light.badrumsskap:
+    name: Skåpslinga
+    aliases:
+      - Skåp slinga
+    room: Badrum
+    expose: true
+
   # Kök
   light.matbord:
     name: Matbord
