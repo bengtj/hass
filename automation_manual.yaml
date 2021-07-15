@@ -230,6 +230,28 @@
       command: PowerOff
       device: 56488837
 
+# Vindfläkt på/av
+- alias: Vindfläkt på
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.vind_temperature
+    above: 30
+  action:
+    service: homeassistant.turn_on
+    data:
+      entity_id: light.vindflakt
+- alias: Vindfläkt av
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.vind_temperature
+    below: 25
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.vindflakt
+
 # Turn on SpelTV when harmony changes to Spela Steam.
 - alias: SpelTV Wake On LAN
   initial_state: 'on'
