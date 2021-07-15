@@ -2,6 +2,7 @@
   "domain": "huesensor",
   "name": "Hue sensors",
   "documentation": "https://github.com/robmarkcole/Hue-sensors-HASS",
+  "version": "6.6.6",
   "dependencies": [],
   "codeowners": ["@robmarkcole"],
   "requirements": []
