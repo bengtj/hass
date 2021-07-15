@@ -11,3 +11,4 @@ tts
 !.gitignore
 webostv.conf
 blueprints
+known_devices.yaml
