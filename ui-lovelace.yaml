@@ -696,7 +696,7 @@ views:
               top: 85.5%
               left: 58%
           - type: state-icon
-            entity: light.traning
+            entity: light.garageslinga
             tap_action:
               action: toggle
             style:
@@ -722,7 +722,14 @@ views:
               action: toggle
             style:
               top: 95%
-              left: 43%
+              left: 43.5%
+          - type: state-icon
+            entity: light.material
+            tap_action:
+              action: toggle
+            style:
+              top: 94.5%
+              left: 50%
           - type: state-icon
             entity: light.atervinning
             tap_action:
@@ -1062,16 +1069,24 @@ views:
           - media_player.maltecast
       # Google home card
       - type: entities
-        title: Google home
+        title: Google Home
         show_header_toggle: false
         entities:
-          - media_player.kokshome
-          - media_player.vardagshome
-          - media_player.altanhome
-          - media_player.relaxhome
-          - media_player.maltehome
-          - media_player.linahome
           - media_player.sovhome
+          - media_player.badhome
+          - media_player.tvatthome
+          - media_player.kokshome
+          - media_player.altanhome
+          - media_player.garagehome
+      - type: entities
+        title: Google Nest
+        show_header_toggle: false
+        entities:
+          - media_player.kokshub
+          - media_player.vardagshub
+          - media_player.relaxhub
+          - media_player.linahub
+          - media_player.maltehub
       # Remotes card
       - type: entities
         title: Kontroll

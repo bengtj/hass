@@ -6,7 +6,7 @@ light.garageport:
   icon: mdi:wall-sconce
 light.garagefonster:
   icon: mdi:car-parking-lights
-light.traning:
+light.material:
   icon: mdi:lamp
 light.skrivare:
   icon: mdi:lamp
