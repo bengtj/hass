@@ -86,6 +86,9 @@ system_health:
 # WOL for SpelTV
 wake_on_lan:
 
+# Allow mobile companion apps
+mobile_app:
+
 # Track device location with nmap. See secrets.yaml for gpslogger configuration.
 device_tracker:
   - platform: nmap_tracker
