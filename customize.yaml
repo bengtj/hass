@@ -2,6 +2,8 @@ switch.granen:
   icon: mdi:pine-tree
 switch.istappar:
   icon: mdi:string-lights
+switch.takfot:
+  icon: mdi:string-lights
 light.garageport:
   icon: mdi:wall-sconce
 light.garagefonster:

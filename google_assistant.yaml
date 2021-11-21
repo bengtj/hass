@@ -373,6 +373,10 @@ entity_config:
     aliases: Istapparna
     room: Ute
     expose: true
+  switch.takfot:
+    name: Takfot
+    room: Ute
+    expose: true
 
   light.entre:
     name: Entré

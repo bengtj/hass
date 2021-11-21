@@ -354,13 +354,20 @@ views:
               top: 47%
               left: 84%
           # Entré
-          # - type: state-icon # [JUL]
-          #   entity: switch.juleljus
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 31%
-          #     left: 91%
+          - type: state-icon # [JUL]
+            entity: switch.takfot
+            tap_action:
+              action: toggle
+            style:
+              top: 21%
+              left: 91%
+          - type: state-icon # [JUL]
+            entity: switch.juleljus
+            tap_action:
+              action: toggle
+            style:
+              top: 31%
+              left: 91%
           - type: state-icon
             entity: light.entrevagg
             tap_action:
@@ -426,27 +433,27 @@ views:
             style:
               top: 40%
               left: 9%
-          # - type: state-icon # [JUL]
-          #   entity: light.extraslinga
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 40%
-          #     left: 25%
-          # - type: state-icon # [JUL]
-          #   entity: switch.altanjul
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 45%
-          #     left: 25%
-          # - type: state-icon # [JUL]
-          #   entity: switch.istappar
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 50%
-          #     left: 25%
+          - type: state-icon # [JUL]
+            entity: light.extraslinga
+            tap_action:
+              action: toggle
+            style:
+              top: 40%
+              left: 25%
+          - type: state-icon # [JUL]
+            entity: switch.altanjul
+            tap_action:
+              action: toggle
+            style:
+              top: 45%
+              left: 25%
+          - type: state-icon # [JUL]
+            entity: switch.istappar
+            tap_action:
+              action: toggle
+            style:
+              top: 50%
+              left: 25%
           - type: state-icon
             entity: light.altanstolpe_1
             tap_action:
@@ -876,8 +883,8 @@ views:
         show_header_toggle: false
         entities:
           - sensor.minecraft_players_online
-          - sensor.r7000_014d_kb_sec_received
-          - sensor.r7000_014d_kb_sec_sent
+#          - sensor.r7000_014d_kb_sec_received
+#          - sensor.r7000_014d_kb_sec_sent
       # 3D print cards
       - type: entities
         title: Octoprint

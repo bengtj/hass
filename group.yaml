@@ -13,6 +13,7 @@ belysning_all:
     - switch.juleljus
     - switch.granen
     - switch.istappar
+    - switch.takfot
 
 # Dagsbelysningen är på dagtid
 belysning_dag:
@@ -43,6 +44,7 @@ belysning_ute:
     - switch.altanjul
     - switch.juleljus
     - switch.istappar
+    - switch.takfot
 
 # Ljus i sovrum och sovrumsgång
 sovrumsljus:

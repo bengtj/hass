@@ -610,17 +610,17 @@
         scene_name: '{{ trigger.to_state.state }}'
 
 # Christmas colors
-# - alias: Julfärger # [JUL]
-#   initial_state: 'on'
-#   trigger:
-#   - platform: time_pattern
-#     seconds: "/59"
-#   action:
-#   - service: script.random_color
-#     data_template:
-#       entity_id: >
-#         {% set entities = ['light.entreslinga', 'light.extraslinga', 'light.hallgo' ] %}
-#         {{ entities|random }}
+- alias: Julfärger # [JUL]
+  initial_state: 'on'
+  trigger:
+  - platform: time_pattern
+    seconds: "/59"
+  action:
+  - service: script.random_color
+    data_template:
+      entity_id: >
+        {% set entities = ['light.entreslinga', 'light.extraslinga', 'light.hallgo' ] %}
+        {{ entities|random }}
  
 # Slå på fluxljus och tema vid uppstart
 - alias: Systemstart
