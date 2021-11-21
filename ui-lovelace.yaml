@@ -359,21 +359,28 @@ views:
             tap_action:
               action: toggle
             style:
-              top: 21%
-              left: 91%
+              top: 27%
+              left: 92%
           - type: state-icon # [JUL]
             entity: switch.juleljus
             tap_action:
               action: toggle
             style:
               top: 31%
-              left: 91%
+              left: 92%
+          - type: state-icon
+            entity: binary_sensor.entre_motion
+            tap_action:
+              action: toggle
+            style:
+              top: 40%
+              left: 92%
           - type: state-icon
             entity: light.entrevagg
             tap_action:
               action: toggle
             style:
-              top: 47.5%
+              top: 47%
               left: 91%
           - type: state-icon
             entity: light.sexan
@@ -387,7 +394,7 @@ views:
             tap_action:
               action: toggle
             style:
-              top: 64.5%
+              top: 69%
               left: 91.4%
           - type: state-icon
             entity: light.entrestolpe_1
@@ -408,7 +415,7 @@ views:
             tap_action:
               action: toggle
             style:
-              top: 62%
+              top: 64%
               left: 98%
           - type: state-icon
             entity: light.entrestolpe_3
@@ -420,13 +427,13 @@ views:
           - type: state-label
             entity: sensor.entre_ute_temperature
             style:
-              top: 69%
-              left: 94%
+              top: 82%
+              left: 92%
           - type: state-label
             entity: sensor.entre_ute_humidity
             style:
-              top: 72%
-              left: 94%
+              top: 85%
+              left: 92%
           # Altan
           - type: state-icon
             entity: binary_sensor.altan_motion
