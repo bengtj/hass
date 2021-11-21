@@ -154,7 +154,7 @@ octoprint:
   bed: true
   number_of_tools: 1
 
-# Cameras, reolink: https://github.com/fwestenberg/reolink, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
+# Cameras, reolink: https://github.com/fwestenberg/reolink_dev, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
 stream:
 ffmpeg:
 camera:

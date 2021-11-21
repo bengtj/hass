@@ -4,6 +4,7 @@ harmony*.conf
 tts
 .*
 *.log
+*.log.*
 *.gz
 *.jpg
 *.png
