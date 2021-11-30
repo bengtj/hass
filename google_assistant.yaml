@@ -150,6 +150,13 @@ entity_config:
     aliases: Hallgo
     room: Hall
     expose: true
+  light.hallstake:
+    name: Hallstake
+    aliases:
+      - Hall stake
+      - Stake hall
+    room: Hall
+    expose: true
 
   # Vardagsrum
   light.entrefonster:
