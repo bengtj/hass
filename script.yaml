@@ -105,7 +105,7 @@ say:
       cache: false
   - service: tts.google_say
     data_template:
-      entity_id: media_player.relaxhome
+      entity_id: media_player.relaxhub
       message: "{{ message }}"
       language: 'sv'
       cache: false
