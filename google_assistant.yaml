@@ -159,13 +159,13 @@ entity_config:
     expose: true
 
   # Vardagsrum
-  light.entrefonster:
-    name: Entréfönster
-    aliases: Fönster entré
+  light.vardagsfonster:
+    name: Vardagsfönster
+    aliases: Fönster vardagsrum
     room: Vardagsrum
     expose: true
-  light.entrestake:
-    name: Entréstake
+  light.vardagstake:
+    name: Vardagstake
     aliases:
       - Vardagstake fönster
       - Stake vardagsrum
@@ -211,11 +211,11 @@ entity_config:
     aliases: Golvlampa
     room: Vardagsrum
     expose: true
-  switch.granen:
-    name: Gran
-    aliases: Granen
-    room: Vardagsrum
-    expose: true
+#  switch.granen: # [JUL]
+#    name: Gran
+#    aliases: Granen
+#    room: Vardagsrum
+#    expose: true
 
   scene.vardagsljust:
     name: Vardagsljust

@@ -179,7 +179,7 @@
       state: 'on'
     switch.bioduk:
       friendly_name: Bioduk
-      icon: mdi:lightbulb
+      icon: mdi:projector-screen-outline
       assumed_state: true
       state: 'off'
   icon: mdi:theme-light-dark

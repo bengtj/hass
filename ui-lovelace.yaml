@@ -571,14 +571,14 @@ views:
               top: 68%
               left: 75%
           - type: state-icon
-            entity: light.entrestake
+            entity: light.vardagstake
             tap_action:
               action: toggle
             style:
               top: 65%
               left: 85%
           - type: state-icon
-            entity: light.entrefonster
+            entity: light.vardagsfonster
             tap_action:
               action: toggle
             style:
