@@ -38,6 +38,7 @@
     - light.tak_v
     - light.tak_h
     - light.golvlampa
+    - light.flakestake # [JUL]
 - platform: flux
   name: Köksflux
   interval: 55
