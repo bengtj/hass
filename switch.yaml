@@ -34,12 +34,7 @@
   sunset_colortemp: 2000
   stop_colortemp: 1600
   lights:
-    - light.vardagsfonster
-    - light.hornlampa
-    - light.tv_v
-    - light.tv_h
-    - light.bordslampa
-    - light.huego
+    - light.tv
     - light.tak_v
     - light.tak_h
     - light.golvlampa
