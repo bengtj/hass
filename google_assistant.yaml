@@ -296,6 +296,11 @@ entity_config:
     expose: true
 
   # Garage
+  light.garageslinga:
+    name: Garageslinga
+    aliases: Garage slinga
+    room: Garage
+    expose: true
   light.garagefonster:
     name: Garagefönster
     aliases: Fönster garage
