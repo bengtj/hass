@@ -300,7 +300,7 @@
   initial_state: 'on'
   trigger:
   - platform: time
-    at: '20:15:00'
+    at: '20:30:00'
   action:
   - service: homeassistant.turn_off
     data:
