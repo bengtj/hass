@@ -1066,6 +1066,17 @@ views:
     id: media
     title: Media
     cards:
+      # Remotes card
+      - type: entities
+        title: Kontroll
+        show_header_toggle: false
+        entities:
+          - type: weblink
+            name: LMS
+            url: http://192.168.0.10:9000/material/
+            icon: mdi:archive-music
+          - remote.vardagsharmoni
+        #  - media_player.vardagsdenon
       # Spotify card:
       - type: entities
         title: Spotify
@@ -1117,13 +1128,6 @@ views:
           - media_player.relaxhub
           - media_player.linahub
           - media_player.maltehub
-      # Remotes card
-      - type: entities
-        title: Kontroll
-        show_header_toggle: false
-        entities:
-          - remote.vardagsharmoni
-        #  - media_player.vardagsdenon
       # Squueezecast card
       # - type: entities
       #   title: Squeezecast
