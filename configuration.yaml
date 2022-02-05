@@ -201,7 +201,7 @@ camera:
     still_image_url: !secret yr_svg_url
     content_type: 'image/svg+xml'
 
-# Mail. Uses gmail filter-forwarding from hass_email to work without delay. It seems like gmail will deliver quicker to the sender address(!)
+# Mail. Used gmail filter-forwarding from hass_email to work without delay. It seems like gmail will deliver quicker to the sender address(!). TODO: Can't do this anymore after gapps shutdown?
 notify:
   - name: email
     platform: smtp
@@ -210,7 +210,9 @@ notify:
     encryption: none
     sender: !secret hass_email
     recipient:
-      - !secret hass_email
+      - !secret bengt_email
+      - !secret maria_email
+      - !secret hem_email
     sender_name: Home Assistant
 
 # Shell commands
