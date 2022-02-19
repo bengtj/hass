@@ -108,9 +108,14 @@ views:
               top: 16%
               left: 43.5%
           - type: state-icon
-            entity: vacuum.purjo
+            entity: vacuum.snovit
             style:
               top: 6%
+              left: 63%
+          - type: state-icon
+            entity: vacuum.purjo
+            style:
+              top: 94%
               left: 63%
           # Maltes rum
           - type: state-icon
@@ -899,6 +904,29 @@ views:
           - sensor.minecraft_players_online
 #          - sensor.r7000_014d_kb_sec_received
 #          - sensor.r7000_014d_kb_sec_sent
+      # Vacuum cards
+      - type: entities
+        title: Snövit
+        entities:
+          - entity: vacuum.snovit
+            show_state: true
+          - entity: sensor.snovit_last_clean_area
+            show_state: true
+          - entity: sensor.snovit_last_clean_duration
+            show_state: true
+          - entity: sensor.snovit_last_clean_start
+            show_state: true
+          - entity: sensor.snovit_last_clean_end
+            show_state: true
+      - type: picture-glance
+        title: Purjo
+        entities:
+          - entity: vacuum.purjo
+            show_state: true
+          - entity: switch.purjo_schedule
+            show_state: true
+        entity: vacuum.purjo
+        camera_image: camera.purjo_cleaning_map
       # 3D print cards
       - type: entities
         title: Octoprint
@@ -922,16 +950,6 @@ views:
             show_state: true
         camera_image: camera.octoprint
         camera_view: live
-      # Vacuum cards
-      - type: picture-glance
-        title: Purjo
-        entities:
-          - entity: vacuum.purjo
-            show_state: true
-          - entity: switch.purjo_schedule
-            show_state: true
-        entity: vacuum.purjo
-        camera_image: camera.purjo_cleaning_map
 
   # Calendar tab
 #  - icon: mdi:calendar-clock
