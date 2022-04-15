@@ -70,9 +70,9 @@ notify:
   - service: script.say
     data_template:
       message: '{{ title }}'
-  - service: notify.relaxtv
-    data_template:
-      message: '{{ title }}'
+#  - service: notify.relaxtv
+#    data_template:
+#      message: '{{ title }}'
 
 # Randomize light color
 random_color:

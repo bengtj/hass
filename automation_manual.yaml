@@ -481,57 +481,107 @@
         - light.garageplanta
 
 # Schema golvfläkt
-- alias: Schema golvfläkt på
-  initial_state: 'on'
-  trigger:
-  - platform: time
-    at: '18:00:00'
-  action:
-  - service: homeassistant.turn_on
-    data:
-      entity_id: 
-        - light.golvflakt
-- alias: Schema golvfläkt av
-  initial_state: 'on'
-  trigger:
-  - platform: time
-    at: '07:00:00'
-  action:
-  - service: homeassistant.turn_off
-    data:
-      entity_id:
-        - light.golvflakt
+# - alias: Schema golvfläkt på
+#   initial_state: 'on'
+#   trigger:
+#   - platform: time
+#     at: '18:00:00'
+#   action:
+#   - service: homeassistant.turn_on
+#     data:
+#       entity_id: 
+#         - light.golvflakt
+# - alias: Schema golvfläkt av
+#   initial_state: 'on'
+#   trigger:
+#   - platform: time
+#     at: '07:00:00'
+#   action:
+#   - service: homeassistant.turn_off
+#     data:
+#       entity_id:
+#         - light.golvflakt
 
 # New hue main switch
 # Use condition to catch all events and not only state changes
 # https://community.home-assistant.io/t/multiple-actions-on-trigger-each-with-its-own-condition/82105
+# - alias: Huvudbrytare
+#   initial_state: 'on'
+#   trigger:
+#   - platform: state
+#     entity_id: remote.huvudbrytare
+#   action:
+#     - service_template: >
+#         {% if trigger.to_state.state in ["1_hold"] %}
+#           homeassistant.turn_on
+#         {% elif trigger.to_state.state in ["2_hold", "3_hold"] %}
+#           scene.turn_on
+#         {% elif trigger.to_state.state in ["4_hold"] %}
+#           homeassistant.turn_off
+#         {% else %}
+#           script.noop
+#         {% endif %}
+#       data_template:
+#         entity_id: >
+#           {% if trigger.to_state.state in ["1_hold"] %}
+#             group.belysning_dag
+#           {% elif trigger.to_state.state in ["2_hold"] %}
+#             scene.vardagsljust
+#           {% elif trigger.to_state.state in ["3_hold"] %}
+#             scene.fluxljus
+#           {% elif trigger.to_state.state in ["4_hold"] %}
+#             group.belysning_all
+#           {% endif %}
+
 - alias: Huvudbrytare
   initial_state: 'on'
   trigger:
-  - platform: state
-    entity_id: remote.huvudbrytare
+    - platform: event
+      event_type: hue_event
+      event_data:
+        id: huvudbrytare_button
+        type: repeat
   action:
     - service_template: >
-        {% if trigger.to_state.state in ["1_hold"] %}
+        {% if trigger.event.data.subtype in [1] %}
           homeassistant.turn_on
-        {% elif trigger.to_state.state in ["2_hold", "3_hold"] %}
+        {% elif trigger.event.data.subtype in [2, 3] %}
           scene.turn_on
-        {% elif trigger.to_state.state in ["4_hold"] %}
+        {% elif trigger.event.data.subtype in [4] %}
           homeassistant.turn_off
         {% else %}
           script.noop
         {% endif %}
       data_template:
         entity_id: >
-          {% if trigger.to_state.state in ["1_hold"] %}
+          {% if trigger.event.data.subtype in [1] %}
             group.belysning_dag
-          {% elif trigger.to_state.state in ["2_hold"] %}
+          {% elif trigger.event.data.subtype in [2] %}
             scene.vardagsljust
-          {% elif trigger.to_state.state in ["3_hold"] %}
+          {% elif trigger.event.data.subtype in [3] %}
             scene.fluxljus
-          {% elif trigger.to_state.state in ["4_hold"] %}
+          {% elif trigger.event.data.subtype in [4] %}
             group.belysning_all
           {% endif %}
+
+#    entity_id: huvudbrytare_button
+# {
+#     "event_type": "hue_event",
+#     "data": {
+#         "id": "huvudbrytare_button",
+#         "device_id": "3e83021c380748889d49e95259011820",
+#         "unique_id": "68fa0c35-b532-4fa6-9b2e-d78443eacdbb",
+#         "type": "long_release",
+#         "subtype": 4
+#     },
+#     "origin": "LOCAL",
+#     "time_fired": "2022-04-15T09:06:46.051812+00:00",
+#     "context": {
+#         "id": "b00ed6386e615a4a0d2bbb31ce3a2e67",
+#         "parent_id": null,
+#         "user_id": null
+#     }
+# }    
 
 # Belysning fjärrisar
 - alias: Belysning fjärrisar

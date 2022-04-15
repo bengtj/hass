@@ -91,14 +91,14 @@ mobile_app:
 
 # Track device location with nmap. See secrets.yaml for gpslogger configuration.
 device_tracker:
-  - platform: nmap_tracker
-    hosts:
-      - 192.168.0.29
-      - 192.168.0.30
-      - 192.168.0.31
-      - 192.168.0.32
-    home_interval: 5
-    interval_seconds: 30
+#  - platform: nmap_tracker
+#    hosts:
+#      - 192.168.0.29
+#      - 192.168.0.30
+#      - 192.168.0.31
+#      - 192.168.0.32
+#    home_interval: 5
+#    interval_seconds: 30
 
 # AC power toggle via Harmony. Copied as switch.ac to get icon color.
 input_boolean:
@@ -113,8 +113,8 @@ hue:
       allow_unreachable: true
     - host: 192.168.0.15
       allow_unreachable: true
-remote: # From https://github.com/robmarkcole/Hue-remotes-HASS
-  - platform: hueremote
+#remote: # From https://github.com/robmarkcole/Hue-remotes-HASS
+#  - platform: hueremote
 
 # Neato botvac
 neato:
@@ -148,11 +148,11 @@ utility_meter:
     source: sensor.energy
     cycle: yearly
 
-octoprint:
-  host: 192.168.0.18
-  api_key: !secret octopi_apikey
-  bed: true
-  number_of_tools: 1
+#octoprint:
+#  host: 192.168.0.18
+#  api_key: !secret octopi_apikey
+#  bed: true
+#  number_of_tools: 1
 
 # Cameras, reolink: https://github.com/fwestenberg/reolink_dev, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
 stream:
@@ -222,9 +222,9 @@ shell_command:
   relax_denon_quick3: curl http://192.168.0.38/MAINZONE/QUICKSELECT/s_quickselect.asp?radioUserMode=Quick3
 
 # Relax TV for notifications
-webostv:
-  host: 192.168.0.25
-  name: RelaxTV
+#webostv:
+#  host: 192.168.0.25
+#  name: RelaxTV
 
 # Global scene selector for hue
 input_select:

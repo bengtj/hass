@@ -26,7 +26,10 @@
   sunset_colortemp: 2000
   stop_colortemp: 1600
   lights:
-    - light.relax
+    - light.skarm
+    - light.datatak
+    - light.relaxtak
+    - light.relaxgang
 - platform: flux
   name: Vardagsflux
   interval: 54
