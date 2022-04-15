@@ -4,6 +4,9 @@
 homeassistant:
   # Name of the location where Home Assistant is running
   name: Hemma hos LMMB
+  # URL:s for accessing hass instance
+  internal_url: !secret internal_url
+  external_url: !secret external_url
   # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude
@@ -37,7 +40,7 @@ config:
 
 # Configure http(s)
 http:
-  base_url: !secret base_url
+#  base_url: !secret base_url
   # Reverse proxy https server 192.168.0.10
   use_x_forwarded_for: true
   trusted_proxies: 192.168.0.10
@@ -52,7 +55,7 @@ recorder:
 # the developers to assist with development of Home Assistant.
 # For more information, please see:
 # https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
-updater:
+#updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
@@ -163,39 +166,39 @@ camera:
 #    host: "192.168.0.64"
 #    username: !secret cam_user
 #    password: !secret cam_pwd
-  - platform: mjpeg
-    name: Köksfönster
-    still_image_url: http://192.168.0.62/image/jpeg.cgi
-    mjpeg_url: http://192.168.0.62/mjpeg.cgi
-    username: !secret cam_user
-    password: !secret cam_pwd
-  - platform: mjpeg
-    name: Altanfönster
-    still_image_url: http://192.168.0.63/image/jpeg.cgi
-    mjpeg_url: http://192.168.0.63/mjpeg.cgi
-    username: !secret cam_user
-    password: !secret cam_pwd
-  - platform: mjpeg
-    name: Plantfönster
-    still_image_url: http://192.168.0.60/image/jpeg.cgi
-    mjpeg_url: http://192.168.0.60/mjpeg.cgi
-    username: !secret cam_user
-    password: !secret cam_pwd
+  # - platform: mjpeg
+  #   name: Köksfönster
+  #   still_image_url: http://192.168.0.62/image/jpeg.cgi
+  #   mjpeg_url: http://192.168.0.62/mjpeg.cgi
+  #   username: !secret cam_user
+  #   password: !secret cam_pwd
+  # - platform: mjpeg
+  #   name: Altanfönster
+  #   still_image_url: http://192.168.0.63/image/jpeg.cgi
+  #   mjpeg_url: http://192.168.0.63/mjpeg.cgi
+  #   username: !secret cam_user
+  #   password: !secret cam_pwd
+  # - platform: mjpeg
+  #   name: Plantfönster
+  #   still_image_url: http://192.168.0.60/image/jpeg.cgi
+  #   mjpeg_url: http://192.168.0.60/mjpeg.cgi
+  #   username: !secret cam_user
+  #   password: !secret cam_pwd
 #  - platform: reolink_dev
 #    name: Garage
 #    host: "192.168.0.61"
 #    username: !secret cam_user
 #    password: !secret cam_pwd
-  - platform: mjpeg
-    name: Print
-    still_image_url: http://192.168.0.65/image/jpeg.cgi
-    mjpeg_url: http://192.168.0.65/mjpeg.cgi
-    username: !secret cam_user
-    password: !secret cam_pwd
-  - platform: mjpeg
-    name: OctoPrint
-    still_image_url: http://192.168.0.18/webcam/?action=snapshot
-    mjpeg_url: http://192.168.0.18/webcam/?action=stream
+  # - platform: mjpeg
+  #   name: Print
+  #   still_image_url: http://192.168.0.65/image/jpeg.cgi
+  #   mjpeg_url: http://192.168.0.65/mjpeg.cgi
+  #   username: !secret cam_user
+  #   password: !secret cam_pwd
+  # - platform: mjpeg
+  #   name: OctoPrint
+  #   still_image_url: http://192.168.0.18/webcam/?action=snapshot
+  #   mjpeg_url: http://192.168.0.18/webcam/?action=stream
   - platform: generic
     name: Yr Väder
     still_image_url: !secret yr_svg_url
