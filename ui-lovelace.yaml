@@ -934,8 +934,7 @@ views:
         entities:
           - sensor.octoprint_current_state
           - sensor.octoprint_job_percentage
-          - sensor.octoprint_time_elapsed
-          - sensor.octoprint_time_remaining
+          - sensor.octoprint_estimated_finish_time
       - type: picture-glance
         title: Octoprint Cam 1
         entities:
