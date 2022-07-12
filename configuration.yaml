@@ -120,14 +120,14 @@ hue:
 #  - platform: hueremote
 
 # Neato botvac
-neato:
-  client_id: !secret neato_client_id
-  client_secret: !secret neato_secret
+# neato:
+#   client_id: !secret neato_client_id
+#   client_secret: !secret neato_secret
 
 # Spotify
-spotify:
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
+# spotify:
+#   client_id: !secret spotify_client_id
+#   client_secret: !secret spotify_client_secret
 
 # Nibe F370 heat pump plugin from https://github.com/elupus/hass_nibe 
 # List of parameter IDs: https://github.com/openhab/openhab1-addons/wiki/Nibe-Heat-Pump-Binding
