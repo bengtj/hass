@@ -807,9 +807,9 @@ views:
        width: 365
     cards:
       # windy.com
-      - type: iframe
-        url: !secret windy_url
-        aspect_ratio: 100%
+      #- type: iframe
+      #  url: !secret windy_url
+      #  aspect_ratio: 100%
       # YR meteogram image
       - type: picture-entity
         entity: camera.yr_vader
@@ -1109,12 +1109,12 @@ views:
         title: Squeezebox
         show_header_toggle: false
         entities:
-          - media_player.sovrum
-          - media_player.linas
-          - media_player.maltes
-          - media_player.tvatt
-          - media_player.vardagsrum
-          - media_player.altanfonster
+          - media_player.sovrumsradio
+          - media_player.linasradio
+          - media_player.maltesradio
+          - media_player.tvattradio
+          - media_player.vardagstouch
+          - media_player.altanfonsterradio
       # Chromecast card
       - type: entities
         title: Chromecast
@@ -1124,7 +1124,7 @@ views:
           - media_player.relaxshield
           - media_player.linashield
           - media_player.garagecast
-          - media_player.maltecast
+        #  - media_player.maltecast
       # Google home card
       - type: entities
         title: Google Home
