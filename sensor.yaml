@@ -114,26 +114,26 @@
 # Glue lock rest sensor, secrets:
 # glue_resource: "https://user-api.gluehome.com/v1/locks/<lock-id>"
 # glue_auth: "Api-Key <api-key>"
-- platform: rest
-  resource: !secret glue_resource
-  name: friggebod_lock
-  method: GET
-  headers:
-    Authorization: !secret glue_auth
-  json_attributes:
-    - description
-    - batteryStatus
-    - lastLockEvent
-    - connectionStatus
-  value_template: "OK"
-- platform: template
-  sensors:
-    friggebod_lock_last_event:
-      friendly_name: Last friggebod lock event
-      value_template: "{{ state_attr('sensor.friggebod_lock', 'lastLockEvent')['eventType'] }}"
-    friggebod_lock_battery:
-      friendly_name: Friggebod lock battery
-      value_template: "{{ state_attr('sensor.friggebod_lock', 'batteryStatus') }}"
-    friggebod_lock_status:
-      friendly_name: Friggebod lock connection status
-      value_template: "{{ state_attr('sensor.friggebod_lock', 'connectionStatus') }}"
+# - platform: rest
+#   resource: !secret glue_resource
+#   name: friggebod_lock
+#   method: GET
+#   headers:
+#     Authorization: !secret glue_auth
+#   json_attributes:
+#     - description
+#     - batteryStatus
+#     - lastLockEvent
+#     - connectionStatus
+#   value_template: "OK"
+# - platform: template
+#   sensors:
+#     friggebod_lock_last_event:
+#       friendly_name: Last friggebod lock event
+#       value_template: "{{ state_attr('sensor.friggebod_lock', 'lastLockEvent')['eventType'] }}"
+#     friggebod_lock_battery:
+#       friendly_name: Friggebod lock battery
+#       value_template: "{{ state_attr('sensor.friggebod_lock', 'batteryStatus') }}"
+#     friggebod_lock_status:
+#       friendly_name: Friggebod lock connection status
+#       value_template: "{{ state_attr('sensor.friggebod_lock', 'connectionStatus') }}"
