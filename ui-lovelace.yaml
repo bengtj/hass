@@ -107,11 +107,11 @@ views:
             style:
               top: 16%
               left: 43.5%
-          - type: state-icon
-            entity: vacuum.snovit
-            style:
-              top: 6%
-              left: 63%
+          # - type: state-icon
+          #   entity: vacuum.snovit
+          #   style:
+          #     top: 6%
+          #     left: 63%
           - type: state-icon
             entity: vacuum.purjo
             style:
@@ -459,13 +459,13 @@ views:
           #   style:
           #     top: 40%
           #     left: 25%
-          # - type: state-icon # [JUL]
-          #   entity: switch.altanjul
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 45%
-          #     left: 25%
+          - type: state-icon # [JUL]
+            entity: switch.altanjul
+            tap_action:
+              action: toggle
+            style:
+              top: 45%
+              left: 25%
           # - type: state-icon # [JUL]
           #   entity: switch.istappar
           #   tap_action:
