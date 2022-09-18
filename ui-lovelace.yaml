@@ -43,33 +43,32 @@ views:
             entity: sensor.power
             style:
               top: 16%
-              left: 17%
+              left: 16.5%
+          - type: state-label
+            entity: sensor.nordpool_se3
+            style:
+              top: 20%
+              left: 16.5%
           - type: state-icon
             entity: sensor.energy_daily
             style:
-              top: 20%
-              left: 11%
+              top: 24%
+              left: 10%
           - type: state-icon
             entity: sensor.energy_monthly
             style:
-              top: 20%
+              top: 24%
               left: 17%
           - type: state-icon
             entity: sensor.energy_yearly
             style:
-              top: 20%
-              left: 23%
+              top: 24%
+              left: 24%
           - type: state-icon
             entity: switch.friggebod_lock
             style:
-              top: 28%
+              top: 30%
               left: 7%
-          - type: state-badge
-            entity: input_select.scen
-            style:
-              top: 28%
-              left: 19%
-              font-size: 75%
           # Sovrum
           - type: state-icon
             entity: light.sovfonster
@@ -831,6 +830,8 @@ views:
             name: Innetemp
           - entity: sensor.ute_temperature
             name: Utetemp
+          - entity: sensor.nordpool_se3
+            name: Nordpool SE3
 
   # Camera tab
   - icon: mdi:cctv
@@ -976,6 +977,7 @@ views:
           - group.belysning_dag
           - group.belysning_sovrum
           - group.belysning_ute
+          - input_select.scen
       - type: custom:auto-entities
         card:
           type: glance

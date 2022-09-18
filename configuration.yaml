@@ -119,6 +119,9 @@ hue:
 #remote: # From https://github.com/robmarkcole/Hue-remotes-HASS
 #  - platform: hueremote
 
+# Energy prices, see sensor.yaml
+nordpool:
+
 # Neato botvac
 # neato:
 #   client_id: !secret neato_client_id
@@ -156,6 +159,7 @@ utility_meter:
 #  api_key: !secret octopi_apikey
 #  bed: true
 #  number_of_tools: 1
+
 
 # Cameras, reolink: https://github.com/fwestenberg/reolink_dev, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
 stream:
