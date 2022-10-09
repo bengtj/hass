@@ -175,7 +175,7 @@
   initial_state: 'on'
   trigger:
   - platform: state
-    entity_id: group.hemma,device_tracker.maltes_mobil
+    entity_id: group.hemma,device_tracker.maltes_mobil,device_tracker.linas_mobil
     to: 'home'
   action:
   - service: script.notify
@@ -191,7 +191,7 @@
   initial_state: 'on'
   trigger:
   - platform: state
-    entity_id: group.hemma,device_tracker.maltes_mobil
+    entity_id: group.hemma,device_tracker.maltes_mobil,device_tracker.linas_mobil
     from: 'home'
   action:
   - service: script.notify
@@ -481,26 +481,26 @@
         - light.garageplanta
 
 # Schema golvfläkt
-# - alias: Schema golvfläkt på
-#   initial_state: 'on'
-#   trigger:
-#   - platform: time
-#     at: '18:00:00'
-#   action:
-#   - service: homeassistant.turn_on
-#     data:
-#       entity_id: 
-#         - light.golvflakt
-# - alias: Schema golvfläkt av
-#   initial_state: 'on'
-#   trigger:
-#   - platform: time
-#     at: '07:00:00'
-#   action:
-#   - service: homeassistant.turn_off
-#     data:
-#       entity_id:
-#         - light.golvflakt
+- alias: Schema golvfläkt på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '18:00:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: 
+        - light.golvflakt
+- alias: Schema golvfläkt av
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '07:00:00'
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id:
+        - light.golvflakt
 
 # New hue main switch
 # Use condition to catch all events and not only state changes

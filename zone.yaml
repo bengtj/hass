@@ -1,4 +1,19 @@
 # Zones
+- name: Julia
+  latitude: 58.019557172220686
+  longitude: 11.832392363628776
+  radius: 25
+  icon: mdi:teddy-bear
+# - name: Oliver
+#   latitude: 58.019382117736505
+#   longitude: 11.831523647677622
+#   radius: 20
+#   icon: mdi:teddy-bear
+# - name: Elliot
+#   latitude: 58.018492889692844
+#   longitude: 11.830573032566724
+#   radius: 15
+#   icon: mdi:teddy-bear
 - name: Skolan
   latitude: 58.010276
   longitude: 11.826017

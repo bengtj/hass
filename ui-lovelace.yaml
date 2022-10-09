@@ -5,7 +5,7 @@ views:
   - icon: mdi:home-assistant
     id: overview
     title: Overview
-    type: custom:masonry-layout
+#    type: custom:masonry-layout
     layout:
       width: 365
     cards:
@@ -53,17 +53,17 @@ views:
             entity: sensor.energy_daily
             style:
               top: 24%
-              left: 10%
+              left: 9%
           - type: state-icon
             entity: sensor.energy_monthly
             style:
               top: 24%
-              left: 17%
+              left: 16%
           - type: state-icon
             entity: sensor.energy_yearly
             style:
               top: 24%
-              left: 24%
+              left: 23%
           - type: state-icon
             entity: switch.friggebod_lock
             style:
@@ -786,7 +786,7 @@ views:
           - device_tracker.bengts_mobil
           - device_tracker.marias_mobil
           - device_tracker.maltes_mobil
-          - device_tracker.lina_lan
+          - device_tracker.linas_mobil
       # Yr forecast picture
       - type: picture-entity
         entity: camera.yr_vader
@@ -801,7 +801,7 @@ views:
   - icon: mdi:weather-partly-rainy
     id: weather
     title: Weather
-    type: custom:masonry-layout
+#    type: custom:masonry-layout
     layout:
        width: 365
     cards:
@@ -861,7 +861,7 @@ views:
           - device_tracker.maria_lan
           - device_tracker.maltes_mobil
           - device_tracker.malte_lan
-#          - device_tracker.linas_mobil
+          - device_tracker.linas_mobil
           - device_tracker.lina_lan
         state_filter:
           - home
@@ -880,8 +880,11 @@ views:
          - device_tracker.bengts_mobil
          - device_tracker.marias_mobil
          - device_tracker.maltes_mobil
-         - device_tracker.lina_lan
+         - device_tracker.linas_mobil
          - zone.home
+         - zone.julia
+#         - zone.oliver
+#         - zone.elliot
          - zone.skolan
          - zone.hemkopco
          - zone.barnens_byvag
