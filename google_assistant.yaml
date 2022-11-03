@@ -219,7 +219,10 @@ entity_config:
 
   scene.vardagsljust:
     name: Vardagsljust
-    aliases: Ljust vardagsrum
+    aliases:
+      - Vardagsol
+      - Vardagsrumsol
+      - Ljust vardagsrum
     room: Vardagsrum
     expose: true
   scene.vardagsflux:
@@ -276,7 +279,9 @@ entity_config:
 
   scene.relaxljust:
     name: Relaxljust
-    aliases: Ljust relax
+    aliases:
+      - Ljust relax
+      - Relaxsol
     room: Relax
     expose: true
   scene.relaxbio:
