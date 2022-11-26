@@ -12,7 +12,7 @@ belysning_all:
     - light.alla_3
     - switch.altanjul
     - switch.juleljus
-#    - switch.granen # [JUL]
+    - switch.granen # [JUL]
     - switch.istappar
     - switch.takfot
 
@@ -22,7 +22,7 @@ belysning_dag:
   entities:
     - light.vardagsrum
     - light.relax
-#    - switch.granen # [JUL]
+    - switch.granen # [JUL]
     - light.hall
     - light.kokstake
     - light.koksfonster
@@ -45,7 +45,7 @@ belysning_ute:
     - switch.altanjul
     - switch.juleljus
     - switch.istappar
-#    - switch.takfot # [JUL]
+    - switch.takfot # [JUL]
 
 # Ljus i sovrum och sovrumsgång
 sovrumsljus:

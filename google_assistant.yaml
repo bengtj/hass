@@ -211,11 +211,11 @@ entity_config:
     aliases: Golvlampa
     room: Vardagsrum
     expose: true
-#  switch.granen: # [JUL]
-#    name: Gran
-#    aliases: Granen
-#    room: Vardagsrum
-#    expose: true
+  switch.granen: # [JUL]
+    name: Gran
+    aliases: Granen
+    room: Vardagsrum
+    expose: true
 
   scene.vardagsljust:
     name: Vardagsljust
