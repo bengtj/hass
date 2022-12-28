@@ -204,7 +204,8 @@
         Lina: {{states("device_tracker.linas_mobil")}}
       url: !secret hass_map_url
 
-# AC power toggle via Harmony
+# AC power toggle via Harmony. Note that PowerOn-commands include mode and possibly temperature.
+# Added PowerOnAuto for 20 degrees auto in the winter. PowerOn is cooling in the summer to unknown temp.
 - alias: Luftkonditionering på
   initial_state: 'on'
   trigger:
@@ -215,7 +216,7 @@
     service: remote.send_command
     data:
       entity_id: remote.vardagsharmoni
-      command: PowerOn
+      command: PowerOnAuto
       device: 56488837
 - alias: Luftkonditionering av
   initial_state: 'on'
