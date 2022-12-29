@@ -909,7 +909,7 @@ views:
           - sensor.linas_minecraft_players_online
 #          - sensor.r7000_014d_kb_sec_received
 #          - sensor.r7000_014d_kb_sec_sent
-      # Vacuum cards
+      # Vacuum cards, be sure to disable adguard when registering roborock with xiaomi account
       - type: entities
         title: Snövit
         entities:
