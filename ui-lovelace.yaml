@@ -905,7 +905,8 @@ views:
         title: Server
         show_header_toggle: false
         entities:
-          - sensor.minecraft_players_online
+          - sensor.maltes_minecraft_players_online
+          - sensor.linas_minecraft_players_online
 #          - sensor.r7000_014d_kb_sec_received
 #          - sensor.r7000_014d_kb_sec_sent
       # Vacuum cards
