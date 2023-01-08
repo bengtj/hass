@@ -74,8 +74,6 @@ light.bordslampa:
   icon: mdi:lamp
 light.linas_sang:
   icon: mdi:wall-sconce
-group.hemma:
-  icon: mdi:security-home
 device_tracker.bengts_mobil:
   friendly_name: Bengt
   entity_picture: /local/bengt.jpg

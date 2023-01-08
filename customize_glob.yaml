@@ -31,5 +31,7 @@
   icon: mdi:home-lock
 "sensor.*battery*":
   icon: mdi:battery
+"group.*hemma":
+  icon: mdi:security-home
 "group.belysning*":
   assumed_state: true

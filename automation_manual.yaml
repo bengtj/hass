@@ -152,7 +152,7 @@
     condition: or
     conditions:
       - condition: state
-        entity_id: group.hemma
+        entity_id: group.foraldrar_hemma
         state: 'not_home'
       - condition: time
         after: '01:00:00'
@@ -175,7 +175,7 @@
   initial_state: 'on'
   trigger:
   - platform: state
-    entity_id: group.hemma,device_tracker.maltes_mobil,device_tracker.linas_mobil
+    entity_id: group.foraldrar_hemma,group.malte_hemma,group.lina_hemma
     to: 'home'
   action:
   - service: script.notify
@@ -191,7 +191,7 @@
   initial_state: 'on'
   trigger:
   - platform: state
-    entity_id: group.hemma,device_tracker.maltes_mobil,device_tracker.linas_mobil
+    entity_id: group.foraldrar_hemma,group.malte_hemma,group.lina_hemma
     from: 'home'
   action:
   - service: script.notify
@@ -455,7 +455,7 @@
     seconds: 00
   condition:
   - condition: state
-    entity_id: group.hemma
+    entity_id: group.foraldrar_hemma
     state: not_home
   - condition: template
     value_template: "{{ (range(3)|random) == 0 }}"

@@ -180,11 +180,21 @@ fluxljus:
     - switch.sovflux
     - switch.uteflux
 
-# Hemma group tracker
-hemma:
+# Föräldrar/Malte/Lina hemma group trackers
+foraldrar_hemma:
   name: Föräldrarna
   entities:
     - device_tracker.bengts_mobil
     - device_tracker.bengt_lan
     - device_tracker.marias_mobil
     - device_tracker.maria_lan
+malte_hemma:
+  name: Malte
+  entities:
+    - device_tracker.maltes_mobil
+    - device_tracker.malte_lan
+lina_hemma:
+  name: Lina
+  entities:
+    - device_tracker.linas_mobil
+    - device_tracker.lina_lan
