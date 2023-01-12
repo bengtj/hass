@@ -676,8 +676,8 @@
         scene_name: '{{ trigger.to_state.state }}'
 
 # Christmas colors
-- alias: Julfärger # [JUL]
-  initial_state: 'on'
+- alias: Julfärger
+  initial_state: 'off' # [JUL]
   trigger:
   - platform: time_pattern
     seconds: "/9"
