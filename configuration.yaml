@@ -88,6 +88,9 @@ person:
 # Support python scripts
 python_script:
 
+# Support google home speaking
+media_source:
+
 # System health info support
 system_health:
 
