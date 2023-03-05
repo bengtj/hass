@@ -106,11 +106,11 @@ views:
             style:
               top: 16%
               left: 43.5%
-          # - type: state-icon
-          #   entity: vacuum.snovit
-          #   style:
-          #     top: 6%
-          #     left: 63%
+          - type: state-icon
+            entity: vacuum.snovit
+            style:
+              top: 6%
+              left: 63%
           - type: state-icon
             entity: vacuum.purjo
             style:
