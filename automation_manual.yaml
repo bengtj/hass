@@ -139,7 +139,7 @@
     entity_id: media_player.relaxshield
     from: 'off'
   action:
-    service: shell_command.relax_denon_quick3
+    service: shell_command.relax_denon_quick1
 
 # Varningsmail och uteljus på när någon rör sig på altan vid fel tillfälle
 - alias: Rörelse altan
@@ -316,7 +316,7 @@
   initial_state: 'on'
   trigger:
   - platform: time
-    at: '20:45:00'
+    at: '21:00:00'
   action:
   - service: homeassistant.turn_off
     data:

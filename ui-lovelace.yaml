@@ -1148,7 +1148,7 @@ views:
         entities:
           - media_player.kokshub
           - media_player.vardagshub
-          - media_player.relaxhub
+          - media_player.hallhub
           - media_player.linahub
           - media_player.maltehub
       # Squueezecast card
