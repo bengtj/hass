@@ -99,7 +99,7 @@ say:
   sequence:
   - service: tts.google_say
     data_template:
-      entity_id: media_player.kokshome
+      entity_id: media_player.hallhub
       message: "{{ message }}"
       language: 'sv'
       cache: false
