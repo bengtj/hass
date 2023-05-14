@@ -262,7 +262,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.ute_temperature
-    below: 5
+    below: 0
   action:
     service: homeassistant.turn_on
     data:
