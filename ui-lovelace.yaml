@@ -19,6 +19,13 @@ views:
             style:
               top: 1.7%
               left: 11%
+          - type: state-icon
+            entity: light.golvflakt
+            tap_action:
+              action: toggle
+            style:
+              top: 6%
+              left: 5%
           - type: state-label
             entity: sensor.ute_temperature
             style:
@@ -806,9 +813,9 @@ views:
        width: 365
     cards:
       # windy.com
-      #- type: iframe
-      #  url: !secret windy_url
-      #  aspect_ratio: 100%
+      - type: iframe
+        url: !secret windy_url
+        aspect_ratio: 100%
       # YR meteogram image
       - type: picture-entity
         entity: camera.yr_vader
@@ -818,9 +825,6 @@ views:
       - type: weather-forecast
         name: SMHI Väder Stora Höga 
         entity: weather.smhi_smhi
-      # Dark sky card, https://blog.darksky.net/forecast-embeds/
-      - type: iframe
-        url: !secret darksky_url
       # Temp sensor history
       - type: history-graph
         title: Historik 3 dagar
