@@ -813,9 +813,9 @@ views:
        width: 365
     cards:
       # windy.com
-      - type: iframe
-        url: !secret windy_url
-        aspect_ratio: 100%
+      # - type: iframe
+      #   url: !secret windy_url
+      #   aspect_ratio: 100%
       # YR meteogram image
       - type: picture-entity
         entity: camera.yr_vader
