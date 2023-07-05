@@ -118,12 +118,12 @@ input_boolean:
     icon: mdi:air-conditioner
 
 # Philips hue bridge
-hue:
-  bridges:
-    - host: 192.168.0.13
-      allow_unreachable: true
-    - host: 192.168.0.15
-      allow_unreachable: true
+# hue:
+#   bridges:
+#     - host: 192.168.0.13
+#       allow_unreachable: true
+#     - host: 192.168.0.15
+#       allow_unreachable: true
 #remote: # From https://github.com/robmarkcole/Hue-remotes-HASS
 #  - platform: hueremote
 
@@ -293,4 +293,4 @@ group: !include group.yaml
 automation: !include automation.yaml
 automation old: !include automation_manual.yaml
 script: !include script.yaml
-rfxtrx: !include rfxtrx.yaml
+#rfxtrx: !include rfxtrx.yaml
