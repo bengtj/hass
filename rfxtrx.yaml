@@ -16,6 +16,7 @@ devices:
 
 # Temperature sensors. ID:s not updated, using automtic add in rfxtrx integration instead.
 # Note that there are two "automatic add" settings and only one works for adding new devices. The other is for enabling new by default.
+# So use "automatic add" o in "CONFIGURE" and prepare for thingsd to go black. Then you will have to find your new device.
 # Message conflicts can be due to "Kyl H" switching id or similar.
   "0a52090ed70000d1370159":
     # name: Sovrum
