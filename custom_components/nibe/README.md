@@ -12,6 +12,8 @@ There are 3 different methods of installing the custom component
 
 ### HACS installation
 
+Read more here (https://hacs.xyz/) if you don't have HACS installed. 
+
 _While this component can be installed by HACS, it is not included in the default repository of HACS._
 
 1. Add this repository as a custom repository inside HACS settings. Make sure you select `Integration` as Category.
@@ -27,8 +29,8 @@ _While this component can be installed by HACS, it is not included in the defaul
 ### Manual installation
 
 1. Download the zip file and extract the folder inside to your custom_components folder. Create the folder is it does not exist.
-2. Rename the folder "hass_nibe-master" to "nibe". All files, including the .translation folder, should be inside the "nibe" catalog under the custom_components folder.
-   ![Windows Folder](./docs/nibe_files_windows.png)
+2. Rename the folder "hass_nibe-master" to "nibe". All files, including the .translation folder, should be inside the "nibe" catalog under the custom_components folder.<br>
+![Windows Folder](./docs/nibe_files_windows.png)
 
 ## Setup
 
@@ -38,55 +40,41 @@ _While this component can be installed by HACS, it is not included in the defaul
 nibe:
 ```
 
-2. Go to the Integrations page located in Home Assistants Configuration dashboard. ![Integrations page](./docs/integrations.png)
+2. Go to the Integrations page located in Home Assistants `Settings` panel.<br>
+![Integrations page](./docs/integrations.png)
 
-3. Click the Nibe Uplink configure button and enter data gathered when you registered on nibe uplink homepage. ![Configure uplink parameters](./docs/nibe_config.png)
+3. Click `+ Add integration` in the lower right corner and select the "Nibe Uplink Heat Pumps" integration. It should have a little box icon to indicate that the integration is provided by a custom integration.<br><i>The "Nibe Heat Pump" integration is <u>only</u> for local communication with the heatpump using a UDP Gateway with NibeGw or a Modbus Connection.</i><br>
+![Nibe integrations](./docs/nibe_integration.png)<br>
+
+4. Enter the data gathered when you registered on the nibe uplink homepage.<br>
+![Configure uplink parameters](./docs/nibe_config.png) 
 
    - **Callback url**
    - **Identifer**: This is your (client_id)
    - **Secret**
    - **Write Access**: If you are going to be running smart home thermostants or control boost modes from home assistant this must be enabled.
 
-4. The configurator will open a new window/tab directed at nibeuplinks home page. After logging in and accepting access for this client id, the window will close and you will be back in home assistant.<br>
+5. The configurator will open a new window/tab directed at nibeuplinks home page. After logging in and accepting access for this client id, the window will close and you will be back in home assistant.<br>
    The system should now have access to the Nibe Uplink API. If you had not specified a system identifer already and error notifification will be added which contains the systems available to you. Take note of the **SystemId** and use to extend your configuration.
 
-5. Add some more info to your [Configuration](README.md#configuration)
-
-```yaml
-nibe:
-  systems:
-    - system: <required system identifier>
-      units:
-        - unit: 0
-```
-
-6. Restart your Home assistant to make changes take effect.
-   The integration page should then display all available entities.
-   ![Integration page example](./docs/nibe_integration.png)
-
 ## Configuration
-
-Minimal configuration
-
-```yaml
-nibe:
-```
 
 Full configuration description
 
 ```yaml
 nibe:
+  # Default client identifier
+  client_id: xxx
+
+  # Default client secret
+  client_secret: yyy
+
+  # Default redirect url
+  redirect_uri: 'http://localhost:8123/api/nibe/auth'
+
   systems:
-    # required system identifier
+    # System identifier to add extra entities too
     - system: <system identifier>
-
-      # list of units to retrieve data for
-      units:
-        # unit to retrieve data for (0 is the master unit and should always exist)
-        - unit: <unit identifier>
-
-          # Optional load of status entities
-          categories: True
 
       # Optional list of additional parameters to retrieve, can be done here or on the sensor platform.
       sensors:

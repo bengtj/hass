@@ -2,9 +2,13 @@
 import logging
 import os
 import re
+import base64
+
+from aiosmtpd.controller import Controller
 
 import datetime as dt
 from typing import Optional
+import ssl
 
 from urllib.parse import quote_plus
 from dateutil.relativedelta import relativedelta
@@ -19,7 +23,7 @@ from homeassistant.const import (
 from homeassistant.core import Context, HomeAssistant
 from homeassistant.helpers.network import get_url, NoURLAvailableError
 from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from homeassistant.helpers.aiohttp_client import async_create_clientsession
 import homeassistant.util.dt as dt_util
 
 from reolink.camera_api import Api
@@ -40,6 +44,7 @@ from .const import (
     CONF_STREAM,
     CONF_STREAM_FORMAT,
     CONF_MOTION_STATES_UPDATE_FALLBACK_DELAY,
+    CONF_ONVIF_SUBSCRIPTION_DISABLED,
     DEFAULT_USE_HTTPS,
     DEFAULT_CHANNEL,
     DEFAULT_MOTION_OFF_DELAY,
@@ -48,6 +53,7 @@ from .const import (
     DEFAULT_STREAM_FORMAT,
     DEFAULT_TIMEOUT,
     DEFAULT_MOTION_STATES_UPDATE_FALLBACK_DELAY,
+    DEFAULT_ONVIF_SUBSCRIPTION_DISABLED,
     DOMAIN,
     PUSH_MANAGER,
     SESSION_RENEW_THRESHOLD,
@@ -152,6 +158,10 @@ class ReolinkBase:
         else:
             self.motion_states_update_fallback_delay = options[CONF_MOTION_STATES_UPDATE_FALLBACK_DELAY]
 
+        self.onvif_subscription_disabled = DEFAULT_ONVIF_SUBSCRIPTION_DISABLED
+        if CONF_ONVIF_SUBSCRIPTION_DISABLED in options:
+            self.onvif_subscription_disabled = options[CONF_ONVIF_SUBSCRIPTION_DISABLED]
+
         from .binary_sensor import MotionSensor, ObjectDetectedSensor
 
         self.sensor_motion_detection: Optional[MotionSensor] = None
@@ -250,6 +260,10 @@ class ReolinkBase:
         self._timeout = timeout
         await self._api.set_timeout(timeout)
 
+    async def set_smtp_port(self, port):
+        push = self._hass.data[DOMAIN][self.push_manager]
+        await push.set_smtp_port(port)
+
     async def update_states(self):
         """Call the API of the camera device to update the states."""
         await self._api.get_states()
@@ -344,6 +358,83 @@ class ReolinkPush:
         self._webhook_id = None
         self._event_id = None
 
+        self.smtp_motion_warn = True
+        self.smtp_port = 0
+        self.smtp = None
+
+    # Create/start/stop SMTP server on parameter change
+    async def set_smtp_port(self, port):
+        if self.smtp_port is not port:
+            if self.smtp:
+                _LOGGER.info("Stopping SMTP server on port %i", self.smtp_port)
+                self.smtp.stop()
+                self.smtp = None
+            if self.smtp is None and port is not None and port > 0:
+                _LOGGER.info("Starting SMTP server on port %i", port)
+                self.smtp = Controller(self, hostname='', port=port)
+                self.smtp.start()
+        self.smtp_port = port
+
+    # SMTP EHLO callback
+    async def handle_EHLO(server, session, envelope, hostname, responses):
+        _LOGGER.debug("SMTP EHLO")
+        return "" # Force error in EHLO querry so client falls back to HELO
+
+    # SMTP data callback
+    async def handle_DATA(self, server, session, envelope):
+        _LOGGER.debug("SMTP data")
+        handled = False
+        matches = re.findall(r'base64[\r\n]+(.+?)[\r\n]+', envelope.content.decode('ascii'))
+        if matches:
+            for x in matches:
+                _LOGGER.debug("SMTP data base64: %s", x)
+                try:
+                    text = base64.b64decode(x).decode('ascii')
+                    _LOGGER.debug("SMTP data ascii: %s", text)
+                except:
+                    continue
+                if re.match(".*tested the e-mail alert.*", text) is not None:
+                    # Full text: "If you receive this e-mail you have successfully set up and tested the e-mail alert from your IPC"
+                    _LOGGER.warning("SMTP test email received")
+                    handled = True
+                name = re.findall(r'Alarm Camera Name:\s*(.+?)\s*[\r\n]+', text)
+                event = re.findall(r'Alarm Event:\s*(.+?)\s*[\r\n]+', text)
+                if name and event:
+                    _LOGGER.debug("SMTP name: %s", name[0])
+                    _LOGGER.debug("SMTP event: %s", event[0])
+                    if (event[0] == "Motion Detection"):
+                        _LOGGER.info("SMTP motion detected")
+                        handled = True
+                        if self.smtp_motion_warn:
+                            self.smtp_motion_warn = False
+                            _LOGGER.warning("SMTP non-AI motion event is inferrior to webhooks,"
+                                            " and probably should be disabled."
+                                            " The time limit between events may mask AI detection events."
+                                            " This warning will only print once.")
+                        self._hass.bus.async_fire(self._event_id, {"motion": True})
+                    elif (event[0] == "Person Detected"):
+                        _LOGGER.info("SMTP person detected")
+                        handled = True
+                        self._hass.bus.async_fire(self._event_id, {"motion": True, "smtp": "person"})
+                    elif (event[0] == "Vehicle Detected"):
+                        _LOGGER.info("SMTP vehicle detected")
+                        handled = True
+                        self._hass.bus.async_fire(self._event_id, {"motion": True, "smtp": "vehicle"})
+                    elif (event[0] == "Pet Detected"):
+                        _LOGGER.info("SMTP pet detected")
+                        handled = True
+                        self._hass.bus.async_fire(self._event_id, {"motion": True, "smtp": "pet"})
+                    elif (event[0] == "Dog or cat Detected"):
+                        _LOGGER.info("SMTP pet detected")
+                        handled = True
+                        self._hass.bus.async_fire(self._event_id, {"motion": True, "smtp": "pet"})
+
+        if not handled:
+            _LOGGER.warning("SMTP received unhandled message: %s", envelope.content.decode('ascii'))
+            return "541 ERROR"
+        else:
+            return "250 OK"
+
     @property
     def sman(self):
         """Return the session manager object."""
@@ -374,7 +465,7 @@ class ReolinkPush:
             except NoURLAvailableError as ex:
                 # If we can't get a URL for external or internal, we will still mark the camara as available
                 await self.set_available(True)
-                return True
+                return False
 
         self._sman = Manager(self._host, self._port, self._username, self._password)
         if await self._sman.subscribe(self._webhook_url):
@@ -411,6 +502,12 @@ class ReolinkPush:
 
     async def renew(self):
         """Renew the subscription of the motion events (lease time is set to 15 minutes)."""
+
+        # _sman is available only if subscription was able to find an Internal/External URL, we can retry in case user has
+        # fixed it after HASS config change
+        if self._sman is None:
+            return await self.subscribe(self._event_id)
+
         if self._sman.renewtimer <= SESSION_RENEW_THRESHOLD:
             if not await self._sman.renew():
                 _LOGGER.error(
@@ -471,11 +568,11 @@ async def handle_webhook(hass, webhook_id, request):
     _LOGGER.debug("Webhook called")
 
     if not request.body_exists:
-        _LOGGER.debug("Webhook triggered without payload")
+        _LOGGER.warning("Webhook triggered without payload")
 
     data = await request.text()
     if not data:
-        _LOGGER.debug("Webhook triggered with unknown payload")
+        _LOGGER.warning("Webhook triggered with unknown payload")
         return
 
     _LOGGER_DATA.debug("Webhook received payload: %s", data)
@@ -483,8 +580,9 @@ async def handle_webhook(hass, webhook_id, request):
     matches = re.findall(r'Name="IsMotion" Value="(.+?)"', data)
     if matches:
         is_motion = matches[0] == "true"
+        _LOGGER_DATA.debug("Webhook received motion: %s", matches[0])
     else:
-        _LOGGER.debug("Webhook triggered with unknown payload")
+        _LOGGER.warning("Webhook triggered with unknown payload")
         return
 
     event_id = await get_event_by_webhook(hass, webhook_id)
@@ -542,5 +640,11 @@ def callback_get_iohttp_session():
     global last_known_hass
     if last_known_hass is None:
         raise Exception("No Home Assistant instance found")
-    session = async_get_clientsession(last_known_hass, verify_ssl=False)
+        
+    context = ssl.create_default_context()
+    context.set_ciphers("DEFAULT")
+    context.check_hostname = False
+    context.verify_mode = ssl.CERT_NONE
+    session = async_create_clientsession(last_known_hass, verify_ssl=False)
+    session.connector._ssl = context
     return session

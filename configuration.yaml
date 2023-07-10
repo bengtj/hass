@@ -275,11 +275,11 @@ lovelace:
     - url: /local/auto-entities.js
       type: module
     # https://github.com/Yevgenium/lovelace-weather-card-chart
-    - url: /local/weather-card-chart.js
-      type: module
+    # - url: /local/weather-card-chart.js
+    #   type: module
     # https://github.com/thomasloven/lovelace-layout-card
-    - url: /local/layout-card.js
-      type: module
+    # - url: /local/layout-card.js
+    #   type: module
  
 # Includes of other config files
 scene: !include scenes.yaml

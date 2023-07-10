@@ -4,7 +4,7 @@
         "step": {
             "user": {
                 "title": "Configure Uplink parameters",
-                "description": "Please configure a application on Nibe Uplinks [Application]({application}) page. The redirect url must point to your Home Assistant instance, but does not need to be publically reachable, it need only be reachable from this computer. Ensure it points to the api endpoint ({suffix})",
+                "description": "Please configure an application on Nibe Uplinks [Application]({application}) page. The redirect url must point to your Home Assistant instance, but does not need to be publically reachable, it need only be reachable from this computer. Ensure it points to the api endpoint ({suffix})",
                 "data": {
                     "redirect_uri": "Callback URL",
                     "client_id": "Identifier",
@@ -19,12 +19,8 @@
                     "code": "Code included in redirect uri"
                 }
             },
-            "systems": {
-                "data": {
-                    "systems": "Selected systems"
-                },
-                "description": "Please select which Nibe systems to track",
-                "title": "System selection"
+            "confirm": {
+                "description": "Authorization successful, continue to add systems to your instance."
             }
         },
         "error": {
@@ -32,6 +28,21 @@
         },
         "abort": {
             "already_configured": "Uplink is already configured"
+        }
+    },
+    "system_health": {
+        "info": {
+            "api_endpoint_reachable": "NibeUplink API endpoint reachable"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Configure Systems",
+                "data": {
+                    "systems": "Systems to load data from"
+                }
+            }
         }
     }
 }
