@@ -10,6 +10,7 @@ belysning_all:
     - light.alla_1
     - light.alla_2
     - light.alla_3
+    - light.alla_4
     - switch.altanjul
     - switch.juleljus
 #    - switch.granen # [JUL]
@@ -23,6 +24,7 @@ belysning_dag:
     - light.vardagsrum
     - light.relax
 #    - switch.granen # [JUL]
+    - light.flygel
     - light.hall
     - light.kokstake
     - light.koksfonster
@@ -174,7 +176,7 @@ ovrigtljus:
 fluxljus:
   name: Fluxljus
   entities:
-    - switch.relaxflux
+    - switch.relax
     - switch.vardagsflux
     - switch.koksflux
     - switch.sovflux

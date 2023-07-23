@@ -66,6 +66,7 @@
   stop_time: '23:45'
   lights:
     - light.halltak
+    - light.flygelvagg
     - light.altanvagg
     - light.altanslinga
     - light.altanstolpe_1
