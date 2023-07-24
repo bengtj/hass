@@ -9,13 +9,6 @@ views:
     layout:
       width: 365
     cards:
-      # Tracker locations
-      - type: glance
-        entities:
-          - device_tracker.bengts_mobil
-          - device_tracker.marias_mobil
-          - device_tracker.maltes_mobil
-          - device_tracker.linas_mobil
       # Floor plan
       - type: picture-elements
         image: /local/planskiss.png
@@ -787,59 +780,68 @@ views:
             style:
               top: 98%
               left: 83%
-      # Flygel plan
-      - type: picture-elements
-        image: /local/flygel.png
-        elements:
-          - type: state-icon
-            entity: light.flygeltak_1
-            tap_action:
-              action: toggle
-            style:
-              top: 50%
-              left: 75%
-          - type: state-icon
-            entity: light.flygeltak_2
-            tap_action:
-              action: toggle
-            style:
-              top: 50%
-              left: 50%
-          - type: state-icon
-            entity: light.flygeltak_3
-            tap_action:
-              action: toggle
-            style:
-              top: 50%
-              left: 25%
-          - type: state-icon
-            entity: light.flygelgolv
-            tap_action:
-              action: toggle
-            style:
-              top: 14%
-              left: 62%
-          - type: state-icon
-            entity: light.bordgo
-            tap_action:
-              action: toggle
-            style:
-              top: 14%
-              left: 30%
-          - type: state-icon
-            entity: light.signe
-            tap_action:
-              action: toggle
-            style:
-              top: 35%
-              left: 17%
-          - type: state-icon
-            entity: light.flygelvagg
-            tap_action:
-              action: toggle
-            style:
-              top: 23%
-              left: 80%
+      - type: horizontal-stack
+        cards:
+          # Tracker locations
+          - type: glance
+            entities:
+              - device_tracker.bengts_mobil
+              - device_tracker.marias_mobil
+              - device_tracker.maltes_mobil
+              - device_tracker.linas_mobil
+          # Flygel plan
+          - type: picture-elements
+            image: /local/flygel.png
+            elements:
+              - type: state-icon
+                entity: light.flygeltak_1
+                tap_action:
+                  action: toggle
+                style:
+                  top: 50%
+                  left: 70%
+              - type: state-icon
+                entity: light.flygeltak_2
+                tap_action:
+                  action: toggle
+                style:
+                  top: 50%
+                  left: 50%
+              - type: state-icon
+                entity: light.flygeltak_3
+                tap_action:
+                  action: toggle
+                style:
+                  top: 50%
+                  left: 30%
+              - type: state-icon
+                entity: light.flygelgolv
+                tap_action:
+                  action: toggle
+                style:
+                  top: 80%
+                  left: 88%
+              - type: state-icon
+                entity: light.bordgo
+                tap_action:
+                  action: toggle
+                style:
+                  top: 45%
+                  left: 12%
+              - type: state-icon
+                entity: light.signe
+                tap_action:
+                  action: toggle
+                style:
+                  top: 17%
+                  left: 12%
+              - type: state-icon
+                entity: light.flygelvagg
+                tap_action:
+                  action: toggle
+                style:
+                  top: 22%
+                  left: 87%
       # Yr forecast picture
       - type: picture-entity
         entity: camera.yr_vader
