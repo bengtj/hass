@@ -422,6 +422,13 @@ views:
               top: 69%
               left: 91.4%
           - type: state-icon
+            entity: light.entrestolpe_4
+            tap_action:
+              action: toggle
+            style:
+              top: 44%
+              left: 98%
+          - type: state-icon
             entity: light.entrestolpe_1
             tap_action:
               action: toggle
@@ -487,7 +494,7 @@ views:
           #     top: 50%
           #     left: 25%
           - type: state-icon
-            entity: light.altanstolpe_1
+            entity: light.altanstolpe_3
             tap_action:
               action: toggle
             style:
@@ -501,14 +508,14 @@ views:
               top: 63%
               left: 7%
           - type: state-icon
-            entity: light.altanstolpe_3
+            entity: light.altanslinga
             tap_action:
               action: toggle
             style:
-              top: 45%
+              top: 48%
               left: 15%
           - type: state-icon
-            entity: light.altanstolpe_4
+            entity: light.altanstolpe_1
             tap_action:
               action: toggle
             style:
@@ -519,14 +526,7 @@ views:
             tap_action:
               action: toggle
             style:
-              top: 51%
-              left: 11%
-          - type: state-icon
-            entity: light.altanbonsai
-            tap_action:
-              action: toggle
-            style:
-              top: 57%
+              top: 56%
               left: 11%
           - type: state-icon
             entity: light.altanvagg
@@ -535,13 +535,6 @@ views:
             style:
               top: 67.7%
               left: 33%
-          - type: state-icon
-            entity: light.altanslinga
-            tap_action:
-              action: toggle
-            style:
-              top: 61%
-              left: 35%
           - type: state-label
             entity: sensor.altan_ute_temperature
             style:
