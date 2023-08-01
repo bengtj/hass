@@ -111,6 +111,19 @@ vardagsrumsljus:
     - light.altanfonster
     - light.golvlampa
 
+# Ljus i flygel
+flygelljus:
+  name: Flygelljus
+  entities:
+    - light.flygel
+    - light.flygeltak_1
+    - light.flygeltak_2
+    - light.flygeltak_3
+    - light.flygelfonster
+    - light.flygelgolv
+    - light.bordgo
+    - light.signe
+
 # Ljus i relax
 relaxljus:
   name: Relaxljus
@@ -175,7 +188,8 @@ ovrigtljus:
 fluxljus:
   name: Fluxljus
   entities:
-    - switch.relax
+    - switch.flygelflux
+    - switch.relaxflux
     - switch.vardagsflux
     - switch.koksflux
     - switch.sovflux

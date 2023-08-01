@@ -1109,6 +1109,13 @@ views:
       - type: custom:auto-entities
         card:
           type: glance
+          title: Flygel
+        filter:
+          include:
+            - group: group.flygelljus
+      - type: custom:auto-entities
+        card:
+          type: glance
           title: Relax
         filter:
           include:
