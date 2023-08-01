@@ -569,8 +569,8 @@
 #     }
 # }    
 
-# Using hue switches turn of flux for the room
-- alias: Flygeldimmer
+# Using hue dimmmers to turn off/on flux
+- alias: Flygeldimmer avflux
   initial_state: 'on'
   trigger:
     - platform: event
@@ -580,6 +580,19 @@
         type: initial_press
   action:
     - service: homeassistant.turn_off
+      entity_id:
+        - switch.flygelflux
+- alias: Flygeldimmer påflux
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: hue_event
+      event_data:
+        id: flygeldimmer_button
+        type: repeat
+        subtype: 4
+  action:
+    - service: homeassistant.turn_on
       entity_id:
         - switch.flygelflux
 
