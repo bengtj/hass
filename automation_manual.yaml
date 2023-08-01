@@ -569,6 +569,31 @@
 #     }
 # }    
 
+# Using hue switches turn of flux for the room
+- alias: Flygeldimmer
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: hue_event
+      event_data:
+        id: flygeldimmer_button
+        type: initial_press
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - switch.flygelflux
+
+# Återställ fluxljus igen på natten
+- alias: Schema fluxljus på
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '5:00:00'
+  action:
+    - service: homeassistant.turn_on
+      entity_id:
+        - group.fluxljus
+
 # Belysning fjärrisar
 - alias: Belysning fjärrisar
   initial_state: 'on'
@@ -639,7 +664,7 @@
         scene_name: '{{ trigger.to_state.state }}'
     - condition: time
       after: '09:00:00'
-      before: '20:00:00'
+      before: '21:00:00'
     - delay: '00:00:01'
     - service: hue.hue_activate_scene
       data_template:

@@ -198,16 +198,13 @@
       options:
       - Flux
       - Inget
-      - Energise
-      - Concentrate
-      - Bright
-      - Read
-      - Dimmed
-      - Nightlight
-      - Savanna sunset
-      - Tropical twilight
-      - Arctic aurora
-      - Spring blossom
+      - Avslappning
+      - Dimmad
+      - Koncentration
+      - Ljust
+      - Läsning
+      - Nattlampa
+      - Styrka
       editable: false
       friendly_name: Huescen
       icon: mdi:theme-light-dark

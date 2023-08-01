@@ -170,16 +170,17 @@ input_select:
     options:
       - Flux
       - Inget
-      - Energise
-      - Concentrate
-      - Bright
-      - Read
-      - Dimmed
-      - Nightlight
-      - Savanna sunset
-      - Tropical twilight
-      - Arctic aurora
-      - Spring blossom
+      - Avslappning
+      - Dimmad
+      - Koncentration
+      - Ljust
+      - Läsning
+      - Nattlampa
+      - Styrka
+      # - Savanna sunset # TODO: Different language in new and old bridges. Maybe update to a new set of favorites in all. Maybe fix after hue_activate_scene is deprecated?
+      # - Tropical twilight
+      # - Arctic aurora
+      # - Spring blossom
     initial: Flux
     icon: mdi:theme-light-dark
 
