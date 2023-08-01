@@ -1,4 +1,9 @@
 # Zones
+- name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  radius: 60
+  icon: mdi:home
 - name: Julia
   latitude: 58.019557172220686
   longitude: 11.832392363628776
