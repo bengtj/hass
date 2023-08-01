@@ -102,14 +102,6 @@ mobile_app:
 
 # Track device location with nmap. See secrets.yaml for gpslogger configuration.
 device_tracker:
-#  - platform: nmap_tracker
-#    hosts:
-#      - 192.168.0.29
-#      - 192.168.0.30
-#      - 192.168.0.31
-#      - 192.168.0.32
-#    home_interval: 5
-#    interval_seconds: 30
 
 # AC power toggle via Harmony. Copied as switch.ac to get icon color.
 input_boolean:
@@ -117,28 +109,8 @@ input_boolean:
     name: Luftkonditionering
     icon: mdi:air-conditioner
 
-# Philips hue bridge
-# hue:
-#   bridges:
-#     - host: 192.168.0.13
-#       allow_unreachable: true
-#     - host: 192.168.0.15
-#       allow_unreachable: true
-#remote: # From https://github.com/robmarkcole/Hue-remotes-HASS
-#  - platform: hueremote
-
 # Energy prices, see sensor.yaml
 nordpool:
-
-# Neato botvac
-# neato:
-#   client_id: !secret neato_client_id
-#   client_secret: !secret neato_secret
-
-# Spotify
-# spotify:
-#   client_id: !secret spotify_client_id
-#   client_secret: !secret spotify_client_secret
 
 # Nibe F370 heat pump plugin from https://github.com/elupus/hass_nibe 
 # List of parameter IDs: https://github.com/openhab/openhab1-addons/wiki/Nibe-Heat-Pump-Binding
@@ -162,55 +134,10 @@ utility_meter:
     source: sensor.energy
     cycle: yearly
 
-#octoprint:
-#  host: 192.168.0.18
-#  api_key: !secret octopi_apikey
-#  bed: true
-#  number_of_tools: 1
-
-
 # Cameras, reolink: https://github.com/fwestenberg/reolink_dev, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
 stream:
 ffmpeg:
 camera:
-#  - platform: reolink_dev
-#    name: Altan
-#    host: "192.168.0.64"
-#    username: !secret cam_user
-#    password: !secret cam_pwd
-  # - platform: mjpeg
-  #   name: Köksfönster
-  #   still_image_url: http://192.168.0.62/image/jpeg.cgi
-  #   mjpeg_url: http://192.168.0.62/mjpeg.cgi
-  #   username: !secret cam_user
-  #   password: !secret cam_pwd
-  # - platform: mjpeg
-  #   name: Altanfönster
-  #   still_image_url: http://192.168.0.63/image/jpeg.cgi
-  #   mjpeg_url: http://192.168.0.63/mjpeg.cgi
-  #   username: !secret cam_user
-  #   password: !secret cam_pwd
-  # - platform: mjpeg
-  #   name: Plantfönster
-  #   still_image_url: http://192.168.0.60/image/jpeg.cgi
-  #   mjpeg_url: http://192.168.0.60/mjpeg.cgi
-  #   username: !secret cam_user
-  #   password: !secret cam_pwd
-#  - platform: reolink_dev
-#    name: Garage
-#    host: "192.168.0.61"
-#    username: !secret cam_user
-#    password: !secret cam_pwd
-  # - platform: mjpeg
-  #   name: Print
-  #   still_image_url: http://192.168.0.65/image/jpeg.cgi
-  #   mjpeg_url: http://192.168.0.65/mjpeg.cgi
-  #   username: !secret cam_user
-  #   password: !secret cam_pwd
-  # - platform: mjpeg
-  #   name: OctoPrint
-  #   still_image_url: http://192.168.0.18/webcam/?action=snapshot
-  #   mjpeg_url: http://192.168.0.18/webcam/?action=stream
   - platform: generic
     name: Yr Väder
     still_image_url: !secret yr_svg_url
@@ -235,11 +162,6 @@ shell_command:
   relax_denon_quick1: curl http://192.168.0.38/MAINZONE/QUICKSELECT/s_quickselect.asp?radioUserMode=Quick1
   relax_denon_quick2: curl http://192.168.0.38/MAINZONE/QUICKSELECT/s_quickselect.asp?radioUserMode=Quick2
   relax_denon_quick3: curl http://192.168.0.38/MAINZONE/QUICKSELECT/s_quickselect.asp?radioUserMode=Quick3
-
-# Relax TV for notifications
-#webostv:
-#  host: 192.168.0.25
-#  name: RelaxTV
 
 # Global scene selector for hue
 input_select:
@@ -283,7 +205,6 @@ lovelace:
  
 # Includes of other config files
 scene: !include scenes.yaml
-scene old: !include scenes_manual.yaml
 zone: !include zone.yaml
 sensor: !include sensor.yaml
 binary_sensor: !include binary_sensor.yaml
@@ -293,4 +214,3 @@ group: !include group.yaml
 automation: !include automation.yaml
 automation old: !include automation_manual.yaml
 script: !include script.yaml
-#rfxtrx: !include rfxtrx.yaml

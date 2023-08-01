@@ -1,5 +1,7 @@
 # RFXtrx 433MHz receiver/transmitter
 
+# Attention: This file is not used anymore, only for reference!
+
 # To add new select automatic add in rfxtrx integration and press switch/button. For lightning4 there can be two devices, note names for data bits.
 # Then enable the entity and on the entity popup the event id will popup when pressing. It is also possible to enter data to create device.
 # Then it is possible to enter stuff like databits and such for the switch using configure on the integration options.

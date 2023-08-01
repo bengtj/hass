@@ -518,37 +518,7 @@
       entity_id:
         - light.golvflakt
 
-# New hue main switch
-# Use condition to catch all events and not only state changes
-# https://community.home-assistant.io/t/multiple-actions-on-trigger-each-with-its-own-condition/82105
-# - alias: Huvudbrytare
-#   initial_state: 'on'
-#   trigger:
-#   - platform: state
-#     entity_id: remote.huvudbrytare
-#   action:
-#     - service_template: >
-#         {% if trigger.to_state.state in ["1_hold"] %}
-#           homeassistant.turn_on
-#         {% elif trigger.to_state.state in ["2_hold", "3_hold"] %}
-#           scene.turn_on
-#         {% elif trigger.to_state.state in ["4_hold"] %}
-#           homeassistant.turn_off
-#         {% else %}
-#           script.noop
-#         {% endif %}
-#       data_template:
-#         entity_id: >
-#           {% if trigger.to_state.state in ["1_hold"] %}
-#             group.belysning_dag
-#           {% elif trigger.to_state.state in ["2_hold"] %}
-#             scene.vardagsljust
-#           {% elif trigger.to_state.state in ["3_hold"] %}
-#             scene.fluxljus
-#           {% elif trigger.to_state.state in ["4_hold"] %}
-#             group.belysning_all
-#           {% endif %}
-
+# Hue main switch
 - alias: Huvudbrytare
   initial_state: 'on'
   trigger:
@@ -625,7 +595,8 @@
             group.belysning_ute
           {% endif %}
 
-# Scene input mapping to hue
+# Scene input mapping to hue.
+# Issues with mixed languages in scene names in different hue bridges. Probably need to remove all scenes and re-add them.
 - alias: Välj scen
   initial_state: 'on'
   trigger:
@@ -648,7 +619,11 @@
         scene_name: '{{ trigger.to_state.state }}'
     - service: hue.hue_activate_scene
       data_template:
-        group_name: 'Relax' # Does not work when on 2nd hue
+        group_name: 'Relax'
+        scene_name: '{{ trigger.to_state.state }}'
+    - service: hue.hue_activate_scene
+      data_template:
+        group_name: 'Flygel'
         scene_name: '{{ trigger.to_state.state }}'
     - service: hue.hue_activate_scene
       data_template:

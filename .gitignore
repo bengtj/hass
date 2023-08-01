@@ -10,6 +10,5 @@ tts
 *.png
 *.pyc
 !.gitignore
-webostv.conf
 blueprints
 known_devices.yaml
