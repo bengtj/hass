@@ -20,6 +20,20 @@
 # Use hue groups for warm/cold white lights instead of the bulbs for these to work properly.
 # Note that all lights in a hue group will be turned on whenever one is on. Cannot use a single large group.
 - platform: flux
+  name: Flygelflux
+  interval: 52
+  start_colortemp: 3000
+  sunset_colortemp: 2000
+  stop_colortemp: 1600
+  lights:
+    - light.flygelfonster
+    - light.flygeltak_1
+    - light.flygeltak_2
+    - light.flygeltak_1
+    - light.flygelgolv
+    - light.bordgo
+    - light.signe
+- platform: flux
   name: Relaxflux
   interval: 53
   start_colortemp: 3000
@@ -41,7 +55,7 @@
     - light.tak_v
     - light.tak_h
     - light.golvlampa
-    - light.flakestake
+    - light.altanfonster
 - platform: flux
   name: Köksflux
   interval: 55
@@ -135,5 +149,5 @@
 # Wake on LAN for SpelTV
 - platform: wake_on_lan
   name: SpelTV
-  mac: 'D4:5D:64:52:12:66'
+  mac: '04:7C:16:5B:81:54'
   host: '192.168.0.7'
