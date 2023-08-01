@@ -370,19 +370,9 @@ entity_config:
     aliases: Altan stolpe 3
     room: Ute
     expose: true
-  light.altanstolpe_4:
-    name: Altanstolpe 4
-    aliases: Altan stolpe 4
-    room: Ute
-    expose: true
   light.altanfontan:
     name: Altanfontän
     aliases: Fontän
-    room: Ute
-    expose: true
-  light.altanbonsai:
-    name: Altanbonsai
-    aliases: Bonsai
     room: Ute
     expose: true
   switch.altanjul:
@@ -432,6 +422,11 @@ entity_config:
   light.entrestolpe_3:
     name: Entréstolpe 3
     aliases: Entré stolpe 3
+    room: Ute
+    expose: true
+  light.entrestolpe_4:
+    name: Entréstolpe 4
+    aliases: Entré stolpe 4
     room: Ute
     expose: true
   light.entresbuske:

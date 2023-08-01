@@ -32,8 +32,6 @@ light.sovrumsgang:
   icon: mdi:wall-sconce
 light.entrebuske:
   icon: mdi:spotlight-beam
-light.altanbonsai:
-  icon: mdi:spotlight-beam
 light.altanfontan:
   icon: mdi:spotlight-beam
 light.plantljus:
