@@ -11,7 +11,7 @@ views:
     cards:
       # Floor plan
       - type: picture-elements
-        image: /local/planskiss.png
+        image: /local/planskiss.png?1 # Update text after ? to force refresh in clients
         elements:
           # Hus sidovy
           - type: state-label # state-icon
@@ -782,16 +782,9 @@ views:
               left: 83%
       - type: horizontal-stack
         cards:
-          # Tracker locations
-          - type: glance
-            entities:
-              - device_tracker.bengts_mobil
-              - device_tracker.marias_mobil
-              - device_tracker.maltes_mobil
-              - device_tracker.linas_mobil
           # Flygel plan
           - type: picture-elements
-            image: /local/flygel.png
+            image: /local/flygel.png?1 # Update text after ? to force refresh in clients
             elements:
               - type: state-icon
                 entity: light.flygeltak_1
@@ -842,6 +835,13 @@ views:
                 style:
                   top: 22%
                   left: 87%
+          # Tracker locations
+          - type: glance
+            entities:
+              - device_tracker.bengts_mobil
+              - device_tracker.marias_mobil
+              - device_tracker.maltes_mobil
+              - device_tracker.linas_mobil
       # Yr forecast picture
       - type: picture-entity
         entity: camera.yr_vader
