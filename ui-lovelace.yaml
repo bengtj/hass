@@ -871,8 +871,30 @@ views:
         show_state: false
       # SMHI
       - type: weather-forecast
-        name: SMHI Väder Stora Höga 
+        name: SMHI Väder Stora Höga
         entity: weather.smhi_smhi
+      - type: custom:platinum-weather-card
+        text_card_title: SMHI Väder Stora Höga
+        section_order:
+          - overview
+          - slots
+        show_section_extended: false
+        show_section_daily_forecast: false
+        overview_layout: complete
+        entity_sun: sun.sun
+        entity_summary: weather.smhi_smhi
+        entity_temperature: weather.smhi_smhi
+        entity_forecast_icon: weather.smhi_smhi
+        entity_pos: weather.smhi_smhi
+        entity_pressure: weather.smhi_smhi
+        entity_humidity: weather.smhi_smhi
+        entity_forecast_max: weather.smhi_smhi
+        entity_forecast_min: weather.smhi_smhi
+        entity_wind_speed: weather.smhi_smhi
+        entity_wind_bearing: weather.smhi_smhi
+        slot_r3: remove # UV
+        slot_r4: sun_next # Fire
+        slot_l5: remove # sun_next
       # Temp sensor history
       - type: history-graph
         title: Historik 3 dagar
@@ -1187,9 +1209,11 @@ views:
         entities:
           - media_player.vardagsshield
           - media_player.relaxshield
-          - media_player.linashield
+          - media_player.linadroid
+          - media_player.flygelshield
+          - media_player.baren
           - media_player.garagecast
-        #  - media_player.maltecast
+          - media_player.altancast
       # Google home card
       - type: entities
         title: Google Home
@@ -1197,10 +1221,11 @@ views:
         entities:
           - media_player.sovhome
           - media_player.badhome
-          - media_player.tvatthome
+          - media_player.flygelhome
           - media_player.kokshome
           - media_player.altanhome
           - media_player.garagehome
+          - media_player.relaxhome
       - type: entities
         title: Google Nest
         show_header_toggle: false
