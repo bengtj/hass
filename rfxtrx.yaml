@@ -7,6 +7,9 @@
 # Then it is possible to enter stuff like databits and such for the switch using configure on the integration options.
 # The options is also the way to go to delete devices.
 
+# Note that there are two "automatic add" settings and only one works for adding new devices. The other is for enabling new by default.
+# So use "automatic add" in "CONFIGURE" and prepare for things to go black. Then you will have to find your new device.
+
 # To receive debug logging from the RFXCOM device, add the following lines to configuration.yaml:
 # logger:
 #   logs:
@@ -16,9 +19,7 @@ device: /dev/ttyUSB0
 # automatic_add: True
 devices:
 
-# Temperature sensors. ID:s not updated, using automtic add in rfxtrx integration instead.
-# Note that there are two "automatic add" settings and only one works for adding new devices. The other is for enabling new by default.
-# So use "automatic add" o in "CONFIGURE" and prepare for thingsd to go black. Then you will have to find your new device.
+# Temperature sensors. ID:s not updated, using automatic add in rfxtrx integration instead.
 # Message conflicts can be due to "Kyl H" switching id or similar.
   "0a52090ed70000d1370159":
     # name: Sovrum

@@ -37,6 +37,14 @@
   unit_prefix: k
   round: 2
 
+- platform: template
+  sensors:
+    wind_direction_text:
+      value_template: >
+        {% set direction = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'] %}
+        {% set degree = states('sensor.wind_direction')|float %}
+        {{ direction[((degree+11.25)/22.5)|int] }}
+
 # Glue lock rest sensor, secrets:
 # glue_resource: "https://user-api.gluehome.com/v1/locks/<lock-id>"
 # glue_auth: "Api-Key <api-key>"

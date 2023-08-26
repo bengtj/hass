@@ -44,10 +44,10 @@ switch.speltv:
   icon: mdi:monitor
 light.skarm:
   icon: mdi:monitor
-light.entrefonster:
-  icon: mdi:lamp
+light.vardagsfonster:
+  icon: mdi:lava-lamp
 light.koksfonster:
-  icon: mdi:lamp
+  icon: mdi:lava-lamp
 light.badrumsskap:
   icon: mdi:led-strip-variant
 light.huego:

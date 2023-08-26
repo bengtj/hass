@@ -133,6 +133,18 @@ utility_meter:
   energy_yearly:
     source: sensor.energy
     cycle: yearly
+  quarter_hourly_rain:
+    source: sensor.rain_total
+    cycle: quarter-hourly
+  hourly_rain:
+    source: sensor.rain_total
+    cycle: hourly
+  daily_rain:
+    source: sensor.rain_total
+    cycle: daily
+  monthly_rain:
+    source: sensor.rain_total
+    cycle: monthly
 
 # Cameras, reolink: https://github.com/fwestenberg/reolink_dev, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
 stream:
@@ -196,6 +208,9 @@ lovelace:
   resources:
     # https://github.com/thomasloven/lovelace-auto-entities/
     - url: /local/auto-entities.js
+      type: module
+    # https://github.com/tomvanswam/compass-card
+    - url: /local/compass-card.js
       type: module
     # https://github.com/Makin-Things/platinum-weather-card
     # Copy js-files from release files and extract icons from zip-file in release files

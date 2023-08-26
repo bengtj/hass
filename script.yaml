@@ -99,13 +99,19 @@ say:
   sequence:
   - service: tts.google_say
     data_template:
-      entity_id: media_player.hallhub
+      entity_id: media_player.flygelhub
       message: "{{ message }}"
       language: 'sv'
       cache: false
   - service: tts.google_say
     data_template:
       entity_id: media_player.relaxhome
+      message: "{{ message }}"
+      language: 'sv'
+      cache: false
+  - service: tts.google_say
+    data_template:
+      entity_id: media_player.kokshub
       message: "{{ message }}"
       language: 'sv'
       cache: false

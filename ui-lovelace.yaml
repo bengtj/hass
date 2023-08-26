@@ -808,6 +808,27 @@ views:
                   top: 50%
                   left: 30%
               - type: state-icon
+                entity: light.flygelfonster_1
+                tap_action:
+                  action: toggle
+                style:
+                  top: 35%
+                  left: 12%
+              - type: state-icon
+                entity: light.flygelfonster_2
+                tap_action:
+                  action: toggle
+                style:
+                  top: 18%
+                  left: 25%
+              - type: state-icon
+                entity: light.flygelfonster_3
+                tap_action:
+                  action: toggle
+                style:
+                  top: 18%
+                  left: 42%
+              - type: state-icon
                 entity: light.flygelgolv
                 tap_action:
                   action: toggle
@@ -819,7 +840,7 @@ views:
                 tap_action:
                   action: toggle
                 style:
-                  top: 45%
+                  top: 55%
                   left: 12%
               - type: state-icon
                 entity: light.signe
@@ -896,17 +917,61 @@ views:
         slot_r4: sun_next # Fire
         slot_l5: remove # sun_next
       # Temp sensor history
-      - type: history-graph
-        title: Historik 3 dagar
-        hours_to_show: 72
+      - type: statistics-graph
+        title: Regn 14 dagar
+        chart_type: bar
+        stat_types:  ['state']
+        period: day
+        days_to_show: 14
+        hide_legend: true
+        entities:
+          - entity: sensor.daily_rain
+            name: Regn per dag
+      - type: statistics-graph
+        title: Regn per timme
+        chart_type: bar
+        stat_types:  ['state']
+        period: hour
+        days_to_show: 1
+        hide_legend: true
+        entities:
+          - entity: sensor.hourly_rain
+            name: Regn per timme
+      - type: statistics-graph
+        title: Energi 14 dagar
+        chart_type: bar
+        stat_types:  ['state']
+        days_to_show: 14
+        period: day
+        hide_legend: true
+        entities:
+          - entity: sensor.energy_daily
+            name: Daglig energi
+      - type: statistics-graph
+        title: Temperatur 14 dagar
+        stat_types:  ['mean']
+        days_to_show: 14
         entities:
           - entity: sensor.inne_temperature
             name: Innetemp
           - entity: sensor.ute_temperature
             name: Utetemp
-          - entity: sensor.nordpool_se3
-            name: Nordpool SE3
-
+      # - type: history-graph
+      #   title: Historik 3 dagar
+      #   hours_to_show: 72
+      #   entities:
+      #     - entity: sensor.nordpool_se3
+      #       name: Nordpool SE3
+      - type: custom:compass-card
+        header:
+          title:
+            value: Vind
+        indicator_sensors:
+          - sensor: sensor.wind_direction
+        value_sensors:
+          - sensor: sensor.wind_gust
+        tap_action:
+          entity: sensor.wind_gust
   # Camera tab
   - icon: mdi:cctv
     id: camera
@@ -1221,7 +1286,6 @@ views:
         entities:
           - media_player.sovhome
           - media_player.badhome
-          - media_player.flygelhome
           - media_player.kokshome
           - media_player.altanhome
           - media_player.garagehome
@@ -1232,7 +1296,7 @@ views:
         entities:
           - media_player.kokshub
           - media_player.vardagshub
-          - media_player.hallhub
+          - media_player.flygelhub
           - media_player.linahub
           - media_player.maltehub
       # Squueezecast card

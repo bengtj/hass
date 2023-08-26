@@ -14,6 +14,8 @@
 "light.*vagg*":
   icon: mdi:wall-sconce
 "light.*stolpe*":
+  icon: mdi:post-lamp
+"light.flygelfonster*":
   icon: mdi:lava-lamp
 "light.*spot*":
   icon: mdi:spotlight-beam
