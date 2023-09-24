@@ -61,9 +61,6 @@ recorder:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
-# Discover some devices automatically
-discovery:
-
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
@@ -149,11 +146,11 @@ utility_meter:
 # Cameras, reolink: https://github.com/fwestenberg/reolink_dev, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
 stream:
 ffmpeg:
-camera:
-  - platform: generic
-    name: Yr Väder
-    still_image_url: !secret yr_svg_url
-    content_type: 'image/svg+xml'
+#camera:
+#  - platform: generic
+#    name: Yr Väder
+#    still_image_url: !secret yr_svg_url
+#    content_type: 'image/svg+xml'
 
 # Mail. Used gmail filter-forwarding from hass_email to work without delay. It seems like gmail will deliver quicker to the sender address(!). TODO: Can't do this anymore after gapps shutdown?
 notify:
@@ -200,7 +197,7 @@ input_select:
 tts:
   - platform: google_translate
     service_name: google_say
-    base_url: http://192.168.0.12:8123
+#    base_url: http://192.168.0.12:8123
 
 # Lovelace UI
 lovelace:

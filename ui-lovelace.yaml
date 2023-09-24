@@ -978,7 +978,7 @@ views:
     title: Kameror
     cards:
       - type: picture-entity
-        entity: camera.altan
+        entity: camera.altan_main
         show_state: false
       - type: picture-entity
         entity: camera.plantfonster
@@ -990,7 +990,7 @@ views:
         entity: camera.koksfonster
         show_state: false
       - type: picture-entity
-        entity: camera.garage
+        entity: camera.garage_main
         show_state: false
       - type: entity-filter
         entities:
