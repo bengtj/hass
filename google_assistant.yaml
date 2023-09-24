@@ -305,6 +305,34 @@ entity_config:
     room: Relaxbad
     expose: true
 
+  # Flygel
+  light.flygelfonster:
+    name: Flygelfönster
+    aliases:
+      - Fönster flygel
+    room: Flygel
+    expose: true
+  light.flygeltak:
+    name: Flygeltak
+    aliases: Tak flygel
+    room: Flygel
+    expose: true
+  light.bordgo:
+    name: Flygelbord
+    aliases: Bord go
+    room: Flygel
+    expose: true
+  light.signe:
+    name: Flygelhörn
+    aliases: Signe
+    room: Flygel
+    expose: true
+  light.flygelgolv:
+    name: Flygelgolv
+    aliases: Golv flygel
+    room: Flygel
+    expose: true
+
   # Garage
   light.garageslinga:
     name: Garageslinga
