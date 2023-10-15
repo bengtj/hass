@@ -47,7 +47,7 @@ views:
               top: 12.6%
               left: 17%
           - type: state-label
-            entity: sensor.power
+            entity: sensor.p1ib_active_power_plus_q1_q4
             style:
               top: 16%
               left: 16.5%
@@ -1093,6 +1093,42 @@ views:
             show_state: true
         camera_image: camera.octoprint
         camera_view: live
+      - type: gauge
+        entity: sensor.p1ib_current_l1
+        max: 25
+        unit: A
+        needle: true
+        severity:
+          green: 0
+          yellow: 16
+          red: 20
+      - type: gauge
+        entity: sensor.p1ib_current_l2
+        max: 25
+        unit: A
+        severity:
+          green: 0
+          yellow: 16
+          red: 20
+        needle: true
+      - type: gauge
+        entity: sensor.p1ib_current_l3
+        max: 25
+        unit: A
+        needle: true
+        severity:
+          green: 0
+          yellow: 16
+          red: 20
+      - type: gauge
+        entity: sensor.p1ib_active_power_plus_q1_q4
+        max: 15
+        unit: kW
+        needle: true
+        severity:
+          green: 0
+          yellow: 7.5
+          red: 11.5
 
   # Calendar tab
 #  - icon: mdi:calendar-clock
