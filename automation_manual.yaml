@@ -316,14 +316,13 @@
   initial_state: 'on'
   trigger:
   - platform: time
-    at: '21:00:00'
+    at: '21:30:00'
   action:
   - service: homeassistant.turn_off
     data:
       entity_id: 
         - light.maltes_rum
         - light.linas_rum
-        - light.sovrumsgang
 
 # Schema belysning ute
 - alias: Schema ute morgon på
@@ -439,7 +438,7 @@
   - platform: time
     at: '17:00:00'
   - platform: time
-    at: '20:00:00'
+    at: '21:30:00'
   action:
   - service: homeassistant.turn_off
     data:
