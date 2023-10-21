@@ -9,13 +9,15 @@
     - sensor.sovrum_ute_temperature
     - sensor.malte_ute_temperature
     - sensor.lina_ute_temperature
-    - sensor.entre_ute_temperature
+    - sensor.entre_temperature
+    - sensor.friggebod_temperature
 #    - sensor.altan_ute_temperature # Gives bad mean value
 - platform: min_max
   name: Inne Temperature
   type: mean
   round_digits: 1
   entity_ids:
+    - sensor.flygel_temperature
     - sensor.relax_temperature
     - sensor.vardagsrum_temperature
     - sensor.sovrum_temperature

@@ -57,24 +57,19 @@ views:
               top: 20%
               left: 16.5%
           - type: state-icon
-            entity: sensor.energy_daily
-            style:
-              top: 24%
-              left: 9%
-          - type: state-icon
-            entity: sensor.energy_monthly
-            style:
-              top: 24%
-              left: 16%
-          - type: state-icon
-            entity: sensor.energy_yearly
-            style:
-              top: 24%
-              left: 23%
-          - type: state-icon
             entity: switch.friggebod_lock
             style:
-              top: 30%
+              top: 25%
+              left: 7%
+          - type: state-label
+            entity: sensor.friggebod_temperature
+            style:
+              top: 29.3%
+              left: 7%
+          - type: state-label
+            entity: sensor.friggebod_humidity
+            style:
+              top: 32.5%
               left: 7%
           # Sovrum
           - type: state-icon
@@ -450,14 +445,9 @@ views:
               top: 76%
               left: 97%
           - type: state-label
-            entity: sensor.entre_ute_temperature
+            entity: sensor.entre_temperature
             style:
               top: 82%
-              left: 92%
-          - type: state-label
-            entity: sensor.entre_ute_humidity
-            style:
-              top: 85%
               left: 92%
           # Altan
           - type: state-icon
@@ -856,6 +846,16 @@ views:
                 style:
                   top: 22%
                   left: 87%
+              - type: state-label
+                entity: sensor.flygel_temperature
+                style:
+                  top: 70%
+                  left: 50%
+              - type: state-label
+                entity: sensor.flygel_humidity
+                style:
+                  top: 83%
+                  left: 50%
           # Tracker locations
           - type: glance
             entities:
