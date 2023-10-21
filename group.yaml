@@ -101,7 +101,7 @@ vardagsrumsljus:
     - light.vardagsrum
     - light.tak_v
     - light.tak_h
-    - light.fonster
+    - light.vardagsfonster
     - light.hornlampa
     - light.tv_v
     - light.tv_h
@@ -132,10 +132,7 @@ relaxljus:
     - light.plantfonster
     - light.plantljus
     - light.datafonster
-    - light.datormys
-    - light.skarm_v
-    - light.skarm_u
-    - light.skarm_h
+    - light.skarm
     - light.relaxgang
     - light.relaxtak
     - light.datatak
@@ -146,7 +143,8 @@ garageljus:
   entities:
     - light.garage
     - light.garagefonster
-    - light.traning
+    - light.garageslinga
+    - light.skrivare
     - light.atervinning
 
 # Ljus utomhus
