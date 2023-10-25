@@ -650,6 +650,13 @@ views:
             style:
               top: 78%
               left: 20%
+          - type: state-icon
+            entity: light.relaxannex
+            tap_action:
+              action: toggle
+            style:
+              top: 74%
+              left: 9%
           - type: state-label
             entity: sensor.relax_temperature
             style:
@@ -774,8 +781,15 @@ views:
         cards:
           # Flygel plan
           - type: picture-elements
-            image: /local/flygel.png?1 # Update text after ? to force refresh in clients
+            image: /local/flygel.png?5 # Update text after ? to force refresh in clients
             elements:
+              - type: state-icon
+                entity: light.flygelsims_s1
+                tap_action:
+                  action: toggle
+                style:
+                  top: 5%
+                  left: 62%
               - type: state-icon
                 entity: light.flygeltak_1
                 tap_action:
@@ -802,28 +816,28 @@ views:
                 tap_action:
                   action: toggle
                 style:
-                  top: 35%
+                  top: 37%
                   left: 12%
               - type: state-icon
                 entity: light.flygelfonster_2
                 tap_action:
                   action: toggle
                 style:
-                  top: 18%
+                  top: 20%
                   left: 25%
               - type: state-icon
                 entity: light.flygelfonster_3
                 tap_action:
                   action: toggle
                 style:
-                  top: 18%
+                  top: 20%
                   left: 42%
               - type: state-icon
                 entity: light.flygelgolv
                 tap_action:
                   action: toggle
                 style:
-                  top: 80%
+                  top: 78%
                   left: 88%
               - type: state-icon
                 entity: light.bordgo
@@ -837,24 +851,31 @@ views:
                 tap_action:
                   action: toggle
                 style:
-                  top: 17%
+                  top: 20%
                   left: 12%
               - type: state-icon
                 entity: light.flygelvagg
                 tap_action:
                   action: toggle
                 style:
-                  top: 22%
+                  top: 25%
                   left: 87%
+              - type: state-icon
+                entity: light.bakflod
+                tap_action:
+                  action: toggle
+                style:
+                  top: 95%
+                  left: 88%
               - type: state-label
                 entity: sensor.flygel_temperature
                 style:
-                  top: 70%
+                  top: 68%
                   left: 50%
               - type: state-label
                 entity: sensor.flygel_humidity
                 style:
-                  top: 83%
+                  top: 80%
                   left: 50%
           # Tracker locations
           - type: glance

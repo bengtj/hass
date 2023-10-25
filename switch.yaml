@@ -44,6 +44,7 @@
     - light.datatak
     - light.relaxtak
     - light.relaxgang
+    - light.relaxannex
 - platform: flux
   name: Vardagsflux
   interval: 54
@@ -81,6 +82,7 @@
   lights:
     - light.halltak
     - light.flygelvagg
+    - light.flygelsims_s1
     - light.altanvagg
     - light.altanslinga
     - light.altanstolpe_1

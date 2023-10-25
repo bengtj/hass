@@ -135,6 +135,7 @@ relaxljus:
     - light.skarm
     - light.relaxgang
     - light.relaxtak
+    - light.relaxannex
     - light.datatak
 
 # Ljus i garage

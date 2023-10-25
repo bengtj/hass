@@ -13,6 +13,8 @@
   icon: mdi:candle  
 "light.*vagg*":
   icon: mdi:wall-sconce
+"light.*sims*":
+  icon: mdi:wall-sconce-flat
 "light.*stolpe*":
   icon: mdi:post-lamp
 "light.flygelfonster*":
