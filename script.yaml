@@ -6,7 +6,7 @@ altan_mail:
   sequence:
   - service: camera.snapshot
     data:
-      entity_id: camera.altan
+      entity_id: camera.altan_main
       filename: "/config/www/cam/altan1.jpg"
   - service: homeassistant.turn_on
     data:
@@ -29,7 +29,7 @@ altan_mail:
       seconds: 3
   - service: camera.snapshot
     data:
-      entity_id: camera.altan
+      entity_id: camera.altan_main
       filename: "/config/www/cam/altan2.jpg"
   - service: notify.email # Mailen kommer fram långsammare med fler bilder, bättre med fler små mail...
     data_template:
@@ -42,6 +42,34 @@ altan_mail:
           - /config/www/cam/plantfonster.jpg
           - /config/www/cam/altanfonster.jpg
           - /config/www/cam/koksfonster.jpg
+
+# Mail with pictures from cameras from baksidan
+baken_mail:
+  alias: "Mail för detekterad bakrörelse"
+  sequence:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.baksidan_main
+      filename: "/config/www/cam/baken1.jpg"
+  - service: camera.snapshot
+    data:
+      entity_id: camera.altan_main
+      filename: "/config/www/cam/altan.jpg"
+  - delay: 
+      seconds: 3
+  - service: camera.snapshot
+    data:
+      entity_id: camera.baksidan_main
+      filename: "/config/www/cam/baken2.jpg"
+  - service: notify.email # Mailen kommer fram långsammare med fler bilder, bättre med fler små mail...
+    data_template:
+      title: Någon smyger på baksidan {{ now().strftime("%H:%M") }}!
+      message: !secret hass_altan_msg
+      data:
+        images:
+          - /config/www/cam/baken1.jpg
+          - /config/www/cam/altan.jpg
+          - /config/www/cam/baken2.jpg
 
 # Mail a standard message, speak the title on google home and show on relax tv.
 # Note by using a script it is possible to include a secret url.
