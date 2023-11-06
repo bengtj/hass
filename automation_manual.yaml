@@ -299,19 +299,33 @@
       entity_id: switch.ac
 
 # Turn on SpelTV when harmony changes to Spela Steam.
+# - alias: SpelTV Wake On LAN
+#   initial_state: 'on'
+#   trigger:
+#     platform: state
+#     entity_id: remote.vardagsharmoni
+#   condition:
+#     condition: template
+#     value_template: '{{ trigger.to_state.attributes.current_activity == "Spela Steam" }}'
+#   action:
+#     service: homeassistant.turn_on
+#     data:
+#       entity_id: switch.speltv
+
+# Turn on SpelTV when FlygelTV changes to PC.
 - alias: SpelTV Wake On LAN
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: remote.vardagsharmoni
+    entity_id: media_player.flygeltv
   condition:
     condition: template
-    value_template: '{{ trigger.to_state.attributes.current_activity == "Spela Steam" }}'
+    value_template: '{{ trigger.to_state.attributes.source == "PC" }}'
   action:
     service: homeassistant.turn_on
     data:
       entity_id: switch.speltv
-    
+
 # Schema belysning dag
 - alias: Schema dag på
   initial_state: 'on'
