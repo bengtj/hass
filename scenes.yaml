@@ -337,3 +337,82 @@
       state: 'on'
   icon: mdi:lightbulb-on-outline
   metadata: {}
+- id: '1699289420481'
+  name: Flygelflux
+  entities:
+    switch.flygelflux:
+      friendly_name: Flygelflux
+      icon: mdi:theme-light-dark
+      state: 'on'
+  icon: mdi:theme-light-dark
+  metadata:
+    switch.flygelflux:
+      entity_only: true
+- id: '1699289529108'
+  name: Flygelljust
+  entities:
+    switch.flygelflux:
+      friendly_name: Flygelflux
+      icon: mdi:theme-light-dark
+      state: 'off'
+    light.flygel:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      is_hue_group: true
+      hue_scenes:
+      - Ljust
+      - Styrka
+      - Arktisk aurora
+      - Dimmad
+      - Läsning
+      - Avslappning
+      - Nattlampa
+      - Koncentration
+      hue_type: room
+      lights:
+      - Flygeltak 13
+      - Flygelfönster 3
+      - Flygeltak 24
+      - Flygeltak 31
+      - Signe
+      - Flygeltak 34
+      - Flygeltak 12
+      - BordGo
+      - Flygeltak 23
+      - Flygelgolv
+      - Flygeltak 11
+      - Flygeltak 21
+      - Flygeltak 32
+      - Flygelfönster 2
+      - Flygeltak 14
+      - Flygeltak 33
+      - Flygelfönster 1
+      - Flygeltak 22
+      dynamics: false
+      icon: mdi:lightbulb-group
+      friendly_name: Flygel
+      supported_features: 40
+      color_mode: color_temp
+      brightness: 255
+      hs_color:
+      - 27.152
+      - 44.32
+      rgb_color:
+      - 255
+      - 193
+      - 141
+      xy_color:
+      - 0.453
+      - 0.374
+      color_temp_kelvin: 3521
+      color_temp: 284
+      state: 'on'
+  icon: mdi:lightbulb-on-outline
+  metadata:
+    switch.flygelflux:
+      entity_only: true

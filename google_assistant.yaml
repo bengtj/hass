@@ -333,6 +333,22 @@ entity_config:
     room: Flygel
     expose: true
 
+  scene.flygelljust:
+    name: Flygelljust
+    aliases:
+      - Ljust flygel
+      - Flygel sol
+    room: Flygel
+    expose: true
+  scene.flygelflux:
+    name: Flygelflux
+    aliases: 
+      - Fluxljus flygel
+      - Flygel flux
+      - Flux flygel
+    room: Relax
+    expose: true
+ 
   # Garage
   light.garageslinga:
     name: Garageslinga
