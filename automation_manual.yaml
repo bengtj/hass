@@ -158,17 +158,17 @@
         after: '01:00:00'
         before: '06:00:00'
   action: # Flera mindre mail så når dom fram snabbare...
-  - service: script.baken_mail
+  - service: script.altan_mail
   - delay: '00:00:20'
   - condition: state
     entity_id: binary_sensor.altan_motion
     state: 'on'
-  - service: script.baken_mail
+  - service: script.altan_mail
   - delay: '00:00:20'
   - condition: state
     entity_id: binary_sensor.altan_motion
     state: 'on'
-  - service: script.baken_mail
+  - service: script.altan_mail
 
 - alias: Rörelse altan
   initial_state: 'on'
