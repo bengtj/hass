@@ -211,17 +211,16 @@ entity_config:
     aliases: Golvlampa
     room: Vardagsrum
     expose: true
-  # switch.granen: # [JUL]
-  #   name: Gran
-  #   aliases: Granen
-  #   room: Vardagsrum
-  #   expose: true
+  switch.granen: # [JUL]
+    name: Gran
+    aliases: Granen
+    room: Vardagsrum
+    expose: true
 
   scene.vardagsljust:
     name: Vardagsljust
     aliases:
-      - Vardags sol
-      - Vardagsrums sol
+      - Upplyst vardagsrum
       - Ljust vardagsrum
     room: Vardagsrum
     expose: true
@@ -230,6 +229,7 @@ entity_config:
     aliases:
       - Vardags flux
       - Fluxljus vardagsrum
+      - Flux vardagsrum
     room: Vardagsrum
     expose: true
 
@@ -281,7 +281,7 @@ entity_config:
     name: Relaxljust
     aliases:
       - Ljust relax
-      - Relax sol
+      - Upplyst relax
     room: Relax
     expose: true
   scene.relaxbio:
@@ -337,7 +337,7 @@ entity_config:
     name: Flygelljust
     aliases:
       - Ljust flygel
-      - Flygel sol
+      - Upplyst flygel
     room: Flygel
     expose: true
   scene.flygelflux:
