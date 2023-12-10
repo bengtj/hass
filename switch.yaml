@@ -22,9 +22,9 @@
 - platform: flux
   name: Flygelflux
   interval: 52
-  start_colortemp: 3000
-  sunset_colortemp: 2000
-  stop_colortemp: 1600
+  start_colortemp: 3600
+  sunset_colortemp: 3000
+  stop_colortemp: 1900
   lights:
     - light.flygelfonster
     - light.flygeltak_1
@@ -48,9 +48,9 @@
 - platform: flux
   name: Vardagsflux
   interval: 54
-  start_colortemp: 3000
-  sunset_colortemp: 2000
-  stop_colortemp: 1600
+  start_colortemp: 3600
+  sunset_colortemp: 3000
+  stop_colortemp: 1900
   lights:
     - light.tv
     - light.tak_v
@@ -77,6 +77,9 @@
 - platform: flux
   name: Uteflux
   interval: 177
+  start_colortemp: 3600
+  sunset_colortemp: 3000
+  stop_colortemp: 1900
   start_time: '7:00'
   stop_time: '23:45'
   lights:
