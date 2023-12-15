@@ -220,6 +220,7 @@ entity_config:
   scene.vardagsljust:
     name: Vardagsljust
     aliases:
+      - Upplyst
       - Upplyst vardagsrum
       - Ljust vardagsrum
     room: Vardagsrum
@@ -227,7 +228,9 @@ entity_config:
   scene.vardagsflux:
     name: Vardagsflux
     aliases:
-      - Vardags flux
+      - Flux
+      - Fluxljus
+      - Vardagsrum flux
       - Fluxljus vardagsrum
       - Flux vardagsrum
     room: Vardagsrum
@@ -280,6 +283,7 @@ entity_config:
   scene.relaxljust:
     name: Relaxljust
     aliases:
+      - Upplyst
       - Ljust relax
       - Upplyst relax
     room: Relax
@@ -292,6 +296,8 @@ entity_config:
   scene.relaxflux:
     name: Relaxflux
     aliases: 
+      - Flux
+      - Fluxljus
       - Fluxljus relax
       - Relax flux
       - Flux relax
@@ -336,6 +342,7 @@ entity_config:
   scene.flygelljust:
     name: Flygelljust
     aliases:
+      - Upplyst
       - Ljust flygel
       - Upplyst flygel
     room: Flygel
@@ -343,6 +350,8 @@ entity_config:
   scene.flygelflux:
     name: Flygelflux
     aliases: 
+      - Flux
+      - Fluxljus
       - Fluxljus flygel
       - Flygel flux
       - Flux flygel
