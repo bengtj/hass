@@ -333,7 +333,7 @@ entity_config:
     aliases: Golv flygel
     room: Flygel
     expose: true
-  switch.granen: # [JUL]
+  light.granen: # [JUL]
     name: Gran
     aliases: Granen
     room: Flygel
@@ -433,12 +433,12 @@ entity_config:
     aliases: Altanjul
     room: Ute
     expose: true
-  switch.istappar:
+  light.istappar:
     name: Istappar
     aliases: Istapparna
     room: Ute
     expose: true
-  switch.takfot:
+  light.takfot:
     name: Takfot
     room: Ute
     expose: true

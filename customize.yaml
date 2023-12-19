@@ -1,8 +1,8 @@
-switch.granen:
+light.granen:
   icon: mdi:pine-tree
-switch.istappar:
+light.istappar:
   icon: mdi:string-lights
-switch.takfot:
+light.takfot:
   icon: mdi:string-lights
 light.garageport:
   icon: mdi:wall-sconce

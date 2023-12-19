@@ -368,7 +368,7 @@ views:
               left: 84%
           # Entré
           - type: state-icon
-            entity: switch.takfot
+            entity: light.takfot
             tap_action:
               action: toggle
             style:
@@ -470,7 +470,7 @@ views:
               top: 45%
               left: 25%
           - type: state-icon # [JUL]
-            entity: switch.istappar
+            entity: light.istappar
             tap_action:
               action: toggle
             style:
@@ -861,7 +861,7 @@ views:
                   top: 20%
                   left: 12%
               - type: state-icon # [JUL]
-                entity: switch.granen
+                entity: light.granen
                 tap_action:
                   action: toggle
                 style:

@@ -107,31 +107,31 @@
     - light.entrestolpe_4
     - light.entrebuske
 
-# Twinkly
-- platform: command_line
-  switches:
-    granen:
-      command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.26 on"
-      command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.26 off" 
-#      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.26 state" # Will interfere with app; only one login token can be active at once...
-      value_template: "{{ value == \"1\" }}"
-      friendly_name: Gran-twinkly
-- platform: command_line
-  switches:
-    istappar:
-      command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.27 on"
-      command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.27 off" 
-#      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.27 state" # Will interfere with app; only one login token can be active at once...
-      value_template: "{{ value == \"1\" }}"
-      friendly_name: Istapp-twinkly
-- platform: command_line
-  switches:
-    takfot:
-      command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.28 on"
-      command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.28 off" 
-#      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.28 state" # Will interfere with app; only one login token can be active at once...
-      value_template: "{{ value == \"1\" }}"
-      friendly_name: Takfot-twinkly
+# # Twinkly
+# - platform: command_line
+#   switches:
+#     granen:
+#       command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.26 on"
+#       command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.26 off" 
+# #      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.26 state" # Will interfere with app; only one login token can be active at once...
+#       value_template: "{{ value == \"1\" }}"
+#       friendly_name: Gran-twinkly
+# - platform: command_line
+#   switches:
+#     istappar:
+#       command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.27 on"
+#       command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.27 off" 
+# #      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.27 state" # Will interfere with app; only one login token can be active at once...
+#       value_template: "{{ value == \"1\" }}"
+#       friendly_name: Istapp-twinkly
+# - platform: command_line
+#   switches:
+#     takfot:
+#       command_on: "python3 /config/python_scripts/twinkly.py 192.168.0.28 on"
+#       command_off: "python3 /config/python_scripts/twinkly.py 192.168.0.28 off" 
+# #      command_state: "python3 /config/python_scripts/twinkly.py 192.168.0.28 state" # Will interfere with app; only one login token can be active at once...
+#       value_template: "{{ value == \"1\" }}"
+#       friendly_name: Takfot-twinkly
 
 # Manual command for bioduk, see http://wildebeestplain.blogspot.com/2016/12/using-conrad-rsl-sockets-with-rfxcom.html
 # - platform: command_line
