@@ -107,30 +107,6 @@
     - light.entrestolpe_4
     - light.entrebuske
 
-# Manual command for bioduk, see http://wildebeestplain.blogspot.com/2016/12/using-conrad-rsl-sockets-with-rfxcom.html
-# - platform: command_line
-#   switches:
-#     bioduk: # 09130014ddfcc0009a60
-#               091300cdddfcc0009a60
-#       friendly_name: "Bioduk"
-#       command_on: 'echo -ne "\x09\x13\x00\x14\xdd\xfc\x03\x00\x9a\x60" > /dev/ttyUSB0'
-#       command_off: 'echo -ne "\x09\x13\x00\x14\xdd\xfc\xc0\x00\x9a\x60" > /dev/ttyUSB0'
-
-# Glue Lock switch w/o support for reading state, adapted from https://github.com/GlueHome/homebridge-plugin
-# Create/fetch <api-key> with glue <user>:<pass> according to plugin README: curl --location --request POST 'https://user-api.gluehome.com/v1/api-keys' --header 'Content-Type: application/json' -u <user>:<pass> --data-raw '{ "name": "My Test Key", "scopes": ["events.read", "locks.read", "locks.write"] }'
-# Fetch <lock-id> using created <api-key>: curl -L -H "Authorization: Api-Key <api-key>"  https://user-api.gluehome.com/v1/locks
-# Test operation <op>=lock/unlock on <lock-id>: curl -L -H "Authorization: Api-Key <api-key>" -H 'Content-Type: application/json' -d '{"type":"<op>"}' https://user-api.gluehome.com/v1/locks/<lock-id>/operations
-# Be sure to replace values in <> with your own and append "-v" to curl command to get more info on failure.
-# In secrets.yaml you will need to escape "" in json:
-# glue_command_on: "curl -L -H 'Authorization: Api-Key <api-key>' -H 'Content-Type: application/json' -d '{\"type\":\"lock\"}' https://user-api.gluehome.com/v1/locks/<lock-id>/operations"
-# glue_command_off: "curl -L -H 'Authorization: Api-Key <api-key>' -H 'Content-Type: application/json' -d '{\"type\":\"unlock\"}' https://user-api.gluehome.com/v1/locks/<lock-id>/operations"
-- platform: command_line
-  switches:
-    friggebod_lock:
-      friendly_name: "Olåst↓ Friggebod ↑Låst"
-      command_on: !secret glue_command_on
-      command_off: !secret glue_command_off
-
 # Wake on LAN for SpelTV
 - platform: wake_on_lan
   name: SpelTV

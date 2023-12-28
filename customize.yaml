@@ -104,5 +104,7 @@ sensor.energy_monthly:
   friendly_name: "Månatlig energiförbrukning"
 sensor.energy_yearly:
   friendly_name: "Årlig energiförbrukning"
+switch.friggebod_lock:
+  friendly_name: "Olåst↓ Friggebod ↑Låst"
 
 # Use wall-sconce-round-variant wall-sconce-flat-variant after updating to newer hassio with newer icons
