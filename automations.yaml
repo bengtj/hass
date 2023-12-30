@@ -1,0 +1,12 @@
+- id: '1703942982447'
+  alias: Nightly Backup
+  description: Backup everything in the middle of the night.
+  trigger:
+  - platform: time
+    at: 03:00:00
+  condition: []
+  action:
+  - service: hassio.backup_full
+    data:
+      compressed: true
+  mode: single

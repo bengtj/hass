@@ -12,3 +12,4 @@ tts
 !.gitignore
 blueprints
 known_devices.yaml
+home-assistant*.db*

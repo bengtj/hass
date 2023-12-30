@@ -223,6 +223,6 @@ switch: !include switch.yaml
 command_line: !include command_line.yaml
 google_assistant: !include google_assistant.yaml
 group: !include group.yaml
-automation: !include automation.yaml
-automation old: !include automation_manual.yaml
+automation: !include automations.yaml
+automation old: !include automations_manual.yaml
 script: !include script.yaml
