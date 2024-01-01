@@ -12,6 +12,7 @@ altan_mail:
     data:
       entity_id:
         - light.altanslinga
+        - light.extraslinga
         - light.altanvagg
   - service: camera.snapshot
     data:
