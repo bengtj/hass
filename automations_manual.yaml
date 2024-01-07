@@ -285,14 +285,14 @@
 
 # AC värme på
 - alias: Morgonluftvärme
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     platform: time
     at: '05:30:00'
   condition:
     condition: numeric_state
     entity_id: sensor.ute_temperature
-    below: 0
+    below: -10
   action:
     service: homeassistant.turn_on
     data:
@@ -733,7 +733,7 @@
 
 # Christmas colors
 - alias: Julfärger
-  initial_state: 'on' # [JUL]
+  initial_state: 'off' # [JUL]
   trigger:
   - platform: time_pattern
     seconds: "/5"
