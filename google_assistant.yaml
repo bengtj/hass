@@ -34,7 +34,7 @@ entity_config:
       - Sovrumsgång vägg
     room: Sovrum
     expose: true
- 
+
   # Maltes rum
   light.maltes_fonster:
     name: Maltefönster
@@ -51,7 +51,7 @@ entity_config:
     aliases: Maltes vägglampa
     room: Maltes rum
     expose: true
- 
+
   # Linas rum
   light.linas_fonster:
     name: Linafönster
@@ -73,7 +73,7 @@ entity_config:
     aliases: Linas sänglampa
     room: Linas rum
     expose: true
- 
+
   # Badrum
   light.badrumsskap:
     name: Skåpslinga
@@ -290,7 +290,7 @@ entity_config:
     expose: true
   scene.relaxflux:
     name: Relaxflux
-    aliases: 
+    aliases:
       - Flux
       - Fluxljus
       - Fluxljus relax
@@ -349,7 +349,7 @@ entity_config:
     expose: true
   scene.flygelflux:
     name: Flygelflux
-    aliases: 
+    aliases:
       - Flux
       - Fluxljus
       - Fluxljus flygel
@@ -357,7 +357,7 @@ entity_config:
       - Flux flygel
     room: Relax
     expose: true
- 
+
   # Garage
   light.garageslinga:
     name: Garageslinga
