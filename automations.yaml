@@ -33,9 +33,23 @@
     - service: light.turn_on
       data:
         brightness: 255
+        kelvin: 5358
       target:
         entity_id: light.flygelvagg
     else:
+    - service: light.turn_on
+      target:
+        entity_id: light.flygelvagg
+      data:
+        rgb_color:
+        - 0
+        - 191
+        - 255
+    - delay:
+        hours: 0
+        minutes: 0
+        seconds: 1
+        milliseconds: 0
     - service: switch.turn_on
       target:
         entity_id: switch.uteflux
