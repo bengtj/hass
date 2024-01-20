@@ -46,8 +46,8 @@ belysning_ute:
     - light.ute
     - switch.altanjul
     - switch.juleljus
-    - light.istappar # [JUL]
-    - light.takfot # [JUL]
+#    - light.istappar # [JUL]
+#    - light.takfot # [JUL]
 
 # Ljus i sovrum och sovrumsgång
 sovrumsljus:

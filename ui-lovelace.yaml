@@ -374,13 +374,13 @@ views:
             style:
               top: 27%
               left: 92%
-          - type: state-icon # [JUL]
-            entity: switch.juleljus
-            tap_action:
-              action: toggle
-            style:
-              top: 31%
-              left: 92%
+          # - type: state-icon # [JUL]
+          #   entity: switch.juleljus
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 31%
+          #     left: 92%
           - type: state-icon
             entity: binary_sensor.entre_motion
             tap_action:
@@ -455,27 +455,27 @@ views:
             style:
               top: 40%
               left: 9%
-          - type: state-icon # [JUL]
+          - type: state-icon
             entity: light.extraslinga
             tap_action:
               action: toggle
             style:
               top: 40%
               left: 25%
-          - type: state-icon # [JUL]
-            entity: switch.altanjul
-            tap_action:
-              action: toggle
-            style:
-              top: 45%
-              left: 25%
-          - type: state-icon # [JUL]
-            entity: light.istappar
-            tap_action:
-              action: toggle
-            style:
-              top: 50%
-              left: 25%
+          # - type: state-icon # [JUL]
+          #   entity: switch.altanjul
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 45%
+          #     left: 25%
+          # - type: state-icon # [JUL]
+          #   entity: light.istappar
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 50%
+          #     left: 25%
           - type: state-icon
             entity: light.altanstolpe_3
             tap_action:
