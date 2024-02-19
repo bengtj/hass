@@ -9,6 +9,7 @@
   - service: hassio.backup_full
     data:
       compressed: true
+      location: hassbackup2
   mode: single
 - id: '1704637753708'
   alias: GrillLjus
