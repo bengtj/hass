@@ -860,13 +860,13 @@ views:
                 style:
                   top: 20%
                   left: 12%
-              - type: state-icon # [JUL]
-                entity: light.granen
-                tap_action:
-                  action: toggle
-                style:
-                  top: 30%
-                  left: 70%
+              # - type: state-icon # [JUL]
+              #   entity: light.granen
+              #   tap_action:
+              #     action: toggle
+              #   style:
+              #     top: 30%
+              #     left: 70%
               - type: state-icon
                 entity: light.flygelvagg
                 tap_action:
