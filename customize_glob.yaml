@@ -11,6 +11,8 @@
   icon: mdi:ceiling-light
 "light.*stake*":
   icon: mdi:candle  
+"light.*plant*":
+  icon: mdi:flower
 "light.*vagg*":
   icon: mdi:wall-sconce
 "light.*sims*":
@@ -39,3 +41,4 @@
   icon: mdi:security-home
 "group.belysning*":
   assumed_state: true
+  

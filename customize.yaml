@@ -34,10 +34,6 @@ light.entrebuske:
   icon: mdi:spotlight-beam
 light.altanfontan:
   icon: mdi:spotlight-beam
-light.plantljus:
-  icon: mdi:flower
-light.garageplanta:
-  icon: mdi:flower
 switch.bioduk:
   icon: mdi:projector-screen-outline
 switch.speltv:

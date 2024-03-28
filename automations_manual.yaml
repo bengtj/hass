@@ -520,13 +520,14 @@
   initial_state: 'on'
   trigger:
   - platform: time
-    at: '05:30:00'
+    at: '05:00:00'
   action:
   - service: homeassistant.turn_on
     data:
       entity_id: 
         - light.plantljus
         - light.garageplanta
+        - light.plantfonster
 - alias: Schema plantljus av
   initial_state: 'on'
   trigger:
@@ -538,6 +539,7 @@
       entity_id:
         - light.plantljus
         - light.garageplanta
+        - light.plantfonster
 
 # Schema golvfläkt
 - alias: Schema golvfläkt på
