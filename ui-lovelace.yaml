@@ -1048,7 +1048,7 @@ views:
     title: Kameror
     cards:
       - type: picture-entity
-        entity: camera.altan_main
+        entity: camera.altan_clear
         show_state: false
       - type: picture-entity
         entity: camera.plantfonster
@@ -1060,10 +1060,10 @@ views:
         entity: camera.koksfonster
         show_state: false
       - type: picture-entity
-        entity: camera.garage_main
+        entity: camera.garage_clear
         show_state: false
       - type: picture-entity
-        entity: camera.baksidan_main
+        entity: camera.baksidan_clear
         show_state: true
       - type: picture-entity
         entity: camera.koket
@@ -1098,6 +1098,7 @@ views:
          - device_tracker.linas_mobil
          - zone.home
          - zone.julia
+         - zone.malva
 #         - zone.oliver
 #         - zone.elliot
          - zone.skolan
@@ -1402,6 +1403,7 @@ views:
           - media_player.altanhome
           - media_player.garagehome
           - media_player.relaxhome
+          - media_player.flygelhome
       - type: entities
         title: Google Nest
         show_header_toggle: false

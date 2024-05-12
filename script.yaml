@@ -6,7 +6,7 @@ altan_mail:
   sequence:
   - service: camera.snapshot
     data:
-      entity_id: camera.altan_main
+      entity_id: camera.altan_clear
       filename: "/config/www/cam/altan1.jpg"
   - service: homeassistant.turn_on
     data:
@@ -30,7 +30,7 @@ altan_mail:
       seconds: 3
   - service: camera.snapshot
     data:
-      entity_id: camera.altan_main
+      entity_id: camera.altan_clear
       filename: "/config/www/cam/altan2.jpg"
   - service: notify.email # Mailen kommer fram långsammare med fler bilder, bättre med fler små mail...
     data_template:
@@ -50,17 +50,17 @@ baken_mail:
   sequence:
   - service: camera.snapshot
     data:
-      entity_id: camera.baksidan_main
+      entity_id: camera.baksidan_clear
       filename: "/config/www/cam/baken1.jpg"
   - service: camera.snapshot
     data:
-      entity_id: camera.altan_main
+      entity_id: camera.altan_clear
       filename: "/config/www/cam/altan.jpg"
   - delay: 
       seconds: 3
   - service: camera.snapshot
     data:
-      entity_id: camera.baksidan_main
+      entity_id: camera.baksidan_clear
       filename: "/config/www/cam/baken2.jpg"
   - service: notify.email # Mailen kommer fram långsammare med fler bilder, bättre med fler små mail...
     data_template:

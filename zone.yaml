@@ -9,6 +9,11 @@
   longitude: 11.832392363628776
   radius: 25
   icon: mdi:teddy-bear
+- name: Malva
+  latitude: 58.0139535
+  longitude: 11.8280705
+  radius: 30
+  icon: mdi:teddy-bear
 # - name: Oliver
 #   latitude: 58.019382117736505
 #   longitude: 11.831523647677622
