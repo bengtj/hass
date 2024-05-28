@@ -16,10 +16,6 @@ altan_mail:
         - light.altanvagg
   - service: camera.snapshot
     data:
-      entity_id: camera.plantfonster
-      filename: "/config/www/cam/plantfonster.jpg"
-  - service: camera.snapshot
-    data:
       entity_id: camera.altanfonster
       filename: "/config/www/cam/altanfonster.jpg"
   - service: camera.snapshot
@@ -40,7 +36,6 @@ altan_mail:
         images:
           - /config/www/cam/altan1.jpg
           - /config/www/cam/altan2.jpg
-          - /config/www/cam/plantfonster.jpg
           - /config/www/cam/altanfonster.jpg
           - /config/www/cam/koksfonster.jpg
 

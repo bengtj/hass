@@ -1051,9 +1051,6 @@ views:
         entity: camera.altan_clear
         show_state: false
       - type: picture-entity
-        entity: camera.plantfonster
-        show_state: false
-      - type: picture-entity
         entity: camera.altanfonster
         show_state: false
       - type: picture-entity
