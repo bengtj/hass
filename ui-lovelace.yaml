@@ -61,6 +61,16 @@ views:
             style:
               top: 25%
               left: 7%
+          - type: state-icon
+            entity: binary_sensor.friggeir
+            style:
+              top: 25%
+              left: 17%
+          - type: state-icon
+            entity: light.friggeflod
+            style:
+              top: 25%
+              left: 27%
           - type: state-label
             entity: sensor.friggebod_temperature
             style:
@@ -1048,10 +1058,10 @@ views:
     title: Kameror
     cards:
       - type: picture-entity
-        entity: camera.altan_clear
+        entity: camera.friggebod_clear
         show_state: false
       - type: picture-entity
-        entity: camera.altanfonster
+        entity: camera.altan_clear
         show_state: false
       - type: picture-entity
         entity: camera.koksfonster
