@@ -173,6 +173,7 @@ uteljus:
     - light.julorm
     - light.ormen
     - switch.altanjul
+    - light.friggeflod
 
 # Övrigt ljus
 ovrigtljus:

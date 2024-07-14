@@ -107,6 +107,7 @@
     - light.entrestolpe_3
     - light.entrestolpe_4
     - light.entrebuske
+    - light.friggeflod
 
 # Wake on LAN for SpelTV
 - platform: wake_on_lan
