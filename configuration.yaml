@@ -111,25 +111,25 @@ nordpool:
 
 # Nibe F370 heat pump plugin from https://github.com/elupus/hass_nibe 
 # List of parameter IDs: https://github.com/openhab/openhab1-addons/wiki/Nibe-Heat-Pump-Binding
-nibe:
-  systems:
-    - system: !secret nibe_system
-      units:
-        - unit: 0
-      sensors:
-        - 40083
-        - 40081
-        - 40079
+#nibe:
+  # systems:
+  #   - system: !secret nibe_system
+  #     units:
+  #       - unit: 0
+  #     sensors:
+  #       - 40083
+  #       - 40081
+  #       - 40079
 utility_meter:
-  energy_daily:
-    source: sensor.energy
-    cycle: daily
-  energy_monthly:
-    source: sensor.energy
-    cycle: monthly
-  energy_yearly:
-    source: sensor.energy
-    cycle: yearly
+  # energy_daily:
+  #   source: sensor.energy
+  #   cycle: daily
+  # energy_monthly:
+  #   source: sensor.energy
+  #   cycle: monthly
+  # energy_yearly:
+  #   source: sensor.energy
+  #   cycle: yearly
   quarter_hourly_rain:
     source: sensor.rain_total
     cycle: quarter-hourly

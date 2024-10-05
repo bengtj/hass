@@ -303,26 +303,26 @@ views:
             style:
               top: 38.5%
               left: 84%
-          - type: state-icon
-            entity: climate.supply
-            style:
-              top: 33%
-              left: 70%
-          - type: state-icon
-            entity: climate.room
-            style:
-              top: 33%
-              left: 75.5%
-          - type: state-icon
-            entity: water_heater.supply
-            style:
-              top: 33%
-              left: 81%
-          - type: state-icon
-            entity: fan.ventilation
-            style:
-              top: 33%
-              left: 85.5%
+          # - type: state-icon
+          #   entity: climate.supply
+          #   style:
+          #     top: 33%
+          #     left: 70%
+          # - type: state-icon
+          #   entity: climate.room
+          #   style:
+          #     top: 33%
+          #     left: 75.5%
+          # - type: state-icon
+          #   entity: water_heater.supply
+          #   style:
+          #     top: 33%
+          #     left: 81%
+          # - type: state-icon
+          #   entity: fan.ventilation
+          #   style:
+          #     top: 33%
+          #     left: 85.5%
           # Hall
           - type: state-icon
             entity: binary_sensor.hall_motion
@@ -1017,16 +1017,16 @@ views:
         entities:
           - entity: sensor.hourly_rain
             name: Regn per timme
-      - type: statistics-graph
-        title: Energi 14 dagar
-        chart_type: bar
-        stat_types:  ['state']
-        days_to_show: 14
-        period: day
-        hide_legend: true
-        entities:
-          - entity: sensor.energy_daily
-            name: Daglig energi
+      # - type: statistics-graph
+      #   title: Energi 14 dagar
+      #   chart_type: bar
+      #   stat_types:  ['state']
+      #   days_to_show: 14
+      #   period: day
+      #   hide_legend: true
+      #   entities:
+      #     - entity: sensor.energy_daily
+      #       name: Daglig energi
       - type: statistics-graph
         title: Temperatur 14 dagar
         stat_types:  ['mean']
@@ -1132,7 +1132,7 @@ views:
           - sensor.linas_minecraft_players_online
 #          - sensor.r7000_014d_kb_sec_received
 #          - sensor.r7000_014d_kb_sec_sent
-      # Vacuum cards, be sure to disable adguard when registering roborock with xiaomi account
+      # Vacuum cards, be sure to disable adguard when registering roborock with xiaomi account. Maybe also log in to their webpage first.
       - type: entities
         title: Snövit
         entities:

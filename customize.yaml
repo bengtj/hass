@@ -92,14 +92,14 @@ device_tracker.linas_mobil:
 device_tracker.lina_lan:
   friendly_name: Linas Wifi
   entity_picture: /local/lina.jpg
-sensor.energy:
-  friendly_name: "Energi"
-sensor.energy_daily:
-  friendly_name: "Energiförbrukning"
-sensor.energy_monthly:
-  friendly_name: "Månatlig energiförbrukning"
-sensor.energy_yearly:
-  friendly_name: "Årlig energiförbrukning"
+# sensor.energy:
+#   friendly_name: "Energi"
+# sensor.energy_daily:
+#   friendly_name: "Energiförbrukning"
+# sensor.energy_monthly:
+#   friendly_name: "Månatlig energiförbrukning"
+# sensor.energy_yearly:
+#   friendly_name: "Årlig energiförbrukning"
 switch.friggebod_lock:
   friendly_name: "Olåst↓ Friggebod ↑Låst"
 
