@@ -868,8 +868,8 @@ views:
                 tap_action:
                   action: toggle
                 style:
-                  top: 55%
-                  left: 12%
+                  top: 78%
+                  left: 70%
               - type: state-icon
                 entity: light.signe
                 tap_action:

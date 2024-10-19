@@ -36,7 +36,10 @@
         brightness: 255
         kelvin: 5358
       target:
-        entity_id: light.flygelvagg
+        entity_id:
+          - light.flygelvagg
+          - light.altanvagg
+          - light.grilly
     else:
     - service: light.turn_on
       target:
