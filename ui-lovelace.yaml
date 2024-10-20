@@ -471,7 +471,14 @@ views:
               action: toggle
             style:
               top: 40%
-              left: 25%
+              left: 19%
+          - type: state-icon
+            entity: light.grilly
+            tap_action:
+              action: toggle
+            style:
+              top: 44%
+              left: 26%
           # - type: state-icon # [JUL]
           #   entity: switch.altanjul
           #   tap_action:
