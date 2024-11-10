@@ -269,6 +269,7 @@ class NordpoolSensor(SensorEntity):
             self.current_price / self._average
             if isinstance(self.current_price, (int, float))
             and isinstance(self._average, (float, int))
+            and self._average>0
             else None
         )
 
