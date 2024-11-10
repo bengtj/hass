@@ -1411,7 +1411,7 @@ views:
           - media_player.sovhome
           - media_player.maltehome
           - media_player.badhome
-          - media_player.kokshome
+          - media_player.kokshomie
           - media_player.altanhome
           - media_player.garagehome
           - media_player.relaxhome
@@ -1437,3 +1437,20 @@ views:
       #     - media_player.garagesqueezecast
       #     - media_player.maltesqueezecast
       #     - media_player.linasqueezecast
+  # Automations tab
+  - icon: mdi:cog-play
+    id: media
+    title: Media
+    cards:
+      - type: custom:auto-entities
+        filter:
+          include:
+            - domain: automation
+          exclude: []
+        sort:
+          method: friendly_name
+        show_empty: true
+        card:
+          type: entities
+          title: Automations
+          show_header_toggle: false
