@@ -34,7 +34,7 @@
     - service: light.turn_on
       data:
         brightness: 255
-        kelvin: 5358
+        kelvin: 4000
       target:
         entity_id:
           - light.flygelvagg
