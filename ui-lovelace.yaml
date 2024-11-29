@@ -529,6 +529,20 @@ views:
               top: 56%
               left: 11%
           - type: state-icon
+            entity: light.koksvagg_1
+            tap_action:
+              action: toggle
+            style:
+              top: 48%
+              left: 35%
+          - type: state-icon
+            entity: light.koksvagg_2
+            tap_action:
+              action: toggle
+            style:
+              top: 58%
+              left: 35%
+          - type: state-icon
             entity: light.altanvagg
             tap_action:
               action: toggle

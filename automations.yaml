@@ -14,48 +14,50 @@
 - id: '1704637753708'
   alias: GrillLjus
   description: Ljus för att grilla
-  trigger:
-  - platform: event
-    event_type: hue_event
+  triggers:
+  - event_type: hue_event
     event_data:
       id: grillknapp_button
       type: short_release
-  condition: []
-  action:
+    trigger: event
+  conditions: []
+  actions:
   - if:
     - condition: state
       entity_id: switch.uteflux
       state: 'on'
     then:
-    - service: switch.turn_off
-      target:
+    - target:
         entity_id: switch.uteflux
       data: {}
-    - service: light.turn_on
-      data:
+      action: switch.turn_off
+    - data:
         brightness: 255
         kelvin: 4000
       target:
         entity_id:
-          - light.flygelvagg
-          - light.altanvagg
-          - light.grilly
+        - light.flygelvagg
+        - light.altanvagg
+        - light.grilly
+        - light.koksvagg_1
+        - light.koksvagg_2
+      action: light.turn_on
     else:
-    - service: light.turn_on
-      target:
+    - target:
         entity_id: light.flygelvagg
       data:
         rgb_color:
         - 0
         - 191
         - 255
+      action: light.turn_on
     - delay:
         hours: 0
         minutes: 0
         seconds: 1
         milliseconds: 0
-    - service: switch.turn_on
-      target:
+    - target:
         entity_id: switch.uteflux
       data: {}
+      action: switch.turn_on
   mode: single
