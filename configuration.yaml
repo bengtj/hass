@@ -33,6 +33,10 @@ homeassistant:
         192.168.0.34: !secret bengt_user_id
       allow_bypass_login: true
 
+# Includes the default config, see https://www.home-assistant.io/integrations/default_config/
+# Disabled. I do not use go2rtc atm.
+#default_config:
+
 # Enables the frontend
 frontend:
   themes:  !include themes.yaml
@@ -64,7 +68,7 @@ recorder:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
-# Enables support for tracking state changes over time
+# Enables support for tracking state changes over time. TODO: Remove unneeded lines...
 history:
 
 # View all events in a logbook
@@ -144,6 +148,7 @@ utility_meter:
     cycle: monthly
 
 # Cameras, reolink: https://github.com/fwestenberg/reolink_dev, see binary_sensor.yaml for camera motion sensor. Maybe check https://github.com/yottatsa/hass_nipca for DCS?
+#go2rtc:
 stream:
 ffmpeg:
 #camera:
