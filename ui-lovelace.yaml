@@ -20,7 +20,7 @@ views:
               top: 1.7%
               left: 11%
           - type: state-icon
-            entity: light.golvflakt
+            entity: light.vindflakt
             tap_action:
               action: toggle
             style:
