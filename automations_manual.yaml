@@ -735,7 +735,7 @@
 
 # Christmas colors
 - alias: Julfärger
-  initial_state: 'on' # [JUL]
+  initial_state: 'off' # [JUL]
   trigger:
   - platform: time_pattern
     seconds: "/3"

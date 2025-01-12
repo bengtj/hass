@@ -333,11 +333,11 @@ entity_config:
     aliases: Golv flygel
     room: Flygel
     expose: true
-  light.granen: # [JUL]
-    name: Gran
-    aliases: Granen
-    room: Flygel
-    expose: true
+  # light.granen: # [JUL]
+  #   name: Gran
+  #   aliases: Granen
+  #   room: Flygel
+  #   expose: true
 
   scene.flygelljust:
     name: Flygelljust
@@ -428,11 +428,11 @@ entity_config:
     aliases: Fontän
     room: Ute
     expose: true
-  switch.altanjul:
-    name: Altanjuleljus
-    aliases: Altanjul
-    room: Ute
-    expose: true
+  # switch.altanjul: # [JUL]
+  #   name: Altanjuleljus
+  #   aliases: Altanjul
+  #   room: Ute
+  #   expose: true
   light.istappar:
     name: Istappar
     aliases: Istapparna
@@ -492,10 +492,10 @@ entity_config:
     aliases: Port
     room: Ute
     expose: true
-  switch.juleljus:
-    name: Entréjuleljus
-    room: Ute
-    expose: true
+  # switch.juleljus: # [JUL]
+  #   name: Entréjuleljus
+  #   room: Ute
+  #   expose: true
 
   # Scener
   scene.fluxljus:
