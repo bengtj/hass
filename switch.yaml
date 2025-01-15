@@ -32,6 +32,7 @@
     - light.flygeltak_3
     - light.flygelgolv
 #    - light.bordgo
+    - light.flygelgo
     - light.signe
 - platform: flux
   name: Relaxflux

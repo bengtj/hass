@@ -878,6 +878,13 @@ views:
                   top: 20%
                   left: 42%
               - type: state-icon
+                entity: light.flygelgo
+                tap_action:
+                  action: toggle
+                style:
+                  top: 55%
+                  left: 12%
+              - type: state-icon
                 entity: light.flygelgolv
                 tap_action:
                   action: toggle
