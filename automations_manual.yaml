@@ -314,7 +314,7 @@
 
 # Turn on SpelTV when FlygelTV changes to PC.
 - alias: SpelTV Wake On LAN
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     platform: state
     entity_id: media_player.flygeltv
