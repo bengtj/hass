@@ -46,11 +46,6 @@ entity_config:
     aliases: Maltes taklampa
     room: Maltes rum
     expose: true
-  light.maltes_vagg:
-    name: Maltes vägg
-    aliases: Maltes vägglampa
-    room: Maltes rum
-    expose: true
 
   # Linas rum
   light.linas_fonster:

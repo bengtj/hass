@@ -130,13 +130,6 @@ views:
               left: 63%
           # Maltes rum
           - type: state-icon
-            entity: light.maltes_vagg
-            tap_action:
-              action: toggle
-            style:
-              top: 6%
-              left: 73%
-          - type: state-icon
             entity: light.maltes_fonster
             tap_action:
               action: toggle

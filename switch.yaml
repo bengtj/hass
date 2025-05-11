@@ -74,7 +74,6 @@
     - light.sovrumsgang
     - light.sanggavel
     - light.linas_vagg
-    - light.maltes_vagg
 - platform: flux
   name: Uteflux
   interval: 177
