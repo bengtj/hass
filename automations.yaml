@@ -61,3 +61,49 @@
       data: {}
       action: switch.turn_on
   mode: single
+- id: '1747675532170'
+  alias: KöksfönsterLjus
+  description: Ljus för att läsa
+  triggers:
+  - event_type: hue_event
+    event_data:
+      id: grillknapp_button
+      type: long_release
+    trigger: event
+  conditions: []
+  actions:
+  - if:
+    - condition: state
+      entity_id: switch.koksflux
+      state: 'on'
+    then:
+    - target:
+        entity_id:
+        - switch.koksflux
+      data: {}
+      action: switch.turn_off
+    - data:
+        brightness: 255
+        kelvin: 4000
+      action: light.turn_on
+      target:
+        entity_id: light.koksfonster
+    else:
+    - data:
+        rgb_color:
+        - 0
+        - 191
+        - 255
+      action: light.turn_on
+      target:
+        entity_id: light.koksfonster
+    - delay:
+        hours: 0
+        minutes: 0
+        seconds: 1
+        milliseconds: 0
+    - data: {}
+      action: switch.turn_on
+      target:
+        entity_id: switch.koksflux
+  mode: single
