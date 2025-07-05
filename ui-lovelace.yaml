@@ -398,13 +398,13 @@ views:
             style:
               top: 47%
               left: 91%
-          - type: state-icon
-            entity: light.sexan
-            tap_action:
-              action: toggle
-            style:
-              top: 59%
-              left: 91.4%
+          # - type: state-icon
+          #   entity: light.sexan
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 59%
+          #     left: 91.4%
           - type: state-icon
             entity: light.entreslinga
             tap_action:
@@ -741,7 +741,7 @@ views:
               left: 46%
               font-size: 61%
           - type: state-label
-            entity: sensor.garage_temperature 
+            entity: sensor.garage_temperature
             style:
               top: 85.5%
               left: 58%
@@ -1108,7 +1108,7 @@ views:
           - device_tracker.lina_lan
         state_filter:
           - home
-        card: 
+        card:
           type: glance
 
   # Map tab
