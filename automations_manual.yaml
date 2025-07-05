@@ -764,6 +764,21 @@
           'light.extraslinga', 'light.altanvagg', 'light.koksvagg_1', 'light.koksvagg_2', 'light.altanslinga', 'light.altanslingfontan', 'light.altanstolpe_1', 'light.altanstolpe_2', 'light.altanstolpe_3' ] %}
         {{ entities|random }}
 
+- alias: Kalasfärger
+  initial_state: 'off'
+  trigger:
+  - platform: time_pattern
+    seconds: "/1"
+  action:
+  - service: script.kalas_colors
+    data_template:
+      entity_id: >
+        {% set entities = [ 'light.hallgo', 
+          'light.entreslinga', 'light.entrevagg', 'light.sexan', 'light.entrestolpe_1', 'light.entrestolpe_2', 'light.entrestolpe_3', 'light.entrestolpe_4', 'light.entrebuske', 'light.garageport',
+          'light.signe', 'light.flygelvagg', 'light.flygelsims_s1', 'light.flygelsims_s2', 'light.flygelsims_s3', 'light.flygelsims_n1', 'light.flygelsims_n2', 'light.flygelsims_n3', 'light.flygelsims_n4',
+          'light.extraslinga', 'light.altanvagg', 'light.koksvagg_1', 'light.koksvagg_2', 'light.altanslinga', 'light.altanslingfontan', 'light.altanstolpe_1', 'light.altanstolpe_2', 'light.altanstolpe_3' ] %}
+        {{ entities|random }}
+
 # Slå på fluxljus och tema vid uppstart
 - alias: Systemstart
   initial_state: 'on'
