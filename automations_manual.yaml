@@ -542,26 +542,26 @@
         - light.plantfonster
 
 # Schema golvfläkt
-- alias: Schema golvfläkt på
-  initial_state: 'on'
-  trigger:
-  - platform: time
-    at: '18:00:00'
-  action:
-  - service: homeassistant.turn_on
-    data:
-      entity_id: 
-        - light.golvflakt
-- alias: Schema golvfläkt av
-  initial_state: 'on'
-  trigger:
-  - platform: time
-    at: '07:00:00'
-  action:
-  - service: homeassistant.turn_off
-    data:
-      entity_id:
-        - light.golvflakt
+# - alias: Schema golvfläkt på
+#   initial_state: 'on'
+#   trigger:
+#   - platform: time
+#     at: '18:00:00'
+#   action:
+#   - service: homeassistant.turn_on
+#     data:
+#       entity_id: 
+#         - light.golvflakt
+# - alias: Schema golvfläkt av
+#   initial_state: 'on'
+#   trigger:
+#   - platform: time
+#     at: '07:00:00'
+#   action:
+#   - service: homeassistant.turn_off
+#     data:
+#       entity_id:
+#         - light.golvflakt
 
 # Hue main switch
 - alias: Huvudbrytare
