@@ -370,13 +370,13 @@ views:
               top: 47%
               left: 84%
           # Entré
-          - type: state-icon
-            entity: light.takfot
-            tap_action:
-              action: toggle
-            style:
-              top: 27%
-              left: 92%
+          # - type: state-icon
+          #   entity: light.takfot
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 27%
+          #     left: 92%
           # - type: state-icon # [JUL]
           #   entity: switch.juleljus
           #   tap_action:
@@ -752,13 +752,13 @@ views:
             style:
               top: 81%
               left: 31%
-          - type: state-icon
-            entity: light.golvflakt
-            tap_action:
-              action: toggle
-            style:
-              top: 94.5%
-              left: 31%
+          # - type: state-icon
+          #   entity: light.golvflakt
+          #   tap_action:
+          #     action: toggle
+          #   style:
+          #     top: 94.5%
+          #     left: 31%
           - type: state-icon
             entity: light.skrivare
             tap_action:
@@ -991,32 +991,39 @@ views:
         entity: camera.yr_vader
         show_name: false
         show_state: false
+      # Met.no
+      - type: weather-forecast
+        name: Met.no Väder Stora Höga
+        entity: weather.forecast_hemma
+        forecast_type: daily
       # SMHI
       - type: weather-forecast
         name: SMHI Väder Stora Höga
         entity: weather.smhi_smhi
-      - type: custom:platinum-weather-card
-        text_card_title: SMHI Väder Stora Höga
-        section_order:
-          - overview
-          - slots
-        show_section_extended: false
-        show_section_daily_forecast: false
-        overview_layout: complete
-        entity_sun: sun.sun
-        entity_summary: weather.smhi_smhi
-        entity_temperature: weather.smhi_smhi
-        entity_forecast_icon: weather.smhi_smhi
-        entity_pos: weather.smhi_smhi
-        entity_pressure: weather.smhi_smhi
-        entity_humidity: weather.smhi_smhi
-        entity_forecast_max: weather.smhi_smhi
-        entity_forecast_min: weather.smhi_smhi
-        entity_wind_speed: weather.smhi_smhi
-        entity_wind_bearing: weather.smhi_smhi
-        slot_r3: remove # UV
-        slot_r4: sun_next # Fire
-        slot_l5: remove # sun_next
+        forecast_type: daily
+
+      # - type: custom:platinum-weather-card
+      #   text_card_title: SMHI Väder Stora Höga
+      #   section_order:
+      #     - overview
+      #     - slots
+      #   show_section_extended: false
+      #   show_section_daily_forecast: false
+      #   overview_layout: complete
+      #   entity_sun: sun.sun
+      #   entity_summary: weather.smhi_smhi
+      #   entity_temperature: weather.smhi_smhi
+      #   entity_forecast_icon: weather.smhi_smhi
+      #   entity_pos: weather.smhi_smhi
+      #   entity_pressure: weather.smhi_smhi
+      #   entity_humidity: weather.smhi_smhi
+      #   entity_forecast_max: weather.smhi_smhi
+      #   entity_forecast_min: weather.smhi_smhi
+      #   entity_wind_speed: weather.smhi_smhi
+      #   entity_wind_bearing: weather.smhi_smhi
+      #   slot_r3: remove # UV
+      #   slot_r4: sun_next # Fire
+      #   slot_l5: remove # sun_next
       # Temp sensor history
       - type: statistics-graph
         title: Regn 14 dagar
