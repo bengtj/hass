@@ -65,8 +65,9 @@ recorder:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
-# Allows you to issue voice commands from the frontend in enabled browsers
+# Enable voice chat and assist pipelines
 conversation:
+assist_pipeline:
 
 # Enables support for tracking state changes over time. TODO: Remove unneeded lines...
 history:

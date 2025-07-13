@@ -1001,7 +1001,6 @@ views:
         name: SMHI Väder Stora Höga
         entity: weather.smhi_smhi
         forecast_type: daily
-
       # - type: custom:platinum-weather-card
       #   text_card_title: SMHI Väder Stora Höga
       #   section_order:
