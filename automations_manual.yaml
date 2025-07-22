@@ -326,6 +326,16 @@
     data:
       entity_id: switch.speltv
 
+- alias: Lås friggebod
+  initial_state: 'on'
+  trigger:
+  - platform: time
+    at: '23:45:00'
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.friggebod_lock
+
 # Schema belysning dag
 - alias: Schema dag på
   initial_state: 'on'
