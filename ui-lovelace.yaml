@@ -850,6 +850,13 @@ views:
                   top: 50%
                   left: 30%
               - type: state-icon
+                entity: light.barstrom
+                tap_action:
+                  action: toggle
+                style:
+                  top: 70%
+                  left: 25%
+              - type: state-icon
                 entity: light.flygelfonster_3
                 tap_action:
                   action: toggle
@@ -982,10 +989,6 @@ views:
     layout:
        width: 365
     cards:
-      # windy.com
-      # - type: iframe
-      #   url: !secret windy_url
-      #   aspect_ratio: 100%
       # YR meteogram image
       - type: picture-entity
         entity: camera.yr_vader
@@ -1001,28 +1004,18 @@ views:
         name: SMHI Väder Stora Höga
         entity: weather.smhi_smhi
         forecast_type: daily
-      # - type: custom:platinum-weather-card
-      #   text_card_title: SMHI Väder Stora Höga
-      #   section_order:
-      #     - overview
-      #     - slots
-      #   show_section_extended: false
-      #   show_section_daily_forecast: false
-      #   overview_layout: complete
-      #   entity_sun: sun.sun
-      #   entity_summary: weather.smhi_smhi
-      #   entity_temperature: weather.smhi_smhi
-      #   entity_forecast_icon: weather.smhi_smhi
-      #   entity_pos: weather.smhi_smhi
-      #   entity_pressure: weather.smhi_smhi
-      #   entity_humidity: weather.smhi_smhi
-      #   entity_forecast_max: weather.smhi_smhi
-      #   entity_forecast_min: weather.smhi_smhi
-      #   entity_wind_speed: weather.smhi_smhi
-      #   entity_wind_bearing: weather.smhi_smhi
-      #   slot_r3: remove # UV
-      #   slot_r4: sun_next # Fire
-      #   slot_l5: remove # sun_next
+      # # windy.com
+      - type: iframe
+        url: !secret windy_url
+        aspect_ratio: 100%
+      # rainviewer.com
+      # - type: iframe
+      #   url: !secret rainviewer_url
+      #   aspect_ratio: 100%
+      # ventusky.com
+      # - type: iframe
+      #   url: !secret ventusky_url
+      #   aspect_ratio: 100%
       # Temp sensor history
       - type: statistics-graph
         title: Regn 14 dagar
@@ -1101,6 +1094,9 @@ views:
         show_state: true
       - type: picture-entity
         entity: camera.koket
+        show_state: false
+      - type: picture-entity
+        entity: camera.flygeln
         show_state: false
       - type: entity-filter
         entities:
