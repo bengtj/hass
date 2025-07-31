@@ -1,15 +1,15 @@
 - id: '1703942982447'
   alias: Nightly Backup
   description: Backup everything in the middle of the night.
-  trigger:
-  - platform: time
-    at: 03:33:00
-  condition: []
-  action:
-  - service: hassio.backup_full
-    data:
+  triggers:
+  - at: 03:33:00
+    trigger: time
+  conditions: []
+  actions:
+  - data:
       compressed: true
-      location: hassbackup2
+      location: hassbackup
+    action: hassio.backup_full
   mode: single
 - id: '1704637753708'
   alias: GrillLjus
