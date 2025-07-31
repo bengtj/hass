@@ -650,6 +650,31 @@
     - service: homeassistant.turn_on
       entity_id:
         - switch.flygelflux
+- alias: Vardagsdimmer avflux
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: hue_event
+      event_data:
+        id: vardagsdimmer_button
+        type: initial_press
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - switch.vardagsflux
+- alias: Vardagsdimmer påflux
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: hue_event
+      event_data:
+        id: vardagsdimmer_button
+        type: repeat
+        subtype: 4
+  action:
+    - service: homeassistant.turn_on
+      entity_id:
+        - switch.vardagsflux
 
 # Återställ fluxljus igen på natten
 - alias: Schema fluxljus på
