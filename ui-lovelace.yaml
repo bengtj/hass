@@ -358,7 +358,7 @@ views:
               left: 73%
           # Lilla toaletten
           - type: state-icon
-            entity: light.toalett
+            entity: light.toaspegel
             tap_action:
               action: toggle
             style:
