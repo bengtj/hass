@@ -112,7 +112,7 @@ input_boolean:
     icon: mdi:air-conditioner
 
 # Energy prices, see sensor.yaml
-nordpool:
+#nordpool: # Now a standard plugin
 
 # Nibe F370 heat pump plugin from https://github.com/elupus/hass_nibe 
 # List of parameter IDs: https://github.com/openhab/openhab1-addons/wiki/Nibe-Heat-Pump-Binding

@@ -52,7 +52,7 @@ views:
               top: 16%
               left: 16.5%
           - type: state-label
-            entity: sensor.nordpool_se3
+            entity: sensor.nord_pool_se3_current_price
             style:
               top: 20%
               left: 16.5%
