@@ -773,7 +773,7 @@
   initial_state: 'off' # [JUL]
   trigger:
   - platform: time_pattern
-    seconds: "/3"
+    seconds: "/1"
   action:
   - service: script.jul_colors
     data_template:
@@ -789,7 +789,7 @@
   initial_state: 'off'
   trigger:
   - platform: time_pattern
-    seconds: "/2"
+    seconds: "/1"
   action:
   - service: script.halloween_colors
     data_template:
