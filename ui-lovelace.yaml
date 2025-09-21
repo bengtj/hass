@@ -385,12 +385,54 @@ views:
           #     top: 31%
           #     left: 92%
           - type: state-icon
+            entity: light.entresims_6
+            tap_action:
+              action: toggle
+            style:
+              top: 5%
+              left: 91%
+          - type: state-icon
+            entity: light.entresims_5
+            tap_action:
+              action: toggle
+            style:
+              top: 21%
+              left: 91%
+          - type: state-icon
+            entity: light.entresims_4
+            tap_action:
+              action: toggle
+            style:
+              top: 30%
+              left: 91%
+          - type: state-icon
+            entity: light.entresims_3
+            tap_action:
+              action: toggle
+            style:
+              top: 43%
+              left: 91%
+          - type: state-icon
+            entity: light.entresims_2
+            tap_action:
+              action: toggle
+            style:
+              top: 63%
+              left: 91%
+          - type: state-icon
+            entity: light.entresims_1
+            tap_action:
+              action: toggle
+            style:
+              top: 77%
+              left: 91%
+          - type: state-icon
             entity: binary_sensor.entre_motion
             tap_action:
               action: toggle
             style:
-              top: 40%
-              left: 92%
+              top: 37%
+              left: 91%
           - type: state-icon
             entity: light.entrevagg
             tap_action:
@@ -458,6 +500,27 @@ views:
             style:
               top: 40%
               left: 9%
+          - type: state-icon
+            entity: light.altansims_3
+            tap_action:
+              action: toggle
+            style:
+              top: 20%
+              left: 34%
+          - type: state-icon
+            entity: light.altansims_2
+            tap_action:
+              action: toggle
+            style:
+              top: 36%
+              left: 34%
+          - type: state-icon
+            entity: light.altansims_1
+            tap_action:
+              action: toggle
+            style:
+              top: 7%
+              left: 34%
           - type: state-icon
             entity: light.extraslinga
             tap_action:
