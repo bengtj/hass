@@ -505,21 +505,21 @@ views:
             tap_action:
               action: toggle
             style:
-              top: 20%
+              top: 7%
               left: 34%
           - type: state-icon
             entity: light.altansims_2
             tap_action:
               action: toggle
             style:
-              top: 36%
+              top: 20%
               left: 34%
           - type: state-icon
             entity: light.altansims_1
             tap_action:
               action: toggle
             style:
-              top: 7%
+              top: 36%
               left: 34%
           - type: state-icon
             entity: light.extraslinga
@@ -1146,9 +1146,9 @@ views:
       - type: picture-entity
         entity: camera.altan_clear
         show_state: false
-      - type: picture-entity
-        entity: camera.koksfonster
-        show_state: false
+      # - type: picture-entity
+      #   entity: camera.koksfonster
+      #   show_state: false
       - type: picture-entity
         entity: camera.garage_clear
         show_state: false
@@ -1242,27 +1242,27 @@ views:
         entity: vacuum.purjo
         camera_image: camera.purjo_cleaning_map
       # 3D print cards
-      - type: entities
-        title: Octoprint
-        show_header_toggle: false
-        entities:
-          - sensor.octoprint_current_state
-          - sensor.octoprint_job_percentage
-          - sensor.octoprint_estimated_finish_time
-      - type: picture-glance
-        title: Octoprint Cam 1
-        entities:
-          - entity: sensor.octoprint_job_percentage
-            show_state: true
-        camera_image: camera.print
-        camera_view: live
-      - type: picture-glance
-        title: Octoprint Cam 2
-        entities:
-          - entity: sensor.octoprint_job_percentage
-            show_state: true
-        camera_image: camera.octoprint
-        camera_view: live
+      # - type: entities
+      #   title: Octoprint
+      #   show_header_toggle: false
+      #   entities:
+      #     - sensor.octoprint_current_state
+      #     - sensor.octoprint_job_percentage
+      #     - sensor.octoprint_estimated_finish_time
+      # - type: picture-glance
+      #   title: Octoprint Cam 1
+      #   entities:
+      #     - entity: sensor.octoprint_job_percentage
+      #       show_state: true
+      #   camera_image: camera.print
+      #   camera_view: live
+      # - type: picture-glance
+      #   title: Octoprint Cam 2
+      #   entities:
+      #     - entity: sensor.octoprint_job_percentage
+      #       show_state: true
+      #   camera_image: camera.octoprint
+      #   camera_view: live
       - type: gauge
         entity: sensor.p1ib_current_l1
         max: 25

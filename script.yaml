@@ -21,8 +21,8 @@ altan_mail:
       filename: "/config/www/cam/friggebod.jpg"
   - service: camera.snapshot
     data:
-      entity_id: camera.koksfonster
-      filename: "/config/www/cam/koksfonster.jpg"
+      entity_id: camera.flygeln
+      filename: "/config/www/cam/flygeln.jpg"
   - delay: 
       seconds: 3
   - service: camera.snapshot
@@ -38,7 +38,7 @@ altan_mail:
           - /config/www/cam/altan1.jpg
           - /config/www/cam/altan2.jpg
           - /config/www/cam/friggebod.jpg
-          - /config/www/cam/koksfonster.jpg
+          - /config/www/cam/flygeln.jpg
 
 # Mail with pictures from cameras from baksidan
 baken_mail:
