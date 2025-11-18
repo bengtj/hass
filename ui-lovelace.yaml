@@ -1027,6 +1027,11 @@ views:
                 style:
                   top: 80%
                   left: 50%
+              - type: state-icon
+                entity: climate.flygel
+                style:
+                  top: 50%
+                  left: 87%
           # Tracker locations
           - type: glance
             entities:

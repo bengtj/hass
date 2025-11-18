@@ -107,3 +107,52 @@
       target:
         entity_id: switch.koksflux
   mode: single
+- id: '1763490693370'
+  alias: Slå på Flygel-AC
+  description: ''
+  triggers:
+  - trigger: numeric_state
+    entity_id:
+    - sensor.flygel_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    below: 20
+  - trigger: numeric_state
+    entity_id:
+    - sensor.flygel_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    above: 26
+  conditions: []
+  actions:
+  - action: climate.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: climate.flygel
+  mode: single
+- id: '1763491135040'
+  alias: Stäng av Flygel-AC
+  description: ''
+  triggers:
+  - trigger: numeric_state
+    entity_id:
+    - sensor.flygel_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    above: 22
+    below: 24
+  conditions: []
+  actions:
+  - action: climate.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id: 995ed5493f9db0ab8d2213eddf2568bd
+  mode: single
