@@ -1,0 +1,20 @@
+- sensor:
+  - default_entity_id: sensor.wind_direction_text
+    state: >
+      {% set direction = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','N'] %}
+      {% set degree = states('sensor.wind_direction')|float %}
+      {{ direction[((degree+11.25)/22.5)|int] }}
+    name: wind_direction_text
+
+- switch:
+  - turn_on:
+    - data:
+        entity_id: input_boolean.ac
+      action: input_boolean.turn_on
+    turn_off:
+    - data:
+        entity_id: input_boolean.ac
+      action: input_boolean.turn_off
+    default_entity_id: switch.ac
+    name: Luftkonditionering
+    state: '{{ is_state(''input_boolean.ac'', ''on'') }}'

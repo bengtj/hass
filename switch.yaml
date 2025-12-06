@@ -1,19 +1,19 @@
 # Switch support
 
 # Template switches
-- platform: template
-  switches:
-    ac:
-      friendly_name: Luftkonditionering
-      value_template: "{{ is_state('input_boolean.ac', 'on') }}"
-      turn_on:
-        service: input_boolean.turn_on
-        data:
-          entity_id: input_boolean.ac
-      turn_off:
-        service: input_boolean.turn_off
-        data:
-          entity_id: input_boolean.ac
+# - platform: template  # In template.yaml
+#   switches:
+#     ac:
+#       friendly_name: Luftkonditionering
+#       value_template: "{{ is_state('input_boolean.ac', 'on') }}"
+#       turn_on:
+#         service: input_boolean.turn_on
+#         data:
+#           entity_id: input_boolean.ac
+#       turn_off:
+#         service: input_boolean.turn_off
+#         data:
+#           entity_id: input_boolean.ac
 
 # Flux switches should contain at most 3-4 hue groups to perform reliable.
 # I offset the interval to make them issue commands at different times.

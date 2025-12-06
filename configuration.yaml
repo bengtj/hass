@@ -230,6 +230,7 @@ lovelace:
 # Includes of other config files
 scene: !include scenes.yaml
 zone: !include zone.yaml
+template: !include template.yaml
 sensor: !include sensor.yaml
 binary_sensor: !include binary_sensor.yaml
 switch: !include switch.yaml
