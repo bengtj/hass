@@ -105,6 +105,13 @@ mobile_app:
 # Track device location with nmap. See secrets.yaml for gpslogger configuration.
 device_tracker:
 
+# Enabled OTA for Ikea, see https://github.com/zigpy/zigpy/wiki/OTA-Configuration
+zha:
+  zigpy_config:
+    ota:
+      extra_providers:
+        - type: ikea
+
 # AC power toggle via Harmony. Copied as switch.ac to get icon color.
 input_boolean:
   ac:

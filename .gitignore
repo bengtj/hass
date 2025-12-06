@@ -13,3 +13,4 @@ tts
 blueprints
 known_devices.yaml
 home-assistant*.db*
+zigbee.db*
