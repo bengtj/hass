@@ -106,7 +106,7 @@ views:
           - type: state-label
             entity: sensor.sovrum_ute_temperature
             style:
-              top: 16%
+              top: 15%
               left: 31%
           - type: state-label
             entity: sensor.sovrum_temperature
@@ -190,7 +190,7 @@ views:
           - type: state-label
             entity: sensor.lina_ute_temperature
             style:
-              top: 32%
+              top: 31%
               left: 31%
           - type: state-label
             entity: sensor.lina_temperature
@@ -370,20 +370,13 @@ views:
               top: 47%
               left: 84%
           # Entré
-          # - type: state-icon
-          #   entity: light.takfot
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 27%
-          #     left: 92%
-          # - type: state-icon # [JUL]
-          #   entity: switch.juleljus
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 31%
-          #     left: 92%
+          - type: state-icon # [JUL]
+            entity: switch.juleljus
+            tap_action:
+              action: toggle
+            style:
+              top: 25%
+              left: 97%
           - type: state-icon
             entity: light.entresims_6
             tap_action:
@@ -519,7 +512,7 @@ views:
             tap_action:
               action: toggle
             style:
-              top: 36%
+              top: 35%
               left: 34%
           - type: state-icon
             entity: light.extraslinga
@@ -535,20 +528,20 @@ views:
             style:
               top: 44%
               left: 26%
-          # - type: state-icon # [JUL]
-          #   entity: switch.altanjul
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 40%
-          #     left: 32%
-          # - type: state-icon # [JUL]
-          #   entity: light.istappar
-          #   tap_action:
-          #     action: toggle
-          #   style:
-          #     top: 50%
-          #     left: 25%
+          - type: state-icon # [JUL]
+            entity: switch.altanjul
+            tap_action:
+              action: toggle
+            style:
+              top: 40%
+              left: 32%
+          - type: state-icon # [JUL]
+            entity: light.istappar
+            tap_action:
+              action: toggle
+            style:
+              top: 50%
+              left: 25%
           - type: state-icon
             entity: light.altanstolpe_3
             tap_action:
@@ -1440,6 +1433,13 @@ views:
         filter:
           include:
             - group: group.fluxljus
+      - type: custom:auto-entities
+        card:
+          type: glance
+          title: Twinkly
+        filter:
+          include:
+            - group: group.twinkly
 
   # Media tab
   - icon: mdi:music
