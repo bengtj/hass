@@ -555,10 +555,3 @@ entity_config:
   #   aliases: Vårblommor
   #   room: Övrigt
   #   expose: true
-
-  # Dammsugare
-  vacuum.purjo:
-    name: Purjo
-    aliases: Dammsugare
-    room: Övrigt
-    expose: true

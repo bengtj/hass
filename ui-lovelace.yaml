@@ -123,11 +123,6 @@ views:
             style:
               top: 6%
               left: 63%
-          - type: state-icon
-            entity: vacuum.purjo
-            style:
-              top: 94%
-              left: 63%
           # Maltes rum
           - type: state-icon
             entity: light.maltes_fonster
@@ -1230,15 +1225,6 @@ views:
             show_state: true
           - entity: sensor.snovit_last_clean_end
             show_state: true
-      - type: picture-glance
-        title: Purjo
-        entities:
-          - entity: vacuum.purjo
-            show_state: true
-          - entity: switch.purjo_schedule
-            show_state: true
-        entity: vacuum.purjo
-        camera_image: camera.purjo_cleaning_map
       # 3D print cards
       # - type: entities
       #   title: Octoprint
