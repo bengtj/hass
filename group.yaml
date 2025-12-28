@@ -23,7 +23,7 @@ belysning_dag:
   entities:
     - light.vardagsrum
     - light.relax
-    # - light.granen # [JUL]
+    - light.granen # [JUL]
     - light.flygel
     - light.hall
     - light.kokstake

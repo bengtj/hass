@@ -15,7 +15,7 @@
 #   logs:
 #     RFXtrx: debug
 
-device: /dev/ttyUSB0
+device: /dev/ttyUSB0 # Use device /dev/serial/by-id/usb-RFXCOM_RFXtrx433XL_DO2VYYCU-if00-port0 in .storage/core.config_entries instead
 # automatic_add: True
 devices:
 
