@@ -51,54 +51,54 @@
       entity_id: switch.klocka_musik
 
 # Varningsmail för vatten
-- alias: Vattenvarning
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id:
-        - switch.vatten_badkar_1
-        - switch.vatten_badkar_2
-        - switch.vatten_toa_1
-        - switch.vatten_toa_2
-        - switch.vatten_dusch_1
-        - switch.vatten_dusch_2
-        - switch.vatten_tvatt_1
-        - switch.vatten_tvatt_2
-        - switch.vatten_disk_1
-        - switch.vatten_disk_2
-  action:
-  - service: script.notify
-    data_template:
-      title: Det verkar blött någonstans {{ now().strftime("%H:%M") }}!
-      message: |
-        Badkar: {{states("switch.vatten_badkar_1")}} {{states("switch.vatten_badkar_2")}}
-        Lilla toaletten: {{states("switch.vatten_toa_1")}} {{states("switch.vatten_toa_2")}}
-        Dusch: {{states("switch.vatten_dusch_1")}} {{states("switch.vatten_dusch_2")}}
-        Tvättstuga: {{states("switch.vatten_tvatt_1")}} {{states("switch.vatten_tvatt_2")}}
-        Diskho: {{states("switch.vatten_disk_1")}} {{states("switch.vatten_disk_2")}}
-      url: !secret hass_devstate_url
-  - service: homeassistant.turn_on
-    data:
-      entity_id: switch.klocka_ring
+# - alias: Vattenvarning
+#   initial_state: 'on'
+#   trigger:
+#     - platform: state
+#       entity_id:
+#         - switch.vatten_badkar_1
+#         - switch.vatten_badkar_2
+#         - switch.vatten_toa_1
+#         - switch.vatten_toa_2
+#         - switch.vatten_dusch_1
+#         - switch.vatten_dusch_2
+#         - switch.vatten_tvatt_1
+#         - switch.vatten_tvatt_2
+#         - switch.vatten_disk_1
+#         - switch.vatten_disk_2
+#   action:
+#   - service: script.notify
+#     data_template:
+#       title: Det verkar blött någonstans {{ now().strftime("%H:%M") }}!
+#       message: |
+#         Badkar: {{states("switch.vatten_badkar_1")}} {{states("switch.vatten_badkar_2")}}
+#         Lilla toaletten: {{states("switch.vatten_toa_1")}} {{states("switch.vatten_toa_2")}}
+#         Dusch: {{states("switch.vatten_dusch_1")}} {{states("switch.vatten_dusch_2")}}
+#         Tvättstuga: {{states("switch.vatten_tvatt_1")}} {{states("switch.vatten_tvatt_2")}}
+#         Diskho: {{states("switch.vatten_disk_1")}} {{states("switch.vatten_disk_2")}}
+#       url: !secret hass_devstate_url
+#   - service: homeassistant.turn_on
+#     data:
+#       entity_id: switch.klocka_ring
 
 # Varningsmail för rök
-- alias: Rökvarning
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id:
-      - binary_sensor.rok_relax
-      - binary_sensor.rok_sovrum
-  action:
-  - service: script.notify
-    data_template:
-      title: Det verkar BRINNA hemma {{ now().strftime("%H:%M") }}!
-      message: |
-        Röksensorn {{ trigger.to_state.attributes.friendly_name }} har iaf varnat...
-      url: !secret hass_devstate_url
-  - service: homeassistant.turn_on
-    data:
-      entity_id: switch.klocka_ring
+# - alias: Rökvarning
+#   initial_state: 'on'
+#   trigger:
+#   - platform: state
+#     entity_id:
+#       - binary_sensor.rok_relax
+#       - binary_sensor.rok_sovrum
+#   action:
+#   - service: script.notify
+#     data_template:
+#       title: Det verkar BRINNA hemma {{ now().strftime("%H:%M") }}!
+#       message: |
+#         Röksensorn {{ trigger.to_state.attributes.friendly_name }} har iaf varnat...
+#       url: !secret hass_devstate_url
+#   - service: homeassistant.turn_on
+#     data:
+#       entity_id: switch.klocka_ring
 
 # Varningsmail för kallt inne
 - alias: Kallt inne
