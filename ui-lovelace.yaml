@@ -1170,6 +1170,7 @@ views:
           - device_tracker.malte_lan
           - device_tracker.linas_mobil
           - device_tracker.lina_lan
+          - device_tracker.alarm
         state_filter:
           - home
         card:

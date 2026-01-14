@@ -156,3 +156,25 @@
     target:
       device_id: 995ed5493f9db0ab8d2213eddf2568bd
   mode: single
+- id: '1767453122377'
+  alias: Larm offline
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - device_tracker.alarm
+    from:
+    - home
+  conditions: []
+  actions:
+  - action: notify.mobile_app_bengts_mobil
+    metadata: {}
+    data:
+      message: Bäst att kolla så det inte är något fuffens
+      title: Larmet offline
+  - action: notify.mobile_app_marias_mobil
+    metadata: {}
+    data:
+      message: Bäst att kolla så det inte är något fuffens
+      title: Larmet offline
+  mode: single
