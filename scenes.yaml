@@ -56,7 +56,7 @@
       - sunset
       supported_color_modes:
       - color_temp
-      effect: None
+      effect: off # Was None
       color_mode: color_temp
       brightness: 3
       color_temp_kelvin: 2732

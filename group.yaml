@@ -23,7 +23,7 @@ belysning_dag:
   entities:
     - light.vardagsrum
     - light.relax
-    - light.granen # [JUL]
+#    - light.granen # [JUL]
     - light.flygel
     - light.hall
     - light.kokstake
@@ -46,8 +46,8 @@ belysning_ute:
     - light.ute
     - switch.altanjul
     - switch.juleljus
-    - light.istappar # [JUL]
-    - light.takfot # [JUL]
+#    - light.istappar # [JUL]
+#    - light.takfot # [JUL]
 
 # Ljus i sovrum och sovrumsgång
 sovrumsljus:
@@ -199,14 +199,14 @@ fluxljus:
     - switch.uteflux
 
 # Group with twinkly lights
-twinkly: # [JUL]
-  name: Twinkly
-  entities:
-    - light.granen
-    - light.natett
-    - light.nattva
-    - light.istappar
-    - light.dots
+# twinkly: # [JUL]
+#   name: Twinkly
+#   entities:
+#     - light.granen
+#     - light.natett
+#     - light.nattva
+#     - light.istappar
+#     - light.dots
 
 # Föräldrar/Malte/Lina hemma group trackers
 foraldrar_hemma:

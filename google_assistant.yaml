@@ -423,11 +423,11 @@ entity_config:
     aliases: Fontän
     room: Ute
     expose: true
-  switch.altanjul: # [JUL]
-    name: Altanjuleljus
-    aliases: Altanjul
-    room: Ute
-    expose: true
+  # switch.altanjul: # [JUL]
+  #   name: Altanjuleljus
+  #   aliases: Altanjul
+  #   room: Ute
+  #   expose: true
   light.istappar:
     name: Istappar
     aliases: Istapparna
@@ -487,10 +487,10 @@ entity_config:
     aliases: Port
     room: Ute
     expose: true
-  switch.juleljus: # [JUL]
-    name: Entréjuleljus
-    room: Ute
-    expose: true
+  # switch.juleljus: # [JUL]
+  #   name: Entréjuleljus
+  #   room: Ute
+  #   expose: true
 
   # Scener
   scene.fluxljus:
