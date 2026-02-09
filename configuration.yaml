@@ -34,8 +34,8 @@ homeassistant:
       allow_bypass_login: true
 
 # Includes the default config, see https://www.home-assistant.io/integrations/default_config/
-# Disabled. I do not use go2rtc atm.
-#default_config:
+# Disabled. I do not use go2rtc atm. Maybe now though, see below.
+default_config:
 
 # Enables the frontend
 frontend:
@@ -214,7 +214,7 @@ tts:
 
 # Lovelace UI
 lovelace:
-  mode: yaml
+  resource_mode: yaml
   resources:
     # https://github.com/thomasloven/lovelace-auto-entities/
     - url: /local/auto-entities.js
@@ -226,6 +226,27 @@ lovelace:
     # Copy js-files from release files and extract icons from zip-file in release files
     - url: /local/platinum-weather-card/platinum-weather-card.js
       type: module
+  dashboards:
+    lovelace:
+      mode: yaml
+      filename: ui-lovelace.yaml
+      title: Overview
+      icon: mdi:view-dashboard
+      show_in_sidebar: true 
+
+# lovelace:
+#   mode: yaml
+#   resources:
+#     # https://github.com/thomasloven/lovelace-auto-entities/
+#     - url: /local/auto-entities.js
+#       type: module
+#     # https://github.com/tomvanswam/compass-card
+#     - url: /local/compass-card.js
+#       type: module
+#     # https://github.com/Makin-Things/platinum-weather-card
+#     # Copy js-files from release files and extract icons from zip-file in release files
+#     - url: /local/platinum-weather-card/platinum-weather-card.js
+#       type: module
 
 # Includes of other config files
 scene: !include scenes.yaml
