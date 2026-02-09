@@ -178,3 +178,37 @@
       message: Bäst att kolla så det inte är något fuffens
       title: Larmet offline
   mode: single
+- id: '1770665143757'
+  alias: Check internet speed
+  description: ''
+  triggers:
+  - trigger: time
+    at: 07:00:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  conditions: []
+  actions:
+  - action: homeassistant.update_entity
+    metadata: {}
+    data:
+      entity_id:
+      - sensor.speedtest_download
+      - sensor.speedtest_ping
+      - sensor.speedtest_upload
+  - if:
+    - condition: numeric_state
+      entity_id: sensor.speedtest_download
+      below: 250
+    then:
+    - action: notify.mobile_app_bengts_mobil
+      metadata: {}
+      data:
+        title: Internet är slött
+        message: Kolla routern...
+  mode: single

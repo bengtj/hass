@@ -1210,28 +1210,20 @@ views:
     title: Server
     cards:
       # Server card
-      - type: entities
-        title: Server
-        show_header_toggle: false
-        entities:
-          - sensor.maltes_minecraft_players_online
-          - sensor.linas_minecraft_players_online
-#          - sensor.r7000_014d_kb_sec_received
-#          - sensor.r7000_014d_kb_sec_sent
       # Vacuum cards, be sure to disable adguard when registering roborock with xiaomi account. Maybe also log in to their webpage first.
-      - type: entities
-        title: Snövit
-        entities:
-          - entity: vacuum.snovit
-            show_state: true
-          - entity: sensor.snovit_last_clean_area
-            show_state: true
-          - entity: sensor.snovit_last_clean_duration
-            show_state: true
-          - entity: sensor.snovit_last_clean_start
-            show_state: true
-          - entity: sensor.snovit_last_clean_end
-            show_state: true
+      # - type: entities
+      #   title: Snövit
+      #   entities:
+      #     - entity: vacuum.snovit
+      #       show_state: true
+      #     - entity: sensor.snovit_last_clean_area
+      #       show_state: true
+      #     - entity: sensor.snovit_last_clean_duration
+      #       show_state: true
+      #     - entity: sensor.snovit_last_clean_start
+      #       show_state: true
+      #     - entity: sensor.snovit_last_clean_end
+      #       show_state: true
       # 3D print cards
       # - type: entities
       #   title: Octoprint
@@ -1290,7 +1282,27 @@ views:
           green: 0
           yellow: 7.5
           red: 11.5
-
+      - type: entities
+        title: Server
+        icon: mdi:minecraft
+        entities:
+          - sensor.maltes_minecraft_players_online
+          - sensor.linas_minecraft_players_online
+      - type: entities
+        title: Internet Speed
+        icon: mdi:wan
+        entities:
+          - sensor.speedtest_download
+          - sensor.speedtest_upload
+          - sensor.speedtest_ping
+          - type: button
+            name: Refresh values
+            icon: mdi:refresh
+            tap_action:
+              action: call-service
+              service: automation.trigger
+              service_data:
+                entity_id: automation.check_internet_speed
   # Calendar tab
 #  - icon: mdi:calendar-clock
 #    id: calendar
