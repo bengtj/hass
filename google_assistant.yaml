@@ -145,7 +145,7 @@ entity_config:
     aliases: Hallgo
     room: Hall
     expose: true
-  light.hallstake:
+  switch.hallstake:
     name: Hallstake
     aliases:
       - Hall stake

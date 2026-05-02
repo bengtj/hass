@@ -332,7 +332,7 @@ views:
               top: 56.5%
               left: 70%
           - type: state-icon
-            entity: light.hallstake
+            entity: switch.hallstake
             tap_action:
               action: toggle
             style:
@@ -510,7 +510,7 @@ views:
               top: 35%
               left: 34%
           - type: state-icon
-            entity: light.extraslinga
+            entity: light.altanslinga
             tap_action:
               action: toggle
             style:
@@ -552,7 +552,7 @@ views:
               top: 63%
               left: 7%
           - type: state-icon
-            entity: light.altanslinga
+            entity: light.extraslinga
             tap_action:
               action: toggle
             style:
@@ -901,7 +901,7 @@ views:
                   top: 50%
                   left: 30%
               - type: state-icon
-                entity: light.barstrom
+                entity: switch.barstrom
                 tap_action:
                   action: toggle
                 style:

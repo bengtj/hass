@@ -1,6 +1,6 @@
-# Start by making all switches look like a lightbulb and then overwrite it for some
-"switch.*":
-  icon: mdi:lightbulb
+# Glob looks of devices
+# "switch.*":
+#   icon: mdi:lightbulb
 "switch.klocka_*":
   icon: mdi:alarm-bell
 "switch.fjarr_*":
@@ -10,6 +10,8 @@
 "light.*tak*":
   icon: mdi:ceiling-light
 "light.*stake*":
+  icon: mdi:candle  
+"switch.*stake*":
   icon: mdi:candle  
 "light.*plant*":
   icon: mdi:flower

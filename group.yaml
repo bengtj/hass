@@ -26,6 +26,7 @@ belysning_dag:
 #    - light.granen # [JUL]
     - light.flygel
     - light.hall
+    - switch.hallstake
     - light.kokstake
     - light.koksfonster
     - light.plantfonster
@@ -82,6 +83,7 @@ halljus:
   entities:
     - light.hall
     - light.halltak
+    - switch.hallstake
 
 # Ljus i kök
 koksljus:
