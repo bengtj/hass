@@ -27,10 +27,10 @@ belysning_dag:
     - light.flygel
     - light.hall
     - switch.hallstake
-    - light.kokstake
     - light.koksfonster
-    - light.plantfonster
-    - light.plantljus
+    - switch.kokstake
+    - switch.relaxfonster
+    - group.belysning_plantor
 
 # Sovrumsbelysningen är på senare dagtid
 belysning_sovrum:
@@ -49,6 +49,13 @@ belysning_ute:
     - switch.juleljus
 #    - light.istappar # [JUL]
 #    - light.takfot # [JUL]
+
+# Belysning för plantor
+belysning_plantor:
+  name: Plantbelysning
+  entities:
+    - switch.plantljus
+    - switch.garageplanta
 
 # Ljus i sovrum och sovrumsgång
 sovrumsljus:
@@ -111,6 +118,7 @@ vardagsrumsljus:
     - light.vitrinskap
     - light.altanfonster
     - light.golvlampa
+    - switch.plantljus
 
 # Ljus i flygel
 flygelljus:
@@ -132,8 +140,7 @@ relaxljus:
   name: Relaxljus
   entities:
     - light.relax
-    - light.plantfonster
-    - light.plantljus
+    - switch.relaxfonster
     - light.datafonster
     - light.skarm
     - light.relaxgang

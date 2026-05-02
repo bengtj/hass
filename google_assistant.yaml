@@ -100,7 +100,7 @@ entity_config:
     aliases: Fönster kök
     room: Kök
     expose: true
-  light.kokstake:
+  switch.kokstake:
     name: Julstake
     aliases:
       - Kökstake fönster
@@ -250,16 +250,16 @@ entity_config:
     aliases: Relax tak
     room: Relax
     expose: true
-  light.plantfonster:
-    name: Plantfönster
-    aliases: Fönster plantor
+  switch.relaxfonster:
+    name: Relaxfönster
+    aliases: Fönster relax
     room: Relax
     expose: true
-  light.plantljus:
+  switch.plantljus:
     name: Plantljus
     aliases:
-      - Planta relax
-      - Plantor relax
+      - Planta vardagsrum
+      - ClickNGrow
     room: Relax
     expose: true
   light.relaxgang:
@@ -376,7 +376,7 @@ entity_config:
     name: Återvinning
     room: Garage
     expose: true
-  light.garageplanta:
+  switch.garageplanta:
     name: Garageplanta
     aliases: Planta garage
     room: Garage
