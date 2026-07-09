@@ -166,18 +166,18 @@ ffmpeg:
 #    content_type: 'image/svg+xml'
 
 # Mail. Used gmail filter-forwarding from hass_email to work without delay. It seems like gmail will deliver quicker to the sender address(!). TODO: Can't do this anymore after gapps shutdown?
-notify:
-  - name: email
-    platform: smtp
-    server: 192.168.0.10
-    port: 25
-    encryption: none
-    sender: !secret hass_email
-    recipient:
-      - !secret bengt_email
-      - !secret maria_email
-      - !secret hem_email
-    sender_name: Home Assistant
+# notify:
+#   - name: email
+#     platform: smtp
+#     server: 192.168.0.10
+#     port: 25
+#     encryption: none
+#     sender: !secret hass_email
+#     recipient:
+#       - !secret bengt_email
+#       - !secret maria_email
+#       - !secret hem_email
+#     sender_name: Home Assistant
 
 # Shell commands
 shell_command:
