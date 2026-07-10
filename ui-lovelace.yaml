@@ -57,7 +57,7 @@ views:
               top: 20%
               left: 16.5%
           - type: state-icon
-            entity: switch.friggebod_lock
+            entity: lock.friggebod
             style:
               top: 25%
               left: 7%

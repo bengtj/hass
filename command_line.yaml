@@ -6,10 +6,10 @@
 # In secrets.yaml you will need to escape "" in json:
 # glue_command_on: "curl -L -H 'Authorization: Api-Key <api-key>' -H 'Content-Type: application/json' -d '{\"type\":\"lock\"}' https://user-api.gluehome.com/v1/locks/<lock-id>/operations"
 # glue_command_off: "curl -L -H 'Authorization: Api-Key <api-key>' -H 'Content-Type: application/json' -d '{\"type\":\"unlock\"}' https://user-api.gluehome.com/v1/locks/<lock-id>/operations"
-- switch:
-    name: Friggebod Lock
-    command_on: !secret glue_command_on
-    command_off: !secret glue_command_off
+# - switch:
+#     name: Friggebod Lock
+#     command_on: !secret glue_command_on
+#     command_off: !secret glue_command_off
 # Set name "Olåst↓ Friggebod ↑Låst" in gui
 
 
