@@ -118,7 +118,7 @@
       hours: 0
       minutes: 5
       seconds: 0
-    below: 20
+    below: 19
   - trigger: numeric_state
     entity_id:
     - sensor.flygel_temperature
@@ -126,7 +126,7 @@
       hours: 0
       minutes: 5
       seconds: 0
-    above: 26
+    above: 25
   conditions: []
   actions:
   - action: climate.turn_on
@@ -146,8 +146,8 @@
       hours: 0
       minutes: 5
       seconds: 0
-    above: 22
-    below: 24
+    above: 21.5
+    below: 23
   conditions: []
   actions:
   - action: climate.turn_off
