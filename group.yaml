@@ -16,6 +16,9 @@ belysning_all:
     - light.granen
     - light.istappar
     - light.takfot
+    - group.belysning_dag
+    - group.belysning_sovrum
+    - group.belysning_ute
 
 # Dagsbelysningen är på dagtid
 belysning_dag:
